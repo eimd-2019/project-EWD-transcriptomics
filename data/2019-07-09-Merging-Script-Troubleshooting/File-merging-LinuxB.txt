@@ -150,8 +150,11 @@ sort_blast-annotnZ.tab \
 sort_uniprot.tab \
 > blastgoprotnZ.tab &
 
-#too much
+#Isolate gene IDs
 
+cut -f2 file | rev | cut -c 4- | rev > _blast-annot-geneID.tab #Isolate the contig column name and remove last 3 characters (isoform ID)
+
+paste _blast-annot-geneID.tab _blast-annot.tab > _blast-annot-geneOnly.tab #Add column with geneID to file.
 
 
 
