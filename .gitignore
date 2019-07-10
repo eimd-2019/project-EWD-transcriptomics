@@ -1,2 +1,4 @@
 
 *.fasta
+data/uniprot-reviewed_yes.tab
+data/uniprot-SP-GO-sorted.tab
