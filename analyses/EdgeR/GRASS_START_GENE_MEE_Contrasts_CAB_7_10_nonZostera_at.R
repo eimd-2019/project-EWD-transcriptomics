@@ -176,7 +176,7 @@ write.table (top, "EXP.CON.txt", sep="\t")
 out <- topTags(qlf.EXP.CON, n=Inf, adjust.method="BH")
 keep <- out$table$FDR <= 0.05 
 out[keep,]
-write.table(out$table[keep,], file="DE.EXP.CON.FDR.txt", row.names = TRUE, col.names = NA, quote=FALSE, sep = "\t")
+write.table(out$table[keep,], file="DE.EXP.CON.FDR.nZ.txt", row.names = TRUE, col.names = NA, quote=FALSE, sep = "\t")
 
 
 
