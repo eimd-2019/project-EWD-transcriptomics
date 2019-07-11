@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1562885571311.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F3C01635",
+    "lastKnownWriteTime" : 1562888168,
+    "last_content_update" : 1562888168615,
+    "path" : "~/Documents/project-EWD-transcriptomics/analyses/GO-MWU/2019-07-11-Gene-Enrichment-with-GO-MWU.Rmd",
+    "project_path" : "analyses/GO-MWU/2019-07-11-Gene-Enrichment-with-GO-MWU.Rmd",
+    "properties" : {
+        "cursorPosition" : "69,230",
+        "docOutlineVisible" : "1",
+        "last_setup_crc32" : "FBF7B14Ebb338d19",
+        "scrollLine" : "56",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
