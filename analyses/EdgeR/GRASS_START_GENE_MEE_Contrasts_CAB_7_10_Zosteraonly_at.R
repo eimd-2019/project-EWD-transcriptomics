@@ -36,9 +36,6 @@ dim(y)
 
 #keeping 3,095 genes in 15 libraries from Zostera file
 
-#keeping 32,255 genes in 15 libraries from gene file
-#keeping 59,647 in 15 libraries from isoform file
-
 #recompute the library sizes:
 y$samples$lib.size <- colSums(y$counts)
 
@@ -54,7 +51,7 @@ n <- y$samples$lib.size
 points <- c(0,1,2,3)
 colors <- (rep(c("blue","red"),2))
 plotMDS(y, col=colors[group], pch=points[group])  
-legend ("topright", legend=levels(group), pch=points, col=colors, ncol=2)
+legend ("top", legend=levels(group), pch=points, col=colors, ncol=2)
 
 #3.23
 design <-model.matrix(~0+group)
@@ -76,7 +73,7 @@ colnames(fit)
 y <- estimateDisp(y, design, robust=TRUE)
 
 y$common.dispersion
-#[1] 1.045299
+#[1] 1.52659
 plotBCV(y)
 #page48, coefficient of biological variation=1.022
 
@@ -96,13 +93,13 @@ qlf.EXPC.CONC <- glmQLFTest(fit, contrast=my.contrasts[,"EXPC.CONC"])
 topTags(qlf.EXPC.CONC)
 
 summary(decideTests(qlf.EXPH.CONH))
-#UP: 62, DOWN:212
+#UP: 212, DOWN:62
 summary(decideTests(qlf.EXPH.CONC))
-#UP: 49, DOWN: 198
+#UP: 198, DOWN: 49
 summary(decideTests(qlf.EXPC.CONH))
-#UP: 185, DOWN: 242
+#UP: 242, DOWN: 185
 summary(decideTests(qlf.EXPC.CONC))
-#UP: 144, DOWN: 221
+#UP: 221, DOWN: 144
 
 plotMD(qlf.EXPH.CONH)
 abline(h=c(-2,2), col="green")
@@ -124,7 +121,7 @@ qlf.EXPH.EXPC <- glmQLFTest(fit, contrast=my.contrasts[,"EXPH.EXPC"])
 topTags(qlf.EXPH.EXPC)
 
 summary(decideTests(qlf.EXPH.EXPC))
-#UP: 1, DOWN: 6
+#UP: 6, DOWN: 1
 
 
 #MEEcontrasts: what genes are DE between hot and cold control shoots? 
