@@ -41,6 +41,10 @@ head(zosteraGOAnnotationsTable) #Confirm format is good for GO-MWU. It is.
 write.table(zosteraGOAnnotationsTable, "2019-07-11-Zostera-GO-Annotations-Table.tab", sep = "\t", col.names = FALSE, row.names = FALSE, quote = FALSE) #Save file
 ```
 
+```{bash}
+head 2019-07-11-Zostera-GO-Annotations-Table.tab #Confirm formatting is good.
+```
+
 ### *L. zosterae*
 
 ```{r}
@@ -59,25 +63,28 @@ head(nonZosteraGOAnnotationsTable) #Confirm format is good for GO-MWU. It is.
 write.table(nonZosteraGOAnnotationsTable, "2019-07-11-nonZostera-GO-Annotations-Table.tab", sep = "\t", col.names = FALSE, row.names = FALSE, quote = FALSE) #Save file
 ```
 
+```{bash}
+head 2019-07-11-nonZostera-GO-Annotations-Table.tab
+```
+
 ## Table of significance measures
 
-The table of significance measures needs to be a CSV file with two columns: gene ID and measure of continuous significance. Similar to the GO-MWU README, I used signed negative log p-values. These p-values are from `edgeR` output.
+The table of significance measures needs to be a CSV file with two columns: gene ID and measure of continuous significance. All genes need to be included, not just those deemed significantly different by `edgeR`. Similar to the GO-MWU README, I used signed negative log p-values modified from `edgeR` output.
 
 ### *Z. marina*
 
 #### Subset table
 
 ```{r}
-zosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.Z.Annot.txt", header = TRUE) #Import differentially expressed genes from edgeR output
-zosteraDEG <- zosteraDEG[,-1] #Remove redundant column
+zosteraDEG <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt", header = TRUE) #Import all genes used in edgeR output
 head(zosteraDEG) #Confirm import
 ```
 
 ```{r}
-zosteraSigMeasures <- data.frame("gene" = zosteraDEG$GeneID,
+zosteraSigMeasures <- data.frame("gene" = row.names(zosteraDEG),
                                  "logFC" = zosteraDEG$logFC,
-                                 "logP" = log(zosteraDEG$PValue)) #Subset gene ID and log fold change. Also include log(p-value)
-head(zosteraSigMeasures) #Confirm changes
+                                 "logP" = log(zosteraDEG$PValue)) #Subset row names as gene ID and log fold change. Also include log(p-value)
+head(zosteraSigMeasures) #Confirm import
 ```
 
 #### Correct p-values for upregulated genes
@@ -126,15 +133,14 @@ head 2019-07-11-Zostera-Table-of-Significance-Measures.csv #Check that row name 
 #### Subset table
 
 ```{r}
-nonzosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.nZ.Annot.txt", header = TRUE) #Import differentially expressed genes from edgeR output
-nonzosteraDEG <- nonzosteraDEG[,-1] #Remove redundant column
+nonzosteraDEG <- read.delim("../EdgeR/EXP.CON.NonZostera.all.txt", header = TRUE) #Import all genes used in edgeR output
 head(nonzosteraDEG) #Confirm import
 ```
 
 ```{r}
-nonzosteraSigMeasures <- data.frame("gene" = nonzosteraDEG$GeneID,
-                                 "logFC" = nonzosteraDEG$logFC,
-                                 "logP" = log(nonzosteraDEG$PValue)) #Subset gene ID and log fold change. Also include log(p-value)
+nonzosteraSigMeasures <- data.frame("gene" = row.names(nonzosteraDEG),
+                                    "logFC" = nonzosteraDEG$logFC,
+                                    "logP" = log(nonzosteraDEG$PValue)) #Subset row names as gene ID and log fold change. Also include log(p-value)
 head(nonzosteraSigMeasures) #Confirm changes
 ```
 
