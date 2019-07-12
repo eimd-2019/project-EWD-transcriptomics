@@ -5,7 +5,7 @@ date: "7/11/2019"
 output: github_document
 ---
 
-In this R Markdown file, we will perform a gene enrichment with [GO-MWU](https://github.com/z0on/GO_MWU). This is a rank-based gene enrichment method using a Mann-Whitney U test that works well with non-model organisms. There are separate annotations for *Zostera marina* and *Labyrinthula zosterae*, so these files will be formatted separately.
+In this R Markdown file, we format files with a gene enrichment with [GO-MWU](https://github.com/z0on/GO_MWU). This is a rank-based gene enrichment method using a Mann-Whitney U test that works well with non-model organisms. There are separate annotations for *Zostera marina* and *Labyrinthula zosterae*, so these files will be formatted separately.
 
 # Set up R Markdown document
 
@@ -71,4 +71,108 @@ The table of significance measures needs to be a CSV file with two columns: gene
 
 ### *Z. marina*
 
+#### Subset table
+
+```{r}
+zosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.Z.Annot.txt", header = TRUE) #Import differentially expressed genes from edgeR output
+zosteraDEG <- zosteraDEG[,-1] #Remove redundant column
+head(zosteraDEG) #Confirm import
+```
+
+```{r}
+zosteraSigMeasures <- data.frame("gene" = zosteraDEG$GeneID,
+                                 "logFC" = zosteraDEG$logFC,
+                                 "logP" = log(zosteraDEG$PValue)) #Subset gene ID and log fold change. Also include log(p-value)
+head(zosteraSigMeasures) #Confirm changes
+```
+
+#### Correct p-values for upregulated genes
+
+```{r}
+zosteraSigMeasuresUpregulated <- subset(x = zosteraSigMeasures, subset = zosteraSigMeasures$logFC > 0) #Subset differentially expressed genes that are upregulated by pulling out genes with a positive fold change
+tail(zosteraSigMeasuresUpregulated) #Confirm subset
+```
+
+```{r}
+range(zosteraSigMeasuresUpregulated$logP) #Look at the range of p-values for upregulated genes. All values are negative. For signed negative log p-values, the sign of the log p-value should correspond with upregulation for downregulation. All upregulated genes should have positive p-values.
+zosteraSigMeasuresUpregulated$signLogP <- -1 * zosteraSigMeasuresUpregulated$logP #Multiply all p-values by -1 so they become positive
+head(zosteraSigMeasuresUpregulated) #Confirm changes
+```
+
+#### Correct p-values for downregulated genes
+
+```{r}
+zosteraSigMeasuresDownregulated <- subset(x = zosteraSigMeasures, subset = zosteraSigMeasures$logFC < 0) #Subset differentially expressed genes that are downregulated by pulling out genes with a negative fold change
+head(zosteraSigMeasuresDownregulated) #Confirm subset
+```
+
+```{r}
+range(zosteraSigMeasuresDownregulated$logP) #All downregulated genes should have negative p-values. These p-values are already negative, so no more modification needs to happen.
+zosteraSigMeasuresDownregulated$signLogP <- zosteraSigMeasuresDownregulated$logP #Copy entries to a new column to be consistent with formatting for table with upregulated genes
+```
+
+#### Combine tables with corrected p-values
+
+```{r}
+zosteraSigMeasuresCorrected <- rbind(zosteraSigMeasuresUpregulated, zosteraSigMeasuresDownregulated) #Combine tables by columns
+zosteraSigMeasuresCorrected <- zosteraSigMeasuresCorrected[,-c(2:3)] #Remove unnecessary columns
+head(zosteraSigMeasuresCorrected) #Confirm changes
+```
+
+```{r}
+write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance-Measures.csv")
+```
+
 ### *L. zosterae*
+
+#### Subset table
+
+```{r}
+nonzosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.nZ.Annot.txt", header = TRUE) #Import differentially expressed genes from edgeR output
+nonzosteraDEG <- nonzosteraDEG[,-1] #Remove redundant column
+head(nonzosteraDEG) #Confirm import
+```
+
+```{r}
+nonzosteraSigMeasures <- data.frame("gene" = nonzosteraDEG$GeneID,
+                                 "logFC" = nonzosteraDEG$logFC,
+                                 "logP" = log(nonzosteraDEG$PValue)) #Subset gene ID and log fold change. Also include log(p-value)
+head(nonzosteraSigMeasures) #Confirm changes
+```
+
+#### Correct p-values for upregulated genes
+
+```{r}
+nonzosteraSigMeasuresUpregulated <- subset(x = nonzosteraSigMeasures, subset = nonzosteraSigMeasures$logFC > 0) #Subset differentially expressed genes that are upregulated by pulling out genes with a positive fold change
+tail(nonzosteraSigMeasuresUpregulated) #Confirm subset
+```
+
+```{r}
+range(nonzosteraSigMeasuresUpregulated$logP) #Look at the range of p-values for upregulated genes. All values are negative. For signed negative log p-values, the sign of the log p-value should correspond with upregulation for downregulation. All upregulated genes should have positive p-values.
+nonzosteraSigMeasuresUpregulated$signLogP <- -1 * nonzosteraSigMeasuresUpregulated$logP #Multiply all p-values by -1 so they become positive
+head(nonzosteraSigMeasuresUpregulated) #Confirm changes
+```
+
+#### Correct p-values for downregulated genes
+
+```{r}
+nonzosteraSigMeasuresDownregulated <- subset(x = nonzosteraSigMeasures, subset = nonzosteraSigMeasures$logFC < 0) #Subset differentially expressed genes that are downregulated by pulling out genes with a negative fold change
+head(nonzosteraSigMeasuresDownregulated) #Confirm subset
+```
+
+```{r}
+range(nonzosteraSigMeasuresDownregulated$logP) #All downregulated genes should have negative p-values. These p-values are already negative, so no more modification needs to happen.
+nonzosteraSigMeasuresDownregulated$signLogP <- nonzosteraSigMeasuresDownregulated$logP #Copy entries to a new column to be consistent with formatting for table with upregulated genes
+```
+
+#### Combine tables with corrected p-values
+
+```{r}
+nonzosteraSigMeasuresCorrected <- rbind(nonzosteraSigMeasuresUpregulated, nonzosteraSigMeasuresDownregulated) #Combine tables by columns
+nonzosteraSigMeasuresCorrected <- nonzosteraSigMeasuresCorrected[,-c(2:3)] #Remove unnecessary columns
+head(nonzosteraSigMeasuresCorrected) #Confirm changes
+```
+
+```{r}
+write.csv(nonzosteraSigMeasuresCorrected, "2019-07-11-nonZostera-Table-of-Significance-Measures.csv")
+```

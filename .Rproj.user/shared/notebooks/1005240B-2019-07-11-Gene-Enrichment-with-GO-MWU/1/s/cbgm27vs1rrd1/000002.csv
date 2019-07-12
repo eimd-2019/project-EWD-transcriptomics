@@ -1,0 +1,5 @@
+"0","write.csv(zosteraSigMeasuresCorrected, ""2019-07-11-Zostera-Table-of-Significance-Measures.csv"", header = TRUE)
+"
+"2","Error in write.table(zosteraSigMeasuresCorrected, ""2019-07-11-Zostera-Table-of-Significance-Measures.csv"",  : 
+  unused argument (header = TRUE)
+"
