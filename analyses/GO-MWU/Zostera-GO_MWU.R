@@ -75,3 +75,29 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
 # 2  GO terms at 10% FDR. No need to plot results. Will just look at table instead.
+
+zosteraMFEnriched <- read.delim("MWU_MF_2019-07-11-Zostera-Table-of-Significance-Measures.csv", sep = " ") #Import MF output
+head(zosteraMFEnriched) #Confirm import
+zosteraMFEnrichedSig <- subset(zosteraMFEnriched, subset = zosteraMFEnriched$p.adj < 0.1) #Subset significantly enriched terms found by GO_MWU
+head(zosteraMFEnrichedSig) #Confirm subset
+write.csv(zosteraMFEnrichedSig, "WU_MF_SIGONLY_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Save file
+
+#### CODE FOR PLOTTING RESULTS ####
+
+# Plotting results
+quartz()
+results=gomwuPlot(input,goAnnotations,goDivision,
+                  #	absValue=-log(0.05,10),  # genes with the measure value exceeding this will be counted as "good genes". Specify absValue=0.001 if you are doing Fisher's exact test for standard GO enrichment or analyzing a WGCNA module (all non-zero genes = "good genes").
+                  absValue=1,
+                  level1=0.1, # FDR threshold for plotting. Specify level1=1 to plot all GO categories containing genes exceeding the absValue.
+                  level2=0.05, # FDR cutoff to print in regular (not italic) font.
+                  level3=0.01, # FDR cutoff to print in large bold font.
+                  txtsize=1.2,    # decrease to fit more on one page, or increase (after rescaling the plot so the tree fits the text) for better "word cloud" effect
+                  treeHeight=0.5 # height of the hierarchical clustering tree
+                  #	colors=c("dodgerblue2","firebrick1","skyblue2","lightcoral") # these are default colors, un-remar and change if needed
+)
+# manually rescale the plot so the tree matches the text 
+# if there are too many categories displayed, try make it more stringent with level1=0.05,level2=0.01,level3=0.001.  
+
+# text representation of results, with actual adjusted p-values
+results

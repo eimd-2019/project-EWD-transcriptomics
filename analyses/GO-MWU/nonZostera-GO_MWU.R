@@ -94,7 +94,3 @@ results=gomwuPlot(input,goAnnotations,goDivision,
 
 # text representation of results, with actual adjusted p-values
 results
-
-#### GO-CC ####
-
-#### GO-MF ####
