@@ -68,10 +68,10 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
            largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
            smallest=5,   # a GO category should contain at least this many genes to be considered
            clusterCutHeight=0.25 # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           #	Alternative="g" # by default the MWU test is two-tgailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
            #	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
            #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
-# 1  GO terms at 10% FDR. No need to plot results. Will just look at table instead.
+# 2  GO terms at 10% FDR. No need to plot results. Will just look at table instead.
