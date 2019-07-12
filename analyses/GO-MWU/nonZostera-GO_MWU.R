@@ -16,11 +16,11 @@
 ################################################################
 # First, press command-D on mac or ctrl-shift-H in Rstudio and navigate to the directory containing scripts and input files. Then edit, mark and execute the following bits of code, one after another.
 
-setwd("analyses/GO-MWU/")
+#### GO-BP ####
 
 # Edit these to match your data file names: 
 input="2019-07-11-nonZostera-Table-of-Significance-Measures.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goAnnotations="2019-07-11-nonZostera-GO-Annotations-Table.txt" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+goAnnotations="2019-07-11-nonZostera-GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
 goDivision="BP" # either MF, or BP, or CC
 source("gomwu.functions.R")
@@ -48,7 +48,7 @@ results=gomwuPlot(input,goAnnotations,goDivision,
 	level2=0.05, # FDR cutoff to print in regular (not italic) font.
 	level3=0.01, # FDR cutoff to print in large bold font.
 	txtsize=1.2,    # decrease to fit more on one page, or increase (after rescaling the plot so the tree fits the text) for better "word cloud" effect
-	treeHeight=0.5, # height of the hierarchical clustering tree
+	treeHeight=0.5 # height of the hierarchical clustering tree
 #	colors=c("dodgerblue2","firebrick1","skyblue2","lightcoral") # these are default colors, un-remar and change if needed
 )
 # manually rescale the plot so the tree matches the text 
@@ -57,3 +57,6 @@ results=gomwuPlot(input,goAnnotations,goDivision,
 # text representation of results, with actual adjusted p-values
 results
 
+#### GO-CC ####
+
+#### GO-MF ####

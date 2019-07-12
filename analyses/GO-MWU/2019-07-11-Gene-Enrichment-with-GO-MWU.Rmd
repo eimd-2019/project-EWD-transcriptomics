@@ -17,12 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 sessionInfo() #Obtain session information.
 ```
 
-# Obtain go.obo database
-
-```{bash}
-curl http://purl.obolibrary.org/obo/go.obo > go.obo #curl database from permanent url
-```
-
 #Format GO-MWU input
 
 ## GO annotations table
