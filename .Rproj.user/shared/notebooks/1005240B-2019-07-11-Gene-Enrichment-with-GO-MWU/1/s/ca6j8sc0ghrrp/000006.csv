@@ -1,0 +1,3 @@
+"0","zosteraDEG <- read.delim(""../EdgeR/DE.EXP.CON.FDR.Z.Annot.txt"", header = TRUE) #Import differentially expressed genes from edgeR output"
+"0","zosteraDEG <- zosteraDEG[,-1] #Remove redundant column"
+"0","head(zosteraDEG) #Confirm import"

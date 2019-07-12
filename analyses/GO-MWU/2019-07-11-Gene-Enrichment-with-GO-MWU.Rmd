@@ -44,7 +44,7 @@ head(zosteraGOAnnotationsTable) #Confirm format is good for GO-MWU. It is.
 ```
 
 ```{r}
-write.table(zosteraGOAnnotationsTable, "2019-07-11-Zostera-GO-Annotations-Table.txt", sep = "\t", col.names = FALSE, row.names = FALSE) #Save file
+write.table(zosteraGOAnnotationsTable, "2019-07-11-Zostera-GO-Annotations-Table.tab", sep = "\t", col.names = FALSE, row.names = FALSE, quote = FALSE) #Save file
 ```
 
 ### *L. zosterae*
@@ -62,7 +62,7 @@ head(nonZosteraGOAnnotationsTable) #Confirm format is good for GO-MWU. It is.
 ```
 
 ```{r}
-write.table(nonZosteraGOAnnotationsTable, "2019-07-11-nonZostera-GO-Annotations-Table.txt", sep = "\t", col.names = FALSE, row.names = FALSE) #Save file
+write.table(nonZosteraGOAnnotationsTable, "2019-07-11-nonZostera-GO-Annotations-Table.tab", sep = "\t", col.names = FALSE, row.names = FALSE, quote = FALSE) #Save file
 ```
 
 ## Table of significance measures
@@ -120,7 +120,7 @@ head(zosteraSigMeasuresCorrected) #Confirm changes
 ```
 
 ```{r}
-write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance-Measures.csv")
+write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance-Measures.csv", quote = FALSE) #Save file
 ```
 
 ### *L. zosterae*
@@ -174,5 +174,5 @@ head(nonzosteraSigMeasuresCorrected) #Confirm changes
 ```
 
 ```{r}
-write.csv(nonzosteraSigMeasuresCorrected, "2019-07-11-nonZostera-Table-of-Significance-Measures.csv")
+write.csv(nonzosteraSigMeasuresCorrected, "2019-07-11-nonZostera-Table-of-Significance-Measures.csv", quote = FALSE) #Save file
 ```

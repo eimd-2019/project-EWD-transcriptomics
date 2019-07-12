@@ -1,0 +1,2 @@
+"0","zosteraSigMeasuresDownregulated <- subset(x = zosteraSigMeasures, subset = zosteraSigMeasures$logFC < 0) #Subset differentially expressed genes that are downregulated by pulling out genes with a negative fold change"
+"0","head(zosteraSigMeasuresDownregulated) #Confirm subset"

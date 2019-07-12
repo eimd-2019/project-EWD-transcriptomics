@@ -1,0 +1,2 @@
+"0","zosteraSigMeasuresUpregulated <- subset(x = zosteraSigMeasures, subset = zosteraSigMeasures$logFC > 0) #Subset differentially expressed genes that are upregulated by pulling out genes with a positive fold change"
+"0","tail(zosteraSigMeasuresUpregulated) #Confirm subset"

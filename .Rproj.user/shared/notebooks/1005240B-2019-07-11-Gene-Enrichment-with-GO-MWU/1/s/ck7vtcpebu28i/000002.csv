@@ -1,0 +1,3 @@
+"0","zosteraSigMeasuresCorrected <- rbind(zosteraSigMeasuresUpregulated, zosteraSigMeasuresDownregulated) #Combine tables by columns"
+"0","zosteraSigMeasuresCorrected <- zosteraSigMeasuresCorrected[,-c(2:3)] #Remove unnecessary columns"
+"0","head(zosteraSigMeasuresCorrected) #Confirm changes"

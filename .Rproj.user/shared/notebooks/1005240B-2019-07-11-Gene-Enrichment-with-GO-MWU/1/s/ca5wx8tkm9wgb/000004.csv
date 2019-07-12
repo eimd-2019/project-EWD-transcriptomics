@@ -1,3 +1,0 @@
-"0","zosteraSigMeasures <- data.frame(""gene"" = zosteraDEG$GeneID,"
-"0","                                 ""signLogP"" = -log(zosteraDEG$PValue)) #Subset gene ID and log fold change. Also include -log(p-value)"
-"0","head(zosteraSigMeasures) #Confirm changes"

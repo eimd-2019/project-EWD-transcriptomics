@@ -16,11 +16,9 @@
 ################################################################
 # First, press command-D on mac or ctrl-shift-H in Rstudio and navigate to the directory containing scripts and input files. Then edit, mark and execute the following bits of code, one after another.
 
-setwd("analyses/GO-MWU/")
-
 # Edit these to match your data file names: 
 input="2019-07-11-Zostera-Table-of-Significance-Measures.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goAnnotations="2019-07-11-Zostera-GO-Annotations-Table.txt" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+goAnnotations="2019-07-11-Zostera-GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
 goDivision="BP" # either MF, or BP, or CC
 source("gomwu.functions.R")
