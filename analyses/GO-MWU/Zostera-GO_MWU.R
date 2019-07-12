@@ -80,7 +80,7 @@ zosteraMFEnriched <- read.delim("MWU_MF_2019-07-11-Zostera-Table-of-Significance
 head(zosteraMFEnriched) #Confirm import
 zosteraMFEnrichedSig <- subset(zosteraMFEnriched, subset = zosteraMFEnriched$p.adj < 0.1) #Subset significantly enriched terms found by GO_MWU
 head(zosteraMFEnrichedSig) #Confirm subset
-write.csv(zosteraMFEnrichedSig, "WU_MF_SIGONLY_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Save file
+write.csv(zosteraMFEnrichedSig, "MWU_MF_SIGONLY_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Save file
 
 #### CODE FOR PLOTTING RESULTS ####
 
