@@ -1,4 +1,0 @@
-"0","nonzosteraSigMeasures <- data.frame(""gene"" = nonzosteraDEG$GeneID,"
-"0","                                 ""logFC"" = nonzosteraDEG$logFC,"
-"0","                                 ""logP"" = log(nonzosteraDEG$PValue)) #Subset gene ID and log fold change. Also include log(p-value)"
-"0","head(nonzosteraSigMeasures) #Confirm changes"

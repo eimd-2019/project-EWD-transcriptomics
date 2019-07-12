@@ -1,8 +1,0 @@
-"0","range(zosteraSigMeasuresUpregulated$logP) #Look at the range of p-values for upregulated genes. All values are negative. For signed negative log p-values, the sign of the log p-value should correspond with upregulation for downregulation. All upregulated genes should have positive p-values."
-"1","[1]"
-"1"," -37.809208"
-"1","  -4.779219"
-"1","
-"
-"0","zosteraSigMeasuresUpregulated$signLogP <- -1 * zosteraSigMeasuresUpregulated$logP #Multiply all p-values by -1 so they become positive"
-"0","head(zosteraSigMeasuresUpregulated) #Confirm changes"

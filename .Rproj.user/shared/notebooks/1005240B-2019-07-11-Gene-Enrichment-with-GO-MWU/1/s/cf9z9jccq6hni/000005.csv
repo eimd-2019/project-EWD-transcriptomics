@@ -1,3 +1,0 @@
-"0","zosteraGOAnnotationsTable <- data.frame(allZosteraAnnotations$GeneID,"
-"0","                                        allZosteraAnnotations$GO) #Save gene ID and all gene ontology terms in a new dataframe"
-"0","head(zosteraGOAnnotationsTable) #Confirm format is good for GO-MWU. It is."

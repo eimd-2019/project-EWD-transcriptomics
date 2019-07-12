@@ -1,3 +1,0 @@
-"0","allnonZosteraAnnotations <- read.delim(""../../data/nonZostera-blast-annot-withGeneID-noIsoforms-geneCounts.tab"", header = FALSE) #Import file with gene counts for annotated genes"
-"0","colnames(allnonZosteraAnnotations) <- c(""GeneID"", ""Accession"", ""Isoform"", ""E-value"", ""ProteinN"", ""GO_BP"", ""GO_CC"", ""GO_MF"", ""GO"", ""Status"", ""Organism"", ""S_10B"", ""S_9A"", ""S_13A"", ""S_42A"", ""S_46B"", ""S_47B"", ""S_48B"", ""S_2A"", ""S_2B"", ""S_7B"", ""S_8B"", ""S_33A"", ""S_36B"", ""S_38A"", ""S_40A"") #Rename columns"
-"0","head(allnonZosteraAnnotations) #Confirm changes"

@@ -1,7 +1,0 @@
-"0","range(nonzosteraSigMeasuresDownregulated$logP) #All downregulated genes should have negative p-values. These p-values are already negative, so no more modification needs to happen."
-"1","[1]"
-"1"," -12.228318"
-"1","  -5.774104"
-"1","
-"
-"0","nonzosteraSigMeasuresDownregulated$signLogP <- nonzosteraSigMeasuresDownregulated$logP #Copy entries to a new column to be consistent with formatting for table with upregulated genes"

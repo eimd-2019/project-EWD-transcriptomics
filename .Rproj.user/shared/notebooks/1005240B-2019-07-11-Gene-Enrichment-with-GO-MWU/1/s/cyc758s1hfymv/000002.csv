@@ -1,1 +1,0 @@
-"0","write.table(zosteraGOAnnotationsTable, ""2019-07-11-Zostera-GO-Annotations-Table.tab"", sep = ""\t"", col.names = FALSE, row.names = FALSE) #Save file"
