@@ -1,0 +1,269 @@
+id	term	lev	value	seq
+"mitotic cytokinesis"	GO:0000281	3	26.3335579685153	TRINITY_DN233011_c0_g1
+"cytoskeleton-dependent cytokinesis"	GO:0061640	2	26.3335579685153	TRINITY_DN233011_c0_g1
+"mitotic cell cycle process"	GO:1903047	2	26.3335579685153	TRINITY_DN233011_c0_g1
+"cytokinesis"	GO:0000910	3	26.3335579685153	TRINITY_DN233011_c0_g1
+"cell cycle process"	GO:0022402	2	26.3335579685153	TRINITY_DN233011_c0_g1
+"cellular process"	GO:0009987	1	26.3335579685153	TRINITY_DN233011_c0_g1
+"biological_process"	GO:0008150	0	26.3335579685153	TRINITY_DN233011_c0_g1
+"negative regulation of transcription by RNA polymerase II"	GO:0000122	6	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of transcription by RNA polymerase II"	GO:0006357	4	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of transcription, DNA-templated"	GO:0045892	5	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of transcription, DNA-templated"	GO:0006355	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of gene expression"	GO:0010468	4	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of nucleic acid-templated transcription"	GO:1903506	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of cellular macromolecule biosynthetic process"	GO:2000112	6	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of macromolecule metabolic process"	GO:0060255	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of RNA biosynthetic process"	GO:2001141	6	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of macromolecule biosynthetic process"	GO:0010556	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of cellular biosynthetic process"	GO:0031326	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of metabolic process"	GO:0019222	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of RNA metabolic process"	GO:0051252	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of biosynthetic process"	GO:0009889	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of cellular metabolic process"	GO:0031323	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of nucleobase-containing compound metabolic process"	GO:0019219	5	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of cellular process"	GO:0050794	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of nitrogen compound metabolic process"	GO:0051171	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of primary metabolic process"	GO:0080090	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of biological process"	GO:0050789	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"biological regulation"	GO:0065007	1	26.2598403926187	TRINITY_DN255273_c0_g1
+"biological_process"	GO:0008150	0	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of gene expression"	GO:0010629	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of nucleic acid-templated transcription"	GO:1903507	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of cellular macromolecule biosynthetic process"	GO:2000113	4	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of macromolecule metabolic process"	GO:0010605	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of RNA biosynthetic process"	GO:1902679	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of macromolecule biosynthetic process"	GO:0010558	3	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of cellular biosynthetic process"	GO:0031327	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of biosynthetic process"	GO:0009890	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of cellular metabolic process"	GO:0031324	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of metabolic process"	GO:0009892	4	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of cellular process"	GO:0048523	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of biological process"	GO:0048519	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of RNA metabolic process"	GO:0051253	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0045934	2	26.2598403926187	TRINITY_DN255273_c0_g1
+"negative regulation of nitrogen compound metabolic process"	GO:0051172	5	26.2598403926187	TRINITY_DN255273_c0_g1
+"regulation of cyclin-dependent protein serine/threonine kinase activity"	GO:0000079	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of protein serine/threonine kinase activity"	GO:0071900	5	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of cyclin-dependent protein kinase activity"	GO:1904029	5	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of protein kinase activity"	GO:0045859	4	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of protein phosphorylation"	GO:0001932	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of kinase activity"	GO:0043549	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of protein modification process"	GO:0031399	5	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of phosphorylation"	GO:0042325	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of transferase activity"	GO:0051338	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of cellular protein metabolic process"	GO:0032268	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of cellular metabolic process"	GO:0031323	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of protein metabolic process"	GO:0051246	4	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of metabolic process"	GO:0019222	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of cellular process"	GO:0050794	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of nitrogen compound metabolic process"	GO:0051171	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of macromolecule metabolic process"	GO:0060255	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of primary metabolic process"	GO:0080090	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of biological process"	GO:0050789	2	13.955922711681	TRINITY_DN255903_c0_g1
+"biological regulation"	GO:0065007	1	13.955922711681	TRINITY_DN255903_c0_g1
+"biological_process"	GO:0008150	0	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of phosphate metabolic process"	GO:0019220	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of catalytic activity"	GO:0050790	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of phosphorus metabolic process"	GO:0051174	3	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of molecular function"	GO:0065009	2	13.955922711681	TRINITY_DN255903_c0_g1
+"regulation of cell cycle"	GO:0051726	2	13.955922711681	TRINITY_DN255903_c0_g1
+"mRNA splicing, via spliceosome"	GO:0000398	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000377	9	13.5006998181242	TRINITY_DN256449_c0_g1
+"mRNA processing"	GO:0006397	7	13.5006998181242	TRINITY_DN256449_c0_g1
+"RNA splicing, via transesterification reactions"	GO:0000375	8	13.5006998181242	TRINITY_DN256449_c0_g1
+"RNA splicing"	GO:0008380	3	13.5006998181242	TRINITY_DN256449_c0_g1
+"RNA processing"	GO:0006396	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"RNA metabolic process"	GO:0016070	4	13.5006998181242	TRINITY_DN256449_c0_g1
+"nucleic acid metabolic process"	GO:0090304	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"nucleobase-containing compound metabolic process"	GO:0006139	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"macromolecule metabolic process"	GO:0043170	3	13.5006998181242	TRINITY_DN256449_c0_g1
+"cellular aromatic compound metabolic process"	GO:0006725	3	13.5006998181242	TRINITY_DN256449_c0_g1
+"cellular nitrogen compound metabolic process"	GO:0034641	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"primary metabolic process"	GO:0044238	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"heterocycle metabolic process"	GO:0046483	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"organic cyclic compound metabolic process"	GO:1901360	3	13.5006998181242	TRINITY_DN256449_c0_g1
+"organic substance metabolic process"	GO:0071704	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"cellular metabolic process"	GO:0044237	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"nitrogen compound metabolic process"	GO:0006807	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"metabolic process"	GO:0008152	1	13.5006998181242	TRINITY_DN256449_c0_g1
+"biological_process"	GO:0008150	0	13.5006998181242	TRINITY_DN256449_c0_g1
+"cellular process"	GO:0009987	1	13.5006998181242	TRINITY_DN256449_c0_g1
+"mRNA metabolic process"	GO:0016071	2	13.5006998181242	TRINITY_DN256449_c0_g1
+"protein depalmitoylation"	GO:0002084	6	16.6645484523675	TRINITY_DN271666_c1_g1
+"protein deacylation"	GO:0035601	5	16.6645484523675	TRINITY_DN271666_c1_g1
+"lipoprotein catabolic process"	GO:0042159	5	16.6645484523675	TRINITY_DN271666_c1_g1
+"macromolecule depalmitoylation"	GO:0098734	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"cellular protein modification process"	GO:0006464	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"macromolecule deacylation"	GO:0098732	5	16.6645484523675	TRINITY_DN271666_c1_g1
+"protein catabolic process"	GO:0030163	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"lipoprotein metabolic process"	GO:0042157	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"macromolecule catabolic process"	GO:0009057	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"protein metabolic process"	GO:0019538	3	16.6645484523675	TRINITY_DN271666_c1_g1
+"organonitrogen compound catabolic process"	GO:1901565	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"macromolecule metabolic process"	GO:0043170	3	16.6645484523675	TRINITY_DN271666_c1_g1
+"organic substance catabolic process"	GO:1901575	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"primary metabolic process"	GO:0044238	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"organonitrogen compound metabolic process"	GO:1901564	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"organic substance metabolic process"	GO:0071704	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"catabolic process"	GO:0009056	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"metabolic process"	GO:0008152	1	16.6645484523675	TRINITY_DN271666_c1_g1
+"nitrogen compound metabolic process"	GO:0006807	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"biological_process"	GO:0008150	0	16.6645484523675	TRINITY_DN271666_c1_g1
+"protein modification process"	GO:0036211	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"cellular protein metabolic process"	GO:0044267	3	16.6645484523675	TRINITY_DN271666_c1_g1
+"macromolecule modification"	GO:0043412	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"cellular macromolecule metabolic process"	GO:0044260	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"cellular metabolic process"	GO:0044237	2	16.6645484523675	TRINITY_DN271666_c1_g1
+"cellular process"	GO:0009987	1	16.6645484523675	TRINITY_DN271666_c1_g1
+"mitotic cytokinesis"	GO:0000281	3	25.2701671148105	TRINITY_DN277328_c0_g1
+"cytoskeleton-dependent cytokinesis"	GO:0061640	2	25.2701671148105	TRINITY_DN277328_c0_g1
+"mitotic cell cycle process"	GO:1903047	2	25.2701671148105	TRINITY_DN277328_c0_g1
+"cytokinesis"	GO:0000910	3	25.2701671148105	TRINITY_DN277328_c0_g1
+"cell cycle process"	GO:0022402	2	25.2701671148105	TRINITY_DN277328_c0_g1
+"cellular process"	GO:0009987	1	25.2701671148105	TRINITY_DN277328_c0_g1
+"biological_process"	GO:0008150	0	25.2701671148105	TRINITY_DN277328_c0_g1
+"response to reactive oxygen species"	GO:0000302	4	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to oxidative stress"	GO:0006979	3	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to oxygen-containing compound"	GO:1901700	2	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to stress"	GO:0006950	2	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to chemical"	GO:0042221	2	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to stimulus"	GO:0050896	1	6.87490190979116	TRINITY_DN295214_c0_g1
+"biological_process"	GO:0008150	0	6.87490190979116	TRINITY_DN295214_c0_g1
+"response to reactive oxygen species"	GO:0000302	4	6.40300245740958	TRINITY_DN295214_c0_g2
+"response to oxidative stress"	GO:0006979	3	6.40300245740958	TRINITY_DN295214_c0_g2
+"response to oxygen-containing compound"	GO:1901700	2	6.40300245740958	TRINITY_DN295214_c0_g2
+"response to stress"	GO:0006950	2	6.40300245740958	TRINITY_DN295214_c0_g2
+"response to chemical"	GO:0042221	2	6.40300245740958	TRINITY_DN295214_c0_g2
+"response to stimulus"	GO:0050896	1	6.40300245740958	TRINITY_DN295214_c0_g2
+"biological_process"	GO:0008150	0	6.40300245740958	TRINITY_DN295214_c0_g2
+"tRNA wobble uridine modification"	GO:0002098	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"tRNA wobble base modification"	GO:0002097	8	29.8474285126815	TRINITY_DN296708_c0_g1
+"tRNA modification"	GO:0006400	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"tRNA processing"	GO:0008033	3	29.8474285126815	TRINITY_DN296708_c0_g1
+"RNA modification"	GO:0009451	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"tRNA metabolic process"	GO:0006399	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"ncRNA processing"	GO:0034470	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"RNA metabolic process"	GO:0016070	4	29.8474285126815	TRINITY_DN296708_c0_g1
+"macromolecule modification"	GO:0043412	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"ncRNA metabolic process"	GO:0034660	6	29.8474285126815	TRINITY_DN296708_c0_g1
+"RNA processing"	GO:0006396	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"nucleic acid metabolic process"	GO:0090304	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"macromolecule metabolic process"	GO:0043170	3	29.8474285126815	TRINITY_DN296708_c0_g1
+"nucleobase-containing compound metabolic process"	GO:0006139	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"organic substance metabolic process"	GO:0071704	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"cellular aromatic compound metabolic process"	GO:0006725	3	29.8474285126815	TRINITY_DN296708_c0_g1
+"cellular nitrogen compound metabolic process"	GO:0034641	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"primary metabolic process"	GO:0044238	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"heterocycle metabolic process"	GO:0046483	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"organic cyclic compound metabolic process"	GO:1901360	3	29.8474285126815	TRINITY_DN296708_c0_g1
+"metabolic process"	GO:0008152	1	29.8474285126815	TRINITY_DN296708_c0_g1
+"cellular metabolic process"	GO:0044237	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"nitrogen compound metabolic process"	GO:0006807	2	29.8474285126815	TRINITY_DN296708_c0_g1
+"biological_process"	GO:0008150	0	29.8474285126815	TRINITY_DN296708_c0_g1
+"cellular process"	GO:0009987	1	29.8474285126815	TRINITY_DN296708_c0_g1
+"regulation of cyclin-dependent protein serine/threonine kinase activity"	GO:0000079	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of protein serine/threonine kinase activity"	GO:0071900	5	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of cyclin-dependent protein kinase activity"	GO:1904029	5	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of protein kinase activity"	GO:0045859	4	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of protein phosphorylation"	GO:0001932	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of kinase activity"	GO:0043549	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of protein modification process"	GO:0031399	5	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of phosphorylation"	GO:0042325	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of transferase activity"	GO:0051338	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of cellular protein metabolic process"	GO:0032268	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of cellular metabolic process"	GO:0031323	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of protein metabolic process"	GO:0051246	4	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of metabolic process"	GO:0019222	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of cellular process"	GO:0050794	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of nitrogen compound metabolic process"	GO:0051171	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of macromolecule metabolic process"	GO:0060255	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of primary metabolic process"	GO:0080090	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of biological process"	GO:0050789	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"biological regulation"	GO:0065007	1	13.0225180424346	TRINITY_DN299755_c1_g3
+"biological_process"	GO:0008150	0	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of phosphate metabolic process"	GO:0019220	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of catalytic activity"	GO:0050790	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of phosphorus metabolic process"	GO:0051174	3	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of molecular function"	GO:0065009	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"regulation of cell cycle"	GO:0051726	2	13.0225180424346	TRINITY_DN299755_c1_g3
+"mitotic cytokinesis"	GO:0000281	3	21.9820468777673	TRINITY_DN299789_c0_g2
+"cytoskeleton-dependent cytokinesis"	GO:0061640	2	21.9820468777673	TRINITY_DN299789_c0_g2
+"mitotic cell cycle process"	GO:1903047	2	21.9820468777673	TRINITY_DN299789_c0_g2
+"cytokinesis"	GO:0000910	3	21.9820468777673	TRINITY_DN299789_c0_g2
+"cell cycle process"	GO:0022402	2	21.9820468777673	TRINITY_DN299789_c0_g2
+"cellular process"	GO:0009987	1	21.9820468777673	TRINITY_DN299789_c0_g2
+"biological_process"	GO:0008150	0	21.9820468777673	TRINITY_DN299789_c0_g2
+"tissue homeostasis"	GO:0001894	2	7.39729082017076	TRINITY_DN311493_c0_g1
+"anatomical structure homeostasis"	GO:0060249	3	7.39729082017076	TRINITY_DN311493_c0_g1
+"homeostatic process"	GO:0042592	2	7.39729082017076	TRINITY_DN311493_c0_g1
+"regulation of biological quality"	GO:0065008	2	7.39729082017076	TRINITY_DN311493_c0_g1
+"biological regulation"	GO:0065007	1	7.39729082017076	TRINITY_DN311493_c0_g1
+"biological_process"	GO:0008150	0	7.39729082017076	TRINITY_DN311493_c0_g1
+"negative regulation of transcription by RNA polymerase II"	GO:0000122	6	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of transcription by RNA polymerase II"	GO:0006357	4	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of transcription, DNA-templated"	GO:0045892	5	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of transcription, DNA-templated"	GO:0006355	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of gene expression"	GO:0010468	4	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of nucleic acid-templated transcription"	GO:1903506	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of cellular macromolecule biosynthetic process"	GO:2000112	6	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of macromolecule metabolic process"	GO:0060255	3	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of RNA biosynthetic process"	GO:2001141	6	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of macromolecule biosynthetic process"	GO:0010556	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of cellular biosynthetic process"	GO:0031326	3	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of metabolic process"	GO:0019222	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of RNA metabolic process"	GO:0051252	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of biosynthetic process"	GO:0009889	3	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of cellular metabolic process"	GO:0031323	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of nucleobase-containing compound metabolic process"	GO:0019219	5	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of cellular process"	GO:0050794	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of nitrogen compound metabolic process"	GO:0051171	2	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of primary metabolic process"	GO:0080090	3	23.455096566714	TRINITY_DN311716_c0_g2
+"regulation of biological process"	GO:0050789	2	23.455096566714	TRINITY_DN311716_c0_g2
+"biological regulation"	GO:0065007	1	23.455096566714	TRINITY_DN311716_c0_g2
+"biological_process"	GO:0008150	0	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of gene expression"	GO:0010629	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of nucleic acid-templated transcription"	GO:1903507	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of cellular macromolecule biosynthetic process"	GO:2000113	4	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of macromolecule metabolic process"	GO:0010605	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of RNA biosynthetic process"	GO:1902679	3	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of macromolecule biosynthetic process"	GO:0010558	3	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of cellular biosynthetic process"	GO:0031327	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of biosynthetic process"	GO:0009890	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of cellular metabolic process"	GO:0031324	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of metabolic process"	GO:0009892	4	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of cellular process"	GO:0048523	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of biological process"	GO:0048519	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of RNA metabolic process"	GO:0051253	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0045934	2	23.455096566714	TRINITY_DN311716_c0_g2
+"negative regulation of nitrogen compound metabolic process"	GO:0051172	5	23.455096566714	TRINITY_DN311716_c0_g2
+"meiotic spindle organization"	GO:0000212	6	11.0491914487381	TRINITY_DN311731_c0_g1
+"spindle organization"	GO:0007051	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"meiotic cell cycle process"	GO:1903046	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"microtubule cytoskeleton organization"	GO:0000226	4	11.0491914487381	TRINITY_DN311731_c0_g1
+"cell cycle process"	GO:0022402	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"reproductive process"	GO:0022414	1	11.0491914487381	TRINITY_DN311731_c0_g1
+"cytoskeleton organization"	GO:0007010	3	11.0491914487381	TRINITY_DN311731_c0_g1
+"microtubule-based process"	GO:0007017	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"cellular process"	GO:0009987	1	11.0491914487381	TRINITY_DN311731_c0_g1
+"biological_process"	GO:0008150	0	11.0491914487381	TRINITY_DN311731_c0_g1
+"organelle organization"	GO:0006996	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"cellular component organization"	GO:0016043	2	11.0491914487381	TRINITY_DN311731_c0_g1
+"cellular component organization or biogenesis"	GO:0071840	1	11.0491914487381	TRINITY_DN311731_c0_g1
+"mitotic cell cycle"	GO:0000278	3	25.5416292433955	TRINITY_DN312002_c0_g1
+"cell cycle"	GO:0007049	2	25.5416292433955	TRINITY_DN312002_c0_g1
+"cellular process"	GO:0009987	1	25.5416292433955	TRINITY_DN312002_c0_g1
+"biological_process"	GO:0008150	0	25.5416292433955	TRINITY_DN312002_c0_g1
+"response to reactive oxygen species"	GO:0000302	4	7.09368855017146	TRINITY_DN312005_c1_g1
+"response to oxidative stress"	GO:0006979	3	7.09368855017146	TRINITY_DN312005_c1_g1
+"response to oxygen-containing compound"	GO:1901700	2	7.09368855017146	TRINITY_DN312005_c1_g1
+"response to stress"	GO:0006950	2	7.09368855017146	TRINITY_DN312005_c1_g1
+"response to chemical"	GO:0042221	2	7.09368855017146	TRINITY_DN312005_c1_g1
+"response to stimulus"	GO:0050896	1	7.09368855017146	TRINITY_DN312005_c1_g1
+"biological_process"	GO:0008150	0	7.09368855017146	TRINITY_DN312005_c1_g1
+"morphogenesis of a polarized epithelium"	GO:0001738	2	14.2055945640341	TRINITY_DN312737_c2_g2
+"morphogenesis of an epithelium"	GO:0002009	2	14.2055945640341	TRINITY_DN312737_c2_g2
+"tissue morphogenesis"	GO:0048729	3	14.2055945640341	TRINITY_DN312737_c2_g2
+"anatomical structure morphogenesis"	GO:0009653	2	14.2055945640341	TRINITY_DN312737_c2_g2
+"developmental process"	GO:0032502	1	14.2055945640341	TRINITY_DN312737_c2_g2
+"biological_process"	GO:0008150	0	14.2055945640341	TRINITY_DN312737_c2_g2
