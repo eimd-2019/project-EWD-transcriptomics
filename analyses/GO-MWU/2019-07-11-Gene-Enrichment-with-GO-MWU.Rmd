@@ -120,7 +120,11 @@ head(zosteraSigMeasuresCorrected) #Confirm changes
 ```
 
 ```{r}
-write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance-Measures.csv", quote = FALSE) #Save file
+write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+```{bash}
+head 2019-07-11-Zostera-Table-of-Significance-Measures.csv #Check that row name column was not included in output
 ```
 
 ### *L. zosterae*
@@ -174,5 +178,9 @@ head(nonzosteraSigMeasuresCorrected) #Confirm changes
 ```
 
 ```{r}
-write.csv(nonzosteraSigMeasuresCorrected, "2019-07-11-nonZostera-Table-of-Significance-Measures.csv", quote = FALSE) #Save file
+write.csv(nonzosteraSigMeasuresCorrected, "2019-07-11-nonZostera-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+```{bash}
+head 2019-07-11-nonZostera-Table-of-Significance-Measures.csv #Confirm row names are not included in the file
 ```
