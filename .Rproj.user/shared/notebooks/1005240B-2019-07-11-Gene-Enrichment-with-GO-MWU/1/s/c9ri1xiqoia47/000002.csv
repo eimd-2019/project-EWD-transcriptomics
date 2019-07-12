@@ -1,3 +1,0 @@
-"0","nonzosteraSigMeasuresCorrected <- rbind(nonzosteraSigMeasuresUpregulated, nonzosteraSigMeasuresDownregulated) #Combine tables by columns"
-"0","nonzosteraSigMeasuresCorrected <- nonzosteraSigMeasuresCorrected[,-c(2:3)] #Remove unnecessary columns"
-"0","head(nonzosteraSigMeasuresCorrected) #Confirm changes"
