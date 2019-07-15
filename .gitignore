@@ -6,3 +6,5 @@ data/uniprot-SP-GO-sorted.tab
 data/Zostera-blast-annot.tab
 data/Zostera-blast-annot-withGeneID.tab
 .Rproj.user
+.DS_Store
+*/.DS_Store

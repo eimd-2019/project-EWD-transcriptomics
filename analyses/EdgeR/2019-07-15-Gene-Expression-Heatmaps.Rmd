@@ -1,0 +1,191 @@
+---
+title: "Gene Expression Heatmaps"
+author: "Yaamini Venkataraman"
+date: "7/15/2019"
+output: github_document
+---
+
+In this R Markdown document, I will create heatmaps for *Z. marina* and *L. zosterae* gene expression.
+
+# Set up R Markdown document
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Install packages
+
+```{r}
+#install.packages("pheatmap") #Uncomment if you need to install this package
+require(pheatmap)
+```
+
+```{r}
+#install.packages("dplyr") #Uncomment if you need to install this package
+require(dplyr)
+```
+
+# Obtain session information
+
+```{r}
+sessionInfo()
+```
+
+# *Z. marina* heatmaps
+
+## Create color scheme
+
+```{r}
+RColorBrewer::display.brewer.all() #Look at RColorBrewer palettes. I'm looking for something that will still make sense for someone with red-green confusion.
+```
+
+```{r}
+heatmapGreen <- RColorBrewer::brewer.pal(9, "Greens") #Save green color palette from RColorBrewer
+```
+
+## All genes
+
+Using all genes in a heatmap will be noisy, and probably not that interesting since the changes will be hard to see.
+
+*Verdict: I was right.*
+
+```{r}
+Zostera.GE<-read.delim("EXP.CON.Zostera.logCPM.txt", header=TRUE) #Import logCPM file
+head(Zostera.GE) #Confirm import
+```
+
+```{r}
+rownames(Zostera.GE) <- Zostera.GE$GeneID #Set gene ID as row names
+Zostera.GE.heatmap <- Zostera.GE[,-1] #Remove redundant column
+head(Zostera.GE.heatmap) #Confirm changes
+```
+
+```{r}
+pheatmap(Zostera.GE.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
+```
+
+## Differentially expressed genes
+
+*Verdict: This is definitely the best looking one.*
+
+```{r}
+zosteraDEG <- read.delim("DE.EXP.CON.FDR.Z.Annot.M.txt") #Import modified file for DEG
+head(zosteraDEG) #Confirm import
+```
+
+```{r}
+zosteraDEG.heatmap <- merge(x = Zostera.GE, y = zosteraDEG, by = "GeneID") #Merge files by GeneID
+rownames(zosteraDEG.heatmap) <- zosteraDEG.heatmap$GeneID #Set gene IDs as rownames
+zosteraDEG.heatmap <- zosteraDEG.heatmap[,c(2:16)] #Only keep columns with logCPM for each sample
+head(zosteraDEG.heatmap) #Confirm changes
+```
+
+### Without row numbers
+
+```{r}
+#pdf("2019-07-15-Zostera-Differentially-Expressed-Genes-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(zosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
+#dev.off() #Uncomment and run after running plotting code above
+```
+
+### With row numbers
+
+```{r}
+zosteraDEG.heatmap$rownumber <- seq(from = 1, to = length(zosteraDEG.heatmap$S_10B), by = 1) #Add a new column numbering rows
+geneRowNumbers <- data.frame("GeneID" = rownames(zosteraDEG.heatmap),
+                             "Number" = zosteraDEG.heatmap$rownumber) #Create new dataframe with gene IDs and row numbers
+write.csv(geneRowNumbers, "2019-07-15-Zostera-Differentially-Expressed-Genes-RowNumbers.csv") #Save file
+```
+
+```{r}
+rownames(zosteraDEG.heatmap) <- zosteraDEG.heatmap$rownumber #Use numbers as row names
+zosteraDEG.heatmap <- zosteraDEG.heatmap[,-16] #Remove rownumber column
+head(zosteraDEG.heatmap) #Confirm changes
+```
+
+
+```{r}
+#pdf("2019-07-15-Zostera-Differentially-Expressed-Genes-Rownames-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(zosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = TRUE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 1) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Show row and column names. Adjust tree height, add a legend, and specify colors and font sizes.
+#dev.off() #Uncomment and run after running plotting code above
+```
+
+# *L. zosterae* heatmaps
+
+## Create color scheme
+
+```{r}
+heatmapBrown <- RColorBrewer::brewer.pal(9, "YlOrBr") #Save yellow-orange-brown color palette from RColorBrewer
+```
+
+## All genes
+
+*Verdict: Still not exciting.*
+
+```{r}
+nZostera.GE<-read.delim("EXP.CON.nZostera.logCPM.txt", header=TRUE) #Import logCPM file
+head(nZostera.GE) #Confirm import
+```
+
+```{r}
+rownames(nZostera.GE) <- nZostera.GE$GeneID #Set gene ID as row names
+nZostera.GE.heatmap <- nZostera.GE[,-1] #Remove redundant column
+head(nZostera.GE.heatmap) #Confirm changes
+```
+
+```{r}
+pheatmap(nZostera.GE.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
+```
+
+## Differentially expressed genes
+
+*Verdict: Still the better one.*
+
+```{r}
+nonZosteraDEG <- read.delim("DE.EXP.CON.FDR.nZ.Annot.M.txt") #Import modified file for DEG
+head(nonZosteraDEG) #Confirm import
+```
+
+I will not look at genes downregulated in the exposed treatments, so those rows should be removed.
+
+```{r}
+nonZosteraDEG <- subset(x = nonZosteraDEG, subset = nonZosteraDEG$logFC > 0) #Retain upregulated genes
+nonZosteraDEG.heatmap <- merge(x = nZostera.GE, y = nonZosteraDEG, by = "GeneID") #Merge files by GeneID
+head(nonZosteraDEG.heatmap) #Confirm merge
+```
+
+```{r}
+rownames(nonZosteraDEG.heatmap) <- nonZosteraDEG.heatmap$GeneID #Set gene IDs as rownames
+nonZosteraDEG.heatmap <- nonZosteraDEG.heatmap[,c(2:16)] #Only keep columns with logCPM for each sample
+head(nonZosteraDEG.heatmap) #Confirm changes
+```
+
+### Without row numbers
+
+```{r}
+#pdf("2019-07-15-nonZostera-Differentially-Expressed-Genes-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(nonZosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
+#dev.off() #Uncomment and run after running plotting code above
+```
+
+### With row numbers
+
+```{r}
+nonZosteraDEG.heatmap$rownumber <- seq(from = 1, to = length(nonZosteraDEG.heatmap$S_10B), by = 1) #Add a new column numbering rows
+nZgeneRowNumbers <- data.frame("GeneID" = rownames(nonZosteraDEG.heatmap),
+                               "Number" = nonZosteraDEG.heatmap$rownumber) #Create new dataframe with gene IDs and row numbers
+write.csv(nZgeneRowNumbers, "2019-07-15-nonZostera-Differentially-Expressed-Genes-RowNumbers.csv") #Save file
+```
+
+```{r}
+rownames(nonZosteraDEG.heatmap) <- nonZosteraDEG.heatmap$rownumber #Use numbers as row names
+nonZosteraDEG.heatmap <- nonZosteraDEG.heatmap[,-16] #Remove rownumber column
+head(nonZosteraDEG.heatmap) #Confirm changes
+```
+
+
+```{r}
+#pdf("2019-07-15-nonZostera-Differentially-Expressed-Genes-Rownames-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(nonZosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = TRUE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 5) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Show row and column names. Adjust tree height, add a legend, and specify colors and font sizes.
+#dev.off() #Uncomment and run after running plotting code above
+```
