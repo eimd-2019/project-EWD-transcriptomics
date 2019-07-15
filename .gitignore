@@ -5,3 +5,4 @@ data/uniprot-reviewed_yes.tab
 data/uniprot-SP-GO-sorted.tab
 data/Zostera-blast-annot.tab
 data/Zostera-blast-annot-withGeneID.tab
+.Rproj.user
