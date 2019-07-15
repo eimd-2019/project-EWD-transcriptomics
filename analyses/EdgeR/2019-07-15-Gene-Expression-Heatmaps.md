@@ -253,6 +253,8 @@ head(zosteraDEG.heatmap) #Confirm changes
     ## TRINITY_DN111591_c0_g1 1.060435 1.060435 1.060435 1.060435 1.060435
     ## TRINITY_DN139711_c0_g1 1.060435 1.060435 1.060435 1.060435 1.060435
 
+### Without row numbers
+
 ``` r
 #pdf("2019-07-15-Zostera-Differentially-Expressed-Genes-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
 pheatmap(zosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
@@ -264,127 +266,46 @@ pheatmap(zosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clusterin
 #dev.off() #Uncomment and run after running plotting code above
 ```
 
-Differentially expressed genes with GO groupings
-------------------------------------------------
-
-I've had `pheatmap` cluster rows for me, but I can also organize rows by gene ontology grouping before creating a heatmap. I will try this out.
-
-*Verdict: Since the heatmap looks better if you cluster rows, there is no point in organzing by groupings the. DO NOT RUN THE CODE IN THIS SECTION YOU WILL GET GARBAGE.*
+### With row numbers
 
 ``` r
-zosteraDEGroupings <- read.csv("../GO-MWU/DE-GO-MWU/2019-07-15-Zostera-DEG-GoGroupings.csv", header = TRUE) #Import file with DEG and GO groupings
-head(zosteraDEGroupings) #Confirm import
+zosteraDEG.heatmap$rownumber <- seq(from = 1, to = length(zosteraDEG.heatmap$S_10B), by = 1) #Add a new column numbering rows
+geneRowNumbers <- data.frame("GeneID" = rownames(zosteraDEG.heatmap),
+                             "Number" = zosteraDEG.heatmap$rownumber) #Create new dataframe with gene IDs and row numbers
+write.csv(geneRowNumbers, "2019-07-15-Zostera-Differentially-Expressed-Genes-RowNumbers.csv") #Save file
 ```
-
-    ##                      seq                                      name
-    ## 1 TRINITY_DN296376_c0_g1                acetyltransferase activity
-    ## 2 TRINITY_DN314167_c0_g1                 acid phosphatase activity
-    ## 3 TRINITY_DN298173_c0_g1 active transmembrane transporter activity
-    ## 4 TRINITY_DN299750_c3_g1 active transmembrane transporter activity
-    ## 5 TRINITY_DN312095_c1_g3 active transmembrane transporter activity
-    ## 6 TRINITY_DN231504_c0_g1   acylglycerol O-acyltransferase activity
-    ##                    term lev     value
-    ## 1            GO:0016407   5 -8.474277
-    ## 2            GO:0003993   6  6.697340
-    ## 3            GO:0022804   3 31.856066
-    ## 4            GO:0022804   3  6.038709
-    ## 5            GO:0022804   3 -4.788537
-    ## 6 GO:0016411;GO:0008374   2  5.300782
-    ##                                                                                                                                                                                                                                                                                                                                                                                                               ProteinN
-    ## 1 Arginine biosynthesis bifunctional protein ArgJ, chloroplastic [Cleaved into: Arginine biosynthesis bifunctional protein ArgJ alpha chain; Arginine biosynthesis bifunctional protein ArgJ beta chain] [Includes: Glutamate N-acetyltransferase (GAT) (EC 2.3.1.35) (Ornithine acetyltransferase) (OATase) (Ornithine transacetylase); Amino-acid acetyltransferase (EC 2.3.1.1) (N-acetylglutamate synthase) (AGS)]
-    ## 2                                                                                                                                                                                                                                                                                                                                                                          Probable inactive purple acid phosphatase 2
-    ## 3                                                                                                                                                                                                                                                                                  Mitochondrial phosphate carrier protein 3, mitochondrial (Mitochondrial phosphate transporter 3) (MPT3) (Phosphate transporter 3;1)
-    ## 4                                                                                                                                                                                                                                                                                                                                                                                     D-xylose-proton symporter-like 2
-    ## 5                                                                                                                                                                                                                                                                                                                                                                         Cation-transporting ATPase pma1 (EC 3.6.3.-)
-    ## 6                                                                                                                                                                                                                     Lysocardiolipin acyltransferase 1 (EC 2.3.1.-) (1-acylglycerol-3-phosphate O-acyltransferase 8) (1-AGP acyltransferase 8) (1-AGPAT 8) (EC 2.3.1.51) (Acyl-CoA:lysocardiolipin acyltransferase 1)
-    ##        logFC    logCPM          FDR       PValue
-    ## 1 -11.622975  3.642559 2.324257e-03 2.087701e-04
-    ## 2   2.311472 10.642739 1.040822e-02 1.234190e-03
-    ## 3  22.290954 11.797225 2.057426e-12 1.462467e-14
-    ## 4   3.018300 10.715628 1.817843e-02 2.384634e-03
-    ## 5 -10.408972  2.373583 4.842992e-02 8.324626e-03
-    ## 6   8.452997  1.650925 3.193581e-02 4.987694e-03
 
 ``` r
-zosteraDEGroupings <- data.frame("GeneID" = zosteraDEGroupings$seq,
-                                 "name" = zosteraDEGroupings$name) #Retain GeneID and name of GO grouping. Rename seq to GeneID to match previous naming conventions
-head(zosteraDEGroupings) #Confirm changes
+rownames(zosteraDEG.heatmap) <- zosteraDEG.heatmap$rownumber #Use numbers as row names
+zosteraDEG.heatmap <- zosteraDEG.heatmap[,-16] #Remove rownumber column
+head(zosteraDEG.heatmap) #Confirm changes
 ```
 
-    ##                   GeneID                                      name
-    ## 1 TRINITY_DN296376_c0_g1                acetyltransferase activity
-    ## 2 TRINITY_DN314167_c0_g1                 acid phosphatase activity
-    ## 3 TRINITY_DN298173_c0_g1 active transmembrane transporter activity
-    ## 4 TRINITY_DN299750_c3_g1 active transmembrane transporter activity
-    ## 5 TRINITY_DN312095_c1_g3 active transmembrane transporter activity
-    ## 6 TRINITY_DN231504_c0_g1   acylglycerol O-acyltransferase activity
+    ##      S_10B     S_9A    S_13A    S_42A    S_46B    S_47B    S_48B     S_2A
+    ## 1 1.060435 1.060435 2.577379 1.060435 2.076238 3.630958 1.060435 1.060435
+    ## 2 1.060435 1.498523 3.970485 3.284488 1.655952 1.060435 1.060435 1.060435
+    ## 3 6.191308 4.255874 7.816069 3.037763 3.407565 4.330281 3.273137 1.060435
+    ## 4 1.060435 1.498523 1.060435 3.037763 2.890313 2.220749 4.931574 1.060435
+    ## 5 1.833703 1.834107 2.577379 1.854878 1.060435 1.060435 1.060435 1.060435
+    ## 6 2.334413 1.060435 3.559861 1.060435 1.655952 2.220749 1.060435 1.060435
+    ##       S_2B     S_7B     S_8B    S_33A    S_36B    S_38A    S_40A
+    ## 1 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
+    ## 2 1.060435 1.060435 1.060435 1.060435 1.878252 1.060435 1.060435
+    ## 3 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
+    ## 4 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
+    ## 5 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
+    ## 6 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
 
 ``` r
-zosteraDEG.heatmap$GeneID <- rownames(zosteraDEG.heatmap) #Create GeneID column
-zosteraDEGroupings.heatmap <- merge(x = zosteraDEGroupings, y = zosteraDEG.heatmap, by = "GeneID") #Merge files by gene ID
-head(zosteraDEGroupings.heatmap) #Confirm merge
+#pdf("2019-07-15-Zostera-Differentially-Expressed-Genes-Rownames-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(zosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = TRUE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 1) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Show row and column names. Adjust tree height, add a legend, and specify colors and font sizes.
 ```
 
-    ##                   GeneID                                   name    S_10B
-    ## 1 TRINITY_DN102431_c0_g1                           tRNA binding 1.060435
-    ## 2 TRINITY_DN104822_c0_g1                            DNA binding 1.060435
-    ## 3 TRINITY_DN111591_c0_g1                         lyase activity 1.833703
-    ## 4 TRINITY_DN111591_c0_g1           carbon-oxygen lyase activity 1.833703
-    ## 5 TRINITY_DN151705_c0_g1 intramolecular oxidoreductase activity 1.060435
-    ## 6 TRINITY_DN151705_c0_g1                     isomerase activity 1.060435
-    ##       S_9A    S_13A    S_42A    S_46B    S_47B    S_48B     S_2A     S_2B
-    ## 1 1.060435 2.577379 1.060435 2.076238 3.630958 1.060435 1.060435 1.060435
-    ## 2 1.498523 3.970485 3.284488 1.655952 1.060435 1.060435 1.060435 1.060435
-    ## 3 1.834107 2.577379 1.854878 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 4 1.834107 2.577379 1.854878 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 5 1.060435 3.300347 1.060435 2.666430 4.799269 1.060435 1.060435 1.060435
-    ## 6 1.060435 3.300347 1.060435 2.666430 4.799269 1.060435 1.060435 1.060435
-    ##       S_7B     S_8B    S_33A    S_36B    S_38A    S_40A
-    ## 1 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 2 1.060435 1.060435 1.060435 1.878252 1.060435 1.060435
-    ## 3 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 4 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 5 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
-    ## 6 1.060435 1.060435 1.060435 1.060435 1.060435 1.060435
+![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
 ``` r
-attach(zosteraDEGroupings.heatmap) #Attach file
-zosteraDEGroupings.heatmap <- zosteraDEGroupings.heatmap[order(name),] #Order by GO grouping
-detach(zosteraDEGroupings.heatmap) #Detach file
-zosteraDEGroupings.heatmap <- zosteraDEGroupings.heatmap[,-2] #Remove GO grouping column
-zosteraDEGroupings.heatmap <- distinct(zosteraDEGroupings.heatmap) #Remove duplicate rows
-rownames(zosteraDEGroupings.heatmap) <- zosteraDEGroupings.heatmap$GeneID #Set Gene ID as row names
-zosteraDEGroupings.heatmap <- zosteraDEGroupings.heatmap[,-1] #Remove GeneID column
-head(zosteraDEGroupings.heatmap) #Confirm changes
+#dev.off() #Uncomment and run after running plotting code above
 ```
-
-    ##                            S_10B      S_9A     S_13A     S_42A     S_46B
-    ## TRINITY_DN296376_c0_g1  1.060435  1.060435  2.009724  1.060435  1.060435
-    ## TRINITY_DN314167_c0_g1 11.795439 10.374363 11.841392 10.743549  9.878069
-    ## TRINITY_DN298173_c0_g1 13.024621 11.828174 12.694021 12.656530 12.707489
-    ## TRINITY_DN299750_c3_g1 11.806204  7.581342 11.690243 11.397564 10.148449
-    ## TRINITY_DN312095_c1_g3  1.060435  1.060435  1.060435  1.060435  1.060435
-    ## TRINITY_DN231504_c0_g1  1.060435  1.060435  2.983684  1.060435  2.076238
-    ##                            S_47B     S_48B      S_2A      S_2B     S_7B
-    ## TRINITY_DN296376_c0_g1  1.060435  1.060435  4.550117  5.065302 5.154530
-    ## TRINITY_DN314167_c0_g1 10.830196 11.417516 10.271618 10.113988 9.882227
-    ## TRINITY_DN298173_c0_g1 13.877465 12.678324  1.988649  1.885816 2.049129
-    ## TRINITY_DN299750_c3_g1 11.520860 12.018023  9.589440  9.202007 8.893739
-    ## TRINITY_DN312095_c1_g3  1.060435  1.060435  1.060435  1.060435 3.544266
-    ## TRINITY_DN231504_c0_g1  3.630958  1.060435  1.060435  1.060435 1.060435
-    ##                             S_8B     S_33A    S_36B     S_38A    S_40A
-    ## TRINITY_DN296376_c0_g1  4.919637  3.675911 2.160810  3.155331 4.276703
-    ## TRINITY_DN314167_c0_g1 10.419807  9.945519 9.553285 10.014327 9.627239
-    ## TRINITY_DN298173_c0_g1  3.923096  1.060435 1.526533  2.666863 2.471188
-    ## TRINITY_DN299750_c3_g1 10.244183 10.622935 9.740647  9.755639 9.792058
-    ## TRINITY_DN312095_c1_g3  1.060435  1.775038 4.035814  1.060435 4.461726
-    ## TRINITY_DN231504_c0_g1  1.060435  1.060435 1.060435  1.060435 1.060435
-
-``` r
-pheatmap(zosteraDEGroupings.heatmap, cluster_row = FALSE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapGreen, fontsize_col = 20, fontsize_row = 12) #Create hatmap. Don't cluster rows, or columns. Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes. This looks like garbage.
-```
-
-![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-16-1.png)
 
 *L. zosterae* heatmaps
 ======================
@@ -460,7 +381,7 @@ head(nZostera.GE.heatmap) #Confirm changes
 pheatmap(nZostera.GE.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
 ```
 
-![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-20-1.png)
+![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-18-1.png)
 
 Differentially expressed genes
 ------------------------------
@@ -650,12 +571,55 @@ head(nonZosteraDEG.heatmap) #Confirm changes
     ## TRINITY_DN233011_c0_g1 7.593233 6.144030 6.764563 6.144030 6.144030
     ## TRINITY_DN251134_c0_g1 7.593233 6.144030 6.144030 8.222816 6.144030
 
+### Without row numbers
+
 ``` r
 #pdf("2019-07-15-nonZostera-Differentially-Expressed-Genes-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
 pheatmap(nonZosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = FALSE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 12) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Do not show rownames but show column names. Adjust tree height, add a legend, and specify colors and font sizes.
 ```
 
-![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-22-1.png)
+
+``` r
+#dev.off() #Uncomment and run after running plotting code above
+```
+
+### With row numbers
+
+``` r
+nonZosteraDEG.heatmap$rownumber <- seq(from = 1, to = length(nonZosteraDEG.heatmap$S_10B), by = 1) #Add a new column numbering rows
+nZgeneRowNumbers <- data.frame("GeneID" = rownames(nonZosteraDEG.heatmap),
+                               "Number" = nonZosteraDEG.heatmap$rownumber) #Create new dataframe with gene IDs and row numbers
+write.csv(nZgeneRowNumbers, "2019-07-15-nonZostera-Differentially-Expressed-Genes-RowNumbers.csv") #Save file
+```
+
+``` r
+rownames(nonZosteraDEG.heatmap) <- nonZosteraDEG.heatmap$rownumber #Use numbers as row names
+nonZosteraDEG.heatmap <- nonZosteraDEG.heatmap[,-16] #Remove rownumber column
+head(nonZosteraDEG.heatmap) #Confirm changes
+```
+
+    ##       S_10B      S_9A     S_13A     S_42A     S_46B    S_47B     S_48B
+    ## 1 15.139983 15.979684 15.285549 14.736471 14.928570 14.81843 14.559036
+    ## 2  7.615969  7.178481  8.155175  6.747021  8.315796  6.14403  7.403922
+    ## 3  6.673587  7.178481  7.289647  7.764827  6.668313  6.14403  6.907347
+    ## 4 11.418155 11.084327 12.075103 12.091389 11.644196 11.83356 11.720705
+    ## 5 14.893211 16.782572 15.502256 13.822896 13.861489 13.61206 13.745257
+    ## 6 14.918270 14.489588 15.207602 14.973766 14.952739 15.11006 14.694009
+    ##       S_2A    S_2B     S_7B     S_8B    S_33A    S_36B    S_38A    S_40A
+    ## 1 6.144030 6.14403 6.144030 7.250857 7.154239 6.144030 7.799234 6.894222
+    ## 2 6.144030 6.14403 6.144030 6.144030 6.144030 6.144030 6.144030 6.144030
+    ## 3 6.144030 6.14403 6.144030 6.144030 6.144030 6.144030 6.144030 6.144030
+    ## 4 6.144030 6.14403 6.144030 6.144030 6.144030 6.144030 6.144030 6.894222
+    ## 5 6.144030 7.12876 7.530946 7.593233 6.144030 6.764563 6.144030 6.144030
+    ## 6 6.587514 6.14403 6.144030 7.593233 6.144030 6.144030 8.222816 6.144030
+
+``` r
+#pdf("2019-07-15-nonZostera-Differentially-Expressed-Genes-Rownames-Heatmap.pdf", width = 11, height = 8.5) #Uncomment and run if you want to save the plot
+pheatmap(nonZosteraDEG.heatmap, cluster_row = TRUE, cluster_cols = FALSE, clustering_distance_rows = "euclidean", clustering_method = "average", show_rownames = TRUE, show_colnames = TRUE, treeheight_col = 80, legend = TRUE, color = heatmapBrown, fontsize_col = 20, fontsize_row = 5) #Create heatmap. Cluster rows, but not columns, Use euclidean distances and average method for clustering. Show row and column names. Adjust tree height, add a legend, and specify colors and font sizes.
+```
+
+![](2019-07-15-Gene-Expression-Heatmaps_files/figure-markdown_github/unnamed-chunk-25-1.png)
 
 ``` r
 #dev.off() #Uncomment and run after running plotting code above
