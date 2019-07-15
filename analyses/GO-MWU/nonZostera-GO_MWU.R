@@ -94,3 +94,24 @@ results=gomwuPlot(input,goAnnotations,goDivision,
 
 # text representation of results, with actual adjusted p-values
 results
+
+#### MERGE EDGER AND GO-MWU OUTPUT ####
+
+nonZosteraDEG <- read.delim("analyses/EdgeR/DE.EXP.CON.FDR.nZ.Annot.txt") #Import L. zosterae differentially expressed genes from edgeR
+head(nonZosteraDEG) #Confirm import
+nonZosteraDEG <- data.frame("seq" = nonZosteraDEG$GeneID, 
+                         "FDR" = nonZosteraDEG$FDR,
+                         "PValue" = nonZosteraDEG$PValue) #Only save gene ID, FDR and p-values from edgeR
+head(nonZosteraDEG) #Confirm changes
+
+nonZosteraGOGroupings <- read.delim("analyses/GO-MWU/MF_2019-07-11-nonZostera-Table-of-Significance-Measures.csv") #Import L. zosterae GO groupings from GO-MWU
+head(nonZosteraGOGroupings) #Confirm import
+
+nonZosteraDEGOGroupings <- merge(x = nonZosteraGOGroupings, y = nonZosteraDEG, by = "seq") #Append FDR and p-values to sequences is nonZosteraGOGroupings
+head(nonZosteraDEGOGroupings) #Confirm changes
+
+attach(nonZosteraDEGOGroupings) #Attach dataframe
+nonZosteraDEGOGroupingsSorted <- nonZosteraDEGOGroupings[order(name),] #Sort by GO group
+detach(nonZosteraDEGOGroupings) #Detatch dataframe
+head(nonZosteraDEGOGroupingsSorted) #Confirm sort
+write.csv(nonZosteraDEGOGroupingsSorted, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-nonZostera-DEG-GoGroupings.csv", row.names = FALSE) #Save file

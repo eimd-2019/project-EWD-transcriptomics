@@ -101,3 +101,24 @@ results=gomwuPlot(input,goAnnotations,goDivision,
 
 # text representation of results, with actual adjusted p-values
 results
+
+#### MERGE EDGER AND GO-MWU OUTPUT ####
+
+zosteraDEG <- read.delim("analyses/EdgeR/DE.EXP.CON.FDR.Z.Annot.txt") #Import Z. marina differentially expressed genes from edgeR
+head(zosteraDEG) #Confirm import
+zosteraDEG <- data.frame("seq" = zosteraDEG$GeneID, 
+                         "FDR" = zosteraDEG$FDR,
+                         "PValue" = zosteraDEG$PValue) #Only save gene ID, FDR and p-values from edgeR
+head(zosteraDEG) #Confirm changes
+
+zosteraGOGroupings <- read.delim("analyses/GO-MWU/MF_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Import Z. marina GO groupings from GO-MWU
+head(zosteraGOGroupings) #Confirm import
+
+zosteraDEGOGroupings <- merge(x = zosteraGOGroupings, y = zosteraDEG, by = "seq") #Append FDR and p-values to sequences is zosteraGOGroupings
+head(zosteraDEGOGroupings) #Confirm changes
+
+attach(zosteraDEGOGroupings) #Attach dataframe
+zosteraDEGOGroupingsSorted <- zosteraDEGOGroupings[order(name),] #Sort by GO group
+detach(zosteraDEGOGroupings) #Detatch dataframe
+head(zosteraDEGOGroupingsSorted) #Confirm sort
+write.csv(zosteraDEGOGroupingsSorted, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-Zostera-DEG-GoGroupings.csv", row.names = FALSE) #Save file
