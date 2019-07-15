@@ -106,9 +106,10 @@ results
 
 zosteraDEG <- read.delim("analyses/EdgeR/DE.EXP.CON.FDR.Z.Annot.txt") #Import Z. marina differentially expressed genes from edgeR
 head(zosteraDEG) #Confirm import
-zosteraDEG <- data.frame("seq" = zosteraDEG$GeneID, 
+zosteraDEG <- data.frame("seq" = zosteraDEG$GeneID,
+                         "ProteinN" = zosteraDEG$ProteinN,
                          "FDR" = zosteraDEG$FDR,
-                         "PValue" = zosteraDEG$PValue) #Only save gene ID, FDR and p-values from edgeR
+                         "PValue" = zosteraDEG$PValue) #Only save gene ID, protein name, FDR, and p-values from edgeR
 head(zosteraDEG) #Confirm changes
 
 zosteraGOGroupings <- read.delim("analyses/GO-MWU/MF_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Import Z. marina GO groupings from GO-MWU
