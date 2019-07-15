@@ -99,9 +99,12 @@ results
 
 nonZosteraDEG <- read.delim("analyses/EdgeR/DE.EXP.CON.FDR.nZ.Annot.txt") #Import L. zosterae differentially expressed genes from edgeR
 head(nonZosteraDEG) #Confirm import
-nonZosteraDEG <- data.frame("seq" = nonZosteraDEG$GeneID, 
-                         "FDR" = nonZosteraDEG$FDR,
-                         "PValue" = nonZosteraDEG$PValue) #Only save gene ID, FDR and p-values from edgeR
+nonZosteraDEG <- data.frame("seq" = nonZosteraDEG$GeneID,
+                            "ProteinN" = nonZosteraDEG$ProteinN,
+                            "logFC" = nonZosteraDEG$logFC,
+                            "logCPM" = nonZosteraDEG$logCPM,
+                            "FDR" = nonZosteraDEG$FDR,
+                            "PValue" = nonZosteraDEG$PValue) #Only save gene ID, protein name, log fold change, log counts per million, FDR and p-values from edgeR
 head(nonZosteraDEG) #Confirm changes
 
 nonZosteraGOGroupings <- read.delim("analyses/GO-MWU/MF_2019-07-11-nonZostera-Table-of-Significance-Measures.csv") #Import L. zosterae GO groupings from GO-MWU
