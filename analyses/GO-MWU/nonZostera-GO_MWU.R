@@ -118,3 +118,7 @@ nonZosteraDEGOGroupingsSorted <- nonZosteraDEGOGroupings[order(name),] #Sort by 
 detach(nonZosteraDEGOGroupings) #Detatch dataframe
 head(nonZosteraDEGOGroupingsSorted) #Confirm sort
 write.csv(nonZosteraDEGOGroupingsSorted, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-nonZostera-DEG-GoGroupings.csv", row.names = FALSE) #Save file
+
+nonZosteraDEGOterms <- nonZosteraDEGOGroupingsSorted[,c(1, 3)] #Only keep sequence and term columns
+head(nonZosteraDEGOterms) #Confirm subset
+write.table(nonZosteraDEGOterms, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-nonZostera-DEG-GOterms.tab", sep = "\t", quote = FALSE, row.names = FALSE) #Save a version with only sequence ID and GOterms
