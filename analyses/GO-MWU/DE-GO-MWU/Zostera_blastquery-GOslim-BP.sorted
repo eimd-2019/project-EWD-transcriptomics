@@ -1,0 +1,806 @@
+TRINITY_DN102431_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN104822_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN111591_c0_g1	other molecular function	carbon-oxygen lyase activity
+TRINITY_DN111591_c0_g1	other molecular function	hydro-lyase activity
+TRINITY_DN111591_c0_g1	other molecular function	lyase activity
+TRINITY_DN151705_c0_g1	other molecular function	"intramolecular oxidoreductase activity, transposing S-S bonds"
+TRINITY_DN151705_c0_g1	other molecular function	intramolecular oxidoreductase activity
+TRINITY_DN151705_c0_g1	other molecular function	isomerase activity
+TRINITY_DN151705_c0_g1	other molecular function	protein disulfide isomerase activity
+TRINITY_DN172940_c0_g1	other molecular function	"transferase activity, transferring one-carbon groups"
+TRINITY_DN172940_c0_g1	other molecular function	methyltransferase activity
+TRINITY_DN175296_c0_g1	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN175296_c0_g1	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN175296_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN2119_c1_g1	other molecular function	cation binding
+TRINITY_DN2119_c1_g1	other molecular function	copper ion binding
+TRINITY_DN2119_c1_g1	other molecular function	metal ion binding
+TRINITY_DN2119_c1_g1	other molecular function	transition metal ion binding
+TRINITY_DN223640_c0_g1	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN223640_c0_g1	other molecular function	nuclease activity
+TRINITY_DN223830_c0_g1	other molecular function	amide binding
+TRINITY_DN226183_c0_g1	other molecular function	"hydroxymethyl-, formyl- and related transferase activity"
+TRINITY_DN226183_c0_g1	other molecular function	"transferase activity, transferring one-carbon groups"
+TRINITY_DN226183_c0_g1	other molecular function	glycine hydroxymethyltransferase activity
+TRINITY_DN226664_c0_g1	kinase activity	kinase activity
+TRINITY_DN226664_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN226664_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN226664_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN227360_c0_g2	cytoskeletal activity	microtubule motor activity
+TRINITY_DN227360_c0_g2	cytoskeletal activity	motor activity
+TRINITY_DN227360_c0_g2	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN227360_c0_g2	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN227360_c0_g2	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN227360_c0_g2	other molecular function	pyrophosphatase activity
+TRINITY_DN231504_c0_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN231504_c0_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN231504_c0_g1	other molecular function	1-acylglycerol-3-phosphate O-acyltransferase activity
+TRINITY_DN231504_c0_g1	other molecular function	O-acyltransferase activity
+TRINITY_DN231504_c0_g1	other molecular function	acylglycerol O-acyltransferase activity
+TRINITY_DN231504_c0_g1	other molecular function	lysophosphatidic acid acyltransferase activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	ATPase regulator activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	GTPase activator activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	GTPase regulator activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	enzyme activator activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN231598_c0_g2	enzyme regulator activity	nucleoside-triphosphatase regulator activity
+TRINITY_DN233686_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN233686_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN233686_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN233686_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN234179_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN234179_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN234179_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN234179_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN238280_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN250557_c0_g1	kinase activity	kinase activity
+TRINITY_DN250557_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN250557_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN250557_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN250557_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN25194_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN252362_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN252362_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN252876_c0_g1	enzyme regulator activity	enzyme inhibitor activity
+TRINITY_DN252876_c0_g1	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN254084_c0_g1	enzyme regulator activity	enzyme inhibitor activity
+TRINITY_DN254084_c0_g1	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN254239_c0_g1	cytoskeletal activity	actin binding
+TRINITY_DN254239_c0_g1	cytoskeletal activity	cytoskeletal protein binding
+TRINITY_DN254239_c0_g1	other molecular function	protein binding
+TRINITY_DN25521_c0_g1	other molecular function	small conjugating protein ligase activity
+TRINITY_DN25521_c0_g1	other molecular function	ubiquitin-protein ligase activity
+TRINITY_DN255876_c0_g1	other molecular function	cation binding
+TRINITY_DN255876_c0_g1	other molecular function	magnesium ion binding
+TRINITY_DN255876_c0_g1	other molecular function	metal ion binding
+TRINITY_DN255899_c0_g1	kinase activity	kinase activity
+TRINITY_DN255899_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN255899_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN255899_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN255960_c0_g1	other molecular function	cation binding
+TRINITY_DN255960_c0_g1	other molecular function	magnesium ion binding
+TRINITY_DN255960_c0_g1	other molecular function	metal ion binding
+TRINITY_DN255993_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN255993_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN256219_c0_g2	other molecular function	GTP binding
+TRINITY_DN256219_c0_g2	other molecular function	guanyl nucleotide binding
+TRINITY_DN256219_c0_g2	other molecular function	guanyl ribonucleotide binding
+TRINITY_DN256219_c0_g2	other molecular function	nucleoside binding
+TRINITY_DN256219_c0_g2	other molecular function	purine nucleoside binding
+TRINITY_DN256219_c0_g2	other molecular function	purine ribonucleoside binding
+TRINITY_DN256219_c0_g2	other molecular function	ribonucleoside binding
+TRINITY_DN256326_c0_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN256326_c0_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN256326_c0_g1	other molecular function	1-acylglycerol-3-phosphate O-acyltransferase activity
+TRINITY_DN256326_c0_g1	other molecular function	O-acyltransferase activity
+TRINITY_DN256326_c0_g1	other molecular function	acylglycerol O-acyltransferase activity
+TRINITY_DN256326_c0_g1	other molecular function	lysophosphatidic acid acyltransferase activity
+TRINITY_DN256557_c0_g2	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN256557_c0_g2	other molecular function	aminopeptidase activity
+TRINITY_DN256557_c0_g2	other molecular function	exopeptidase activity
+TRINITY_DN256557_c0_g2	other molecular function	peptidase activity
+TRINITY_DN259162_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN259162_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN259522_c0_g1	kinase activity	calmodulin-dependent protein kinase activity
+TRINITY_DN259522_c0_g1	kinase activity	kinase activity
+TRINITY_DN259522_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN259522_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN259522_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN259522_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN259522_c1_g1	kinase activity	calmodulin-dependent protein kinase activity
+TRINITY_DN259522_c1_g1	kinase activity	kinase activity
+TRINITY_DN259522_c1_g1	kinase activity	protein kinase activity
+TRINITY_DN259522_c1_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN259522_c1_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN259522_c1_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN271000_c0_g1	other molecular function	cation binding
+TRINITY_DN271000_c0_g1	other molecular function	magnesium ion binding
+TRINITY_DN271000_c0_g1	other molecular function	metal ion binding
+TRINITY_DN271265_c0_g1	other molecular function	"ligase activity, forming carbon-carbon bonds"
+TRINITY_DN271265_c0_g1	other molecular function	CoA carboxylase activity
+TRINITY_DN271265_c0_g1	other molecular function	acetyl-CoA carboxylase activity
+TRINITY_DN271265_c0_g1	other molecular function	ligase activity
+TRINITY_DN271641_c0_g3	other molecular function	SNARE binding
+TRINITY_DN271641_c0_g3	other molecular function	protein binding
+TRINITY_DN271649_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN271662_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN271662_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN271662_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN271662_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN271688_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN274001_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN274735_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN274735_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN274796_c0_g1	other molecular function	monooxygenase activity
+TRINITY_DN274796_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN274808_c0_g1	other molecular function	"carbon-nitrogen ligase activity, with glutamine as amido-N-donor"
+TRINITY_DN274808_c0_g1	other molecular function	"ligase activity, forming carbon-nitrogen bonds"
+TRINITY_DN274808_c0_g1	other molecular function	ligase activity
+TRINITY_DN274823_c0_g1	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN274823_c0_g1	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN274823_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN274831_c0_g1	other molecular function	"oxidoreductase activity, acting on the aldehyde or oxo group of donors"
+TRINITY_DN274831_c0_g1	other molecular function	"oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor"
+TRINITY_DN274831_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN276022_c0_g1	other molecular function	"hydroxymethyl-, formyl- and related transferase activity"
+TRINITY_DN276022_c0_g1	other molecular function	"transferase activity, transferring one-carbon groups"
+TRINITY_DN276022_c0_g1	other molecular function	glycine hydroxymethyltransferase activity
+TRINITY_DN276025_c0_g1	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN276025_c0_g1	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN276025_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN276063_c0_g1	other molecular function	amide binding
+TRINITY_DN276081_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN276081_c0_g2	nucleic acid binding activity	DNA binding
+TRINITY_DN276264_c0_g3	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN276264_c0_g3	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN276264_c0_g3	other molecular function	oxidoreductase activity
+TRINITY_DN276418_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN276418_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN276539_c0_g1	kinase activity	kinase activity
+TRINITY_DN276539_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN276539_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN276539_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN276539_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN276554_c0_g1	other molecular function	"hydrolase activity, acting on glycosyl bonds"
+TRINITY_DN276554_c0_g1	other molecular function	"hydrolase activity, hydrolyzing O-glycosyl compounds"
+TRINITY_DN276582_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN276582_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN276607_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN276631_c0_g2	other molecular function	monooxygenase activity
+TRINITY_DN276631_c0_g2	other molecular function	oxidoreductase activity
+TRINITY_DN276935_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN276943_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN276974_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN276974_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN276974_c0_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN276974_c0_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN276983_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN276983_c0_g1	nucleic acid binding activity	double-stranded DNA binding
+TRINITY_DN277000_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN277209_c0_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN277209_c0_g1	other molecular function	carboxypeptidase activity
+TRINITY_DN277209_c0_g1	other molecular function	exopeptidase activity
+TRINITY_DN277209_c0_g1	other molecular function	peptidase activity
+TRINITY_DN277209_c0_g1	other molecular function	serine hydrolase activity
+TRINITY_DN277209_c0_g1	other molecular function	serine-type peptidase activity
+TRINITY_DN277292_c0_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN277292_c0_g1	transporter activity	transporter activity
+TRINITY_DN277371_c0_g1	other molecular function	"transferase activity, transferring one-carbon groups"
+TRINITY_DN277371_c0_g1	other molecular function	methyltransferase activity
+TRINITY_DN277373_c0_g1	kinase activity	kinase activity
+TRINITY_DN277373_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN277373_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN277373_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN277373_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN277394_c0_g1	nucleic acid binding activity	mRNA binding
+TRINITY_DN277395_c0_g1	other molecular function	molecular transducer activity
+TRINITY_DN277395_c0_g1	signal transduction activity	transmembrane receptor activity
+TRINITY_DN277395_c0_g1	transporter activity	channel activity
+TRINITY_DN277395_c0_g1	transporter activity	gated channel activity
+TRINITY_DN277395_c0_g1	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN277395_c0_g1	transporter activity	ion channel activity
+TRINITY_DN277395_c0_g1	transporter activity	ion gated channel activity
+TRINITY_DN277395_c0_g1	transporter activity	ion transmembrane transporter activity
+TRINITY_DN277395_c0_g1	transporter activity	passive transmembrane transporter activity
+TRINITY_DN277395_c0_g1	transporter activity	substrate specific channel activity
+TRINITY_DN277395_c0_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN277395_c0_g1	transporter activity	transporter activity
+TRINITY_DN278387_c0_g1	other molecular function	"ligase activity, forming carbon-sulfur bonds"
+TRINITY_DN278387_c0_g1	other molecular function	CoA-ligase activity
+TRINITY_DN278387_c0_g1	other molecular function	acid-thiol ligase activity
+TRINITY_DN278387_c0_g1	other molecular function	acyl-CoA ligase activity
+TRINITY_DN278387_c0_g1	other molecular function	ligase activity
+TRINITY_DN278923_c1_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN278923_c1_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN278928_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN278928_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN278965_c0_g1	other molecular function	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"
+TRINITY_DN278965_c0_g1	other molecular function	dioxygenase activity
+TRINITY_DN278965_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN278966_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN278966_c0_g2	nucleic acid binding activity	DNA binding
+TRINITY_DN292320_c0_g2	nucleic acid binding activity	mRNA binding
+TRINITY_DN292320_c0_g4	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN292335_c2_g3	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN292335_c2_g3	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN292335_c2_g3	other molecular function	GTPase activity
+TRINITY_DN292335_c2_g3	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN292335_c2_g3	other molecular function	pyrophosphatase activity
+TRINITY_DN292378_c0_g2	nucleic acid binding activity	DNA binding
+TRINITY_DN292383_c0_g1	other molecular function	cation binding
+TRINITY_DN292383_c0_g1	other molecular function	magnesium ion binding
+TRINITY_DN292383_c0_g1	other molecular function	metal ion binding
+TRINITY_DN292387_c4_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN292961_c0_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN292961_c0_g1	other molecular function	cysteine-type peptidase activity
+TRINITY_DN292961_c0_g1	other molecular function	peptidase activity
+TRINITY_DN292961_c0_g1	other molecular function	small conjugating protein-specific protease activity
+TRINITY_DN292961_c0_g1	other molecular function	ubiquitin-specific protease activity
+TRINITY_DN292979_c1_g2	nucleic acid binding activity	transcription factor activity
+TRINITY_DN292979_c1_g2	transcription regulatory activity	transcription factor activity
+TRINITY_DN292999_c3_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN292999_c3_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN292999_c3_g1	other molecular function	O-acyltransferase activity
+TRINITY_DN292999_c3_g1	other molecular function	acylglycerol O-acyltransferase activity
+TRINITY_DN293332_c0_g1	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN293332_c0_g1	other molecular function	phosphatase activity
+TRINITY_DN293332_c0_g1	other molecular function	phosphoprotein phosphatase activity
+TRINITY_DN293332_c0_g1	other molecular function	phosphoric ester hydrolase activity
+TRINITY_DN293332_c0_g1	other molecular function	protein serine/threonine phosphatase activity
+TRINITY_DN293348_c0_g2	kinase activity	calmodulin-dependent protein kinase activity
+TRINITY_DN293348_c0_g2	kinase activity	kinase activity
+TRINITY_DN293348_c0_g2	kinase activity	protein kinase activity
+TRINITY_DN293348_c0_g2	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN293348_c0_g2	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN293348_c0_g2	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN293350_c0_g1	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN293350_c0_g1	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN293350_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN293383_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN293383_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN293450_c1_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN293450_c1_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN293493_c3_g1	other molecular function	"transferase activity, transferring alkyl or aryl (other than methyl) groups"
+TRINITY_DN293493_c3_g1	other molecular function	glutathione transferase activity
+TRINITY_DN293493_c3_g4	other molecular function	"transferase activity, transferring alkyl or aryl (other than methyl) groups"
+TRINITY_DN293493_c3_g4	other molecular function	glutathione transferase activity
+TRINITY_DN293494_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN293494_c0_g1	nucleic acid binding activity	double-stranded DNA binding
+TRINITY_DN293682_c3_g2	other molecular function	"transferase activity, transferring alkyl or aryl (other than methyl) groups"
+TRINITY_DN293691_c0_g1	transporter activity	cation transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	inorganic cation transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	ion transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	metal ion transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	transition metal ion transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN293691_c0_g1	transporter activity	transporter activity
+TRINITY_DN293813_c0_g1	other molecular function	"transferase activity, transferring nitrogenous groups"
+TRINITY_DN293813_c0_g1	other molecular function	transaminase activity
+TRINITY_DN293818_c2_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN293818_c2_g1	other molecular function	antioxidant activity
+TRINITY_DN293818_c2_g1	other molecular function	oxidoreductase activity
+TRINITY_DN293818_c2_g1	other molecular function	peroxidase activity
+TRINITY_DN293818_c2_g2	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN293818_c2_g2	other molecular function	antioxidant activity
+TRINITY_DN293818_c2_g2	other molecular function	oxidoreductase activity
+TRINITY_DN293818_c2_g2	other molecular function	peroxidase activity
+TRINITY_DN293818_c3_g2	transporter activity	"nucleobase, nucleoside, nucleotide and nucleic acid transmembrane transporter activity"
+TRINITY_DN293818_c3_g2	transporter activity	ATP transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	adenine nucleotide transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	anion transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	drug transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	ion transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	nucleotide transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	organic anion transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	organophosphate ester transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	purine nucleotide transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	purine ribonucleotide transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	transmembrane transporter activity
+TRINITY_DN293818_c3_g2	transporter activity	transporter activity
+TRINITY_DN294142_c0_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN294142_c0_g1	other molecular function	endopeptidase activity
+TRINITY_DN294142_c0_g1	other molecular function	peptidase activity
+TRINITY_DN294142_c0_g1	other molecular function	serine hydrolase activity
+TRINITY_DN294142_c0_g1	other molecular function	serine-type endopeptidase activity
+TRINITY_DN294142_c0_g1	other molecular function	serine-type peptidase activity
+TRINITY_DN294184_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN294184_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN294184_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN294184_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN294189_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN294189_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN294619_c0_g2	transporter activity	cation channel activity
+TRINITY_DN294619_c0_g2	transporter activity	cation transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	channel activity
+TRINITY_DN294619_c0_g2	transporter activity	gated channel activity
+TRINITY_DN294619_c0_g2	transporter activity	inorganic cation transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	ion channel activity
+TRINITY_DN294619_c0_g2	transporter activity	ion gated channel activity
+TRINITY_DN294619_c0_g2	transporter activity	ion transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	metal ion transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	monovalent inorganic cation transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	passive transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	substrate specific channel activity
+TRINITY_DN294619_c0_g2	transporter activity	transmembrane transporter activity
+TRINITY_DN294619_c0_g2	transporter activity	transporter activity
+TRINITY_DN294650_c0_g4	nucleic acid binding activity	DNA binding
+TRINITY_DN294652_c0_g3	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN294747_c0_g1	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN294747_c0_g1	other molecular function	phosphatase activity
+TRINITY_DN294747_c0_g1	other molecular function	phosphoprotein phosphatase activity
+TRINITY_DN294747_c0_g1	other molecular function	phosphoric ester hydrolase activity
+TRINITY_DN294772_c2_g5	other molecular function	structural constituent of ribosome
+TRINITY_DN294772_c2_g5	other molecular function	structural molecule activity
+TRINITY_DN294775_c0_g2	other molecular function	structural constituent of ribosome
+TRINITY_DN294775_c0_g2	other molecular function	structural molecule activity
+TRINITY_DN294787_c0_g3	kinase activity	kinase activity
+TRINITY_DN294787_c0_g3	kinase activity	protein kinase activity
+TRINITY_DN294787_c0_g3	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN294787_c0_g3	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN294787_c0_g3	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN295071_c1_g1	kinase activity	kinase activity
+TRINITY_DN295071_c1_g1	kinase activity	protein kinase activity
+TRINITY_DN295071_c1_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN295071_c1_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN295071_c1_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN295075_c3_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN295075_c3_g1	other molecular function	structural molecule activity
+TRINITY_DN295083_c1_g3	other molecular function	"transferase activity, transferring alkyl or aryl (other than methyl) groups"
+TRINITY_DN295218_c0_g1	kinase activity	kinase activity
+TRINITY_DN295218_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN295218_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN295218_c0_g1	other molecular function	"phosphotransferase activity, phosphate group as acceptor"
+TRINITY_DN295218_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN295269_c0_g4	kinase activity	kinase activity
+TRINITY_DN295269_c0_g4	kinase activity	protein kinase activity
+TRINITY_DN295269_c0_g4	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN295269_c0_g4	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN295269_c0_g4	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN295269_c0_g5	kinase activity	kinase activity
+TRINITY_DN295269_c0_g5	kinase activity	protein kinase activity
+TRINITY_DN295269_c0_g5	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN295269_c0_g5	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN295269_c0_g5	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN296278_c0_g3	other molecular function	carbon-nitrogen lyase activity
+TRINITY_DN296278_c0_g3	other molecular function	lyase activity
+TRINITY_DN296278_c0_g4	other molecular function	carbon-nitrogen lyase activity
+TRINITY_DN296278_c0_g4	other molecular function	lyase activity
+TRINITY_DN296278_c0_g5	other molecular function	carbon-nitrogen lyase activity
+TRINITY_DN296278_c0_g5	other molecular function	lyase activity
+TRINITY_DN296376_c0_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN296376_c0_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN296376_c0_g1	other molecular function	acetyltransferase activity
+TRINITY_DN296706_c2_g1	other molecular function	small conjugating protein ligase activity
+TRINITY_DN296706_c2_g1	other molecular function	ubiquitin-protein ligase activity
+TRINITY_DN296757_c3_g1	other molecular function	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds"
+TRINITY_DN296757_c3_g1	other molecular function	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides"
+TRINITY_DN296758_c2_g5	nucleic acid binding activity	DNA binding
+TRINITY_DN296759_c4_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN296759_c4_g1	other molecular function	structural molecule activity
+TRINITY_DN296771_c4_g2	other molecular function	calcium ion binding
+TRINITY_DN296771_c4_g2	other molecular function	cation binding
+TRINITY_DN296771_c4_g2	other molecular function	metal ion binding
+TRINITY_DN296783_c0_g1	other molecular function	lyase activity
+TRINITY_DN298161_c0_g1	enzyme regulator activity	GTPase activator activity
+TRINITY_DN298161_c0_g1	enzyme regulator activity	GTPase regulator activity
+TRINITY_DN298161_c0_g1	enzyme regulator activity	enzyme activator activity
+TRINITY_DN298161_c0_g1	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN298161_c0_g1	enzyme regulator activity	nucleoside-triphosphatase regulator activity
+TRINITY_DN298165_c0_g2	other molecular function	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds"
+TRINITY_DN298165_c0_g2	other molecular function	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides"
+TRINITY_DN298167_c1_g1	other molecular function	GTP binding
+TRINITY_DN298167_c1_g1	other molecular function	guanyl nucleotide binding
+TRINITY_DN298167_c1_g1	other molecular function	guanyl ribonucleotide binding
+TRINITY_DN298167_c1_g1	other molecular function	nucleoside binding
+TRINITY_DN298167_c1_g1	other molecular function	purine nucleoside binding
+TRINITY_DN298167_c1_g1	other molecular function	purine ribonucleoside binding
+TRINITY_DN298167_c1_g1	other molecular function	ribonucleoside binding
+TRINITY_DN298173_c0_g1	transporter activity	active transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	inorganic phosphate transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	ion transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	secondary active transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN298173_c0_g1	transporter activity	transporter activity
+TRINITY_DN298177_c0_g1	other molecular function	cation binding
+TRINITY_DN298177_c0_g1	other molecular function	metal ion binding
+TRINITY_DN298177_c0_g1	other molecular function	transition metal ion binding
+TRINITY_DN298177_c0_g1	other molecular function	zinc ion binding
+TRINITY_DN298417_c1_g1	other molecular function	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"
+TRINITY_DN298417_c1_g1	other molecular function	dioxygenase activity
+TRINITY_DN298417_c1_g1	other molecular function	oxidoreductase activity
+TRINITY_DN298447_c0_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN298447_c0_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN298447_c1_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN298447_c1_g1	other molecular function	endopeptidase activity
+TRINITY_DN298447_c1_g1	other molecular function	metalloendopeptidase activity
+TRINITY_DN298447_c1_g1	other molecular function	metallopeptidase activity
+TRINITY_DN298447_c1_g1	other molecular function	peptidase activity
+TRINITY_DN298472_c6_g3	nucleic acid binding activity	DNA binding
+TRINITY_DN298602_c0_g1	other molecular function	electron carrier activity
+TRINITY_DN298602_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN298605_c1_g1	other molecular function	"oxidoreductase activity, acting on the CH-CH group of donors"
+TRINITY_DN298605_c1_g1	other molecular function	oxidoreductase activity
+TRINITY_DN298605_c1_g1	other molecular function	succinate dehydrogenase activity
+TRINITY_DN298805_c0_g2	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN298805_c0_g2	other molecular function	peptidase activity
+TRINITY_DN298831_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN298831_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN298831_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN298831_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN298834_c0_g2	nucleic acid binding activity	DNA binding
+TRINITY_DN299032_c0_g1	kinase activity	kinase activity
+TRINITY_DN299032_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN299032_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN299032_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN299042_c0_g1	kinase activity	"nucleobase, nucleoside, nucleotide kinase activity"
+TRINITY_DN299042_c0_g1	kinase activity	kinase activity
+TRINITY_DN299042_c0_g1	kinase activity	nucleoside phosphate kinase activity
+TRINITY_DN299042_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN299042_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN299042_c0_g1	other molecular function	"phosphotransferase activity, phosphate group as acceptor"
+TRINITY_DN299042_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN299202_c0_g2	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN299202_c0_g2	other molecular function	endopeptidase activity
+TRINITY_DN299202_c0_g2	other molecular function	peptidase activity
+TRINITY_DN299202_c0_g2	other molecular function	serine hydrolase activity
+TRINITY_DN299202_c0_g2	other molecular function	serine-type endopeptidase activity
+TRINITY_DN299202_c0_g2	other molecular function	serine-type peptidase activity
+TRINITY_DN299255_c0_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN299255_c0_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN299263_c0_g3	kinase activity	kinase activity
+TRINITY_DN299263_c0_g3	kinase activity	protein kinase activity
+TRINITY_DN299263_c0_g3	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN299263_c0_g3	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN299263_c0_g3	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN299263_c0_g3	other molecular function	molecular transducer activity
+TRINITY_DN299270_c7_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN299270_c7_g1	other molecular function	structural molecule activity
+TRINITY_DN299276_c0_g5	nucleic acid binding activity	transcription factor activity
+TRINITY_DN299276_c0_g5	transcription regulatory activity	transcription factor activity
+TRINITY_DN299653_c1_g2	other molecular function	structural constituent of ribosome
+TRINITY_DN299653_c1_g2	other molecular function	structural molecule activity
+TRINITY_DN299658_c5_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN299658_c5_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN299726_c0_g1	other molecular function	"transferase activity, transferring glycosyl groups"
+TRINITY_DN299726_c0_g1	other molecular function	"transferase activity, transferring pentosyl groups"
+TRINITY_DN299729_c1_g1	nucleic acid binding activity	"translation factor activity, nucleic acid binding"
+TRINITY_DN299729_c1_g1	nucleic acid binding activity	translation elongation factor activity
+TRINITY_DN299729_c1_g1	nucleic acid binding activity	translation initiation factor activity
+TRINITY_DN299729_c1_g1	other molecular function	translation regulator activity
+TRINITY_DN299750_c3_g1	transporter activity	active transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	cation transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	inorganic cation transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	ion transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	metal ion transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	monovalent inorganic cation transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	secondary active transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN299750_c3_g1	transporter activity	transporter activity
+TRINITY_DN299750_c3_g2	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN299750_c3_g2	other molecular function	phosphatase activity
+TRINITY_DN299750_c3_g2	other molecular function	phosphoric ester hydrolase activity
+TRINITY_DN299750_c3_g3	nucleic acid binding activity	DNA binding
+TRINITY_DN299758_c1_g1	kinase activity	cyclin-dependent protein kinase activity
+TRINITY_DN299758_c1_g1	kinase activity	kinase activity
+TRINITY_DN299758_c1_g1	kinase activity	protein kinase activity
+TRINITY_DN299758_c1_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN299758_c1_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN299758_c1_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN299758_c1_g1	other molecular function	molecular transducer activity
+TRINITY_DN299758_c1_g2	kinase activity	cyclin-dependent protein kinase activity
+TRINITY_DN299758_c1_g2	kinase activity	kinase activity
+TRINITY_DN299758_c1_g2	kinase activity	protein kinase activity
+TRINITY_DN299758_c1_g2	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN299758_c1_g2	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN299758_c1_g2	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN299758_c1_g2	other molecular function	molecular transducer activity
+TRINITY_DN310027_c1_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN310027_c1_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN310027_c1_g1	other molecular function	GTPase activity
+TRINITY_DN310027_c1_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN310027_c1_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN310080_c0_g1	other molecular function	"hydrolase activity, acting on glycosyl bonds"
+TRINITY_DN310080_c0_g1	other molecular function	"hydrolase activity, hydrolyzing O-glycosyl compounds"
+TRINITY_DN310080_c0_g3	other molecular function	"hydrolase activity, acting on glycosyl bonds"
+TRINITY_DN310080_c0_g3	other molecular function	"hydrolase activity, hydrolyzing O-glycosyl compounds"
+TRINITY_DN310082_c1_g1	other molecular function	"oxidoreductase activity, acting on the CH-CH group of donors"
+TRINITY_DN310082_c1_g1	other molecular function	oxidoreductase activity
+TRINITY_DN310742_c0_g4	other molecular function	GTP binding
+TRINITY_DN310742_c0_g4	other molecular function	guanyl nucleotide binding
+TRINITY_DN310742_c0_g4	other molecular function	guanyl ribonucleotide binding
+TRINITY_DN310742_c0_g4	other molecular function	nucleoside binding
+TRINITY_DN310742_c0_g4	other molecular function	purine nucleoside binding
+TRINITY_DN310742_c0_g4	other molecular function	purine ribonucleoside binding
+TRINITY_DN310742_c0_g4	other molecular function	ribonucleoside binding
+TRINITY_DN310742_c1_g1	other molecular function	"oxidoreductase activity, acting on the CH-NH group of donors"
+TRINITY_DN310742_c1_g1	other molecular function	"oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor"
+TRINITY_DN310742_c1_g1	other molecular function	oxidoreductase activity
+TRINITY_DN310742_c1_g3	kinase activity	kinase activity
+TRINITY_DN310742_c1_g3	kinase activity	protein kinase activity
+TRINITY_DN310742_c1_g3	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN310742_c1_g3	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN310742_c1_g3	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN310743_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN310743_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN310744_c0_g3	kinase activity	kinase activity
+TRINITY_DN310744_c0_g3	kinase activity	protein kinase activity
+TRINITY_DN310744_c0_g3	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN310744_c0_g3	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN310744_c0_g3	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN310744_c0_g3	other molecular function	molecular transducer activity
+TRINITY_DN310768_c2_g1	nucleic acid binding activity	mRNA binding
+TRINITY_DN311070_c0_g2	other molecular function	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"
+TRINITY_DN311070_c0_g2	other molecular function	oxidoreductase activity
+TRINITY_DN311070_c0_g3	other molecular function	electron carrier activity
+TRINITY_DN311070_c0_g3	other molecular function	oxidoreductase activity
+TRINITY_DN311418_c0_g2	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN311418_c0_g2	other molecular function	protein binding
+TRINITY_DN311418_c0_g3	other molecular function	small conjugating protein ligase activity
+TRINITY_DN311418_c0_g3	other molecular function	ubiquitin-protein ligase activity
+TRINITY_DN311419_c1_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN311419_c1_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN311463_c3_g2	nucleic acid binding activity	"translation factor activity, nucleic acid binding"
+TRINITY_DN311463_c3_g2	nucleic acid binding activity	translation elongation factor activity
+TRINITY_DN311463_c3_g2	other molecular function	translation regulator activity
+TRINITY_DN311475_c2_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN311475_c2_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN311476_c1_g3	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN311476_c1_g3	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN311476_c1_g3	other molecular function	GTPase activity
+TRINITY_DN311476_c1_g3	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN311476_c1_g3	other molecular function	pyrophosphatase activity
+TRINITY_DN311478_c1_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN311478_c1_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN311484_c1_g1	cytoskeletal activity	microtubule motor activity
+TRINITY_DN311484_c1_g1	cytoskeletal activity	motor activity
+TRINITY_DN311484_c1_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN311484_c1_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN311484_c1_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN311484_c1_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN311486_c4_g1	other molecular function	"ligase activity, forming carbon-sulfur bonds"
+TRINITY_DN311486_c4_g1	other molecular function	CoA-ligase activity
+TRINITY_DN311486_c4_g1	other molecular function	acid-thiol ligase activity
+TRINITY_DN311486_c4_g1	other molecular function	acyl-CoA ligase activity
+TRINITY_DN311486_c4_g1	other molecular function	ligase activity
+TRINITY_DN311730_c0_g1	transporter activity	lipid transporter activity
+TRINITY_DN311730_c0_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN311730_c0_g1	transporter activity	transporter activity
+TRINITY_DN311738_c1_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN311738_c1_g1	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN311738_c1_g1	other molecular function	aspartic-type peptidase activity
+TRINITY_DN311738_c1_g1	other molecular function	endopeptidase activity
+TRINITY_DN311738_c1_g1	other molecular function	peptidase activity
+TRINITY_DN311752_c0_g1	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN311752_c0_g1	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN311752_c0_g1	other molecular function	C-acyltransferase activity
+TRINITY_DN311753_c2_g8	other molecular function	"oxidoreductase activity, acting on CH-OH group of donors"
+TRINITY_DN311753_c2_g8	other molecular function	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+TRINITY_DN311753_c2_g8	other molecular function	oxidoreductase activity
+TRINITY_DN311774_c0_g1	other molecular function	monooxygenase activity
+TRINITY_DN311774_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN311783_c0_g2	kinase activity	calmodulin-dependent protein kinase activity
+TRINITY_DN311783_c0_g2	kinase activity	kinase activity
+TRINITY_DN311783_c0_g2	kinase activity	protein kinase activity
+TRINITY_DN311783_c0_g2	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN311783_c0_g2	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN311783_c0_g2	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN311789_c4_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN311789_c4_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN311789_c4_g1	other molecular function	GTPase activity
+TRINITY_DN311789_c4_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN311789_c4_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN311791_c1_g2	other molecular function	cation binding
+TRINITY_DN311791_c1_g2	other molecular function	metal ion binding
+TRINITY_DN311791_c1_g2	other molecular function	transition metal ion binding
+TRINITY_DN311791_c1_g2	other molecular function	zinc ion binding
+TRINITY_DN311791_c2_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN311986_c0_g1	other molecular function	"ATPase activity, coupled"
+TRINITY_DN311986_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN311986_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN311986_c0_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN311986_c0_g1	other molecular function	ATP-dependent peptidase activity
+TRINITY_DN311986_c0_g1	other molecular function	ATPase activity
+TRINITY_DN311986_c0_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN311986_c0_g1	other molecular function	peptidase activity
+TRINITY_DN311986_c0_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN311987_c0_g6	other molecular function	"oxidoreductase activity, acting on NADH or NADPH"
+TRINITY_DN311987_c0_g6	other molecular function	"oxidoreductase activity, acting on sulfur group of donors"
+TRINITY_DN311987_c0_g6	other molecular function	"oxidoreductase activity, acting on sulfur group of donors, NAD or NADP as acceptor"
+TRINITY_DN311987_c0_g6	other molecular function	antioxidant activity
+TRINITY_DN311987_c0_g6	other molecular function	disulfide oxidoreductase activity
+TRINITY_DN311987_c0_g6	other molecular function	oxidoreductase activity
+TRINITY_DN312003_c1_g6	enzyme regulator activity	GTPase activator activity
+TRINITY_DN312003_c1_g6	enzyme regulator activity	GTPase regulator activity
+TRINITY_DN312003_c1_g6	enzyme regulator activity	enzyme activator activity
+TRINITY_DN312003_c1_g6	enzyme regulator activity	enzyme regulator activity
+TRINITY_DN312003_c1_g6	enzyme regulator activity	nucleoside-triphosphatase regulator activity
+TRINITY_DN312093_c0_g7	other molecular function	cation binding
+TRINITY_DN312093_c0_g7	other molecular function	metal ion binding
+TRINITY_DN312095_c1_g3	other molecular function	"ATPase activity, coupled to movement of substances"
+TRINITY_DN312095_c1_g3	other molecular function	"ATPase activity, coupled"
+TRINITY_DN312095_c1_g3	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN312095_c1_g3	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN312095_c1_g3	other molecular function	ATPase activity
+TRINITY_DN312095_c1_g3	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN312095_c1_g3	other molecular function	pyrophosphatase activity
+TRINITY_DN312095_c1_g3	transporter activity	"ATPase activity, coupled to transmembrane movement of ions"
+TRINITY_DN312095_c1_g3	transporter activity	"ATPase activity, coupled to transmembrane movement of ions, phosphorylative mechanism"
+TRINITY_DN312095_c1_g3	transporter activity	"ATPase activity, coupled to transmembrane movement of substances"
+TRINITY_DN312095_c1_g3	transporter activity	P-P-bond-hydrolysis-driven transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	active ion transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	active transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	calcium ion transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	calcium-transporting ATPase activity
+TRINITY_DN312095_c1_g3	transporter activity	cation transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	cation-transporting ATPase activity
+TRINITY_DN312095_c1_g3	transporter activity	inorganic cation transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	ion transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	metal ion transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	primary active transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	transmembrane transporter activity
+TRINITY_DN312095_c1_g3	transporter activity	transporter activity
+TRINITY_DN312702_c0_g1	nucleic acid binding activity	"translation factor activity, nucleic acid binding"
+TRINITY_DN312702_c0_g1	nucleic acid binding activity	translation elongation factor activity
+TRINITY_DN312702_c0_g1	nucleic acid binding activity	translation initiation factor activity
+TRINITY_DN312702_c0_g1	other molecular function	translation regulator activity
+TRINITY_DN312707_c1_g1	nucleic acid binding activity	transcription factor activity
+TRINITY_DN312707_c1_g1	transcription regulatory activity	transcription factor activity
+TRINITY_DN312713_c2_g1	other molecular function	molecular transducer activity
+TRINITY_DN312713_c2_g1	signal transduction activity	transmembrane receptor activity
+TRINITY_DN312713_c2_g1	transporter activity	channel activity
+TRINITY_DN312713_c2_g1	transporter activity	gated channel activity
+TRINITY_DN312713_c2_g1	transporter activity	inorganic solute uptake transmembrane transporter activity
+TRINITY_DN312713_c2_g1	transporter activity	ion channel activity
+TRINITY_DN312713_c2_g1	transporter activity	ion gated channel activity
+TRINITY_DN312713_c2_g1	transporter activity	ion transmembrane transporter activity
+TRINITY_DN312713_c2_g1	transporter activity	passive transmembrane transporter activity
+TRINITY_DN312713_c2_g1	transporter activity	substrate specific channel activity
+TRINITY_DN312713_c2_g1	transporter activity	transmembrane transporter activity
+TRINITY_DN312713_c2_g1	transporter activity	transporter activity
+TRINITY_DN312716_c1_g1	other molecular function	GTP binding
+TRINITY_DN312716_c1_g1	other molecular function	guanyl nucleotide binding
+TRINITY_DN312716_c1_g1	other molecular function	guanyl ribonucleotide binding
+TRINITY_DN312716_c1_g1	other molecular function	nucleoside binding
+TRINITY_DN312716_c1_g1	other molecular function	purine nucleoside binding
+TRINITY_DN312716_c1_g1	other molecular function	purine ribonucleoside binding
+TRINITY_DN312716_c1_g1	other molecular function	ribonucleoside binding
+TRINITY_DN312717_c0_g3	nucleic acid binding activity	"translation factor activity, nucleic acid binding"
+TRINITY_DN312717_c0_g3	nucleic acid binding activity	translation elongation factor activity
+TRINITY_DN312717_c0_g3	other molecular function	translation regulator activity
+TRINITY_DN312737_c2_g5	cytoskeletal activity	motor activity
+TRINITY_DN312737_c2_g5	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN312737_c2_g5	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN312737_c2_g5	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN312737_c2_g5	other molecular function	pyrophosphatase activity
+TRINITY_DN312745_c1_g6	kinase activity	kinase activity
+TRINITY_DN312745_c1_g6	kinase activity	protein kinase activity
+TRINITY_DN312745_c1_g6	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN312745_c1_g6	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN312745_c1_g6	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN312752_c3_g1	other molecular function	"transferase activity, transferring alkyl or aryl (other than methyl) groups"
+TRINITY_DN312799_c0_g2	cytoskeletal activity	motor activity
+TRINITY_DN312799_c0_g2	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN312799_c0_g2	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN312799_c0_g2	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN312799_c0_g2	other molecular function	pyrophosphatase activity
+TRINITY_DN314109_c2_g1	kinase activity	kinase activity
+TRINITY_DN314109_c2_g1	kinase activity	protein kinase activity
+TRINITY_DN314109_c2_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN314109_c2_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN314109_c2_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN314157_c1_g3	other molecular function	oxidoreductase activity
+TRINITY_DN314160_c4_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN314160_c4_g1	other molecular function	endopeptidase activity
+TRINITY_DN314160_c4_g1	other molecular function	peptidase activity
+TRINITY_DN314160_c4_g1	other molecular function	serine hydrolase activity
+TRINITY_DN314160_c4_g1	other molecular function	serine-type endopeptidase activity
+TRINITY_DN314160_c4_g1	other molecular function	serine-type peptidase activity
+TRINITY_DN314167_c0_g1	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN314167_c0_g1	other molecular function	acid phosphatase activity
+TRINITY_DN314167_c0_g1	other molecular function	phosphatase activity
+TRINITY_DN314167_c0_g1	other molecular function	phosphoric ester hydrolase activity
+TRINITY_DN314168_c2_g5	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN314168_c2_g5	other molecular function	endopeptidase activity
+TRINITY_DN314168_c2_g5	other molecular function	metalloendopeptidase activity
+TRINITY_DN314168_c2_g5	other molecular function	metallopeptidase activity
+TRINITY_DN314168_c2_g5	other molecular function	peptidase activity
+TRINITY_DN314173_c1_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN314176_c1_g1	other molecular function	"transferase activity, transferring one-carbon groups"
+TRINITY_DN314176_c1_g1	other molecular function	methyltransferase activity
+TRINITY_DN314234_c0_g5	nucleic acid binding activity	DNA binding
+TRINITY_DN314234_c0_g5	nucleic acid binding activity	double-stranded DNA binding
+TRINITY_DN314275_c4_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN314275_c4_g1	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN314275_c4_g1	other molecular function	aspartic-type peptidase activity
+TRINITY_DN314275_c4_g1	other molecular function	endopeptidase activity
+TRINITY_DN314275_c4_g1	other molecular function	peptidase activity
+TRINITY_DN314626_c2_g5	other molecular function	"transferase activity, transferring acyl groups other than amino-acyl groups"
+TRINITY_DN314626_c2_g5	other molecular function	"transferase activity, transferring acyl groups"
+TRINITY_DN314626_c2_g5	other molecular function	3-oxoacyl-[acyl-carrier-protein] reductase activity
+TRINITY_DN314626_c2_g5	other molecular function	fatty-acid synthase activity
+TRINITY_DN314831_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN314831_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN314831_c0_g1	other molecular function	GTPase activity
+TRINITY_DN314831_c0_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN314831_c0_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN314831_c1_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN314831_c1_g1	other molecular function	cysteine-type peptidase activity
+TRINITY_DN314831_c1_g1	other molecular function	peptidase activity
+TRINITY_DN314831_c1_g1	other molecular function	small conjugating protein-specific protease activity
+TRINITY_DN314831_c1_g1	other molecular function	ubiquitin-specific protease activity
+TRINITY_DN314848_c0_g1	other molecular function	"ligase activity, forming carbon-carbon bonds"
+TRINITY_DN314848_c0_g1	other molecular function	CoA carboxylase activity
+TRINITY_DN314848_c0_g1	other molecular function	acetyl-CoA carboxylase activity
+TRINITY_DN314848_c0_g1	other molecular function	ligase activity
+TRINITY_DN316210_c2_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN316223_c6_g3	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN316223_c6_g3	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN316223_c6_g3	other molecular function	aspartic-type peptidase activity
+TRINITY_DN316223_c6_g3	other molecular function	endopeptidase activity
+TRINITY_DN316223_c6_g3	other molecular function	peptidase activity
+TRINITY_DN316260_c0_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN316260_c0_g3	nucleic acid binding activity	DNA binding
+TRINITY_DN316649_c0_g1	nucleic acid binding activity	tRNA binding
+TRINITY_DN316900_c0_g1	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN316900_c0_g1	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN316900_c0_g1	other molecular function	aspartic-type peptidase activity
+TRINITY_DN316900_c0_g1	other molecular function	endopeptidase activity
+TRINITY_DN316900_c0_g1	other molecular function	peptidase activity
+TRINITY_DN316900_c0_g2	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN316900_c0_g2	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN316900_c0_g2	other molecular function	aspartic-type peptidase activity
+TRINITY_DN316900_c0_g2	other molecular function	endopeptidase activity
+TRINITY_DN316900_c0_g2	other molecular function	peptidase activity
+TRINITY_DN316900_c0_g3	other molecular function	"peptidase activity, acting on L-amino acid peptides"
+TRINITY_DN316900_c0_g3	other molecular function	aspartic-type endopeptidase activity
+TRINITY_DN316900_c0_g3	other molecular function	aspartic-type peptidase activity
+TRINITY_DN316900_c0_g3	other molecular function	endopeptidase activity
+TRINITY_DN316900_c0_g3	other molecular function	peptidase activity
+TRINITY_DN316904_c8_g6	other molecular function	structural constituent of ribosome
+TRINITY_DN316904_c8_g6	other molecular function	structural molecule activity
+TRINITY_DN316973_c2_g1	nucleic acid binding activity	DNA binding
+TRINITY_DN316974_c2_g2	other molecular function	cation binding
+TRINITY_DN316974_c2_g2	other molecular function	copper ion binding
+TRINITY_DN316974_c2_g2	other molecular function	metal ion binding
+TRINITY_DN316974_c2_g2	other molecular function	transition metal ion binding
+TRINITY_DN316993_c2_g1	nucleic acid binding activity	"translation factor activity, nucleic acid binding"
+TRINITY_DN316993_c2_g1	nucleic acid binding activity	translation elongation factor activity
+TRINITY_DN316993_c2_g1	other molecular function	translation regulator activity
+TRINITY_DN317243_c9_g4	kinase activity	kinase activity
+TRINITY_DN317243_c9_g4	kinase activity	protein kinase activity
+TRINITY_DN317243_c9_g4	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN317243_c9_g4	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN317243_c9_g4	other molecular function	DNA polymerase activity
+TRINITY_DN317243_c9_g4	other molecular function	RNA-directed DNA polymerase activity
+TRINITY_DN317243_c9_g4	other molecular function	nucleotidyltransferase activity
+TRINITY_DN318563_c0_g1	other molecular function	"hydrolase activity, acting on ester bonds"
+TRINITY_DN318563_c0_g1	other molecular function	phosphatase activity
+TRINITY_DN318563_c0_g1	other molecular function	phosphoric ester hydrolase activity
+TRINITY_DN3463_c0_g1	other molecular function	"oxidoreductase activity, acting on peroxide as acceptor"
+TRINITY_DN3463_c0_g1	other molecular function	antioxidant activity
+TRINITY_DN3463_c0_g1	other molecular function	oxidoreductase activity
+TRINITY_DN3463_c0_g1	other molecular function	peroxidase activity
+TRINITY_DN3495_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides"
+TRINITY_DN3495_c0_g1	other molecular function	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+TRINITY_DN3495_c0_g1	other molecular function	GTPase activity
+TRINITY_DN3495_c0_g1	other molecular function	nucleoside-triphosphatase activity
+TRINITY_DN3495_c0_g1	other molecular function	pyrophosphatase activity
+TRINITY_DN371660_c0_g1	kinase activity	kinase activity
+TRINITY_DN371660_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN371660_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN371660_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN371660_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
+TRINITY_DN524499_c0_g1	other molecular function	structural constituent of ribosome
+TRINITY_DN524499_c0_g1	other molecular function	structural molecule activity
+TRINITY_DN546034_c0_g1	nucleic acid binding activity	mRNA binding
+TRINITY_DN553854_c0_g1	kinase activity	kinase activity
+TRINITY_DN553854_c0_g1	kinase activity	protein kinase activity
+TRINITY_DN553854_c0_g1	kinase activity	protein serine/threonine kinase activity
+TRINITY_DN553854_c0_g1	other molecular function	"phosphotransferase activity, alcohol group as acceptor"
+TRINITY_DN553854_c0_g1	other molecular function	"transferase activity, transferring phosphorus-containing groups"
