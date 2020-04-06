@@ -114,7 +114,7 @@ zosteraDEG <- data.frame("seq" = zosteraDEG$GeneID,
                          "PValue" = zosteraDEG$PValue) #Only save gene ID, protein name, log fold change, log counts per million, FDR, and p-values from edgeR
 head(zosteraDEG) #Confirm changes
 
-zosteraGOGroupings <- read.delim("analyses/GO-MWU/MF_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Import Z. marina GO groupings from GO-MWU
+zosteraGOGroupings <- read.delim("analyses/GO-MWU/BP_2019-07-11-Zostera-Table-of-Significance-Measures.csv") #Import Z. marina BP GO groupings from GO-MWU
 head(zosteraGOGroupings) #Confirm import
 
 zosteraDEGOGroupings <- merge(x = zosteraGOGroupings, y = zosteraDEG, by = "seq") #Append FDR and p-values to sequences is zosteraGOGroupings
