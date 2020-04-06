@@ -1,806 +1,765 @@
-TRINITY_DN102431_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN238280_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN271649_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN276607_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN277000_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN316649_c0_g1	tRNA binding	nucleic acid binding activity	F
-TRINITY_DN298605_c1_g1	succinate dehydrogenase activity	other molecular function	F
-TRINITY_DN271641_c0_g3	SNARE binding	other molecular function	F
-TRINITY_DN255876_c0_g1	magnesium ion binding	other molecular function	F
-TRINITY_DN255960_c0_g1	magnesium ion binding	other molecular function	F
-TRINITY_DN271000_c0_g1	magnesium ion binding	other molecular function	F
-TRINITY_DN292383_c0_g1	magnesium ion binding	other molecular function	F
-TRINITY_DN293818_c3_g2	adenine nucleotide transmembrane transporter activity	transporter activity	F
-TRINITY_DN256219_c0_g2	nucleoside binding	other molecular function	F
-TRINITY_DN298167_c1_g1	nucleoside binding	other molecular function	F
-TRINITY_DN310742_c0_g4	nucleoside binding	other molecular function	F
-TRINITY_DN312716_c1_g1	nucleoside binding	other molecular function	F
-TRINITY_DN256219_c0_g2	purine nucleoside binding	other molecular function	F
-TRINITY_DN298167_c1_g1	purine nucleoside binding	other molecular function	F
-TRINITY_DN310742_c0_g4	purine nucleoside binding	other molecular function	F
-TRINITY_DN312716_c1_g1	purine nucleoside binding	other molecular function	F
-TRINITY_DN104822_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN25194_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN271688_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276081_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276081_c0_g2	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276935_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276943_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276983_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN278966_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN278966_c0_g2	DNA binding	nucleic acid binding activity	F
-TRINITY_DN292378_c0_g2	DNA binding	nucleic acid binding activity	F
-TRINITY_DN292387_c4_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN293494_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN294650_c0_g4	DNA binding	nucleic acid binding activity	F
-TRINITY_DN296758_c2_g5	DNA binding	nucleic acid binding activity	F
-TRINITY_DN298472_c6_g3	DNA binding	nucleic acid binding activity	F
-TRINITY_DN298834_c0_g2	DNA binding	nucleic acid binding activity	F
-TRINITY_DN299750_c3_g3	DNA binding	nucleic acid binding activity	F
-TRINITY_DN311791_c2_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN314173_c1_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN314234_c0_g5	DNA binding	nucleic acid binding activity	F
-TRINITY_DN316210_c2_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN316260_c0_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN316260_c0_g3	DNA binding	nucleic acid binding activity	F
-TRINITY_DN316973_c2_g1	DNA binding	nucleic acid binding activity	F
-TRINITY_DN276983_c0_g1	double-stranded DNA binding	nucleic acid binding activity	F
-TRINITY_DN293494_c0_g1	double-stranded DNA binding	nucleic acid binding activity	F
-TRINITY_DN314234_c0_g5	double-stranded DNA binding	nucleic acid binding activity	F
-TRINITY_DN278923_c1_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN278923_c1_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN292979_c1_g2	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN292979_c1_g2	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN293450_c1_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN293450_c1_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN298447_c0_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN298447_c0_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN299255_c0_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN299255_c0_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN299276_c0_g5	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN299276_c0_g5	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN299658_c5_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN299658_c5_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN311419_c1_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN311419_c1_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN311475_c2_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN311475_c2_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN312707_c1_g1	transcription factor activity	nucleic acid binding activity	F
-TRINITY_DN312707_c1_g1	transcription factor activity	transcription regulatory activity	F
-TRINITY_DN277394_c0_g1	mRNA binding	nucleic acid binding activity	F
-TRINITY_DN292320_c0_g2	mRNA binding	nucleic acid binding activity	F
-TRINITY_DN310768_c2_g1	mRNA binding	nucleic acid binding activity	F
-TRINITY_DN546034_c0_g1	mRNA binding	nucleic acid binding activity	F
-TRINITY_DN252362_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN255993_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN259162_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN274735_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN276418_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN276582_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN278928_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN293383_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN294189_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN294772_c2_g5	structural constituent of ribosome	other molecular function	F
-TRINITY_DN294775_c0_g2	structural constituent of ribosome	other molecular function	F
-TRINITY_DN295075_c3_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN296759_c4_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN299270_c7_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN299653_c1_g2	structural constituent of ribosome	other molecular function	F
-TRINITY_DN310743_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN316904_c8_g6	structural constituent of ribosome	other molecular function	F
-TRINITY_DN524499_c0_g1	structural constituent of ribosome	other molecular function	F
-TRINITY_DN299729_c1_g1	translation initiation factor activity	nucleic acid binding activity	F
-TRINITY_DN312702_c0_g1	translation initiation factor activity	nucleic acid binding activity	F
-TRINITY_DN299729_c1_g1	translation elongation factor activity	nucleic acid binding activity	F
-TRINITY_DN311463_c3_g2	translation elongation factor activity	nucleic acid binding activity	F
-TRINITY_DN312702_c0_g1	translation elongation factor activity	nucleic acid binding activity	F
-TRINITY_DN312717_c0_g3	translation elongation factor activity	nucleic acid binding activity	F
-TRINITY_DN316993_c2_g1	translation elongation factor activity	nucleic acid binding activity	F
-TRINITY_DN151705_c0_g1	protein disulfide isomerase activity	other molecular function	F
-TRINITY_DN227360_c0_g2	motor activity	cytoskeletal activity	F
-TRINITY_DN311484_c1_g1	motor activity	cytoskeletal activity	F
-TRINITY_DN312737_c2_g5	motor activity	cytoskeletal activity	F
-TRINITY_DN312799_c0_g2	motor activity	cytoskeletal activity	F
-TRINITY_DN227360_c0_g2	microtubule motor activity	cytoskeletal activity	F
-TRINITY_DN311484_c1_g1	microtubule motor activity	cytoskeletal activity	F
-TRINITY_DN254239_c0_g1	actin binding	cytoskeletal activity	F
-TRINITY_DN231504_c0_g1	1-acylglycerol-3-phosphate O-acyltransferase activity	other molecular function	F
-TRINITY_DN256326_c0_g1	1-acylglycerol-3-phosphate O-acyltransferase activity	other molecular function	F
-TRINITY_DN292335_c2_g3	GTPase activity	other molecular function	F
-TRINITY_DN310027_c1_g1	GTPase activity	other molecular function	F
-TRINITY_DN311476_c1_g3	GTPase activity	other molecular function	F
-TRINITY_DN311789_c4_g1	GTPase activity	other molecular function	F
-TRINITY_DN314831_c0_g1	GTPase activity	other molecular function	F
-TRINITY_DN3495_c0_g1	GTPase activity	other molecular function	F
-TRINITY_DN317243_c9_g4	RNA-directed DNA polymerase activity	other molecular function	F
-TRINITY_DN271265_c0_g1	acetyl-CoA carboxylase activity	other molecular function	F
-TRINITY_DN314848_c0_g1	acetyl-CoA carboxylase activity	other molecular function	F
-TRINITY_DN314167_c0_g1	acid phosphatase activity	other molecular function	F
-TRINITY_DN278387_c0_g1	acyl-CoA ligase activity	other molecular function	F
-TRINITY_DN311486_c4_g1	acyl-CoA ligase activity	other molecular function	F
-TRINITY_DN294142_c0_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN298447_c1_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN299202_c0_g2	endopeptidase activity	other molecular function	F
-TRINITY_DN311738_c1_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN314160_c4_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN314168_c2_g5	endopeptidase activity	other molecular function	F
-TRINITY_DN314275_c4_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN316223_c6_g3	endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g1	endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g2	endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g3	endopeptidase activity	other molecular function	F
-TRINITY_DN311986_c0_g1	ATP-dependent peptidase activity	other molecular function	F
-TRINITY_DN256557_c0_g2	aminopeptidase activity	other molecular function	F
-TRINITY_DN277209_c0_g1	carboxypeptidase activity	other molecular function	F
-TRINITY_DN311738_c1_g1	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN314275_c4_g1	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN316223_c6_g3	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g1	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g2	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g3	aspartic-type endopeptidase activity	other molecular function	F
-TRINITY_DN298447_c1_g1	metalloendopeptidase activity	other molecular function	F
-TRINITY_DN314168_c2_g5	metalloendopeptidase activity	other molecular function	F
-TRINITY_DN294142_c0_g1	serine-type endopeptidase activity	other molecular function	F
-TRINITY_DN299202_c0_g2	serine-type endopeptidase activity	other molecular function	F
-TRINITY_DN314160_c4_g1	serine-type endopeptidase activity	other molecular function	F
-TRINITY_DN314626_c2_g5	fatty-acid synthase activity	other molecular function	F
-TRINITY_DN314626_c2_g5	3-oxoacyl-[acyl-carrier-protein] reductase activity	other molecular function	F
-TRINITY_DN293493_c3_g1	glutathione transferase activity	other molecular function	F
-TRINITY_DN293493_c3_g4	glutathione transferase activity	other molecular function	F
-TRINITY_DN226183_c0_g1	glycine hydroxymethyltransferase activity	other molecular function	F
-TRINITY_DN276022_c0_g1	glycine hydroxymethyltransferase activity	other molecular function	F
-TRINITY_DN274796_c0_g1	monooxygenase activity	other molecular function	F
-TRINITY_DN276631_c0_g2	monooxygenase activity	other molecular function	F
-TRINITY_DN311774_c0_g1	monooxygenase activity	other molecular function	F
-TRINITY_DN223640_c0_g1	nuclease activity	other molecular function	F
-TRINITY_DN276554_c0_g1	"hydrolase activity, hydrolyzing O-glycosyl compounds"	other molecular function	F
-TRINITY_DN310080_c0_g1	"hydrolase activity, hydrolyzing O-glycosyl compounds"	other molecular function	F
-TRINITY_DN310080_c0_g3	"hydrolase activity, hydrolyzing O-glycosyl compounds"	other molecular function	F
-TRINITY_DN233686_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN234179_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN271662_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN293818_c2_g1	peroxidase activity	other molecular function	F
-TRINITY_DN293818_c2_g2	peroxidase activity	other molecular function	F
-TRINITY_DN294184_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN298831_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN3463_c0_g1	peroxidase activity	other molecular function	F
-TRINITY_DN226664_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN250557_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN255899_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN259522_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN259522_c1_g1	protein kinase activity	kinase activity	F
-TRINITY_DN276539_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN277373_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN293348_c0_g2	protein kinase activity	kinase activity	F
-TRINITY_DN294787_c0_g3	protein kinase activity	kinase activity	F
-TRINITY_DN295071_c1_g1	protein kinase activity	kinase activity	F
-TRINITY_DN295218_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g4	protein kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g5	protein kinase activity	kinase activity	F
-TRINITY_DN299032_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN299042_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN299263_c0_g3	protein kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g1	protein kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g2	protein kinase activity	kinase activity	F
-TRINITY_DN310742_c1_g3	protein kinase activity	kinase activity	F
-TRINITY_DN310744_c0_g3	protein kinase activity	kinase activity	F
-TRINITY_DN311783_c0_g2	protein kinase activity	kinase activity	F
-TRINITY_DN312745_c1_g6	protein kinase activity	kinase activity	F
-TRINITY_DN314109_c2_g1	protein kinase activity	kinase activity	F
-TRINITY_DN317243_c9_g4	protein kinase activity	kinase activity	F
-TRINITY_DN371660_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN553854_c0_g1	protein kinase activity	kinase activity	F
-TRINITY_DN250557_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN259522_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN259522_c1_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN276539_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN277373_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN293348_c0_g2	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN294787_c0_g3	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN295071_c1_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g4	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g5	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN299263_c0_g3	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g2	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN310742_c1_g3	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN310744_c0_g3	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN311783_c0_g2	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN312745_c1_g6	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN314109_c2_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN371660_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN553854_c0_g1	protein serine/threonine kinase activity	kinase activity	F
-TRINITY_DN259522_c0_g1	calmodulin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN259522_c1_g1	calmodulin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN293348_c0_g2	calmodulin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN311783_c0_g2	calmodulin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g1	cyclin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g2	cyclin-dependent protein kinase activity	kinase activity	F
-TRINITY_DN293332_c0_g1	phosphoprotein phosphatase activity	other molecular function	F
-TRINITY_DN294747_c0_g1	phosphoprotein phosphatase activity	other molecular function	F
-TRINITY_DN293332_c0_g1	protein serine/threonine phosphatase activity	other molecular function	F
-TRINITY_DN25521_c0_g1	ubiquitin-protein ligase activity	other molecular function	F
-TRINITY_DN296706_c2_g1	ubiquitin-protein ligase activity	other molecular function	F
-TRINITY_DN311418_c0_g3	ubiquitin-protein ligase activity	other molecular function	F
-TRINITY_DN292961_c0_g1	ubiquitin-specific protease activity	other molecular function	F
-TRINITY_DN314831_c1_g1	ubiquitin-specific protease activity	other molecular function	F
-TRINITY_DN252876_c0_g1	enzyme inhibitor activity	enzyme regulator activity	F
-TRINITY_DN254084_c0_g1	enzyme inhibitor activity	enzyme regulator activity	F
-TRINITY_DN277395_c0_g1	transmembrane receptor activity	signal transduction activity	F
-TRINITY_DN312713_c2_g1	transmembrane receptor activity	signal transduction activity	F
-TRINITY_DN231598_c0_g2	GTPase activator activity	enzyme regulator activity	F
-TRINITY_DN298161_c0_g1	GTPase activator activity	enzyme regulator activity	F
-TRINITY_DN312003_c1_g6	GTPase activator activity	enzyme regulator activity	F
-TRINITY_DN252362_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN255993_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN259162_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN274735_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN276418_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN276582_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN278928_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN293383_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN294189_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN294772_c2_g5	structural molecule activity	other molecular function	F
-TRINITY_DN294775_c0_g2	structural molecule activity	other molecular function	F
-TRINITY_DN295075_c3_g1	structural molecule activity	other molecular function	F
-TRINITY_DN296759_c4_g1	structural molecule activity	other molecular function	F
-TRINITY_DN299270_c7_g1	structural molecule activity	other molecular function	F
-TRINITY_DN299653_c1_g2	structural molecule activity	other molecular function	F
-TRINITY_DN310743_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN316904_c8_g6	structural molecule activity	other molecular function	F
-TRINITY_DN524499_c0_g1	structural molecule activity	other molecular function	F
-TRINITY_DN277292_c0_g1	transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	transporter activity	transporter activity	F
-TRINITY_DN293691_c0_g1	transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	transporter activity	transporter activity	F
-TRINITY_DN298173_c0_g1	transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	transporter activity	transporter activity	F
-TRINITY_DN311730_c0_g1	transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	transporter activity	transporter activity	F
-TRINITY_DN312713_c2_g1	transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	ion channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	ion channel activity	transporter activity	F
-TRINITY_DN312713_c2_g1	ion channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	cation channel activity	transporter activity	F
-TRINITY_DN298173_c0_g1	inorganic phosphate transmembrane transporter activity	transporter activity	F
-TRINITY_DN311730_c0_g1	lipid transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	purine ribonucleotide transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	ATP transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	calcium-transporting ATPase activity	transporter activity	F
-TRINITY_DN2119_c1_g1	copper ion binding	other molecular function	F
-TRINITY_DN316974_c2_g2	copper ion binding	other molecular function	F
-TRINITY_DN296771_c4_g2	calcium ion binding	other molecular function	F
-TRINITY_DN254239_c0_g1	protein binding	other molecular function	F
-TRINITY_DN271641_c0_g3	protein binding	other molecular function	F
-TRINITY_DN311418_c0_g2	protein binding	other molecular function	F
-TRINITY_DN256219_c0_g2	GTP binding	other molecular function	F
-TRINITY_DN298167_c1_g1	GTP binding	other molecular function	F
-TRINITY_DN310742_c0_g4	GTP binding	other molecular function	F
-TRINITY_DN312716_c1_g1	GTP binding	other molecular function	F
-TRINITY_DN231598_c0_g2	enzyme activator activity	enzyme regulator activity	F
-TRINITY_DN298161_c0_g1	enzyme activator activity	enzyme regulator activity	F
-TRINITY_DN312003_c1_g6	enzyme activator activity	enzyme regulator activity	F
-TRINITY_DN254239_c0_g1	cytoskeletal protein binding	cytoskeletal activity	F
-TRINITY_DN299729_c1_g1	"translation factor activity, nucleic acid binding"	nucleic acid binding activity	F
-TRINITY_DN311463_c3_g2	"translation factor activity, nucleic acid binding"	nucleic acid binding activity	F
-TRINITY_DN312702_c0_g1	"translation factor activity, nucleic acid binding"	nucleic acid binding activity	F
-TRINITY_DN312717_c0_g3	"translation factor activity, nucleic acid binding"	nucleic acid binding activity	F
-TRINITY_DN316993_c2_g1	"translation factor activity, nucleic acid binding"	nucleic acid binding activity	F
-TRINITY_DN172940_c0_g1	methyltransferase activity	other molecular function	F
-TRINITY_DN277371_c0_g1	methyltransferase activity	other molecular function	F
-TRINITY_DN314176_c1_g1	methyltransferase activity	other molecular function	F
-TRINITY_DN256557_c0_g2	peptidase activity	other molecular function	F
-TRINITY_DN277209_c0_g1	peptidase activity	other molecular function	F
-TRINITY_DN292961_c0_g1	peptidase activity	other molecular function	F
-TRINITY_DN294142_c0_g1	peptidase activity	other molecular function	F
-TRINITY_DN298447_c1_g1	peptidase activity	other molecular function	F
-TRINITY_DN298805_c0_g2	peptidase activity	other molecular function	F
-TRINITY_DN299202_c0_g2	peptidase activity	other molecular function	F
-TRINITY_DN311738_c1_g1	peptidase activity	other molecular function	F
-TRINITY_DN311986_c0_g1	peptidase activity	other molecular function	F
-TRINITY_DN314160_c4_g1	peptidase activity	other molecular function	F
-TRINITY_DN314168_c2_g5	peptidase activity	other molecular function	F
-TRINITY_DN314275_c4_g1	peptidase activity	other molecular function	F
-TRINITY_DN314831_c1_g1	peptidase activity	other molecular function	F
-TRINITY_DN316223_c6_g3	peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g1	peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g2	peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g3	peptidase activity	other molecular function	F
-TRINITY_DN292961_c0_g1	cysteine-type peptidase activity	other molecular function	F
-TRINITY_DN314831_c1_g1	cysteine-type peptidase activity	other molecular function	F
-TRINITY_DN277209_c0_g1	serine-type peptidase activity	other molecular function	F
-TRINITY_DN294142_c0_g1	serine-type peptidase activity	other molecular function	F
-TRINITY_DN299202_c0_g2	serine-type peptidase activity	other molecular function	F
-TRINITY_DN314160_c4_g1	serine-type peptidase activity	other molecular function	F
-TRINITY_DN298447_c1_g1	metallopeptidase activity	other molecular function	F
-TRINITY_DN314168_c2_g5	metallopeptidase activity	other molecular function	F
-TRINITY_DN256557_c0_g2	exopeptidase activity	other molecular function	F
-TRINITY_DN277209_c0_g1	exopeptidase activity	other molecular function	F
-TRINITY_DN298177_c0_g1	zinc ion binding	other molecular function	F
-TRINITY_DN311791_c1_g2	zinc ion binding	other molecular function	F
-TRINITY_DN293691_c0_g1	cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN231504_c0_g1	O-acyltransferase activity	other molecular function	F
-TRINITY_DN256326_c0_g1	O-acyltransferase activity	other molecular function	F
-TRINITY_DN292999_c3_g1	O-acyltransferase activity	other molecular function	F
-TRINITY_DN293813_c0_g1	transaminase activity	other molecular function	F
-TRINITY_DN293818_c3_g2	anion transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	organic anion transmembrane transporter activity	transporter activity	F
-TRINITY_DN298602_c0_g1	electron carrier activity	other molecular function	F
-TRINITY_DN311070_c0_g3	electron carrier activity	other molecular function	F
-TRINITY_DN311987_c0_g6	disulfide oxidoreductase activity	other molecular function	F
-TRINITY_DN277395_c0_g1	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN293691_c0_g1	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN298173_c0_g1	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN312713_c2_g1	ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	monovalent inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	monovalent inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	calcium ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	nucleotide transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	purine nucleotide transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	drug transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	channel activity	transporter activity	F
-TRINITY_DN312713_c2_g1	channel activity	transporter activity	F
-TRINITY_DN298173_c0_g1	secondary active transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	secondary active transmembrane transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN293691_c0_g1	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN298173_c0_g1	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN312713_c2_g1	inorganic solute uptake transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	primary active transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	P-P-bond-hydrolysis-driven transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	organophosphate ester transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	"ATPase activity, coupled to transmembrane movement of ions, phosphorylative mechanism"	transporter activity	F
-TRINITY_DN293818_c3_g2	"nucleobase, nucleoside, nucleotide and nucleic acid transmembrane transporter activity"	transporter activity	F
-TRINITY_DN233686_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN234179_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN271662_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN293818_c2_g1	antioxidant activity	other molecular function	F
-TRINITY_DN293818_c2_g2	antioxidant activity	other molecular function	F
-TRINITY_DN294184_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN298831_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN311987_c0_g6	antioxidant activity	other molecular function	F
-TRINITY_DN3463_c0_g1	antioxidant activity	other molecular function	F
-TRINITY_DN226664_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN250557_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN255899_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN259522_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN259522_c1_g1	kinase activity	kinase activity	F
-TRINITY_DN276539_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN277373_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN293348_c0_g2	kinase activity	kinase activity	F
-TRINITY_DN294787_c0_g3	kinase activity	kinase activity	F
-TRINITY_DN295071_c1_g1	kinase activity	kinase activity	F
-TRINITY_DN295218_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g4	kinase activity	kinase activity	F
-TRINITY_DN295269_c0_g5	kinase activity	kinase activity	F
-TRINITY_DN299032_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN299042_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN299263_c0_g3	kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g1	kinase activity	kinase activity	F
-TRINITY_DN299758_c1_g2	kinase activity	kinase activity	F
-TRINITY_DN310742_c1_g3	kinase activity	kinase activity	F
-TRINITY_DN310744_c0_g3	kinase activity	kinase activity	F
-TRINITY_DN311783_c0_g2	kinase activity	kinase activity	F
-TRINITY_DN312745_c1_g6	kinase activity	kinase activity	F
-TRINITY_DN314109_c2_g1	kinase activity	kinase activity	F
-TRINITY_DN317243_c9_g4	kinase activity	kinase activity	F
-TRINITY_DN371660_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN553854_c0_g1	kinase activity	kinase activity	F
-TRINITY_DN278387_c0_g1	CoA-ligase activity	other molecular function	F
-TRINITY_DN311486_c4_g1	CoA-ligase activity	other molecular function	F
-TRINITY_DN296376_c0_g1	acetyltransferase activity	other molecular function	F
-TRINITY_DN311752_c0_g1	C-acyltransferase activity	other molecular function	F
-TRINITY_DN231504_c0_g1	acylglycerol O-acyltransferase activity	other molecular function	F
-TRINITY_DN256326_c0_g1	acylglycerol O-acyltransferase activity	other molecular function	F
-TRINITY_DN292999_c3_g1	acylglycerol O-acyltransferase activity	other molecular function	F
-TRINITY_DN271265_c0_g1	CoA carboxylase activity	other molecular function	F
-TRINITY_DN314848_c0_g1	CoA carboxylase activity	other molecular function	F
-TRINITY_DN227360_c0_g2	pyrophosphatase activity	other molecular function	F
-TRINITY_DN276974_c0_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN292335_c2_g3	pyrophosphatase activity	other molecular function	F
-TRINITY_DN310027_c1_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN311476_c1_g3	pyrophosphatase activity	other molecular function	F
-TRINITY_DN311484_c1_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN311789_c4_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN311986_c0_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN312095_c1_g3	pyrophosphatase activity	other molecular function	F
-TRINITY_DN312737_c2_g5	pyrophosphatase activity	other molecular function	F
-TRINITY_DN312799_c0_g2	pyrophosphatase activity	other molecular function	F
-TRINITY_DN314831_c0_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN3495_c0_g1	pyrophosphatase activity	other molecular function	F
-TRINITY_DN175296_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN233686_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN234179_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN271662_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN274001_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN274796_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN274823_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN274831_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN276025_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN276264_c0_g3	oxidoreductase activity	other molecular function	F
-TRINITY_DN276631_c0_g2	oxidoreductase activity	other molecular function	F
-TRINITY_DN278965_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN293350_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN293818_c2_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN293818_c2_g2	oxidoreductase activity	other molecular function	F
-TRINITY_DN294184_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN298417_c1_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN298602_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN298605_c1_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN298831_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN310082_c1_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN310742_c1_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN311070_c0_g2	oxidoreductase activity	other molecular function	F
-TRINITY_DN311070_c0_g3	oxidoreductase activity	other molecular function	F
-TRINITY_DN311753_c2_g8	oxidoreductase activity	other molecular function	F
-TRINITY_DN311774_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN311987_c0_g6	oxidoreductase activity	other molecular function	F
-TRINITY_DN314157_c1_g3	oxidoreductase activity	other molecular function	F
-TRINITY_DN3463_c0_g1	oxidoreductase activity	other molecular function	F
-TRINITY_DN175296_c0_g1	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN274823_c0_g1	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN276025_c0_g1	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN276264_c0_g3	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN293350_c0_g1	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN311753_c2_g8	"oxidoreductase activity, acting on CH-OH group of donors"	other molecular function	F
-TRINITY_DN175296_c0_g1	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN274823_c0_g1	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN276025_c0_g1	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN276264_c0_g3	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN293350_c0_g1	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN311753_c2_g8	"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN274831_c0_g1	"oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN298605_c1_g1	"oxidoreductase activity, acting on the CH-CH group of donors"	other molecular function	F
-TRINITY_DN310082_c1_g1	"oxidoreductase activity, acting on the CH-CH group of donors"	other molecular function	F
-TRINITY_DN310742_c1_g1	"oxidoreductase activity, acting on the CH-NH group of donors"	other molecular function	F
-TRINITY_DN310742_c1_g1	"oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN311987_c0_g6	"oxidoreductase activity, acting on NADH or NADPH"	other molecular function	F
-TRINITY_DN311987_c0_g6	"oxidoreductase activity, acting on sulfur group of donors"	other molecular function	F
-TRINITY_DN311987_c0_g6	"oxidoreductase activity, acting on sulfur group of donors, NAD or NADP as acceptor"	other molecular function	F
-TRINITY_DN233686_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN234179_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN271662_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN293818_c2_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN293818_c2_g2	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN294184_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN298831_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN3463_c0_g1	"oxidoreductase activity, acting on peroxide as acceptor"	other molecular function	F
-TRINITY_DN278965_c0_g1	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"	other molecular function	F
-TRINITY_DN298417_c1_g1	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"	other molecular function	F
-TRINITY_DN311070_c0_g2	"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"	other molecular function	F
-TRINITY_DN172940_c0_g1	"transferase activity, transferring one-carbon groups"	other molecular function	F
-TRINITY_DN226183_c0_g1	"transferase activity, transferring one-carbon groups"	other molecular function	F
-TRINITY_DN276022_c0_g1	"transferase activity, transferring one-carbon groups"	other molecular function	F
-TRINITY_DN277371_c0_g1	"transferase activity, transferring one-carbon groups"	other molecular function	F
-TRINITY_DN314176_c1_g1	"transferase activity, transferring one-carbon groups"	other molecular function	F
-TRINITY_DN226183_c0_g1	"hydroxymethyl-, formyl- and related transferase activity"	other molecular function	F
-TRINITY_DN276022_c0_g1	"hydroxymethyl-, formyl- and related transferase activity"	other molecular function	F
-TRINITY_DN231504_c0_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN256326_c0_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN292999_c3_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN296376_c0_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN311478_c1_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN311752_c0_g1	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN314626_c2_g5	"transferase activity, transferring acyl groups"	other molecular function	F
-TRINITY_DN231504_c0_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN256326_c0_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN292999_c3_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN296376_c0_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN311478_c1_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN311752_c0_g1	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN314626_c2_g5	"transferase activity, transferring acyl groups other than amino-acyl groups"	other molecular function	F
-TRINITY_DN299726_c0_g1	"transferase activity, transferring glycosyl groups"	other molecular function	F
-TRINITY_DN299726_c0_g1	"transferase activity, transferring pentosyl groups"	other molecular function	F
-TRINITY_DN293493_c3_g1	"transferase activity, transferring alkyl or aryl (other than methyl) groups"	other molecular function	F
-TRINITY_DN293493_c3_g4	"transferase activity, transferring alkyl or aryl (other than methyl) groups"	other molecular function	F
-TRINITY_DN293682_c3_g2	"transferase activity, transferring alkyl or aryl (other than methyl) groups"	other molecular function	F
-TRINITY_DN295083_c1_g3	"transferase activity, transferring alkyl or aryl (other than methyl) groups"	other molecular function	F
-TRINITY_DN312752_c3_g1	"transferase activity, transferring alkyl or aryl (other than methyl) groups"	other molecular function	F
-TRINITY_DN293813_c0_g1	"transferase activity, transferring nitrogenous groups"	other molecular function	F
-TRINITY_DN226664_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN250557_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN255899_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN259522_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN259522_c1_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN276539_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN277373_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN293348_c0_g2	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN294787_c0_g3	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN295071_c1_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN295218_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN295269_c0_g4	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN295269_c0_g5	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN299032_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN299042_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN299263_c0_g3	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN299758_c1_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN299758_c1_g2	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN310742_c1_g3	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN310744_c0_g3	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN311783_c0_g2	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN312745_c1_g6	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN314109_c2_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN317243_c9_g4	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN371660_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN553854_c0_g1	"transferase activity, transferring phosphorus-containing groups"	other molecular function	F
-TRINITY_DN226664_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN250557_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN255899_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN259522_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN259522_c1_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN276539_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN277373_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN293348_c0_g2	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN294787_c0_g3	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN295071_c1_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN295218_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN295269_c0_g4	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN295269_c0_g5	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN299032_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN299042_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN299263_c0_g3	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN299758_c1_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN299758_c1_g2	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN310742_c1_g3	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN310744_c0_g3	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN311783_c0_g2	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN312745_c1_g6	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN314109_c2_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN317243_c9_g4	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN371660_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN553854_c0_g1	"phosphotransferase activity, alcohol group as acceptor"	other molecular function	F
-TRINITY_DN295218_c0_g1	"phosphotransferase activity, phosphate group as acceptor"	other molecular function	F
-TRINITY_DN299042_c0_g1	"phosphotransferase activity, phosphate group as acceptor"	other molecular function	F
-TRINITY_DN317243_c9_g4	nucleotidyltransferase activity	other molecular function	F
-TRINITY_DN223640_c0_g1	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN292320_c0_g4	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN293332_c0_g1	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN294652_c0_g3	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN294747_c0_g1	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN299750_c3_g2	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN314167_c0_g1	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN318563_c0_g1	"hydrolase activity, acting on ester bonds"	other molecular function	F
-TRINITY_DN293332_c0_g1	phosphatase activity	other molecular function	F
-TRINITY_DN294747_c0_g1	phosphatase activity	other molecular function	F
-TRINITY_DN299750_c3_g2	phosphatase activity	other molecular function	F
-TRINITY_DN314167_c0_g1	phosphatase activity	other molecular function	F
-TRINITY_DN318563_c0_g1	phosphatase activity	other molecular function	F
-TRINITY_DN276554_c0_g1	"hydrolase activity, acting on glycosyl bonds"	other molecular function	F
-TRINITY_DN310080_c0_g1	"hydrolase activity, acting on glycosyl bonds"	other molecular function	F
-TRINITY_DN310080_c0_g3	"hydrolase activity, acting on glycosyl bonds"	other molecular function	F
-TRINITY_DN296757_c3_g1	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds"	other molecular function	F
-TRINITY_DN298165_c0_g2	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds"	other molecular function	F
-TRINITY_DN296757_c3_g1	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides"	other molecular function	F
-TRINITY_DN298165_c0_g2	"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides"	other molecular function	F
-TRINITY_DN227360_c0_g2	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN276974_c0_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN292335_c2_g3	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN310027_c1_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN311476_c1_g3	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN311484_c1_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN311789_c4_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN311986_c0_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN312095_c1_g3	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN312737_c2_g5	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN312799_c0_g2	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN314831_c0_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN3495_c0_g1	"hydrolase activity, acting on acid anhydrides"	other molecular function	F
-TRINITY_DN227360_c0_g2	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN276974_c0_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN292335_c2_g3	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN310027_c1_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN311476_c1_g3	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN311484_c1_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN311789_c4_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN311986_c0_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN312095_c1_g3	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN312737_c2_g5	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN312799_c0_g2	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN314831_c0_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN3495_c0_g1	"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"	other molecular function	F
-TRINITY_DN111591_c0_g1	lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g3	lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g4	lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g5	lyase activity	other molecular function	F
-TRINITY_DN296783_c0_g1	lyase activity	other molecular function	F
-TRINITY_DN111591_c0_g1	carbon-oxygen lyase activity	other molecular function	F
-TRINITY_DN111591_c0_g1	hydro-lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g3	carbon-nitrogen lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g4	carbon-nitrogen lyase activity	other molecular function	F
-TRINITY_DN296278_c0_g5	carbon-nitrogen lyase activity	other molecular function	F
-TRINITY_DN151705_c0_g1	isomerase activity	other molecular function	F
-TRINITY_DN151705_c0_g1	intramolecular oxidoreductase activity	other molecular function	F
-TRINITY_DN151705_c0_g1	"intramolecular oxidoreductase activity, transposing S-S bonds"	other molecular function	F
-TRINITY_DN271265_c0_g1	ligase activity	other molecular function	F
-TRINITY_DN274808_c0_g1	ligase activity	other molecular function	F
-TRINITY_DN278387_c0_g1	ligase activity	other molecular function	F
-TRINITY_DN311486_c4_g1	ligase activity	other molecular function	F
-TRINITY_DN314848_c0_g1	ligase activity	other molecular function	F
-TRINITY_DN278387_c0_g1	"ligase activity, forming carbon-sulfur bonds"	other molecular function	F
-TRINITY_DN311486_c4_g1	"ligase activity, forming carbon-sulfur bonds"	other molecular function	F
-TRINITY_DN278387_c0_g1	acid-thiol ligase activity	other molecular function	F
-TRINITY_DN311486_c4_g1	acid-thiol ligase activity	other molecular function	F
-TRINITY_DN274808_c0_g1	"ligase activity, forming carbon-nitrogen bonds"	other molecular function	F
-TRINITY_DN274808_c0_g1	"carbon-nitrogen ligase activity, with glutamine as amido-N-donor"	other molecular function	F
-TRINITY_DN271265_c0_g1	"ligase activity, forming carbon-carbon bonds"	other molecular function	F
-TRINITY_DN314848_c0_g1	"ligase activity, forming carbon-carbon bonds"	other molecular function	F
-TRINITY_DN311986_c0_g1	ATPase activity	other molecular function	F
-TRINITY_DN312095_c1_g3	ATPase activity	other molecular function	F
-TRINITY_DN274831_c0_g1	"oxidoreductase activity, acting on the aldehyde or oxo group of donors"	other molecular function	F
-TRINITY_DN227360_c0_g2	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN276974_c0_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN292335_c2_g3	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN310027_c1_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN311476_c1_g3	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN311484_c1_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN311789_c4_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN311986_c0_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN312095_c1_g3	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN312737_c2_g5	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN312799_c0_g2	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN314831_c0_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN3495_c0_g1	nucleoside-triphosphatase activity	other molecular function	F
-TRINITY_DN277209_c0_g1	serine hydrolase activity	other molecular function	F
-TRINITY_DN294142_c0_g1	serine hydrolase activity	other molecular function	F
-TRINITY_DN299202_c0_g2	serine hydrolase activity	other molecular function	F
-TRINITY_DN314160_c4_g1	serine hydrolase activity	other molecular function	F
-TRINITY_DN256219_c0_g2	guanyl nucleotide binding	other molecular function	F
-TRINITY_DN298167_c1_g1	guanyl nucleotide binding	other molecular function	F
-TRINITY_DN310742_c0_g4	guanyl nucleotide binding	other molecular function	F
-TRINITY_DN312716_c1_g1	guanyl nucleotide binding	other molecular function	F
-TRINITY_DN299042_c0_g1	"nucleobase, nucleoside, nucleotide kinase activity"	kinase activity	F
-TRINITY_DN292961_c0_g1	small conjugating protein-specific protease activity	other molecular function	F
-TRINITY_DN314831_c1_g1	small conjugating protein-specific protease activity	other molecular function	F
-TRINITY_DN25521_c0_g1	small conjugating protein ligase activity	other molecular function	F
-TRINITY_DN296706_c2_g1	small conjugating protein ligase activity	other molecular function	F
-TRINITY_DN311418_c0_g3	small conjugating protein ligase activity	other molecular function	F
-TRINITY_DN312095_c1_g3	cation-transporting ATPase activity	transporter activity	F
-TRINITY_DN277395_c0_g1	passive transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	passive transmembrane transporter activity	transporter activity	F
-TRINITY_DN312713_c2_g1	passive transmembrane transporter activity	transporter activity	F
-TRINITY_DN298173_c0_g1	active transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	active transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	active transmembrane transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	gated channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	gated channel activity	transporter activity	F
-TRINITY_DN312713_c2_g1	gated channel activity	transporter activity	F
-TRINITY_DN277395_c0_g1	substrate specific channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	substrate specific channel activity	transporter activity	F
-TRINITY_DN312713_c2_g1	substrate specific channel activity	transporter activity	F
-TRINITY_DN277395_c0_g1	ion gated channel activity	transporter activity	F
-TRINITY_DN294619_c0_g2	ion gated channel activity	transporter activity	F
-TRINITY_DN312713_c2_g1	ion gated channel activity	transporter activity	F
-TRINITY_DN312095_c1_g3	active ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN277292_c0_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN277395_c0_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN293691_c0_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN293818_c3_g2	transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	transmembrane transporter activity	transporter activity	F
-TRINITY_DN298173_c0_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN311730_c0_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	transmembrane transporter activity	transporter activity	F
-TRINITY_DN312713_c2_g1	transmembrane transporter activity	transporter activity	F
-TRINITY_DN293691_c0_g1	inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	inorganic cation transmembrane transporter activity	transporter activity	F
-TRINITY_DN231598_c0_g2	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN252876_c0_g1	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN254084_c0_g1	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN298161_c0_g1	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN311418_c0_g2	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN312003_c1_g6	enzyme regulator activity	enzyme regulator activity	F
-TRINITY_DN231598_c0_g2	GTPase regulator activity	enzyme regulator activity	F
-TRINITY_DN298161_c0_g1	GTPase regulator activity	enzyme regulator activity	F
-TRINITY_DN312003_c1_g6	GTPase regulator activity	enzyme regulator activity	F
-TRINITY_DN256219_c0_g2	ribonucleoside binding	other molecular function	F
-TRINITY_DN298167_c1_g1	ribonucleoside binding	other molecular function	F
-TRINITY_DN310742_c0_g4	ribonucleoside binding	other molecular function	F
-TRINITY_DN312716_c1_g1	ribonucleoside binding	other molecular function	F
-TRINITY_DN256219_c0_g2	purine ribonucleoside binding	other molecular function	F
-TRINITY_DN298167_c1_g1	purine ribonucleoside binding	other molecular function	F
-TRINITY_DN310742_c0_g4	purine ribonucleoside binding	other molecular function	F
-TRINITY_DN312716_c1_g1	purine ribonucleoside binding	other molecular function	F
-TRINITY_DN256219_c0_g2	guanyl ribonucleotide binding	other molecular function	F
-TRINITY_DN298167_c1_g1	guanyl ribonucleotide binding	other molecular function	F
-TRINITY_DN310742_c0_g4	guanyl ribonucleotide binding	other molecular function	F
-TRINITY_DN312716_c1_g1	guanyl ribonucleotide binding	other molecular function	F
-TRINITY_DN223830_c0_g1	amide binding	other molecular function	F
-TRINITY_DN276063_c0_g1	amide binding	other molecular function	F
-TRINITY_DN317243_c9_g4	DNA polymerase activity	other molecular function	F
-TRINITY_DN231504_c0_g1	lysophosphatidic acid acyltransferase activity	other molecular function	F
-TRINITY_DN256326_c0_g1	lysophosphatidic acid acyltransferase activity	other molecular function	F
-TRINITY_DN293332_c0_g1	phosphoric ester hydrolase activity	other molecular function	F
-TRINITY_DN294747_c0_g1	phosphoric ester hydrolase activity	other molecular function	F
-TRINITY_DN299750_c3_g2	phosphoric ester hydrolase activity	other molecular function	F
-TRINITY_DN314167_c0_g1	phosphoric ester hydrolase activity	other molecular function	F
-TRINITY_DN318563_c0_g1	phosphoric ester hydrolase activity	other molecular function	F
-TRINITY_DN311986_c0_g1	"ATPase activity, coupled"	other molecular function	F
-TRINITY_DN312095_c1_g3	"ATPase activity, coupled"	other molecular function	F
-TRINITY_DN312095_c1_g3	"ATPase activity, coupled to transmembrane movement of ions"	transporter activity	F
-TRINITY_DN312095_c1_g3	"ATPase activity, coupled to transmembrane movement of substances"	transporter activity	F
-TRINITY_DN2119_c1_g1	cation binding	other molecular function	F
-TRINITY_DN255876_c0_g1	cation binding	other molecular function	F
-TRINITY_DN255960_c0_g1	cation binding	other molecular function	F
-TRINITY_DN271000_c0_g1	cation binding	other molecular function	F
-TRINITY_DN292383_c0_g1	cation binding	other molecular function	F
-TRINITY_DN296771_c4_g2	cation binding	other molecular function	F
-TRINITY_DN298177_c0_g1	cation binding	other molecular function	F
-TRINITY_DN311791_c1_g2	cation binding	other molecular function	F
-TRINITY_DN312093_c0_g7	cation binding	other molecular function	F
-TRINITY_DN316974_c2_g2	cation binding	other molecular function	F
-TRINITY_DN312095_c1_g3	"ATPase activity, coupled to movement of substances"	other molecular function	F
-TRINITY_DN299729_c1_g1	translation regulator activity	other molecular function	F
-TRINITY_DN311463_c3_g2	translation regulator activity	other molecular function	F
-TRINITY_DN312702_c0_g1	translation regulator activity	other molecular function	F
-TRINITY_DN312717_c0_g3	translation regulator activity	other molecular function	F
-TRINITY_DN316993_c2_g1	translation regulator activity	other molecular function	F
-TRINITY_DN2119_c1_g1	metal ion binding	other molecular function	F
-TRINITY_DN255876_c0_g1	metal ion binding	other molecular function	F
-TRINITY_DN255960_c0_g1	metal ion binding	other molecular function	F
-TRINITY_DN271000_c0_g1	metal ion binding	other molecular function	F
-TRINITY_DN292383_c0_g1	metal ion binding	other molecular function	F
-TRINITY_DN296771_c4_g2	metal ion binding	other molecular function	F
-TRINITY_DN298177_c0_g1	metal ion binding	other molecular function	F
-TRINITY_DN311791_c1_g2	metal ion binding	other molecular function	F
-TRINITY_DN312093_c0_g7	metal ion binding	other molecular function	F
-TRINITY_DN316974_c2_g2	metal ion binding	other molecular function	F
-TRINITY_DN293691_c0_g1	metal ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN294619_c0_g2	metal ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN299750_c3_g1	metal ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN312095_c1_g3	metal ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN2119_c1_g1	transition metal ion binding	other molecular function	F
-TRINITY_DN298177_c0_g1	transition metal ion binding	other molecular function	F
-TRINITY_DN311791_c1_g2	transition metal ion binding	other molecular function	F
-TRINITY_DN316974_c2_g2	transition metal ion binding	other molecular function	F
-TRINITY_DN293691_c0_g1	transition metal ion transmembrane transporter activity	transporter activity	F
-TRINITY_DN299042_c0_g1	nucleoside phosphate kinase activity	kinase activity	F
-TRINITY_DN278965_c0_g1	dioxygenase activity	other molecular function	F
-TRINITY_DN298417_c1_g1	dioxygenase activity	other molecular function	F
-TRINITY_DN277395_c0_g1	molecular transducer activity	other molecular function	F
-TRINITY_DN299263_c0_g3	molecular transducer activity	other molecular function	F
-TRINITY_DN299758_c1_g1	molecular transducer activity	other molecular function	F
-TRINITY_DN299758_c1_g2	molecular transducer activity	other molecular function	F
-TRINITY_DN310744_c0_g3	molecular transducer activity	other molecular function	F
-TRINITY_DN312713_c2_g1	molecular transducer activity	other molecular function	F
-TRINITY_DN231598_c0_g2	nucleoside-triphosphatase regulator activity	enzyme regulator activity	F
-TRINITY_DN298161_c0_g1	nucleoside-triphosphatase regulator activity	enzyme regulator activity	F
-TRINITY_DN312003_c1_g6	nucleoside-triphosphatase regulator activity	enzyme regulator activity	F
-TRINITY_DN231598_c0_g2	ATPase regulator activity	enzyme regulator activity	F
-TRINITY_DN311738_c1_g1	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN314275_c4_g1	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN316223_c6_g3	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g1	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g2	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN316900_c0_g3	aspartic-type peptidase activity	other molecular function	F
-TRINITY_DN256557_c0_g2	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN277209_c0_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN292961_c0_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN294142_c0_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN298447_c1_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN298805_c0_g2	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN299202_c0_g2	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN311738_c1_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN311986_c0_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN314160_c4_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN314168_c2_g5	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN314275_c4_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN314831_c1_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN316223_c6_g3	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN316900_c0_g1	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN316900_c0_g2	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
-TRINITY_DN316900_c0_g3	"peptidase activity, acting on L-amino acid peptides"	other molecular function	F
+TRINITY_DN293394_c0_g1	ribosomal large subunit assembly	cell organization and biogenesis	P
+TRINITY_DN298832_c1_g1	ribosomal large subunit assembly	cell organization and biogenesis	P
+TRINITY_DN298848_c3_g2	ribosomal large subunit assembly	cell organization and biogenesis	P
+TRINITY_DN314236_c0_g1	ribosomal large subunit assembly	cell organization and biogenesis	P
+TRINITY_DN292998_c5_g6	ribosomal small subunit assembly	cell organization and biogenesis	P
+TRINITY_DN316936_c5_g1	ribosomal small subunit assembly	cell organization and biogenesis	P
+TRINITY_DN298449_c4_g2	autophagic vacuole formation	cell organization and biogenesis	P
+TRINITY_DN298449_c4_g2	autophagic vacuole formation	other metabolic processes	P
+TRINITY_DN298449_c4_g2	autophagic vacuole formation	stress response	P
+TRINITY_DN312745_c1_g1	cell cycle checkpoint	cell cycle and proliferation	P
+TRINITY_DN312745_c1_g3	cell cycle checkpoint	cell cycle and proliferation	P
+TRINITY_DN316221_c2_g2	cell cycle checkpoint	cell cycle and proliferation	P
+TRINITY_DN228040_c0_g1	regulation of cyclin-dependent protein kinase activity	cell cycle and proliferation	P
+TRINITY_DN228040_c0_g1	regulation of cyclin-dependent protein kinase activity	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of cyclin-dependent protein kinase activity	cell cycle and proliferation	P
+TRINITY_DN299755_c1_g3	regulation of cyclin-dependent protein kinase activity	other metabolic processes	P
+TRINITY_DN312090_c4_g1	sulfate assimilation	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of transcription from RNA polymerase II promoter	RNA metabolism	P
+TRINITY_DN295269_c0_g3	activation of MAPK activity	protein metabolism	P
+TRINITY_DN295269_c0_g3	activation of MAPK activity	signal transduction	P
+TRINITY_DN296379_c5_g1	protein polyubiquitination	protein metabolism	P
+TRINITY_DN314173_c2_g1	protein polyubiquitination	protein metabolism	P
+TRINITY_DN293346_c7_g1	microtubule cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN295224_c1_g2	microtubule cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN296798_c5_g3	microtubule cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN228042_c0_g1	mitotic cell cycle	cell cycle and proliferation	P
+TRINITY_DN298843_c0_g1	cytokinesis after mitosis	cell cycle and proliferation	P
+TRINITY_DN312741_c6_g2	cytokinesis after mitosis	cell cycle and proliferation	P
+TRINITY_DN294674_c6_g1	response to reactive oxygen species	stress response	P
+TRINITY_DN295083_c2_g1	response to reactive oxygen species	stress response	P
+TRINITY_DN295214_c0_g1	response to reactive oxygen species	stress response	P
+TRINITY_DN295269_c0_g6	response to reactive oxygen species	stress response	P
+TRINITY_DN299040_c0_g1	response to reactive oxygen species	stress response	P
+TRINITY_DN312005_c0_g4	response to reactive oxygen species	stress response	P
+TRINITY_DN312753_c3_g2	response to reactive oxygen species	stress response	P
+TRINITY_DN139711_c0_g1	"RNA splicing, via transesterification reactions"	RNA metabolism	P
+TRINITY_DN276992_c0_g1	"RNA splicing, via transesterification reactions"	RNA metabolism	P
+TRINITY_DN310768_c2_g2	"RNA splicing, via transesterification reactions"	RNA metabolism	P
+TRINITY_DN46127_c0_g1	"RNA splicing, via transesterification reactions"	RNA metabolism	P
+TRINITY_DN139711_c0_g1	"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	RNA metabolism	P
+TRINITY_DN276992_c0_g1	"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	RNA metabolism	P
+TRINITY_DN310768_c2_g2	"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	RNA metabolism	P
+TRINITY_DN46127_c0_g1	"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	RNA metabolism	P
+TRINITY_DN312738_c3_g1	"regulation of alternative nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN312740_c0_g1	"regulation of alternative nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN292331_c0_g1	spliceosomal snRNP biogenesis	RNA metabolism	P
+TRINITY_DN139711_c0_g1	"nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN276992_c0_g1	"nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN310768_c2_g2	"nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN46127_c0_g1	"nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN312737_c2_g4	protein peptidyl-prolyl isomerization	protein metabolism	P
+TRINITY_DN277043_c0_g1	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN277043_c0_g2	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN293385_c0_g1	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN293483_c0_g1	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN294781_c1_g1	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN294781_c2_g1	"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	RNA metabolism	P
+TRINITY_DN277043_c0_g1	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN277043_c0_g2	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN293385_c0_g1	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN293483_c0_g1	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN294781_c1_g1	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN294781_c2_g1	maturation of LSU-rRNA	RNA metabolism	P
+TRINITY_DN292970_c0_g1	double-strand break repair via homologous recombination	DNA metabolism	P
+TRINITY_DN292970_c0_g1	double-strand break repair via homologous recombination	stress response	P
+TRINITY_DN292970_c0_g2	double-strand break repair via homologous recombination	DNA metabolism	P
+TRINITY_DN292970_c0_g2	double-strand break repair via homologous recombination	stress response	P
+TRINITY_DN292970_c0_g1	recombinational repair	DNA metabolism	P
+TRINITY_DN292970_c0_g1	recombinational repair	stress response	P
+TRINITY_DN292970_c0_g2	recombinational repair	DNA metabolism	P
+TRINITY_DN292970_c0_g2	recombinational repair	stress response	P
+TRINITY_DN311745_c0_g3	cell morphogenesis	cell organization and biogenesis	P
+TRINITY_DN298843_c0_g1	cytokinesis	other biological processes	P
+TRINITY_DN312741_c6_g2	cytokinesis	other biological processes	P
+TRINITY_DN278325_c0_g1	nuclear-transcribed mRNA catabolic process	RNA metabolism	P
+TRINITY_DN292384_c0_g1	nuclear-transcribed mRNA catabolic process	RNA metabolism	P
+TRINITY_DN293826_c5_g4	pseudouridine synthesis	RNA metabolism	P
+TRINITY_DN294187_c0_g1	pseudouridine synthesis	RNA metabolism	P
+TRINITY_DN111543_c0_g1	long-chain fatty acid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	long-chain fatty acid metabolic process	other metabolic processes	P
+TRINITY_DN298476_c0_g1	formation of translation initiation complex	cell organization and biogenesis	P
+TRINITY_DN298476_c0_g1	formation of translation initiation complex	protein metabolism	P
+TRINITY_DN255905_c0_g1	neuron migration	developmental processes	P
+TRINITY_DN312728_c0_g1	neuron migration	developmental processes	P
+TRINITY_DN228040_c0_g1	regulation of protein amino acid phosphorylation	protein metabolism	P
+TRINITY_DN295269_c0_g3	regulation of protein amino acid phosphorylation	protein metabolism	P
+TRINITY_DN299755_c1_g3	regulation of protein amino acid phosphorylation	protein metabolism	P
+TRINITY_DN295269_c0_g3	positive regulation of protein amino acid phosphorylation	protein metabolism	P
+TRINITY_DN299263_c0_g1	activation of innate immune response	stress response	P
+TRINITY_DN299263_c0_g2	activation of innate immune response	stress response	P
+TRINITY_DN312745_c1_g2	activation of innate immune response	stress response	P
+TRINITY_DN299263_c0_g1	activation of immune response	other biological processes	P
+TRINITY_DN299263_c0_g2	activation of immune response	other biological processes	P
+TRINITY_DN312745_c1_g2	activation of immune response	other biological processes	P
+TRINITY_DN226686_c0_g1	immune system process	other biological processes	P
+TRINITY_DN298863_c0_g2	immune system process	other biological processes	P
+TRINITY_DN299263_c0_g1	immune system process	other biological processes	P
+TRINITY_DN299263_c0_g2	immune system process	other biological processes	P
+TRINITY_DN312745_c1_g2	immune system process	other biological processes	P
+TRINITY_DN299263_c0_g1	regulation of immune system process	other biological processes	P
+TRINITY_DN299263_c0_g2	regulation of immune system process	other biological processes	P
+TRINITY_DN312745_c1_g2	regulation of immune system process	other biological processes	P
+TRINITY_DN299263_c0_g1	positive regulation of immune system process	other biological processes	P
+TRINITY_DN299263_c0_g2	positive regulation of immune system process	other biological processes	P
+TRINITY_DN312745_c1_g2	positive regulation of immune system process	other biological processes	P
+TRINITY_DN299263_c0_g1	immune response-activating signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g2	immune response-activating signal transduction	signal transduction	P
+TRINITY_DN312745_c1_g2	immune response-activating signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g1	innate immune response-activating signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g1	innate immune response-activating signal transduction	stress response	P
+TRINITY_DN299263_c0_g2	innate immune response-activating signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g2	innate immune response-activating signal transduction	stress response	P
+TRINITY_DN312745_c1_g2	innate immune response-activating signal transduction	signal transduction	P
+TRINITY_DN312745_c1_g2	innate immune response-activating signal transduction	stress response	P
+TRINITY_DN299263_c0_g1	immune response-regulating signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g2	immune response-regulating signal transduction	signal transduction	P
+TRINITY_DN312745_c1_g2	immune response-regulating signal transduction	signal transduction	P
+TRINITY_DN292914_c1_g1	carbohydrate metabolic process	other metabolic processes	P
+TRINITY_DN312705_c0_g2	carbohydrate metabolic process	other metabolic processes	P
+TRINITY_DN111543_c0_g1	organic acid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	organic acid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	organic acid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	organic acid metabolic process	other metabolic processes	P
+TRINITY_DN45784_c0_g1	organic acid metabolic process	other metabolic processes	P
+TRINITY_DN292970_c0_g1	DNA metabolic process	DNA metabolism	P
+TRINITY_DN292970_c0_g2	DNA metabolic process	DNA metabolism	P
+TRINITY_DN298237_c0_g2	DNA metabolic process	DNA metabolism	P
+TRINITY_DN292970_c0_g1	DNA repair	DNA metabolism	P
+TRINITY_DN292970_c0_g1	DNA repair	stress response	P
+TRINITY_DN292970_c0_g2	DNA repair	DNA metabolism	P
+TRINITY_DN292970_c0_g2	DNA repair	stress response	P
+TRINITY_DN292970_c0_g1	double-strand break repair	DNA metabolism	P
+TRINITY_DN292970_c0_g1	double-strand break repair	stress response	P
+TRINITY_DN292970_c0_g2	double-strand break repair	DNA metabolism	P
+TRINITY_DN292970_c0_g2	double-strand break repair	stress response	P
+TRINITY_DN292970_c0_g1	DNA recombination	DNA metabolism	P
+TRINITY_DN292970_c0_g2	DNA recombination	DNA metabolism	P
+TRINITY_DN276572_c0_g1	"regulation of transcription, DNA-dependent"	RNA metabolism	P
+TRINITY_DN276572_c0_g1	regulation of transcription from RNA polymerase II promoter	RNA metabolism	P
+TRINITY_DN274635_c0_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN277043_c0_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN277043_c0_g2	rRNA processing	RNA metabolism	P
+TRINITY_DN293385_c0_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN293483_c0_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN293826_c5_g4	rRNA processing	RNA metabolism	P
+TRINITY_DN294781_c1_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN294781_c2_g1	rRNA processing	RNA metabolism	P
+TRINITY_DN296362_c0_g2	rRNA processing	RNA metabolism	P
+TRINITY_DN139711_c0_g1	mRNA processing	RNA metabolism	P
+TRINITY_DN276992_c0_g1	mRNA processing	RNA metabolism	P
+TRINITY_DN310768_c2_g2	mRNA processing	RNA metabolism	P
+TRINITY_DN46127_c0_g1	mRNA processing	RNA metabolism	P
+TRINITY_DN312007_c1_g4	tRNA metabolic process	RNA metabolism	P
+TRINITY_DN278325_c0_g1	RNA catabolic process	RNA metabolism	P
+TRINITY_DN292384_c0_g1	RNA catabolic process	RNA metabolism	P
+TRINITY_DN278325_c0_g1	mRNA catabolic process	RNA metabolism	P
+TRINITY_DN292384_c0_g1	mRNA catabolic process	RNA metabolism	P
+TRINITY_DN294767_c5_g1	translation	protein metabolism	P
+TRINITY_DN294767_c5_g2	translation	protein metabolism	P
+TRINITY_DN294775_c0_g1	translation	protein metabolism	P
+TRINITY_DN298834_c0_g1	translation	protein metabolism	P
+TRINITY_DN298841_c2_g1	translation	protein metabolism	P
+TRINITY_DN310743_c5_g1	translation	protein metabolism	P
+TRINITY_DN311414_c0_g1	translation	protein metabolism	P
+TRINITY_DN314179_c1_g1	translation	protein metabolism	P
+TRINITY_DN316210_c3_g3	translation	protein metabolism	P
+TRINITY_DN277915_c0_g1	translational elongation	protein metabolism	P
+TRINITY_DN234177_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN271251_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN277215_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN296379_c5_g1	protein modification process	protein metabolism	P
+TRINITY_DN299296_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN299783_c0_g3	protein modification process	protein metabolism	P
+TRINITY_DN312737_c2_g4	protein modification process	protein metabolism	P
+TRINITY_DN314173_c2_g1	protein modification process	protein metabolism	P
+TRINITY_DN314832_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN34409_c0_g1	protein modification process	protein metabolism	P
+TRINITY_DN271251_c0_g1	proteolysis	protein metabolism	P
+TRINITY_DN311468_c0_g1	proteolysis	protein metabolism	P
+TRINITY_DN311468_c0_g1	ubiquitin-dependent protein catabolic process	protein metabolism	P
+TRINITY_DN294767_c5_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN294767_c5_g2	peptide metabolic process	other metabolic processes	P
+TRINITY_DN294775_c0_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN298834_c0_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN298841_c2_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN310743_c5_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN311414_c0_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN314179_c1_g1	peptide metabolic process	other metabolic processes	P
+TRINITY_DN316210_c3_g3	peptide metabolic process	other metabolic processes	P
+TRINITY_DN111543_c0_g1	lipid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	lipid metabolic process	other metabolic processes	P
+TRINITY_DN293491_c0_g1	lipid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	lipid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	lipid metabolic process	other metabolic processes	P
+TRINITY_DN111543_c0_g1	fatty acid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	fatty acid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	fatty acid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	isoprenoid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	terpenoid metabolic process	other metabolic processes	P
+TRINITY_DN312090_c4_g1	sulfur metabolic process	other metabolic processes	P
+TRINITY_DN252333_c0_g1	transport	transport	P
+TRINITY_DN278343_c0_g1	transport	transport	P
+TRINITY_DN292396_c0_g1	transport	transport	P
+TRINITY_DN292396_c0_g2	transport	transport	P
+TRINITY_DN292396_c0_g3	transport	transport	P
+TRINITY_DN292396_c0_g4	transport	transport	P
+TRINITY_DN293346_c7_g1	transport	transport	P
+TRINITY_DN295224_c1_g2	transport	transport	P
+TRINITY_DN299209_c0_g1	transport	transport	P
+TRINITY_DN252333_c0_g1	ion transport	transport	P
+TRINITY_DN292396_c0_g1	ion transport	transport	P
+TRINITY_DN292396_c0_g2	ion transport	transport	P
+TRINITY_DN292396_c0_g3	ion transport	transport	P
+TRINITY_DN292396_c0_g4	ion transport	transport	P
+TRINITY_DN299209_c0_g1	ion transport	transport	P
+TRINITY_DN252333_c0_g1	anion transport	transport	P
+TRINITY_DN292396_c0_g1	anion transport	transport	P
+TRINITY_DN292396_c0_g2	anion transport	transport	P
+TRINITY_DN292396_c0_g3	anion transport	transport	P
+TRINITY_DN292396_c0_g4	anion transport	transport	P
+TRINITY_DN252333_c0_g1	amino acid transport	transport	P
+TRINITY_DN292396_c0_g1	amino acid transport	transport	P
+TRINITY_DN292396_c0_g2	amino acid transport	transport	P
+TRINITY_DN292396_c0_g3	amino acid transport	transport	P
+TRINITY_DN292396_c0_g4	amino acid transport	transport	P
+TRINITY_DN278343_c0_g1	intracellular protein transport	transport	P
+TRINITY_DN293346_c7_g1	intracellular protein transport	transport	P
+TRINITY_DN295224_c1_g2	intracellular protein transport	transport	P
+TRINITY_DN278343_c0_g1	nucleocytoplasmic transport	transport	P
+TRINITY_DN255905_c0_g1	cell motion	other biological processes	P
+TRINITY_DN312728_c0_g1	cell motion	other biological processes	P
+TRINITY_DN226686_c0_g1	response to stress	stress response	P
+TRINITY_DN292970_c0_g1	response to stress	stress response	P
+TRINITY_DN292970_c0_g2	response to stress	stress response	P
+TRINITY_DN293455_c0_g1	response to stress	stress response	P
+TRINITY_DN293455_c0_g2	response to stress	stress response	P
+TRINITY_DN294674_c6_g1	response to stress	stress response	P
+TRINITY_DN295083_c2_g1	response to stress	stress response	P
+TRINITY_DN295214_c0_g1	response to stress	stress response	P
+TRINITY_DN295269_c0_g6	response to stress	stress response	P
+TRINITY_DN298863_c0_g2	response to stress	stress response	P
+TRINITY_DN299040_c0_g1	response to stress	stress response	P
+TRINITY_DN312005_c0_g4	response to stress	stress response	P
+TRINITY_DN312745_c1_g1	response to stress	stress response	P
+TRINITY_DN312745_c1_g3	response to stress	stress response	P
+TRINITY_DN312753_c3_g2	response to stress	stress response	P
+TRINITY_DN292970_c0_g1	response to DNA damage stimulus	stress response	P
+TRINITY_DN292970_c0_g2	response to DNA damage stimulus	stress response	P
+TRINITY_DN295269_c0_g6	response to DNA damage stimulus	stress response	P
+TRINITY_DN312745_c1_g1	response to DNA damage stimulus	stress response	P
+TRINITY_DN312745_c1_g3	response to DNA damage stimulus	stress response	P
+TRINITY_DN294674_c6_g1	response to oxidative stress	stress response	P
+TRINITY_DN295083_c2_g1	response to oxidative stress	stress response	P
+TRINITY_DN295214_c0_g1	response to oxidative stress	stress response	P
+TRINITY_DN295269_c0_g6	response to oxidative stress	stress response	P
+TRINITY_DN299040_c0_g1	response to oxidative stress	stress response	P
+TRINITY_DN312005_c0_g4	response to oxidative stress	stress response	P
+TRINITY_DN312753_c3_g2	response to oxidative stress	stress response	P
+TRINITY_DN293346_c7_g1	organelle organization	cell organization and biogenesis	P
+TRINITY_DN294759_c0_g1	organelle organization	cell organization and biogenesis	P
+TRINITY_DN295224_c1_g2	organelle organization	cell organization and biogenesis	P
+TRINITY_DN296362_c0_g5	organelle organization	cell organization and biogenesis	P
+TRINITY_DN296798_c5_g3	organelle organization	cell organization and biogenesis	P
+TRINITY_DN298237_c0_g2	organelle organization	cell organization and biogenesis	P
+TRINITY_DN298449_c4_g2	organelle organization	cell organization and biogenesis	P
+TRINITY_DN293346_c7_g1	cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN295224_c1_g2	cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN296798_c5_g3	cytoskeleton organization	cell organization and biogenesis	P
+TRINITY_DN293346_c7_g1	microtubule-based process	other biological processes	P
+TRINITY_DN295224_c1_g2	microtubule-based process	other biological processes	P
+TRINITY_DN296798_c5_g3	microtubule-based process	other biological processes	P
+TRINITY_DN298449_c4_g2	vacuole organization	cell organization and biogenesis	P
+TRINITY_DN228042_c0_g1	cell cycle	cell cycle and proliferation	P
+TRINITY_DN299263_c0_g1	signal transduction	signal transduction	P
+TRINITY_DN299263_c0_g2	signal transduction	signal transduction	P
+TRINITY_DN312745_c1_g2	signal transduction	signal transduction	P
+TRINITY_DN312007_c1_g4	tRNA processing	RNA metabolism	P
+TRINITY_DN278343_c0_g1	protein localization	other biological processes	P
+TRINITY_DN293346_c7_g1	protein localization	other biological processes	P
+TRINITY_DN295224_c1_g2	protein localization	other biological processes	P
+TRINITY_DN139711_c0_g1	RNA splicing	RNA metabolism	P
+TRINITY_DN276992_c0_g1	RNA splicing	RNA metabolism	P
+TRINITY_DN310768_c2_g2	RNA splicing	RNA metabolism	P
+TRINITY_DN46127_c0_g1	RNA splicing	RNA metabolism	P
+TRINITY_DN293491_c0_g1	lipid biosynthetic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	catabolic process	other metabolic processes	P
+TRINITY_DN299783_c0_g3	catabolic process	other metabolic processes	P
+TRINITY_DN311468_c0_g1	catabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN299783_c0_g3	macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN311468_c0_g1	macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN293826_c5_g4	RNA modification	RNA metabolism	P
+TRINITY_DN294187_c0_g1	RNA modification	RNA metabolism	P
+TRINITY_DN311419_c1_g2	RNA modification	RNA metabolism	P
+TRINITY_DN312007_c1_g4	RNA modification	RNA metabolism	P
+TRINITY_DN293455_c0_g1	response to abiotic stimulus	other biological processes	P
+TRINITY_DN293455_c0_g2	response to abiotic stimulus	other biological processes	P
+TRINITY_DN295083_c2_g1	response to abiotic stimulus	other biological processes	P
+TRINITY_DN311745_c0_g3	anatomical structure morphogenesis	other biological processes	P
+TRINITY_DN276572_c0_g1	regulation of biosynthetic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of biosynthetic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	negative regulation of metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	negative regulation of metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of signal transduction	signal transduction	P
+TRINITY_DN295269_c0_g3	positive regulation of signal transduction	signal transduction	P
+TRINITY_DN276572_c0_g1	regulation of gene expression	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of gene expression	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of gene expression	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of gene expression	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of gene expression	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of macromolecule biosynthetic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of macromolecule biosynthetic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of phosphorus metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	negative regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	negative regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of gene expression	other metabolic processes	P
+TRINITY_DN278325_c0_g1	negative regulation of gene expression	other metabolic processes	P
+TRINITY_DN292384_c0_g1	negative regulation of gene expression	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of cell communication	other biological processes	P
+TRINITY_DN295269_c0_g3	positive regulation of cell communication	other biological processes	P
+TRINITY_DN278343_c0_g1	protein transport	transport	P
+TRINITY_DN293346_c7_g1	protein transport	transport	P
+TRINITY_DN295224_c1_g2	protein transport	transport	P
+TRINITY_DN252333_c0_g1	organic anion transport	transport	P
+TRINITY_DN292396_c0_g1	organic anion transport	transport	P
+TRINITY_DN292396_c0_g2	organic anion transport	transport	P
+TRINITY_DN292396_c0_g3	organic anion transport	transport	P
+TRINITY_DN292396_c0_g4	organic anion transport	transport	P
+TRINITY_DN278343_c0_g1	peptide transport	transport	P
+TRINITY_DN293346_c7_g1	peptide transport	transport	P
+TRINITY_DN295224_c1_g2	peptide transport	transport	P
+TRINITY_DN252333_c0_g1	organic acid transport	transport	P
+TRINITY_DN292396_c0_g1	organic acid transport	transport	P
+TRINITY_DN292396_c0_g2	organic acid transport	transport	P
+TRINITY_DN292396_c0_g3	organic acid transport	transport	P
+TRINITY_DN292396_c0_g4	organic acid transport	transport	P
+TRINITY_DN139711_c0_g1	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN276992_c0_g1	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN278325_c0_g1	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN292384_c0_g1	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN310768_c2_g2	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN46127_c0_g1	mRNA metabolic process	RNA metabolism	P
+TRINITY_DN274635_c0_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN277043_c0_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN277043_c0_g2	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN293385_c0_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN293483_c0_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN293826_c5_g4	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN294781_c1_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN294781_c2_g1	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN296362_c0_g2	rRNA metabolic process	RNA metabolism	P
+TRINITY_DN293826_c5_g4	snoRNA metabolic process	RNA metabolism	P
+TRINITY_DN310729_c0_g1	snoRNA metabolic process	RNA metabolism	P
+TRINITY_DN255905_c0_g1	cell migration	other biological processes	P
+TRINITY_DN312728_c0_g1	cell migration	other biological processes	P
+TRINITY_DN234177_c0_g1	protein ubiquitination	protein metabolism	P
+TRINITY_DN296379_c5_g1	protein ubiquitination	protein metabolism	P
+TRINITY_DN299296_c0_g1	protein ubiquitination	protein metabolism	P
+TRINITY_DN314173_c2_g1	protein ubiquitination	protein metabolism	P
+TRINITY_DN34409_c0_g1	protein ubiquitination	protein metabolism	P
+TRINITY_DN293491_c0_g1	heterocycle biosynthetic process	other metabolic processes	P
+TRINITY_DN293493_c3_g6	heterocycle biosynthetic process	other metabolic processes	P
+TRINITY_DN312737_c2_g4	peptidyl-amino acid modification	protein metabolism	P
+TRINITY_DN312737_c2_g4	peptidyl-proline modification	protein metabolism	P
+TRINITY_DN276572_c0_g1	"regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process"	other metabolic processes	P
+TRINITY_DN312738_c3_g1	"regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process"	other metabolic processes	P
+TRINITY_DN312740_c0_g1	"regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process"	other metabolic processes	P
+TRINITY_DN228040_c0_g1	regulation of phosphate metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of phosphate metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of phosphate metabolic process	other metabolic processes	P
+TRINITY_DN228040_c0_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of metabolic process	other metabolic processes	P
+TRINITY_DN293491_c0_g1	aromatic compound biosynthetic process	other metabolic processes	P
+TRINITY_DN293493_c3_g6	aromatic compound biosynthetic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	aromatic compound catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	aromatic compound catabolic process	other metabolic processes	P
+TRINITY_DN111543_c0_g1	carboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	carboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	carboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	carboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN45784_c0_g1	carboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN311468_c0_g1	modification-dependent protein catabolic process	protein metabolism	P
+TRINITY_DN293346_c7_g1	cell cycle process	cell cycle and proliferation	P
+TRINITY_DN295224_c1_g2	cell cycle process	cell cycle and proliferation	P
+TRINITY_DN298843_c0_g1	cell cycle process	cell cycle and proliferation	P
+TRINITY_DN312741_c6_g2	cell cycle process	cell cycle and proliferation	P
+TRINITY_DN310761_c3_g1	reproductive process	other biological processes	P
+TRINITY_DN311463_c2_g1	cell differentiation	other biological processes	P
+TRINITY_DN310729_c0_g1	RNA 3'-end processing	RNA metabolism	P
+TRINITY_DN293826_c5_g4	snoRNA 3'-end processing	RNA metabolism	P
+TRINITY_DN310729_c0_g1	snoRNA 3'-end processing	RNA metabolism	P
+TRINITY_DN228040_c0_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of cellular metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of cellular biosynthetic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of cellular biosynthetic process	other metabolic processes	P
+TRINITY_DN299263_c0_g1	regulation of defense response	stress response	P
+TRINITY_DN299263_c0_g2	regulation of defense response	stress response	P
+TRINITY_DN312745_c1_g2	regulation of defense response	stress response	P
+TRINITY_DN299263_c0_g1	positive regulation of defense response	stress response	P
+TRINITY_DN299263_c0_g2	positive regulation of defense response	stress response	P
+TRINITY_DN312745_c1_g2	positive regulation of defense response	stress response	P
+TRINITY_DN228040_c0_g1	regulation of protein modification process	protein metabolism	P
+TRINITY_DN295269_c0_g3	regulation of protein modification process	protein metabolism	P
+TRINITY_DN299755_c1_g3	regulation of protein modification process	protein metabolism	P
+TRINITY_DN295269_c0_g3	positive regulation of protein modification process	protein metabolism	P
+TRINITY_DN312745_c1_g1	DNA integrity checkpoint	cell cycle and proliferation	P
+TRINITY_DN312745_c1_g3	DNA integrity checkpoint	cell cycle and proliferation	P
+TRINITY_DN316221_c2_g2	DNA integrity checkpoint	cell cycle and proliferation	P
+TRINITY_DN295269_c0_g3	activation of protein kinase activity	other metabolic processes	P
+TRINITY_DN228040_c0_g1	regulation of cellular protein metabolic process	protein metabolism	P
+TRINITY_DN295269_c0_g3	regulation of cellular protein metabolic process	protein metabolism	P
+TRINITY_DN299755_c1_g3	regulation of cellular protein metabolic process	protein metabolism	P
+TRINITY_DN295269_c0_g3	positive regulation of cellular protein metabolic process	protein metabolism	P
+TRINITY_DN234177_c0_g1	protein modification by small protein conjugation	protein metabolism	P
+TRINITY_DN296379_c5_g1	protein modification by small protein conjugation	protein metabolism	P
+TRINITY_DN299296_c0_g1	protein modification by small protein conjugation	protein metabolism	P
+TRINITY_DN314173_c2_g1	protein modification by small protein conjugation	protein metabolism	P
+TRINITY_DN34409_c0_g1	protein modification by small protein conjugation	protein metabolism	P
+TRINITY_DN310761_c3_g1	multicellular organismal process	other biological processes	P
+TRINITY_DN310761_c3_g1	developmental process	other biological processes	P
+TRINITY_DN311463_c2_g1	developmental process	other biological processes	P
+TRINITY_DN311745_c0_g3	developmental process	other biological processes	P
+TRINITY_DN314645_c3_g2	developmental process	other biological processes	P
+TRINITY_DN314645_c3_g3	developmental process	other biological processes	P
+TRINITY_DN111543_c0_g1	monocarboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	monocarboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	monocarboxylic acid metabolic process	other metabolic processes	P
+TRINITY_DN311745_c0_g3	cellular component morphogenesis	cell organization and biogenesis	P
+TRINITY_DN278343_c0_g1	macromolecule localization	other biological processes	P
+TRINITY_DN293346_c7_g1	macromolecule localization	other biological processes	P
+TRINITY_DN295224_c1_g2	macromolecule localization	other biological processes	P
+TRINITY_DN292970_c0_g1	cellular response to stress	stress response	P
+TRINITY_DN292970_c0_g2	cellular response to stress	stress response	P
+TRINITY_DN295269_c0_g6	cellular response to stress	stress response	P
+TRINITY_DN312745_c1_g1	cellular response to stress	stress response	P
+TRINITY_DN312745_c1_g3	cellular response to stress	stress response	P
+TRINITY_DN295269_c0_g3	positive regulation of kinase activity	other metabolic processes	P
+TRINITY_DN252333_c0_g1	transmembrane ion transport	transport	P
+TRINITY_DN292396_c0_g1	transmembrane ion transport	transport	P
+TRINITY_DN292396_c0_g2	transmembrane ion transport	transport	P
+TRINITY_DN292396_c0_g3	transmembrane ion transport	transport	P
+TRINITY_DN292396_c0_g4	transmembrane ion transport	transport	P
+TRINITY_DN274635_c0_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN277043_c0_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN277043_c0_g2	ncRNA processing	RNA metabolism	P
+TRINITY_DN293385_c0_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN293483_c0_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN293826_c5_g4	ncRNA processing	RNA metabolism	P
+TRINITY_DN294781_c1_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN294781_c2_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN296362_c0_g2	ncRNA processing	RNA metabolism	P
+TRINITY_DN310729_c0_g1	ncRNA processing	RNA metabolism	P
+TRINITY_DN312007_c1_g4	ncRNA processing	RNA metabolism	P
+TRINITY_DN278325_c0_g1	"nucleobase, nucleoside, nucleotide and nucleic acid catabolic process"	other metabolic processes	P
+TRINITY_DN292384_c0_g1	"nucleobase, nucleoside, nucleotide and nucleic acid catabolic process"	other metabolic processes	P
+TRINITY_DN274635_c0_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN277043_c0_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN277043_c0_g2	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN293385_c0_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN293483_c0_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN293826_c5_g4	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN294781_c1_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN294781_c2_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN296362_c0_g2	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN310729_c0_g1	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN312007_c1_g4	ncRNA metabolic process	RNA metabolism	P
+TRINITY_DN255905_c0_g1	locomotion	other biological processes	P
+TRINITY_DN312728_c0_g1	locomotion	other biological processes	P
+TRINITY_DN294674_c6_g1	response to chemical stimulus	other biological processes	P
+TRINITY_DN295083_c2_g1	response to chemical stimulus	other biological processes	P
+TRINITY_DN295214_c0_g1	response to chemical stimulus	other biological processes	P
+TRINITY_DN295269_c0_g6	response to chemical stimulus	other biological processes	P
+TRINITY_DN299040_c0_g1	response to chemical stimulus	other biological processes	P
+TRINITY_DN312005_c0_g4	response to chemical stimulus	other biological processes	P
+TRINITY_DN312753_c3_g2	response to chemical stimulus	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of phosphorylation	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of phosphorylation	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of phosphorylation	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of phosphorylation	other metabolic processes	P
+TRINITY_DN298237_c0_g2	homeostatic process	other biological processes	P
+TRINITY_DN311493_c0_g1	homeostatic process	other biological processes	P
+TRINITY_DN278343_c0_g1	amide transport	transport	P
+TRINITY_DN293346_c7_g1	amide transport	transport	P
+TRINITY_DN295224_c1_g2	amide transport	transport	P
+TRINITY_DN294767_c5_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN294767_c5_g2	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN294775_c0_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN298834_c0_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN298841_c2_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN310743_c5_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN311414_c0_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN314179_c1_g1	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN316210_c3_g3	peptide biosynthetic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of catalytic activity	other biological processes	P
+TRINITY_DN293826_c5_g4	snoRNA processing	RNA metabolism	P
+TRINITY_DN310729_c0_g1	snoRNA processing	RNA metabolism	P
+TRINITY_DN295269_c0_g3	regulation of MAP kinase activity	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of MAP kinase activity	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of MAPKKK cascade	signal transduction	P
+TRINITY_DN295269_c0_g3	positive regulation of MAPKKK cascade	signal transduction	P
+TRINITY_DN234177_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN271251_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN277215_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN293826_c5_g4	biopolymer modification	other metabolic processes	P
+TRINITY_DN294187_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN296379_c5_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN299296_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN299783_c0_g3	biopolymer modification	other metabolic processes	P
+TRINITY_DN311419_c1_g2	biopolymer modification	other metabolic processes	P
+TRINITY_DN312007_c1_g4	biopolymer modification	other metabolic processes	P
+TRINITY_DN312737_c2_g4	biopolymer modification	other metabolic processes	P
+TRINITY_DN314173_c2_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN314832_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN34409_c0_g1	biopolymer modification	other metabolic processes	P
+TRINITY_DN111543_c0_g1	oxoacid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	oxoacid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	oxoacid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	oxoacid metabolic process	other metabolic processes	P
+TRINITY_DN45784_c0_g1	oxoacid metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of RNA splicing	RNA metabolism	P
+TRINITY_DN312740_c0_g1	regulation of RNA splicing	RNA metabolism	P
+TRINITY_DN228040_c0_g1	regulation of kinase activity	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of kinase activity	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of kinase activity	other metabolic processes	P
+TRINITY_DN294767_c5_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN294767_c5_g2	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN294775_c0_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN298834_c0_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN298841_c2_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN310743_c5_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN311414_c0_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN314179_c1_g1	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN316210_c3_g3	amide biosynthetic process	other metabolic processes	P
+TRINITY_DN310729_c0_g1	ncRNA 3'-end processing	RNA metabolism	P
+TRINITY_DN311468_c0_g1	modification-dependent macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of molecular function	other biological processes	P
+TRINITY_DN278325_c0_g1	cellular catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	cellular catabolic process	other metabolic processes	P
+TRINITY_DN311468_c0_g1	cellular catabolic process	other metabolic processes	P
+TRINITY_DN111543_c0_g1	cellular lipid metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	cellular lipid metabolic process	other metabolic processes	P
+TRINITY_DN293491_c0_g1	cellular lipid metabolic process	other metabolic processes	P
+TRINITY_DN314170_c2_g1	cellular lipid metabolic process	other metabolic processes	P
+TRINITY_DN314641_c0_g1	cellular lipid metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	cellular macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	cellular macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN311468_c0_g1	cellular macromolecule catabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	nitrogen compound catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	nitrogen compound catabolic process	other metabolic processes	P
+TRINITY_DN299263_c0_g1	regulation of innate immune response	stress response	P
+TRINITY_DN299263_c0_g2	regulation of innate immune response	stress response	P
+TRINITY_DN312745_c1_g2	regulation of innate immune response	stress response	P
+TRINITY_DN299263_c0_g1	positive regulation of innate immune response	stress response	P
+TRINITY_DN299263_c0_g2	positive regulation of innate immune response	stress response	P
+TRINITY_DN312745_c1_g2	positive regulation of innate immune response	stress response	P
+TRINITY_DN278343_c0_g1	establishment of protein localization	other biological processes	P
+TRINITY_DN293346_c7_g1	establishment of protein localization	other biological processes	P
+TRINITY_DN295224_c1_g2	establishment of protein localization	other biological processes	P
+TRINITY_DN312745_c1_g1	negative regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN312745_c1_g3	negative regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN316221_c2_g2	negative regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN228040_c0_g1	regulation of protein kinase activity	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of protein kinase activity	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of protein kinase activity	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of protein kinase activity	other metabolic processes	P
+TRINITY_DN276572_c0_g1	"negative regulation of transcription, DNA-dependent"	RNA metabolism	P
+TRINITY_DN276572_c0_g1	"negative regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process"	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of phosphate metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	heterocycle catabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	heterocycle catabolic process	other metabolic processes	P
+TRINITY_DN278343_c0_g1	intracellular transport	transport	P
+TRINITY_DN293346_c7_g1	intracellular transport	transport	P
+TRINITY_DN295224_c1_g2	intracellular transport	transport	P
+TRINITY_DN252333_c0_g1	carboxylic acid transport	transport	P
+TRINITY_DN292396_c0_g1	carboxylic acid transport	transport	P
+TRINITY_DN292396_c0_g2	carboxylic acid transport	transport	P
+TRINITY_DN292396_c0_g3	carboxylic acid transport	transport	P
+TRINITY_DN292396_c0_g4	carboxylic acid transport	transport	P
+TRINITY_DN312738_c3_g1	"regulation of nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN312740_c0_g1	"regulation of nuclear mRNA splicing, via spliceosome"	RNA metabolism	P
+TRINITY_DN295269_c0_g3	positive regulation of biological process	other biological processes	P
+TRINITY_DN295269_c0_g6	positive regulation of biological process	other biological processes	P
+TRINITY_DN299263_c0_g1	positive regulation of biological process	other biological processes	P
+TRINITY_DN299263_c0_g2	positive regulation of biological process	other biological processes	P
+TRINITY_DN312745_c1_g2	positive regulation of biological process	other biological processes	P
+TRINITY_DN276572_c0_g1	negative regulation of biological process	other biological processes	P
+TRINITY_DN278325_c0_g1	negative regulation of biological process	other biological processes	P
+TRINITY_DN292384_c0_g1	negative regulation of biological process	other biological processes	P
+TRINITY_DN312745_c1_g1	negative regulation of biological process	other biological processes	P
+TRINITY_DN312745_c1_g3	negative regulation of biological process	other biological processes	P
+TRINITY_DN316221_c2_g2	negative regulation of biological process	other biological processes	P
+TRINITY_DN295269_c0_g3	positive regulation of cellular process	other biological processes	P
+TRINITY_DN295269_c0_g6	positive regulation of cellular process	other biological processes	P
+TRINITY_DN276572_c0_g1	negative regulation of cellular process	other biological processes	P
+TRINITY_DN312745_c1_g1	negative regulation of cellular process	other biological processes	P
+TRINITY_DN312745_c1_g3	negative regulation of cellular process	other biological processes	P
+TRINITY_DN316221_c2_g2	negative regulation of cellular process	other biological processes	P
+TRINITY_DN295269_c0_g3	regulation of response to stimulus	other biological processes	P
+TRINITY_DN295269_c0_g6	regulation of response to stimulus	other biological processes	P
+TRINITY_DN299263_c0_g1	regulation of response to stimulus	other biological processes	P
+TRINITY_DN299263_c0_g2	regulation of response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g2	regulation of response to stimulus	other biological processes	P
+TRINITY_DN295269_c0_g3	positive regulation of response to stimulus	other biological processes	P
+TRINITY_DN295269_c0_g6	positive regulation of response to stimulus	other biological processes	P
+TRINITY_DN299263_c0_g1	positive regulation of response to stimulus	other biological processes	P
+TRINITY_DN299263_c0_g2	positive regulation of response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g2	positive regulation of response to stimulus	other biological processes	P
+TRINITY_DN314645_c3_g2	anatomical structure formation involved in morphogenesis	other biological processes	P
+TRINITY_DN314645_c3_g3	anatomical structure formation involved in morphogenesis	other biological processes	P
+TRINITY_DN310761_c3_g1	anatomical structure development	other biological processes	P
+TRINITY_DN311463_c2_g1	cellular developmental process	other biological processes	P
+TRINITY_DN311745_c0_g3	cellular developmental process	other biological processes	P
+TRINITY_DN255905_c0_g1	cell motility	other biological processes	P
+TRINITY_DN312728_c0_g1	cell motility	other biological processes	P
+TRINITY_DN312738_c3_g1	regulation of mRNA processing	RNA metabolism	P
+TRINITY_DN312740_c0_g1	regulation of mRNA processing	RNA metabolism	P
+TRINITY_DN299263_c0_g1	regulation of immune response	other biological processes	P
+TRINITY_DN299263_c0_g2	regulation of immune response	other biological processes	P
+TRINITY_DN312745_c1_g2	regulation of immune response	other biological processes	P
+TRINITY_DN299263_c0_g1	positive regulation of immune response	other biological processes	P
+TRINITY_DN299263_c0_g2	positive regulation of immune response	other biological processes	P
+TRINITY_DN312745_c1_g2	positive regulation of immune response	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of catalytic activity	other biological processes	P
+TRINITY_DN295269_c0_g3	regulation of catalytic activity	other biological processes	P
+TRINITY_DN299755_c1_g3	regulation of catalytic activity	other biological processes	P
+TRINITY_DN226686_c0_g1	response to stimulus	other biological processes	P
+TRINITY_DN292970_c0_g1	response to stimulus	other biological processes	P
+TRINITY_DN292970_c0_g2	response to stimulus	other biological processes	P
+TRINITY_DN293455_c0_g1	response to stimulus	other biological processes	P
+TRINITY_DN293455_c0_g2	response to stimulus	other biological processes	P
+TRINITY_DN294674_c6_g1	response to stimulus	other biological processes	P
+TRINITY_DN295083_c2_g1	response to stimulus	other biological processes	P
+TRINITY_DN295214_c0_g1	response to stimulus	other biological processes	P
+TRINITY_DN295269_c0_g6	response to stimulus	other biological processes	P
+TRINITY_DN298863_c0_g2	response to stimulus	other biological processes	P
+TRINITY_DN299040_c0_g1	response to stimulus	other biological processes	P
+TRINITY_DN312005_c0_g4	response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g1	response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g3	response to stimulus	other biological processes	P
+TRINITY_DN312753_c3_g2	response to stimulus	other biological processes	P
+TRINITY_DN278343_c0_g1	nuclear transport	transport	P
+TRINITY_DN228040_c0_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	negative regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	positive regulation of nitrogen compound metabolic process	other metabolic processes	P
+TRINITY_DN228040_c0_g1	regulation of phosphorus metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of phosphorus metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of phosphorus metabolic process	other metabolic processes	P
+TRINITY_DN252333_c0_g1	localization	other biological processes	P
+TRINITY_DN278343_c0_g1	localization	other biological processes	P
+TRINITY_DN292396_c0_g1	localization	other biological processes	P
+TRINITY_DN292396_c0_g2	localization	other biological processes	P
+TRINITY_DN292396_c0_g3	localization	other biological processes	P
+TRINITY_DN292396_c0_g4	localization	other biological processes	P
+TRINITY_DN293346_c7_g1	localization	other biological processes	P
+TRINITY_DN295224_c1_g2	localization	other biological processes	P
+TRINITY_DN299209_c0_g1	localization	other biological processes	P
+TRINITY_DN252333_c0_g1	establishment of localization	other biological processes	P
+TRINITY_DN278343_c0_g1	establishment of localization	other biological processes	P
+TRINITY_DN292396_c0_g1	establishment of localization	other biological processes	P
+TRINITY_DN292396_c0_g2	establishment of localization	other biological processes	P
+TRINITY_DN292396_c0_g3	establishment of localization	other biological processes	P
+TRINITY_DN292396_c0_g4	establishment of localization	other biological processes	P
+TRINITY_DN293346_c7_g1	establishment of localization	other biological processes	P
+TRINITY_DN295224_c1_g2	establishment of localization	other biological processes	P
+TRINITY_DN299209_c0_g1	establishment of localization	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of protein metabolic process	protein metabolism	P
+TRINITY_DN295269_c0_g3	regulation of protein metabolic process	protein metabolism	P
+TRINITY_DN299755_c1_g3	regulation of protein metabolic process	protein metabolism	P
+TRINITY_DN295269_c0_g3	positive regulation of protein metabolic process	protein metabolism	P
+TRINITY_DN276572_c0_g1	regulation of RNA metabolic process	RNA metabolism	P
+TRINITY_DN312738_c3_g1	regulation of RNA metabolic process	RNA metabolism	P
+TRINITY_DN312740_c0_g1	regulation of RNA metabolic process	RNA metabolism	P
+TRINITY_DN276572_c0_g1	negative regulation of RNA metabolic process	RNA metabolism	P
+TRINITY_DN228040_c0_g1	regulation of transferase activity	other biological processes	P
+TRINITY_DN295269_c0_g3	regulation of transferase activity	other biological processes	P
+TRINITY_DN299755_c1_g3	regulation of transferase activity	other biological processes	P
+TRINITY_DN295269_c0_g3	positive regulation of transferase activity	other biological processes	P
+TRINITY_DN311468_c0_g1	proteolysis involved in cellular protein catabolic process	protein metabolism	P
+TRINITY_DN278343_c0_g1	organelle localization	other biological processes	P
+TRINITY_DN293346_c7_g1	organelle localization	other biological processes	P
+TRINITY_DN295224_c1_g2	organelle localization	other biological processes	P
+TRINITY_DN278343_c0_g1	cellular localization	other biological processes	P
+TRINITY_DN293346_c7_g1	cellular localization	other biological processes	P
+TRINITY_DN295224_c1_g2	cellular localization	other biological processes	P
+TRINITY_DN278343_c0_g1	establishment of localization in cell	other biological processes	P
+TRINITY_DN293346_c7_g1	establishment of localization in cell	other biological processes	P
+TRINITY_DN295224_c1_g2	establishment of localization in cell	other biological processes	P
+TRINITY_DN278343_c0_g1	establishment of organelle localization	other biological processes	P
+TRINITY_DN293346_c7_g1	establishment of organelle localization	other biological processes	P
+TRINITY_DN295224_c1_g2	establishment of organelle localization	other biological processes	P
+TRINITY_DN292970_c0_g1	cellular response to stimulus	other biological processes	P
+TRINITY_DN292970_c0_g2	cellular response to stimulus	other biological processes	P
+TRINITY_DN295269_c0_g6	cellular response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g1	cellular response to stimulus	other biological processes	P
+TRINITY_DN312745_c1_g3	cellular response to stimulus	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN299755_c1_g3	regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN312745_c1_g1	regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN312745_c1_g3	regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN316221_c2_g2	regulation of cell cycle	cell cycle and proliferation	P
+TRINITY_DN252333_c0_g1	transmembrane transport	transport	P
+TRINITY_DN292396_c0_g1	transmembrane transport	transport	P
+TRINITY_DN292396_c0_g2	transmembrane transport	transport	P
+TRINITY_DN292396_c0_g3	transmembrane transport	transport	P
+TRINITY_DN292396_c0_g4	transmembrane transport	transport	P
+TRINITY_DN298237_c0_g2	anatomical structure homeostasis	other biological processes	P
+TRINITY_DN311493_c0_g1	anatomical structure homeostasis	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of macromolecule metabolic process	other metabolic processes	P
+TRINITY_DN172833_c0_g1	regulation of biological quality	other biological processes	P
+TRINITY_DN298237_c0_g2	regulation of biological quality	other biological processes	P
+TRINITY_DN311493_c0_g1	regulation of biological quality	other biological processes	P
+TRINITY_DN228040_c0_g1	regulation of molecular function	other biological processes	P
+TRINITY_DN295269_c0_g3	regulation of molecular function	other biological processes	P
+TRINITY_DN299755_c1_g3	regulation of molecular function	other biological processes	P
+TRINITY_DN234177_c0_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN271251_c0_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN296379_c5_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN299296_c0_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN314173_c2_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN34409_c0_g1	protein modification by small protein conjugation or removal	protein metabolism	P
+TRINITY_DN228040_c0_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN276572_c0_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN278325_c0_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN292384_c0_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN295269_c0_g3	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN299755_c1_g3	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN312738_c3_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN312740_c0_g1	regulation of primary metabolic process	other metabolic processes	P
+TRINITY_DN299263_c0_g1	regulation of response to stress	stress response	P
+TRINITY_DN299263_c0_g2	regulation of response to stress	stress response	P
+TRINITY_DN312745_c1_g2	regulation of response to stress	stress response	P
