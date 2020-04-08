@@ -8,3 +8,4 @@ data/Zostera-blast-annot-withGeneID.tab
 .Rproj.user
 .DS_Store
 */.DS_Store
+.RData
