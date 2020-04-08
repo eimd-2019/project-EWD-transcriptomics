@@ -129,3 +129,6 @@ write.csv(zosteraDEGOGroupingsSorted, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-Zost
 zosteraDEGOterms <- zosteraDEGOGroupingsSorted[,c(1, 3)] #Only keep sequence and term columns
 head(zosteraDEGOterms) #Confirm subset
 write.table(zosteraDEGOterms, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-Zostera-DEG-GOterms.tab", sep = "\t", quote = FALSE, row.names = FALSE) #Save a version with only sequence ID and GOterms
+
+zosteraDEProtein <- zosteraDEGOGroupingsSorted[,c(1, 6)] #Only keep sequence and protein annotation
+write.table(zosteraDEProtein, "analyses/GO-MWU/DE-GO-MWU/2019-07-15-Zostera-DEG-ProteinN.tab", sep = "\t", quote = FALSE, row.names = FALSE) #Save a version with only sequence ID and protein annotation

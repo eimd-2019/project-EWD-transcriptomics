@@ -1,0 +1,318 @@
+seq	ProteinN
+TRINITY_DN299263_c0_g1	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN294767_c5_g1	60S ribosomal protein L9
+TRINITY_DN294767_c5_g2	60S ribosomal protein L9
+TRINITY_DN294775_c0_g1	60S ribosomal protein L32-A
+TRINITY_DN298834_c0_g1	Putative glycine--tRNA ligase (EC 6.1.1.14) (Diadenosine tetraphosphate synthetase) (Ap4A synthetase) (EC 2.7.7.-) (Glycyl-tRNA synthetase) (GlyRS)
+TRINITY_DN298841_c2_g1	40S ribosomal protein S23
+TRINITY_DN310743_c5_g1	60S ribosomal protein L27-B
+TRINITY_DN311414_c0_g1	Developmentally-regulated GTP-binding protein 1 homolog (DRG-1)
+TRINITY_DN314179_c1_g1	RWD domain-containing protein 1 (Small androgen receptor-interacting protein)
+TRINITY_DN316210_c3_g3	Ribosome-recycling factor, chloroplastic (RRF) (Nuclear located protein D2) (Ribosome-releasing factor, chloroplastic) (Fragment)
+TRINITY_DN310761_c3_g1	Protein FLX-like 4 (AtFLXL4)
+TRINITY_DN314645_c3_g2	Angio-associated migratory cell protein
+TRINITY_DN314645_c3_g3	Angio-associated migratory cell protein
+TRINITY_DN311745_c0_g3	Rac-like GTP-binding protein 4 (GTPase protein ROP4) (OsRac4)
+TRINITY_DN298449_c4_g2	Ras-related protein Rab-1A
+TRINITY_DN292914_c1_g1	Sucrose synthase 1 (EC 2.4.1.13) (Shrunken-1) (Sucrose-UDP glucosyltransferase 1)
+TRINITY_DN312705_c0_g2	Mannosylglycoprotein endo-beta-mannosidase (Endo-beta-mannosidase) (EC 3.2.1.152) [Cleaved into: Mannosylglycoprotein endo-beta-mannosidase 31 kDa subunit; Mannosylglycoprotein endo-beta-mannosidase 28 kDa subunit; Mannosylglycoprotein endo-beta-mannosidase 42 kDa subunit]
+TRINITY_DN111543_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN172833_c0_g1	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN314170_c2_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314641_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX) (EC 1.3.3.6) (Palmitoyl-CoA oxidase) [Cleaved into: Peroxisomal acyl-CoA oxidase 1, A chain; Peroxisomal acyl-CoA oxidase 1, B chain; Peroxisomal acyl-CoA oxidase 1, C chain]
+TRINITY_DN45784_c0_g1	Nitrilase homolog 2 (EC 3.5.-.-)
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN316221_c2_g2	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN298843_c0_g1	Serine/threonine-protein kinase pakA (dPAKa) (EC 2.7.11.1) (dpak1)
+TRINITY_DN312741_c6_g2	Actin-1
+TRINITY_DN311463_c2_g1	Elongation factor 2 (EF-2)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN311468_c0_g1	E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)
+TRINITY_DN311463_c2_g1	Elongation factor 2 (EF-2)
+TRINITY_DN311745_c0_g3	Rac-like GTP-binding protein 4 (GTPase protein ROP4) (OsRac4)
+TRINITY_DN278343_c0_g1	Protein SDA1 homolog (SDA1 domain-containing protein 1 homolog)
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN234177_c0_g1	BTB/POZ domain-containing protein At5g47800
+TRINITY_DN271251_c0_g1	COP9 signalosome complex subunit 2 (Signalosome subunit 2) (Protein FUSCA 12)
+TRINITY_DN277215_c0_g1	Peptide methionine sulfoxide reductase MsrA 1 (Protein-methionine-S-oxide reductase 1) (EC 1.8.4.11) (Peptide-methionine (S)-S-oxide reductase 1) (Peptide Met(O) reductase 1)
+TRINITY_DN296379_c5_g1	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN299296_c0_g1	Probable E3 ubiquitin-protein ligase XBOS32 (EC 2.3.2.27) (Ankyrin repeat domain and RING finger-containing protein XBOS32) (RING-type E3 ubiquitin transferase XBOS32) (XB3 protein homolog 2)
+TRINITY_DN299783_c0_g3	Acyl-protein thioesterase 2 (APT-2) (EC 3.1.2.-) (Lysophospholipase II) (LPL-II) (LysoPLA II)
+TRINITY_DN312737_c2_g4	Peptidyl-prolyl cis-trans isomerase (PPIase) (EC 5.2.1.8) (Cyclophilin) (Cyp) (Cyclosporin A-binding protein) (Rotamase) (allergen Cat r 1)
+TRINITY_DN314173_c2_g1	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN314832_c0_g1	eEF1A lysine and N-terminal methyltransferase (Methyltransferase-like protein 13) [Includes: eEF1A lysine methyltransferase (EC 2.1.1.-); eEF1A N-terminal methyltransferase (EC 2.1.1.-)]
+TRINITY_DN34409_c0_g1	Ubiquitin-fold modifier 1
+TRINITY_DN292970_c0_g1	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN295269_c0_g6	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN298843_c0_g1	Serine/threonine-protein kinase pakA (dPAKa) (EC 2.7.11.1) (dpak1)
+TRINITY_DN312741_c6_g2	Actin-1
+TRINITY_DN277915_c0_g1	Elongation factor 3 (EF-3)
+TRINITY_DN310761_c3_g1	Protein FLX-like 4 (AtFLXL4)
+TRINITY_DN311463_c2_g1	Elongation factor 2 (EF-2)
+TRINITY_DN311745_c0_g3	Rac-like GTP-binding protein 4 (GTPase protein ROP4) (OsRac4)
+TRINITY_DN314645_c3_g2	Angio-associated migratory cell protein
+TRINITY_DN314645_c3_g3	Angio-associated migratory cell protein
+TRINITY_DN292970_c0_g1	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN298237_c0_g2	DNA polymerase delta subunit 4 (DNA polymerase delta subunit p12)
+TRINITY_DN292970_c0_g1	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN252333_c0_g1	Amino acid permease 6 (Amino acid transporter AAP6)
+TRINITY_DN278343_c0_g1	Protein SDA1 homolog (SDA1 domain-containing protein 1 homolog)
+TRINITY_DN292396_c0_g1	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292396_c0_g2	Probable amino acid permease 7 (Amino acid transporter AAP7)
+TRINITY_DN292396_c0_g3	Amino acid permease 5 (Amino acid transporter AAP5)
+TRINITY_DN292396_c0_g4	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN299209_c0_g1	Mechanosensitive ion channel protein 2, chloroplastic (Mechanosensitive channel of small conductance-like 2) (MscS-Like protein 2)
+TRINITY_DN298476_c0_g1	Eukaryotic translation initiation factor 3 subunit A (eIF3a) (Eukaryotic translation initiation factor 3 large subunit) (Eukaryotic translation initiation factor 3 subunit 10) (eIF-3-theta) (p114)
+TRINITY_DN298237_c0_g2	DNA polymerase delta subunit 4 (DNA polymerase delta subunit p12)
+TRINITY_DN311493_c0_g1	Sodium/potassium-transporting ATPase subunit alpha (Na(+)/K(+) ATPase alpha subunit) (EC 7.2.2.13) (Sodium pump subunit alpha)
+TRINITY_DN226686_c0_g1	GDP-L-fucose synthase (EC 1.1.1.271) (GDP-4-keto-6-deoxy-D-mannose-3,5-epimerase-4-reductase) (Protein FX) (Red cell NADP(H)-binding protein) (Short-chain dehydrogenase/reductase family 4E member 1)
+TRINITY_DN298863_c0_g2	Methylesterase 1 (AtMES1) (EC 3.1.1.-)
+TRINITY_DN299263_c0_g1	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN252333_c0_g1	Amino acid permease 6 (Amino acid transporter AAP6)
+TRINITY_DN292396_c0_g1	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292396_c0_g2	Probable amino acid permease 7 (Amino acid transporter AAP7)
+TRINITY_DN292396_c0_g3	Amino acid permease 5 (Amino acid transporter AAP5)
+TRINITY_DN292396_c0_g4	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN299209_c0_g1	Mechanosensitive ion channel protein 2, chloroplastic (Mechanosensitive channel of small conductance-like 2) (MscS-Like protein 2)
+TRINITY_DN172833_c0_g1	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN293491_c0_g1	Delta(14)-sterol reductase (EC 1.3.1.70) (C-14 sterol reductase) (Protein FACKEL) (Sterol C14-reductase)
+TRINITY_DN111543_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN172833_c0_g1	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN293491_c0_g1	Delta(14)-sterol reductase (EC 1.3.1.70) (C-14 sterol reductase) (Protein FACKEL) (Sterol C14-reductase)
+TRINITY_DN314170_c2_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314641_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX) (EC 1.3.3.6) (Palmitoyl-CoA oxidase) [Cleaved into: Peroxisomal acyl-CoA oxidase 1, A chain; Peroxisomal acyl-CoA oxidase 1, B chain; Peroxisomal acyl-CoA oxidase 1, C chain]
+TRINITY_DN111543_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314170_c2_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN234177_c0_g1	BTB/POZ domain-containing protein At5g47800
+TRINITY_DN271251_c0_g1	COP9 signalosome complex subunit 2 (Signalosome subunit 2) (Protein FUSCA 12)
+TRINITY_DN277215_c0_g1	Peptide methionine sulfoxide reductase MsrA 1 (Protein-methionine-S-oxide reductase 1) (EC 1.8.4.11) (Peptide-methionine (S)-S-oxide reductase 1) (Peptide Met(O) reductase 1)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN294187_c0_g1	RNA pseudouridine synthase 5 (EC 5.4.99.-) (RNA pseudouridylate synthase 5) (RNA-uridine isomerase 5)
+TRINITY_DN296379_c5_g1	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN299296_c0_g1	Probable E3 ubiquitin-protein ligase XBOS32 (EC 2.3.2.27) (Ankyrin repeat domain and RING finger-containing protein XBOS32) (RING-type E3 ubiquitin transferase XBOS32) (XB3 protein homolog 2)
+TRINITY_DN299783_c0_g3	Acyl-protein thioesterase 2 (APT-2) (EC 3.1.2.-) (Lysophospholipase II) (LPL-II) (LysoPLA II)
+TRINITY_DN311419_c1_g2	Pentatricopeptide repeat-containing protein At2g42920, chloroplastic
+TRINITY_DN312007_c1_g4	Adenylyltransferase and sulfurtransferase MOCS3-2 (Molybdenum cofactor synthesis protein 3-2) [Includes: Molybdopterin-synthase adenylyltransferase 2 (EC 2.7.7.80) (Adenylyltransferase MOCS3-2) (Sulfur carrier protein MOCS2A adenylyltransferase 2); Molybdopterin-synthase sulfurtransferase 2 (EC 2.8.1.11) (Sulfur carrier protein MOCS2A sulfurtransferase 2) (Sulfurtransferase MOCS3-2)]
+TRINITY_DN312737_c2_g4	Peptidyl-prolyl cis-trans isomerase (PPIase) (EC 5.2.1.8) (Cyclophilin) (Cyp) (Cyclosporin A-binding protein) (Rotamase) (allergen Cat r 1)
+TRINITY_DN314173_c2_g1	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN314832_c0_g1	eEF1A lysine and N-terminal methyltransferase (Methyltransferase-like protein 13) [Includes: eEF1A lysine methyltransferase (EC 2.1.1.-); eEF1A N-terminal methyltransferase (EC 2.1.1.-)]
+TRINITY_DN34409_c0_g1	Ubiquitin-fold modifier 1
+TRINITY_DN277043_c0_g1	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g2	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN293385_c0_g1	60S ribosomal protein L7
+TRINITY_DN293483_c0_g1	60S ribosomal protein L8 (L4) (L7A)
+TRINITY_DN294781_c1_g1	60S ribosomal protein L35
+TRINITY_DN294781_c2_g1	60S ribosomal protein L35
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN296798_c5_g3	Tubulin beta chain (Beta-tubulin)
+TRINITY_DN228042_c0_g1	Serine/threonine-protein kinase haspin homolog (AtHaspin) (EC 2.7.11.1)
+TRINITY_DN111543_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314170_c2_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314641_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX) (EC 1.3.3.6) (Palmitoyl-CoA oxidase) [Cleaved into: Peroxisomal acyl-CoA oxidase 1, A chain; Peroxisomal acyl-CoA oxidase 1, B chain; Peroxisomal acyl-CoA oxidase 1, C chain]
+TRINITY_DN255905_c0_g1	Cyclin-dependent kinase-like 5 (EC 2.7.11.22) (Serine/threonine-protein kinase 9)
+TRINITY_DN312728_c0_g1	Protein O-linked-mannose beta-1,4-N-acetylglucosaminyltransferase 2 (POMGnT2) (EC 2.4.1.312) (Extracellular O-linked N-acetylglucosamine transferase-like) (Glycosyltransferase-like domain-containing protein 2)
+TRINITY_DN139711_c0_g1	Polyadenylate-binding protein (PABP) (Poly(A)-binding protein)
+TRINITY_DN276992_c0_g1	Eukaryotic initiation factor 4A-III (eIF-4A-III) (eIF4A-III) (EC 3.6.4.13)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN310768_c2_g2	SUPPRESSOR OF ABI3-5 (REQUIRED FOR SNC4-1D protein 1) (Splicing factor SUA)
+TRINITY_DN46127_c0_g1	Splicing factor 3A subunit 1
+TRINITY_DN310761_c3_g1	Protein FLX-like 4 (AtFLXL4)
+TRINITY_DN310729_c0_g1	H/ACA ribonucleoprotein complex subunit 4 (EC 5.4.99.-) (CBF5 homolog) (Dyskerin) (Nopp-140-associated protein of 57 kDa homolog) (AtNAP57) (Nucleolar protein NAP57 homolog)
+TRINITY_DN274635_c0_g1	Adenylate kinase isoenzyme 6 homolog FAP7 (AK6) (EC 2.7.4.3) (Dual activity adenylate kinase/ATPase) (AK/ATPase) (POS9-activating factor 7)
+TRINITY_DN277043_c0_g1	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g2	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN293385_c0_g1	60S ribosomal protein L7
+TRINITY_DN293483_c0_g1	60S ribosomal protein L8 (L4) (L7A)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN294781_c1_g1	60S ribosomal protein L35
+TRINITY_DN294781_c2_g1	60S ribosomal protein L35
+TRINITY_DN296362_c0_g2	Nucleolar protein 10
+TRINITY_DN310729_c0_g1	H/ACA ribonucleoprotein complex subunit 4 (EC 5.4.99.-) (CBF5 homolog) (Dyskerin) (Nopp-140-associated protein of 57 kDa homolog) (AtNAP57) (Nucleolar protein NAP57 homolog)
+TRINITY_DN312007_c1_g4	Adenylyltransferase and sulfurtransferase MOCS3-2 (Molybdenum cofactor synthesis protein 3-2) [Includes: Molybdopterin-synthase adenylyltransferase 2 (EC 2.7.7.80) (Adenylyltransferase MOCS3-2) (Sulfur carrier protein MOCS2A adenylyltransferase 2); Molybdopterin-synthase sulfurtransferase 2 (EC 2.8.1.11) (Sulfur carrier protein MOCS2A sulfurtransferase 2) (Sulfurtransferase MOCS3-2)]
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN316221_c2_g2	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN316221_c2_g2	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN255905_c0_g1	Cyclin-dependent kinase-like 5 (EC 2.7.11.22) (Serine/threonine-protein kinase 9)
+TRINITY_DN312728_c0_g1	Protein O-linked-mannose beta-1,4-N-acetylglucosaminyltransferase 2 (POMGnT2) (EC 2.4.1.312) (Extracellular O-linked N-acetylglucosamine transferase-like) (Glycosyltransferase-like domain-containing protein 2)
+TRINITY_DN252333_c0_g1	Amino acid permease 6 (Amino acid transporter AAP6)
+TRINITY_DN278343_c0_g1	Protein SDA1 homolog (SDA1 domain-containing protein 1 homolog)
+TRINITY_DN292396_c0_g1	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292396_c0_g2	Probable amino acid permease 7 (Amino acid transporter AAP7)
+TRINITY_DN292396_c0_g3	Amino acid permease 5 (Amino acid transporter AAP5)
+TRINITY_DN292396_c0_g4	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN278343_c0_g1	Protein SDA1 homolog (SDA1 domain-containing protein 1 homolog)
+TRINITY_DN278343_c0_g1	Protein SDA1 homolog (SDA1 domain-containing protein 1 homolog)
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN293346_c7_g1	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN294759_c0_g1	Mitochondrial fission protein ELM1 (Protein ELONGATED MITOCHONDRIA 1)
+TRINITY_DN295224_c1_g2	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN296362_c0_g5	Dynamin-related protein 1C (Dynamin-like protein 5) (Dynamin-like protein C) (Dynamin-like protein DLP1)
+TRINITY_DN296798_c5_g3	Tubulin beta chain (Beta-tubulin)
+TRINITY_DN298237_c0_g2	DNA polymerase delta subunit 4 (DNA polymerase delta subunit p12)
+TRINITY_DN298449_c4_g2	Ras-related protein Rab-1A
+TRINITY_DN293491_c0_g1	Delta(14)-sterol reductase (EC 1.3.1.70) (C-14 sterol reductase) (Protein FACKEL) (Sterol C14-reductase)
+TRINITY_DN293493_c3_g6	Caffeic acid 3-O-methyltransferase (CAOMT) (COMT) (EC 2.1.1.68) (S-adenosysl-L-methionine:caffeic acid 3-O-methyltransferase)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN293491_c0_g1	Delta(14)-sterol reductase (EC 1.3.1.70) (C-14 sterol reductase) (Protein FACKEL) (Sterol C14-reductase)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN299783_c0_g3	Acyl-protein thioesterase 2 (APT-2) (EC 3.1.2.-) (Lysophospholipase II) (LPL-II) (LysoPLA II)
+TRINITY_DN311468_c0_g1	E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)
+TRINITY_DN299783_c0_g3	Acyl-protein thioesterase 2 (APT-2) (EC 3.1.2.-) (Lysophospholipase II) (LPL-II) (LysoPLA II)
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN295269_c0_g6	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN299263_c0_g1	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN295269_c0_g6	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN234177_c0_g1	BTB/POZ domain-containing protein At5g47800
+TRINITY_DN296379_c5_g1	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN299296_c0_g1	Probable E3 ubiquitin-protein ligase XBOS32 (EC 2.3.2.27) (Ankyrin repeat domain and RING finger-containing protein XBOS32) (RING-type E3 ubiquitin transferase XBOS32) (XB3 protein homolog 2)
+TRINITY_DN314173_c2_g1	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN34409_c0_g1	Ubiquitin-fold modifier 1
+TRINITY_DN234177_c0_g1	BTB/POZ domain-containing protein At5g47800
+TRINITY_DN271251_c0_g1	COP9 signalosome complex subunit 2 (Signalosome subunit 2) (Protein FUSCA 12)
+TRINITY_DN296379_c5_g1	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN299296_c0_g1	Probable E3 ubiquitin-protein ligase XBOS32 (EC 2.3.2.27) (Ankyrin repeat domain and RING finger-containing protein XBOS32) (RING-type E3 ubiquitin transferase XBOS32) (XB3 protein homolog 2)
+TRINITY_DN314173_c2_g1	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN34409_c0_g1	Ubiquitin-fold modifier 1
+TRINITY_DN312737_c2_g4	Peptidyl-prolyl cis-trans isomerase (PPIase) (EC 5.2.1.8) (Cyclophilin) (Cyp) (Cyclosporin A-binding protein) (Rotamase) (allergen Cat r 1)
+TRINITY_DN296379_c5_g1	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN314173_c2_g1	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN271251_c0_g1	COP9 signalosome complex subunit 2 (Signalosome subunit 2) (Protein FUSCA 12)
+TRINITY_DN311468_c0_g1	E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN294187_c0_g1	RNA pseudouridine synthase 5 (EC 5.4.99.-) (RNA pseudouridylate synthase 5) (RNA-uridine isomerase 5)
+TRINITY_DN312738_c3_g1	Serine/arginine-rich splicing factor SR45 (At-SR45) (AtSR45) (Serine/arginine-rich ribonucleoprotein 1)
+TRINITY_DN312740_c0_g1	Polypyrimidine tract-binding protein homolog 2
+TRINITY_DN172833_c0_g1	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN298237_c0_g2	DNA polymerase delta subunit 4 (DNA polymerase delta subunit p12)
+TRINITY_DN311493_c0_g1	Sodium/potassium-transporting ATPase subunit alpha (Na(+)/K(+) ATPase alpha subunit) (EC 7.2.2.13) (Sodium pump subunit alpha)
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN228040_c0_g1	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN299755_c1_g3	Protein phosphatase 2C homolog 3 (PP2C-3) (EC 3.1.3.16)
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN316221_c2_g2	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN228040_c0_g1	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN299755_c1_g3	Protein phosphatase 2C homolog 3 (PP2C-3) (EC 3.1.3.16)
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN312738_c3_g1	Serine/arginine-rich splicing factor SR45 (At-SR45) (AtSR45) (Serine/arginine-rich ribonucleoprotein 1)
+TRINITY_DN312740_c0_g1	Polypyrimidine tract-binding protein homolog 2
+TRINITY_DN228040_c0_g1	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN278325_c0_g1	Pumilio domain-containing protein C6G9.14
+TRINITY_DN292384_c0_g1	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN299755_c1_g3	Protein phosphatase 2C homolog 3 (PP2C-3) (EC 3.1.3.16)
+TRINITY_DN312738_c3_g1	Serine/arginine-rich splicing factor SR45 (At-SR45) (AtSR45) (Serine/arginine-rich ribonucleoprotein 1)
+TRINITY_DN312740_c0_g1	Polypyrimidine tract-binding protein homolog 2
+TRINITY_DN276572_c0_g1	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN312738_c3_g1	Serine/arginine-rich splicing factor SR45 (At-SR45) (AtSR45) (Serine/arginine-rich ribonucleoprotein 1)
+TRINITY_DN312740_c0_g1	Polypyrimidine tract-binding protein homolog 2
+TRINITY_DN228040_c0_g1	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN295269_c0_g3	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN299755_c1_g3	Protein phosphatase 2C homolog 3 (PP2C-3) (EC 3.1.3.16)
+TRINITY_DN310761_c3_g1	Protein FLX-like 4 (AtFLXL4)
+TRINITY_DN293455_c0_g1	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN293455_c0_g2	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN295083_c2_g1	Protein CHLOROPLAST ENHANCING STRESS TOLERANCE, chloroplastic (OsCEST)
+TRINITY_DN294674_c6_g1	Putative L-ascorbate peroxidase 6 (AtAPx08) (EC 1.11.1.11)
+TRINITY_DN295083_c2_g1	Protein CHLOROPLAST ENHANCING STRESS TOLERANCE, chloroplastic (OsCEST)
+TRINITY_DN295214_c0_g1	17.4 kDa class I heat shock protein (17.4 kDa heat shock protein 1) (AtHsp17.4A)
+TRINITY_DN295269_c0_g6	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN299040_c0_g1	16.9 kDa class I heat shock protein 2 (16.9 kDa heat shock protein 2) (OsHsp16.9B)
+TRINITY_DN312005_c0_g4	Cytochrome c peroxidase, mitochondrial (CCP) (EC 1.11.1.5)
+TRINITY_DN312753_c3_g2	L-ascorbate peroxidase 3 (AtAPx03) (EC 1.11.1.11)
+TRINITY_DN226686_c0_g1	GDP-L-fucose synthase (EC 1.1.1.271) (GDP-4-keto-6-deoxy-D-mannose-3,5-epimerase-4-reductase) (Protein FX) (Red cell NADP(H)-binding protein) (Short-chain dehydrogenase/reductase family 4E member 1)
+TRINITY_DN292970_c0_g1	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN293455_c0_g1	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN293455_c0_g2	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN294674_c6_g1	Putative L-ascorbate peroxidase 6 (AtAPx08) (EC 1.11.1.11)
+TRINITY_DN295083_c2_g1	Protein CHLOROPLAST ENHANCING STRESS TOLERANCE, chloroplastic (OsCEST)
+TRINITY_DN295214_c0_g1	17.4 kDa class I heat shock protein (17.4 kDa heat shock protein 1) (AtHsp17.4A)
+TRINITY_DN295269_c0_g6	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN298863_c0_g2	Methylesterase 1 (AtMES1) (EC 3.1.1.-)
+TRINITY_DN299040_c0_g1	16.9 kDa class I heat shock protein 2 (16.9 kDa heat shock protein 2) (OsHsp16.9B)
+TRINITY_DN312005_c0_g4	Cytochrome c peroxidase, mitochondrial (CCP) (EC 1.11.1.5)
+TRINITY_DN312745_c1_g1	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312753_c3_g2	L-ascorbate peroxidase 3 (AtAPx03) (EC 1.11.1.11)
+TRINITY_DN293394_c0_g1	60S ribosomal protein L6
+TRINITY_DN298832_c1_g1	mRNA turnover protein 4 homolog (Ribosome assembly factor MRTO4)
+TRINITY_DN298848_c3_g2	60S acidic ribosomal protein P0-1
+TRINITY_DN314236_c0_g1	Midasin (Dynein-related AAA-ATPase REA1) (MIDAS-containing protein) (Ribosome export/assembly protein 1)
+TRINITY_DN292998_c5_g6	40S ribosomal protein S5
+TRINITY_DN316936_c5_g1	Ribosomal RNA-processing protein 7 homolog A (Gastric cancer antigen Zg14)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN294187_c0_g1	RNA pseudouridine synthase 5 (EC 5.4.99.-) (RNA pseudouridylate synthase 5) (RNA-uridine isomerase 5)
+TRINITY_DN311419_c1_g2	Pentatricopeptide repeat-containing protein At2g42920, chloroplastic
+TRINITY_DN312007_c1_g4	Adenylyltransferase and sulfurtransferase MOCS3-2 (Molybdenum cofactor synthesis protein 3-2) [Includes: Molybdopterin-synthase adenylyltransferase 2 (EC 2.7.7.80) (Adenylyltransferase MOCS3-2) (Sulfur carrier protein MOCS2A adenylyltransferase 2); Molybdopterin-synthase sulfurtransferase 2 (EC 2.8.1.11) (Sulfur carrier protein MOCS2A sulfurtransferase 2) (Sulfurtransferase MOCS3-2)]
+TRINITY_DN139711_c0_g1	Polyadenylate-binding protein (PABP) (Poly(A)-binding protein)
+TRINITY_DN276992_c0_g1	Eukaryotic initiation factor 4A-III (eIF-4A-III) (eIF4A-III) (EC 3.6.4.13)
+TRINITY_DN310768_c2_g2	SUPPRESSOR OF ABI3-5 (REQUIRED FOR SNC4-1D protein 1) (Splicing factor SUA)
+TRINITY_DN46127_c0_g1	Splicing factor 3A subunit 1
+TRINITY_DN274635_c0_g1	Adenylate kinase isoenzyme 6 homolog FAP7 (AK6) (EC 2.7.4.3) (Dual activity adenylate kinase/ATPase) (AK/ATPase) (POS9-activating factor 7)
+TRINITY_DN277043_c0_g1	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g2	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN293385_c0_g1	60S ribosomal protein L7
+TRINITY_DN293483_c0_g1	60S ribosomal protein L8 (L4) (L7A)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN294781_c1_g1	60S ribosomal protein L35
+TRINITY_DN294781_c2_g1	60S ribosomal protein L35
+TRINITY_DN296362_c0_g2	Nucleolar protein 10
+TRINITY_DN299263_c0_g1	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g2	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN111543_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN172833_c0_g1	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN314170_c2_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314641_c0_g1	Peroxisomal acyl-coenzyme A oxidase 1 (AOX) (EC 1.3.3.6) (Palmitoyl-CoA oxidase) [Cleaved into: Peroxisomal acyl-CoA oxidase 1, A chain; Peroxisomal acyl-CoA oxidase 1, B chain; Peroxisomal acyl-CoA oxidase 1, C chain]
+TRINITY_DN45784_c0_g1	Nitrilase homolog 2 (EC 3.5.-.-)
+TRINITY_DN293826_c5_g4	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN310729_c0_g1	H/ACA ribonucleoprotein complex subunit 4 (EC 5.4.99.-) (CBF5 homolog) (Dyskerin) (Nopp-140-associated protein of 57 kDa homolog) (AtNAP57) (Nucleolar protein NAP57 homolog)
+TRINITY_DN292331_c0_g1	U4/U6.U5 tri-snRNP-associated protein 1 (SNU66 homolog) (hSnu66) (Squamous cell carcinoma antigen recognized by T-cells 1) (SART-1) (hSART-1) (U4/U6.U5 tri-snRNP-associated 110 kDa protein) (allergen Hom s 1)
+TRINITY_DN312090_c4_g1	Sulfite reductase [NADPH] flavoprotein component (EC 1.8.1.2)
+TRINITY_DN252333_c0_g1	Amino acid permease 6 (Amino acid transporter AAP6)
+TRINITY_DN292396_c0_g1	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292396_c0_g2	Probable amino acid permease 7 (Amino acid transporter AAP7)
+TRINITY_DN292396_c0_g3	Amino acid permease 5 (Amino acid transporter AAP5)
+TRINITY_DN292396_c0_g4	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN312007_c1_g4	Adenylyltransferase and sulfurtransferase MOCS3-2 (Molybdenum cofactor synthesis protein 3-2) [Includes: Molybdopterin-synthase adenylyltransferase 2 (EC 2.7.7.80) (Adenylyltransferase MOCS3-2) (Sulfur carrier protein MOCS2A adenylyltransferase 2); Molybdopterin-synthase sulfurtransferase 2 (EC 2.8.1.11) (Sulfur carrier protein MOCS2A sulfurtransferase 2) (Sulfurtransferase MOCS3-2)]
+TRINITY_DN311468_c0_g1	E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)
