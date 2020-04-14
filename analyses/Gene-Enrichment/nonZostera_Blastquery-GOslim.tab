@@ -1,0 +1,869 @@
+TRINITY_DN255903_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255903_c0_g1	other metabolic processes	P
+TRINITY_DN299755_c1_g3	cell cycle and proliferation	P
+TRINITY_DN299755_c1_g3	other metabolic processes	P
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN311716_c0_g2	RNA metabolism	P
+TRINITY_DN255903_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255903_c0_g1	cell organization and biogenesis	P
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN299755_c1_g3	other metabolic processes	P
+TRINITY_DN299755_c1_g3	signal transduction	P
+TRINITY_DN311731_c0_g1	cell cycle and proliferation	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN255903_c0_g1	cell organization and biogenesis	P
+TRINITY_DN296373_c0_g2	nucleus	C
+TRINITY_DN312002_c0_g1	cell cycle and proliferation	P
+TRINITY_DN233011_c0_g1	cell cycle and proliferation	P
+TRINITY_DN277328_c0_g1	cell cycle and proliferation	P
+TRINITY_DN299789_c0_g2	cell cycle and proliferation	P
+TRINITY_DN277082_c0_g1	other molecular function	F
+TRINITY_DN295214_c0_g1	stress response	P
+TRINITY_DN295214_c0_g2	stress response	P
+TRINITY_DN312005_c1_g1	stress response	P
+TRINITY_DN256449_c0_g1	RNA metabolism	P
+TRINITY_DN294754_c0_g1	other cellular component	C
+TRINITY_DN311731_c0_g1	other cellular component	C
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN311731_c0_g1	cytoskeleton	C
+TRINITY_DN312002_c0_g1	cytoskeleton	C
+TRINITY_DN54639_c0_g1	nucleus	C
+TRINITY_DN227396_c0_g1	nucleus	C
+TRINITY_DN294779_c1_g3	nucleus	C
+TRINITY_DN296218_c0_g2	nucleus	C
+TRINITY_DN298167_c1_g1	nucleus	C
+TRINITY_DN310763_c1_g1	nucleus	C
+TRINITY_DN310763_c3_g1	nucleus	C
+TRINITY_DN311486_c4_g1	nucleus	C
+TRINITY_DN311753_c2_g6	nucleus	C
+TRINITY_DN314258_c2_g2	nucleus	C
+TRINITY_DN314271_c1_g1	nucleus	C
+TRINITY_DN314627_c5_g1	nucleus	C
+TRINITY_DN314629_c1_g3	nucleus	C
+TRINITY_DN314888_c2_g4	nucleus	C
+TRINITY_DN316237_c1_g2	nucleus	C
+TRINITY_DN316936_c6_g6	nucleus	C
+TRINITY_DN317247_c5_g1	nucleus	C
+TRINITY_DN312002_c0_g1	other biological processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN312737_c2_g2	other cellular component	C
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN271666_c1_g1	protein metabolism	P
+TRINITY_DN312737_c2_g2	cell organization and biogenesis	P
+TRINITY_DN312737_c2_g2	protein metabolism	P
+TRINITY_DN312737_c2_g2	transport	P
+TRINITY_DN296708_c0_g1	RNA metabolism	P
+TRINITY_DN292370_c1_g7	nucleic acid binding activity	F
+TRINITY_DN294779_c1_g3	nucleic acid binding activity	F
+TRINITY_DN296218_c0_g2	nucleic acid binding activity	F
+TRINITY_DN298167_c1_g1	nucleic acid binding activity	F
+TRINITY_DN310763_c1_g1	nucleic acid binding activity	F
+TRINITY_DN310763_c3_g1	nucleic acid binding activity	F
+TRINITY_DN311486_c4_g1	nucleic acid binding activity	F
+TRINITY_DN311753_c2_g6	nucleic acid binding activity	F
+TRINITY_DN314258_c2_g2	nucleic acid binding activity	F
+TRINITY_DN314271_c1_g1	nucleic acid binding activity	F
+TRINITY_DN314627_c5_g1	nucleic acid binding activity	F
+TRINITY_DN314629_c1_g3	nucleic acid binding activity	F
+TRINITY_DN314888_c2_g4	nucleic acid binding activity	F
+TRINITY_DN316237_c1_g2	nucleic acid binding activity	F
+TRINITY_DN316936_c6_g6	nucleic acid binding activity	F
+TRINITY_DN317247_c5_g1	nucleic acid binding activity	F
+TRINITY_DN227396_c0_g1	nucleic acid binding activity	F
+TRINITY_DN314232_c4_g4	nucleic acid binding activity	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN294754_c0_g1	nucleic acid binding activity	F
+TRINITY_DN294754_c0_g1	transcription regulatory activity	F
+TRINITY_DN311716_c0_g2	transcription regulatory activity	F
+TRINITY_DN227396_c0_g1	nucleic acid binding activity	F
+TRINITY_DN251191_c0_g1	nucleic acid binding activity	F
+TRINITY_DN251191_c0_g2	nucleic acid binding activity	F
+TRINITY_DN294754_c0_g1	nucleic acid binding activity	F
+TRINITY_DN295087_c0_g1	nucleic acid binding activity	F
+TRINITY_DN312702_c0_g1	nucleic acid binding activity	F
+TRINITY_DN314232_c4_g4	nucleic acid binding activity	F
+TRINITY_DN226644_c0_g1	other molecular function	F
+TRINITY_DN293386_c0_g1	cytoskeletal activity	F
+TRINITY_DN274805_c0_g2	cytoskeletal activity	F
+TRINITY_DN52678_c0_g1	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN314232_c4_g4	other molecular function	F
+TRINITY_DN312093_c0_g3	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN292370_c1_g7	other molecular function	F
+TRINITY_DN294779_c1_g3	other molecular function	F
+TRINITY_DN296218_c0_g2	other molecular function	F
+TRINITY_DN298167_c1_g1	other molecular function	F
+TRINITY_DN310763_c1_g1	other molecular function	F
+TRINITY_DN310763_c3_g1	other molecular function	F
+TRINITY_DN311486_c4_g1	other molecular function	F
+TRINITY_DN314232_c4_g4	other molecular function	F
+TRINITY_DN314258_c2_g2	other molecular function	F
+TRINITY_DN314627_c5_g1	other molecular function	F
+TRINITY_DN314629_c1_g3	other molecular function	F
+TRINITY_DN314888_c2_g4	other molecular function	F
+TRINITY_DN316237_c1_g2	other molecular function	F
+TRINITY_DN316936_c6_g6	other molecular function	F
+TRINITY_DN317247_c5_g1	other molecular function	F
+TRINITY_DN277082_c0_g1	other molecular function	F
+TRINITY_DN311716_c0_g1	other molecular function	F
+TRINITY_DN292353_c0_g1	other molecular function	F
+TRINITY_DN310761_c3_g1	transporter activity	F
+TRINITY_DN310761_c3_g3	transporter activity	F
+TRINITY_DN312005_c1_g1	other molecular function	F
+TRINITY_DN293894_c0_g2	other molecular function	F
+TRINITY_DN277209_c0_g1	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN292370_c1_g7	other molecular function	F
+TRINITY_DN294779_c1_g3	other molecular function	F
+TRINITY_DN296218_c0_g2	other molecular function	F
+TRINITY_DN298167_c1_g1	other molecular function	F
+TRINITY_DN310763_c1_g1	other molecular function	F
+TRINITY_DN310763_c3_g1	other molecular function	F
+TRINITY_DN311486_c4_g1	other molecular function	F
+TRINITY_DN311753_c2_g6	other molecular function	F
+TRINITY_DN314232_c4_g4	other molecular function	F
+TRINITY_DN314258_c2_g2	other molecular function	F
+TRINITY_DN314271_c1_g1	other molecular function	F
+TRINITY_DN314627_c5_g1	other molecular function	F
+TRINITY_DN314629_c1_g3	other molecular function	F
+TRINITY_DN314888_c2_g4	other molecular function	F
+TRINITY_DN316237_c1_g2	other molecular function	F
+TRINITY_DN316900_c0_g1	other molecular function	F
+TRINITY_DN316936_c6_g6	other molecular function	F
+TRINITY_DN317247_c5_g1	other molecular function	F
+TRINITY_DN259150_c0_g1	other molecular function	F
+TRINITY_DN66609_c0_g1	other molecular function	F
+TRINITY_DN311461_c0_g1	other molecular function	F
+TRINITY_DN312702_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN274840_c0_g1	other molecular function	F
+TRINITY_DN292370_c1_g7	other molecular function	F
+TRINITY_DN294779_c1_g3	other molecular function	F
+TRINITY_DN296218_c0_g2	other molecular function	F
+TRINITY_DN298167_c1_g1	other molecular function	F
+TRINITY_DN310763_c1_g1	other molecular function	F
+TRINITY_DN310763_c3_g1	other molecular function	F
+TRINITY_DN311486_c4_g1	other molecular function	F
+TRINITY_DN314232_c4_g4	other molecular function	F
+TRINITY_DN314258_c2_g2	other molecular function	F
+TRINITY_DN314627_c5_g1	other molecular function	F
+TRINITY_DN314629_c1_g3	other molecular function	F
+TRINITY_DN314888_c2_g4	other molecular function	F
+TRINITY_DN316237_c1_g2	other molecular function	F
+TRINITY_DN316936_c6_g6	other molecular function	F
+TRINITY_DN317247_c5_g1	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN312005_c1_g1	other molecular function	F
+TRINITY_DN278965_c0_g1	other molecular function	F
+TRINITY_DN173970_c0_g1	kinase activity	F
+TRINITY_DN233011_c0_g1	kinase activity	F
+TRINITY_DN277328_c0_g1	kinase activity	F
+TRINITY_DN295224_c1_g1	kinase activity	F
+TRINITY_DN295269_c0_g2	kinase activity	F
+TRINITY_DN299789_c0_g2	kinase activity	F
+TRINITY_DN312002_c0_g1	kinase activity	F
+TRINITY_DN173970_c0_g1	kinase activity	F
+TRINITY_DN233011_c0_g1	other molecular function	F
+TRINITY_DN277328_c0_g1	other molecular function	F
+TRINITY_DN299789_c0_g2	other molecular function	F
+TRINITY_DN295269_c0_g2	other molecular function	F
+TRINITY_DN299755_c1_g3	other molecular function	F
+TRINITY_DN295269_c0_g2	other molecular function	F
+TRINITY_DN299755_c1_g3	other molecular function	F
+TRINITY_DN311716_c0_g2	other molecular function	F
+TRINITY_DN292353_c0_g1	other molecular function	F
+TRINITY_DN292324_c0_g1	other molecular function	F
+TRINITY_DN294779_c0_g2	other molecular function	F
+TRINITY_DN314831_c1_g5	other molecular function	F
+TRINITY_DN295224_c1_g1	enzyme regulator activity	F
+TRINITY_DN296759_c4_g1	cytoskeletal activity	F
+TRINITY_DN251134_c1_g1	transporter activity	F
+TRINITY_DN22073_c0_g1	transporter activity	F
+TRINITY_DN312726_c1_g4	transporter activity	F
+TRINITY_DN312726_c1_g4	transporter activity	F
+TRINITY_DN311493_c0_g1	transporter activity	F
+TRINITY_DN278965_c0_g1	other molecular function	F
+TRINITY_DN2119_c0_g1	other molecular function	F
+TRINITY_DN310761_c3_g1	other molecular function	F
+TRINITY_DN310761_c3_g3	other molecular function	F
+TRINITY_DN173970_c0_g1	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN233011_c0_g1	other molecular function	F
+TRINITY_DN274840_c0_g1	other molecular function	F
+TRINITY_DN276416_c0_g1	other molecular function	F
+TRINITY_DN277082_c0_g1	other molecular function	F
+TRINITY_DN277328_c0_g1	other molecular function	F
+TRINITY_DN294779_c0_g2	other molecular function	F
+TRINITY_DN295224_c1_g1	other molecular function	F
+TRINITY_DN295269_c0_g2	other molecular function	F
+TRINITY_DN299789_c0_g2	other molecular function	F
+TRINITY_DN311493_c0_g1	other molecular function	F
+TRINITY_DN311753_c2_g6	other molecular function	F
+TRINITY_DN312002_c0_g1	other molecular function	F
+TRINITY_DN312702_c0_g1	other molecular function	F
+TRINITY_DN314271_c1_g1	other molecular function	F
+TRINITY_DN449830_c0_g1	other molecular function	F
+TRINITY_DN233011_c0_g1	other molecular function	F
+TRINITY_DN277328_c0_g1	other molecular function	F
+TRINITY_DN295224_c1_g1	other molecular function	F
+TRINITY_DN296759_c4_g1	other molecular function	F
+TRINITY_DN299789_c0_g2	other molecular function	F
+TRINITY_DN277082_c0_g1	non-structural extracellular	C
+TRINITY_DN316234_c0_g1	non-structural extracellular	C
+TRINITY_DN317297_c2_g1	non-structural extracellular	C
+TRINITY_DN227396_c0_g1	nucleus	C
+TRINITY_DN251134_c0_g1	nucleus	C
+TRINITY_DN255273_c0_g1	nucleus	C
+TRINITY_DN255903_c0_g1	nucleus	C
+TRINITY_DN271642_c0_g1	nucleus	C
+TRINITY_DN271666_c1_g1	nucleus	C
+TRINITY_DN276416_c0_g1	nucleus	C
+TRINITY_DN277082_c0_g1	nucleus	C
+TRINITY_DN278382_c0_g1	nucleus	C
+TRINITY_DN294754_c0_g1	nucleus	C
+TRINITY_DN296708_c0_g1	nucleus	C
+TRINITY_DN299755_c1_g3	nucleus	C
+TRINITY_DN311493_c0_g1	nucleus	C
+TRINITY_DN311716_c0_g1	nucleus	C
+TRINITY_DN311716_c0_g2	nucleus	C
+TRINITY_DN312002_c0_g1	nucleus	C
+TRINITY_DN312722_c5_g1	nucleus	C
+TRINITY_DN314232_c4_g4	nucleus	C
+TRINITY_DN314831_c1_g5	nucleus	C
+TRINITY_DN251134_c0_g1	nucleus	C
+TRINITY_DN255273_c0_g1	nucleus	C
+TRINITY_DN256449_c0_g1	nucleus	C
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN255273_c0_g1	nucleus	C
+TRINITY_DN255273_c0_g1	nucleus	C
+TRINITY_DN227396_c0_g1	other cellular component	C
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN271666_c1_g1	other cellular component	C
+TRINITY_DN274805_c0_g2	other cellular component	C
+TRINITY_DN274840_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN277371_c0_g1	other cellular component	C
+TRINITY_DN278906_c0_g1	other cellular component	C
+TRINITY_DN292324_c0_g1	other cellular component	C
+TRINITY_DN295214_c0_g1	other cellular component	C
+TRINITY_DN295214_c0_g2	other cellular component	C
+TRINITY_DN296759_c4_g1	other cellular component	C
+TRINITY_DN299755_c1_g3	other cellular component	C
+TRINITY_DN311418_c0_g1	other cellular component	C
+TRINITY_DN311493_c0_g1	other cellular component	C
+TRINITY_DN311716_c0_g1	other cellular component	C
+TRINITY_DN311731_c0_g1	other cellular component	C
+TRINITY_DN312002_c0_g1	other cellular component	C
+TRINITY_DN312722_c5_g1	other cellular component	C
+TRINITY_DN312737_c2_g2	other cellular component	C
+TRINITY_DN314271_c0_g1	other cellular component	C
+TRINITY_DN317297_c1_g3	other cellular component	C
+TRINITY_DN2119_c0_g1	mitochondrion	C
+TRINITY_DN54639_c0_g1	mitochondrion	C
+TRINITY_DN255273_c0_g1	mitochondrion	C
+TRINITY_DN277082_c0_g1	mitochondrion	C
+TRINITY_DN2119_c0_g1	mitochondrion	C
+TRINITY_DN2119_c0_g1	other membranes	C
+TRINITY_DN310761_c3_g1	mitochondrion	C
+TRINITY_DN310761_c3_g1	other membranes	C
+TRINITY_DN310761_c3_g3	mitochondrion	C
+TRINITY_DN310761_c3_g3	other membranes	C
+TRINITY_DN312737_c1_g1	mitochondrion	C
+TRINITY_DN312737_c1_g1	other membranes	C
+TRINITY_DN312005_c1_g1	mitochondrion	C
+TRINITY_DN312005_c1_g1	mitochondrion	C
+TRINITY_DN292353_c0_g1	other cytoplasmic organelle	C
+TRINITY_DN316900_c0_g1	other cytoplasmic organelle	C
+TRINITY_DN312701_c0_g2	other cytoplasmic organelle	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN292353_c0_g1	other cytoplasmic organelle	C
+TRINITY_DN311489_c3_g5	other cytoplasmic organelle	C
+TRINITY_DN277209_c0_g1	other cytoplasmic organelle	C
+TRINITY_DN54630_c0_g1	other cytoplasmic organelle	C
+TRINITY_DN54630_c0_g1	other membranes	C
+TRINITY_DN226644_c0_g1	ER/Golgi	C
+TRINITY_DN278965_c0_g1	ER/Golgi	C
+TRINITY_DN292353_c0_g1	ER/Golgi	C
+TRINITY_DN294773_c0_g2	ER/Golgi	C
+TRINITY_DN294773_c0_g3	ER/Golgi	C
+TRINITY_DN298834_c0_g6	ER/Golgi	C
+TRINITY_DN311716_c0_g2	ER/Golgi	C
+TRINITY_DN317297_c1_g3	ER/Golgi	C
+TRINITY_DN226644_c0_g1	ER/Golgi	C
+TRINITY_DN278965_c0_g1	ER/Golgi	C
+TRINITY_DN292353_c0_g1	ER/Golgi	C
+TRINITY_DN294773_c0_g2	ER/Golgi	C
+TRINITY_DN294773_c0_g3	ER/Golgi	C
+TRINITY_DN292353_c0_g1	ER/Golgi	C
+TRINITY_DN292353_c0_g1	other membranes	C
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN311716_c0_g2	ER/Golgi	C
+TRINITY_DN311716_c0_g2	other membranes	C
+TRINITY_DN317297_c1_g3	ER/Golgi	C
+TRINITY_DN317297_c1_g3	other membranes	C
+TRINITY_DN251134_c0_g1	ER/Golgi	C
+TRINITY_DN292353_c0_g1	ER/Golgi	C
+TRINITY_DN312701_c0_g2	ER/Golgi	C
+TRINITY_DN312701_c0_g3	ER/Golgi	C
+TRINITY_DN278968_c0_g1	ER/Golgi	C
+TRINITY_DN251134_c0_g1	ER/Golgi	C
+TRINITY_DN292324_c0_g1	other cellular component	C
+TRINITY_DN311716_c0_g2	other cellular component	C
+TRINITY_DN255273_c0_g1	cytoskeleton	C
+TRINITY_DN255903_c0_g1	cytoskeleton	C
+TRINITY_DN276416_c0_g1	cytoskeleton	C
+TRINITY_DN311731_c0_g1	cytoskeleton	C
+TRINITY_DN312002_c0_g1	cytoskeleton	C
+TRINITY_DN312737_c2_g2	cytoskeleton	C
+TRINITY_DN255273_c0_g1	cytoskeleton	C
+TRINITY_DN255903_c0_g1	cytoskeleton	C
+TRINITY_DN312737_c2_g2	cytoskeleton	C
+TRINITY_DN293386_c0_g1	cytoskeleton	C
+TRINITY_DN255273_c0_g1	cytoskeleton	C
+TRINITY_DN255273_c0_g1	cytosol	C
+TRINITY_DN259150_c0_g1	cytosol	C
+TRINITY_DN271642_c0_g1	cytosol	C
+TRINITY_DN271666_c1_g1	cytosol	C
+TRINITY_DN274712_c0_g1	cytosol	C
+TRINITY_DN276416_c0_g1	cytosol	C
+TRINITY_DN277082_c0_g1	cytosol	C
+TRINITY_DN296708_c0_g1	cytosol	C
+TRINITY_DN311461_c0_g1	cytosol	C
+TRINITY_DN311716_c0_g1	cytosol	C
+TRINITY_DN271642_c0_g1	nucleus	C
+TRINITY_DN314271_c0_g1	cytoskeleton	C
+TRINITY_DN255273_c0_g1	cytoskeleton	C
+TRINITY_DN276416_c0_g1	cytoskeleton	C
+TRINITY_DN296759_c4_g1	cytoskeleton	C
+TRINITY_DN311731_c0_g1	cytoskeleton	C
+TRINITY_DN449830_c0_g1	cytoskeleton	C
+TRINITY_DN22073_c0_g1	other membranes	C
+TRINITY_DN22073_c0_g1	plasma membrane	C
+TRINITY_DN251134_c1_g1	other membranes	C
+TRINITY_DN251134_c1_g1	plasma membrane	C
+TRINITY_DN255273_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	plasma membrane	C
+TRINITY_DN276416_c0_g1	other membranes	C
+TRINITY_DN276416_c0_g1	plasma membrane	C
+TRINITY_DN292353_c0_g1	other membranes	C
+TRINITY_DN292353_c0_g1	plasma membrane	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN294657_c0_g1	plasma membrane	C
+TRINITY_DN311493_c0_g1	other membranes	C
+TRINITY_DN311493_c0_g1	plasma membrane	C
+TRINITY_DN312093_c0_g3	other membranes	C
+TRINITY_DN312093_c0_g3	plasma membrane	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN312726_c1_g4	plasma membrane	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN312726_c1_g4	plasma membrane	C
+TRINITY_DN311493_c0_g1	other membranes	C
+TRINITY_DN311493_c0_g1	plasma membrane	C
+TRINITY_DN251134_c1_g1	other membranes	C
+TRINITY_DN251134_c1_g1	plasma membrane	C
+TRINITY_DN312737_c2_g2	other membranes	C
+TRINITY_DN312737_c2_g2	plasma membrane	C
+TRINITY_DN312737_c2_g2	other membranes	C
+TRINITY_DN312737_c2_g2	plasma membrane	C
+TRINITY_DN311493_c0_g1	other membranes	C
+TRINITY_DN311493_c0_g1	plasma membrane	C
+TRINITY_DN276416_c0_g1	other cellular component	C
+TRINITY_DN312737_c2_g2	other cellular component	C
+TRINITY_DN449830_c0_g1	other cellular component	C
+TRINITY_DN312002_c0_g1	other cellular component	C
+TRINITY_DN278968_c0_g1	other metabolic processes	P
+TRINITY_DN312737_c1_g1	other metabolic processes	P
+TRINITY_DN274840_c0_g1	other metabolic processes	P
+TRINITY_DN277082_c0_g1	other metabolic processes	P
+TRINITY_DN296373_c0_g2	DNA metabolism	P
+TRINITY_DN255903_c0_g1	DNA metabolism	P
+TRINITY_DN255903_c0_g1	stress response	P
+TRINITY_DN227396_c0_g1	DNA metabolism	P
+TRINITY_DN294779_c1_g3	DNA metabolism	P
+TRINITY_DN296218_c0_g2	DNA metabolism	P
+TRINITY_DN298167_c1_g1	DNA metabolism	P
+TRINITY_DN310763_c1_g1	DNA metabolism	P
+TRINITY_DN310763_c3_g1	DNA metabolism	P
+TRINITY_DN311486_c4_g1	DNA metabolism	P
+TRINITY_DN314232_c4_g4	DNA metabolism	P
+TRINITY_DN314258_c2_g2	DNA metabolism	P
+TRINITY_DN314629_c1_g3	DNA metabolism	P
+TRINITY_DN314888_c2_g4	DNA metabolism	P
+TRINITY_DN316237_c1_g2	DNA metabolism	P
+TRINITY_DN296373_c0_g2	cell organization and biogenesis	P
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN271642_c0_g1	RNA metabolism	P
+TRINITY_DN274840_c0_g1	RNA metabolism	P
+TRINITY_DN226644_c0_g1	protein metabolism	P
+TRINITY_DN295214_c0_g1	protein metabolism	P
+TRINITY_DN295214_c0_g2	protein metabolism	P
+TRINITY_DN233011_c0_g1	protein metabolism	P
+TRINITY_DN277328_c0_g1	protein metabolism	P
+TRINITY_DN299755_c1_g3	protein metabolism	P
+TRINITY_DN299789_c0_g2	protein metabolism	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN312701_c0_g2	protein metabolism	P
+TRINITY_DN278382_c0_g1	protein metabolism	P
+TRINITY_DN294779_c0_g2	protein metabolism	P
+TRINITY_DN278906_c0_g1	other metabolic processes	P
+TRINITY_DN271666_c1_g1	other metabolic processes	P
+TRINITY_DN311461_c0_g1	other metabolic processes	P
+TRINITY_DN259150_c0_g1	other metabolic processes	P
+TRINITY_DN292353_c0_g1	other metabolic processes	P
+TRINITY_DN294773_c0_g2	other metabolic processes	P
+TRINITY_DN294773_c0_g3	other metabolic processes	P
+TRINITY_DN66609_c0_g1	other metabolic processes	P
+TRINITY_DN292353_c0_g1	other metabolic processes	P
+TRINITY_DN52678_c0_g1	other metabolic processes	P
+TRINITY_DN311493_c0_g1	transport	P
+TRINITY_DN54630_c0_g1	transport	P
+TRINITY_DN54630_c0_g1	transport	P
+TRINITY_DN312701_c0_g2	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN294657_c0_g1	transport	P
+TRINITY_DN294657_c0_g1	transport	P
+TRINITY_DN312737_c2_g2	transport	P
+TRINITY_DN255273_c0_g1	other metabolic processes	P
+TRINITY_DN255903_c0_g1	stress response	P
+TRINITY_DN296759_c4_g1	other biological processes	P
+TRINITY_DN311731_c0_g1	other biological processes	P
+TRINITY_DN449830_c0_g1	other biological processes	P
+TRINITY_DN294657_c0_g1	cell organization and biogenesis	P
+TRINITY_DN298834_c0_g6	other biological processes	P
+TRINITY_DN311731_c0_g1	cell cycle and proliferation	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN255903_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255903_c0_g1	cell organization and biogenesis	P
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255273_c0_g1	cell organization and biogenesis	P
+TRINITY_DN251134_c1_g1	signal transduction	P
+TRINITY_DN312737_c2_g2	signal transduction	P
+TRINITY_DN312093_c0_g3	signal transduction	P
+TRINITY_DN317297_c1_g3	signal transduction	P
+TRINITY_DN311493_c0_g1	cell-cell signaling	P
+TRINITY_DN312002_c0_g1	developmental processes	P
+TRINITY_DN276416_c0_g1	other biological processes	P
+TRINITY_DN277082_c0_g1	other biological processes	P
+TRINITY_DN276416_c0_g1	cell organization and biogenesis	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN274805_c0_g2	cell organization and biogenesis	P
+TRINITY_DN274805_c0_g2	developmental processes	P
+TRINITY_DN292353_c0_g1	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN311731_c0_g1	cytoskeletal activity	F
+TRINITY_DN293386_c0_g1	cytoskeletal activity	F
+TRINITY_DN311418_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN311716_c0_g2	other molecular function	F
+TRINITY_DN278968_c0_g1	other molecular function	F
+TRINITY_DN277371_c0_g1	other metabolic processes	P
+TRINITY_DN317297_c1_g3	other metabolic processes	P
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN293894_c0_g2	other molecular function	F
+TRINITY_DN227396_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN271642_c0_g1	other molecular function	F
+TRINITY_DN278382_c0_g1	other molecular function	F
+TRINITY_DN294754_c0_g1	other molecular function	F
+TRINITY_DN295087_c0_g1	other molecular function	F
+TRINITY_DN311753_c2_g6	other molecular function	F
+TRINITY_DN314271_c1_g1	other molecular function	F
+TRINITY_DN314627_c5_g1	other molecular function	F
+TRINITY_DN316936_c6_g6	other molecular function	F
+TRINITY_DN317247_c5_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN251134_c1_g1	transporter activity	F
+TRINITY_DN311493_c0_g1	developmental processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN278968_c0_g1	other molecular function	F
+TRINITY_DN271666_c1_g1	other molecular function	F
+TRINITY_DN292353_c0_g1	other molecular function	F
+TRINITY_DN292353_c0_g1	developmental processes	P
+TRINITY_DN449830_c0_g1	cytoskeletal activity	F
+TRINITY_DN296373_c0_g2	nucleus	C
+TRINITY_DN2119_c0_g1	other metabolic processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN295214_c0_g1	stress response	P
+TRINITY_DN295214_c0_g2	stress response	P
+TRINITY_DN312005_c1_g1	other cellular component	C
+TRINITY_DN314271_c0_g1	other cellular component	C
+TRINITY_DN276416_c0_g1	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN295214_c0_g1	other biological processes	P
+TRINITY_DN295214_c0_g2	other biological processes	P
+TRINITY_DN295214_c0_g1	stress response	P
+TRINITY_DN295214_c0_g2	stress response	P
+TRINITY_DN311731_c0_g1	developmental processes	P
+TRINITY_DN312093_c0_g3	signal transduction	P
+TRINITY_DN251191_c0_g2	other molecular function	F
+TRINITY_DN226644_c0_g1	other cellular component	C
+TRINITY_DN312701_c0_g2	other cytoplasmic organelle	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN311418_c0_g1	other biological processes	P
+TRINITY_DN312726_c1_g4	other biological processes	P
+TRINITY_DN255273_c0_g1	other metabolic processes	P
+TRINITY_DN312737_c2_g2	other metabolic processes	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN312737_c2_g2	cell organization and biogenesis	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN255273_c0_g1	signal transduction	P
+TRINITY_DN278968_c0_g1	other metabolic processes	P
+TRINITY_DN227396_c0_g1	DNA metabolism	P
+TRINITY_DN292370_c1_g7	DNA metabolism	P
+TRINITY_DN294779_c1_g3	DNA metabolism	P
+TRINITY_DN296218_c0_g2	DNA metabolism	P
+TRINITY_DN298167_c1_g1	DNA metabolism	P
+TRINITY_DN310763_c1_g1	DNA metabolism	P
+TRINITY_DN310763_c3_g1	DNA metabolism	P
+TRINITY_DN311486_c4_g1	DNA metabolism	P
+TRINITY_DN311753_c2_g6	DNA metabolism	P
+TRINITY_DN314232_c4_g4	DNA metabolism	P
+TRINITY_DN314258_c2_g2	DNA metabolism	P
+TRINITY_DN314271_c1_g1	DNA metabolism	P
+TRINITY_DN314627_c5_g1	DNA metabolism	P
+TRINITY_DN314629_c1_g3	DNA metabolism	P
+TRINITY_DN314888_c2_g4	DNA metabolism	P
+TRINITY_DN316237_c1_g2	DNA metabolism	P
+TRINITY_DN316936_c6_g6	DNA metabolism	P
+TRINITY_DN317247_c5_g1	DNA metabolism	P
+TRINITY_DN312726_c1_g4	transporter activity	F
+TRINITY_DN54630_c0_g1	transporter activity	F
+TRINITY_DN312726_c1_g4	transporter activity	F
+TRINITY_DN277082_c0_g1	cytoskeleton	C
+TRINITY_DN255903_c0_g1	cytoskeletal activity	F
+TRINITY_DN312726_c1_g4	transport	P
+TRINITY_DN311493_c0_g1	transport	P
+TRINITY_DN173970_c0_g1	other membranes	C
+TRINITY_DN277082_c0_g1	other membranes	C
+TRINITY_DN292324_c0_g1	other membranes	C
+TRINITY_DN292353_c0_g1	other membranes	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN2119_c0_g1	other membranes	C
+TRINITY_DN22073_c0_g1	other membranes	C
+TRINITY_DN54630_c0_g1	other membranes	C
+TRINITY_DN66609_c0_g1	other membranes	C
+TRINITY_DN292353_c0_g1	other membranes	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN310761_c3_g1	other membranes	C
+TRINITY_DN310761_c3_g3	other membranes	C
+TRINITY_DN311716_c0_g2	other membranes	C
+TRINITY_DN312006_c1_g5	other membranes	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN312701_c0_g3	other membranes	C
+TRINITY_DN317297_c1_g3	other membranes	C
+TRINITY_DN317297_c2_g1	signal transduction	P
+TRINITY_DN66609_c0_g1	other metabolic processes	P
+TRINITY_DN312737_c2_g2	transport	P
+TRINITY_DN251134_c0_g1	transport	P
+TRINITY_DN311489_c3_g5	other cellular component	C
+TRINITY_DN311493_c0_g1	other membranes	C
+TRINITY_DN311493_c0_g1	plasma membrane	C
+TRINITY_DN277082_c0_g1	other membranes	C
+TRINITY_DN277082_c0_g1	plasma membrane	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN312726_c1_g4	plasma membrane	C
+TRINITY_DN255273_c0_g1	other metabolic processes	P
+TRINITY_DN294773_c0_g2	other molecular function	F
+TRINITY_DN294773_c0_g3	other molecular function	F
+TRINITY_DN271642_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	cell organization and biogenesis	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN312726_c1_g4	other molecular function	F
+TRINITY_DN256449_c0_g1	nucleus	C
+TRINITY_DN278965_c0_g1	other molecular function	F
+TRINITY_DN311484_c1_g5	other molecular function	F
+TRINITY_DN277371_c0_g1	other molecular function	F
+TRINITY_DN295219_c1_g1	other molecular function	F
+TRINITY_DN66609_c0_g1	other molecular function	F
+TRINITY_DN274712_c0_g1	other molecular function	F
+TRINITY_DN384783_c0_g1	other molecular function	F
+TRINITY_DN259150_c0_g1	other molecular function	F
+TRINITY_DN66609_c0_g1	other molecular function	F
+TRINITY_DN276416_c0_g1	other molecular function	F
+TRINITY_DN277371_c0_g1	other molecular function	F
+TRINITY_DN274840_c0_g1	other molecular function	F
+TRINITY_DN311461_c0_g1	other metabolic processes	P
+TRINITY_DN311716_c0_g2	nucleus	C
+TRINITY_DN293386_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN296708_c0_g1	protein metabolism	P
+TRINITY_DN276416_c0_g1	protein metabolism	P
+TRINITY_DN294773_c0_g2	protein metabolism	P
+TRINITY_DN294773_c0_g3	protein metabolism	P
+TRINITY_DN278965_c0_g1	protein metabolism	P
+TRINITY_DN311461_c0_g1	other molecular function	F
+TRINITY_DN255903_c0_g1	enzyme regulator activity	F
+TRINITY_DN251134_c1_g1	other biological processes	P
+TRINITY_DN292324_c0_g1	other metabolic processes	P
+TRINITY_DN311716_c0_g1	other metabolic processes	P
+TRINITY_DN314831_c1_g5	other molecular function	F
+TRINITY_DN278906_c0_g1	other metabolic processes	P
+TRINITY_DN293386_c0_g1	other molecular function	F
+TRINITY_DN294657_c0_g1	other molecular function	F
+TRINITY_DN311493_c0_g1	cell organization and biogenesis	P
+TRINITY_DN312005_c1_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	developmental processes	P
+TRINITY_DN255273_c0_g1	developmental processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN312002_c0_g1	cell organization and biogenesis	P
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN277082_c0_g1	other molecular function	F
+TRINITY_DN52678_c0_g1	other molecular function	F
+TRINITY_DN278906_c0_g1	other molecular function	F
+TRINITY_DN298834_c0_g6	ER/Golgi	C
+TRINITY_DN298834_c0_g6	other membranes	C
+TRINITY_DN293386_c0_g1	cell organization and biogenesis	P
+TRINITY_DN293386_c0_g1	developmental processes	P
+TRINITY_DN449830_c0_g1	cytoskeleton	C
+TRINITY_DN312002_c0_g1	enzyme regulator activity	F
+TRINITY_DN251134_c1_g1	other biological processes	P
+TRINITY_DN276416_c0_g1	other biological processes	P
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN278906_c0_g1	other molecular function	F
+TRINITY_DN251134_c1_g1	other biological processes	P
+TRINITY_DN278382_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN316234_c0_g1	other molecular function	F
+TRINITY_DN295224_c1_g1	developmental processes	P
+TRINITY_DN295224_c1_g1	stress response	P
+TRINITY_DN256449_c0_g1	nucleic acid binding activity	F
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN317297_c1_g3	other membranes	C
+TRINITY_DN294754_c0_g1	RNA metabolism	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN294754_c0_g1	RNA metabolism	P
+TRINITY_DN311716_c0_g2	cell organization and biogenesis	P
+TRINITY_DN311716_c0_g2	protein metabolism	P
+TRINITY_DN251191_c0_g1	RNA metabolism	P
+TRINITY_DN251191_c0_g2	RNA metabolism	P
+TRINITY_DN277371_c0_g1	other molecular function	F
+TRINITY_DN294754_c0_g1	nucleus	C
+TRINITY_DN278965_c0_g1	other molecular function	F
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN278965_c0_g1	other molecular function	F
+TRINITY_DN294779_c0_g2	other molecular function	F
+TRINITY_DN255273_c0_g1	developmental processes	P
+TRINITY_DN293386_c0_g1	other cellular component	C
+TRINITY_DN312701_c0_g2	other cytoplasmic organelle	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN312726_c1_g4	other cytoplasmic organelle	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN312701_c0_g2	other cytoplasmic organelle	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN317297_c1_g3	nucleus	C
+TRINITY_DN317297_c1_g3	other membranes	C
+TRINITY_DN227396_c0_g1	other biological processes	P
+TRINITY_DN317297_c1_g3	transport	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN312002_c0_g1	other biological processes	P
+TRINITY_DN312701_c0_g2	transport	P
+TRINITY_DN312701_c0_g2	ER/Golgi	C
+TRINITY_DN312701_c0_g2	other membranes	C
+TRINITY_DN299755_c1_g3	signal transduction	P
+TRINITY_DN299755_c1_g3	stress response	P
+TRINITY_DN293386_c0_g1	cytoskeleton	C
+TRINITY_DN255273_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	plasma membrane	C
+TRINITY_DN294657_c0_g1	ER/Golgi	C
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN312726_c1_g4	transporter activity	F
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN312737_c2_g2	other biological processes	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN311716_c0_g2	other molecular function	F
+TRINITY_DN278906_c0_g1	other metabolic processes	P
+TRINITY_DN311716_c0_g1	other metabolic processes	P
+TRINITY_DN255903_c0_g1	cell organization and biogenesis	P
+TRINITY_DN278968_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	stress response	P
+TRINITY_DN312005_c1_g1	stress response	P
+TRINITY_DN312737_c2_g2	other biological processes	P
+TRINITY_DN251134_c1_g1	transport	P
+TRINITY_DN226644_c0_g1	stress response	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN295224_c1_g1	signal transduction	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN311716_c0_g2	cell organization and biogenesis	P
+TRINITY_DN311716_c0_g2	protein metabolism	P
+TRINITY_DN251134_c0_g1	nucleus	C
+TRINITY_DN311493_c0_g1	developmental processes	P
+TRINITY_DN311493_c0_g1	developmental processes	P
+TRINITY_DN293386_c0_g1	other biological processes	P
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	other metabolic processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN226644_c0_g1	other cellular component	C
+TRINITY_DN294657_c0_g1	other cellular component	C
+TRINITY_DN295214_c0_g1	stress response	P
+TRINITY_DN295214_c0_g2	stress response	P
+TRINITY_DN311716_c0_g2	other metabolic processes	P
+TRINITY_DN311716_c0_g2	other metabolic processes	P
+TRINITY_DN294657_c0_g1	other membranes	C
+TRINITY_DN312002_c0_g1	other biological processes	P
+TRINITY_DN317297_c1_g3	other biological processes	P
+TRINITY_DN233011_c0_g1	cytoskeleton	C
+TRINITY_DN277328_c0_g1	cytoskeleton	C
+TRINITY_DN299789_c0_g2	cytoskeleton	C
+TRINITY_DN312005_c1_g1	other metabolic processes	P
+TRINITY_DN312005_c1_g1	stress response	P
+TRINITY_DN251134_c0_g1	other molecular function	F
+TRINITY_DN312737_c2_g2	other molecular function	F
+TRINITY_DN251134_c0_g1	other molecular function	F
+TRINITY_DN294773_c0_g2	other molecular function	F
+TRINITY_DN294773_c0_g3	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN312726_c1_g4	transport	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	death	P
+TRINITY_DN312737_c2_g2	death	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN314831_c1_g5	other molecular function	F
+TRINITY_DN255273_c0_g1	protein metabolism	P
+TRINITY_DN278382_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN255273_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	plasma membrane	C
+TRINITY_DN255273_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	plasma membrane	C
+TRINITY_DN255273_c0_g1	other membranes	C
+TRINITY_DN255273_c0_g1	plasma membrane	C
+TRINITY_DN292353_c0_g1	other cellular component	C
+TRINITY_DN312701_c0_g2	other cellular component	C
+TRINITY_DN255273_c0_g1	other biological processes	P
+TRINITY_DN278965_c0_g1	other metabolic processes	P
+TRINITY_DN278906_c0_g1	other metabolic processes	P
+TRINITY_DN255273_c0_g1	signal transduction	P
+TRINITY_DN311716_c0_g2	cell cycle and proliferation	P
+TRINITY_DN295214_c0_g1	other molecular function	F
+TRINITY_DN295214_c0_g2	other molecular function	F
+TRINITY_DN294773_c0_g2	protein metabolism	P
+TRINITY_DN294773_c0_g3	protein metabolism	P
+TRINITY_DN255273_c0_g1	other metabolic processes	P
+TRINITY_DN294657_c0_g1	transport	P
+TRINITY_DN255273_c0_g1	stress response	P
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN226644_c0_g1	other biological processes	P
+TRINITY_DN316234_c0_g1	other metabolic processes	P
+TRINITY_DN449830_c0_g1	other molecular function	F
+TRINITY_DN449830_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	other biological processes	P
+TRINITY_DN317297_c1_g3	developmental processes	P
+TRINITY_DN317297_c1_g3	other metabolic processes	P
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255273_c0_g1	developmental processes	P
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN312737_c2_g2	other biological processes	P
+TRINITY_DN255273_c0_g1	RNA metabolism	P
+TRINITY_DN312737_c2_g2	RNA metabolism	P
+TRINITY_DN251134_c1_g1	transport	P
+TRINITY_DN312737_c2_g2	transport	P
+TRINITY_DN298834_c0_g6	other metabolic processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN22073_c0_g1	other molecular function	F
+TRINITY_DN256449_c0_g1	other molecular function	F
+TRINITY_DN274840_c0_g1	other molecular function	F
+TRINITY_DN292353_c0_g1	other molecular function	F
+TRINITY_DN293894_c0_g2	other molecular function	F
+TRINITY_DN294779_c1_g3	other molecular function	F
+TRINITY_DN295269_c0_g2	other molecular function	F
+TRINITY_DN296218_c0_g2	other molecular function	F
+TRINITY_DN296373_c0_g2	other molecular function	F
+TRINITY_DN296708_c0_g1	other molecular function	F
+TRINITY_DN298167_c1_g1	other molecular function	F
+TRINITY_DN299755_c1_g3	other molecular function	F
+TRINITY_DN310763_c1_g1	other molecular function	F
+TRINITY_DN310763_c3_g1	other molecular function	F
+TRINITY_DN311486_c4_g1	other molecular function	F
+TRINITY_DN311489_c3_g5	other molecular function	F
+TRINITY_DN312002_c0_g1	other molecular function	F
+TRINITY_DN312005_c1_g1	other molecular function	F
+TRINITY_DN312726_c1_g4	other molecular function	F
+TRINITY_DN314232_c4_g4	other molecular function	F
+TRINITY_DN314258_c2_g2	other molecular function	F
+TRINITY_DN314271_c0_g1	other molecular function	F
+TRINITY_DN314629_c1_g3	other molecular function	F
+TRINITY_DN314888_c2_g4	other molecular function	F
+TRINITY_DN316234_c0_g1	other molecular function	F
+TRINITY_DN316237_c1_g2	other molecular function	F
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	signal transduction	P
+TRINITY_DN251134_c0_g1	nucleus	C
+TRINITY_DN255273_c0_g1	other cellular component	C
+TRINITY_DN277082_c0_g1	other cellular component	C
+TRINITY_DN298834_c0_g6	other molecular function	F
+TRINITY_DN312737_c2_g2	transport	P
+TRINITY_DN312737_c2_g2	other biological processes	P
+TRINITY_DN311493_c0_g1	other biological processes	P
+TRINITY_DN311731_c0_g1	cytoskeletal activity	F
+TRINITY_DN295214_c0_g1	other molecular function	F
+TRINITY_DN295214_c0_g2	other molecular function	F
+TRINITY_DN277082_c0_g1	other molecular function	F
+TRINITY_DN311493_c0_g1	cell organization and biogenesis	P
+TRINITY_DN311493_c0_g1	developmental processes	P
+TRINITY_DN311731_c0_g1	cell cycle and proliferation	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN295214_c0_g1	cell organization and biogenesis	P
+TRINITY_DN295214_c0_g2	cell organization and biogenesis	P
+TRINITY_DN312726_c1_g4	cell organization and biogenesis	P
+TRINITY_DN311731_c0_g1	cell cycle and proliferation	P
+TRINITY_DN311731_c0_g1	cell organization and biogenesis	P
+TRINITY_DN255273_c0_g1	other biological processes	P
+TRINITY_DN311731_c0_g1	other biological processes	P
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN293386_c0_g1	cell organization and biogenesis	P
+TRINITY_DN251134_c0_g1	cell organization and biogenesis	P
+TRINITY_DN251134_c0_g1	protein metabolism	P
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255273_c0_g1	other biological processes	P
+TRINITY_DN255273_c0_g1	other biological processes	P
+TRINITY_DN312726_c1_g4	transport	P
+TRINITY_DN449830_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	cell organization and biogenesis	P
+TRINITY_DN312726_c1_g4	other cytoplasmic organelle	C
+TRINITY_DN312726_c1_g4	other membranes	C
+TRINITY_DN292324_c0_g1	other biological processes	P
+TRINITY_DN278965_c0_g1	other metabolic processes	P
+TRINITY_DN276416_c0_g1	developmental processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN312737_c2_g2	cell organization and biogenesis	P
+TRINITY_DN293386_c0_g1	other biological processes	P
+TRINITY_DN293386_c0_g1	cell organization and biogenesis	P
+TRINITY_DN293386_c0_g1	developmental processes	P
+TRINITY_DN311493_c0_g1	developmental processes	P
+TRINITY_DN312737_c2_g2	developmental processes	P
+TRINITY_DN2119_c0_g1	cell organization and biogenesis	P
+TRINITY_DN277202_c0_g1	non-structural extracellular	C
+TRINITY_DN312737_c2_g2	other biological processes	P
+TRINITY_DN255273_c0_g1	other molecular function	F
+TRINITY_DN255273_c0_g1	cell cycle and proliferation	P
+TRINITY_DN255273_c0_g1	developmental processes	P
+TRINITY_DN310761_c3_g1	other membranes	C
+TRINITY_DN310761_c3_g3	other membranes	C
+TRINITY_DN251134_c1_g1	transport	P
+TRINITY_DN278382_c0_g1	protein metabolism	P
+TRINITY_DN294657_c0_g1	other membranes	None
+TRINITY_DN294657_c0_g1	plasma membrane	None
+TRINITY_DN312726_c1_g4	transport	None
