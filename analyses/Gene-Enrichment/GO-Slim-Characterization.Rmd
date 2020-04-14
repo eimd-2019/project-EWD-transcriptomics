@@ -1,0 +1,13 @@
+---
+title: "GO Slim Characterization"
+author: "Yaamini Venkataraman"
+date: "4/13/2020"
+output: html_document
+---
+
+In this R Markdown document, I will characterize GO Slim terms.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
