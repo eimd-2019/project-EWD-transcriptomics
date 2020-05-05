@@ -77,7 +77,7 @@ The table of significance measures needs to be a CSV file with two columns: gene
 
 ```{r}
 zosteraDEG <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt", header = TRUE) #Import all genes used in edgeR output
-head(zosteraDEG) #Confirm import
+tail(zosteraDEG) #Confirm import
 ```
 
 ```{r}
@@ -141,12 +141,36 @@ write.csv(zosteraSigMeasuresCorrected, "2019-07-11-Zostera-Table-of-Significance
 head 2019-07-11-Zostera-Table-of-Significance-Measures.csv #Check that row name column was not included in output
 ```
 
+#### Modify table of significance measures for Fisher test
+
+```{r}
+zosteraSigMeasuresFisher <- data.frame("gene" = row.names(zosteraDEG),
+                                       "FDR" = zosteraDEG$FDR,
+                                       "Fisher" = rep(0, times = length(zosteraDEG$FDR))) #Subset row names as gene ID and FDR. Also include a blank column for modified Fisher test
+tail(zosteraSigMeasuresFisher) #Confirm import
+```
+
+```{r}
+zosteraSigMeasuresFisher$Fisher[which(zosteraSigMeasuresFisher$FDR < 0.05)] <- rep("1", length(which(zosteraSigMeasuresFisher$FDR < 0.05))) #For anything where FDR < 0.05, replace 0 with 1
+zosteraSigMeasuresFisher$Fisher <- as.numeric(zosteraSigMeasuresFisher$Fisher) #Ensure column is numeric
+zosteraSigMeasuresFisher <- zosteraSigMeasuresFisher[,-2] #Remove FDR column
+tail(zosteraSigMeasuresFisher) #Confirm changes
+```
+
+```{r}
+write.csv(zosteraSigMeasuresFisher, "2019-07-11-Zostera-Table-of-Significance-Measures-Fisher.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+```{bash}
+head 2019-07-11-Zostera-Table-of-Significance-Measures-Fisher.csv #Check that row name column was not included in output
+```
+
 ### Run GO-MWU
 
 #### Biological processes
 
 ```{r}
-input="2019-07-11-Zostera-Table-of-Significance-Measures-Uncorrected.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="2019-07-11-Zostera-Table-of-Significance-Measures-Fisher.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goAnnotations="2019-07-11-Zostera-GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
 goDivision="BP" # either MF, or BP, or CC

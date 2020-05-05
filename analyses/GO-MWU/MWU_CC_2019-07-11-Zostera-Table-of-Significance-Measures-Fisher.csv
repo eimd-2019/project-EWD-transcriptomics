@@ -1,0 +1,52 @@
+"delta.rank" "pval" "level" "nseqs" "term" "name" "p.adj"
+0 0.867395050486685 3 11 "GO:0000151" "ubiquitin ligase complex" 1
+0 1 4 11 "GO:0000159;GO:0008287;GO:1903293" "protein serine/threonine phosphatase complex" 1
+0 0.638131943858408 3 19 "GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0044455;GO:0098798" "proton-transporting two-sector ATPase complex, catalytic domain" 1
+0 1 2 5 "GO:0000322" "storage vacuole" 1
+0 1 5 7 "GO:0000323" "lytic vacuole" 1
+0 0.722227276255543 2 7 "GO:0000347" "THO complex" 1
+0 1 2 14 "GO:0000502;GO:1905369" "proteasome complex" 1
+0 0.394885682617295 2 8 "GO:0000775;GO:0098687" "chromosomal region" 1
+0 0.262214285564373 2 6 "GO:0000785" "chromatin" 1
+0 1 2 13 "GO:0000786;GO:0032993;GO:0044815" "protein-DNA complex" 1
+0 0.394885682617295 4 8 "GO:0000932;GO:0036464;GO:0035770" "cytoplasmic ribonucleoprotein granule" 1
+0 0.873250827710264 2 20 "GO:0000943" "retrotransposon nucleocapsid" 1
+0 0.194530677225008 1 24 "GO:0005576" "extracellular region" 1
+0 1 2 5 "GO:0005654" "nucleoplasm" 1
+0 0.570316752188014 2 11 "GO:0005730" "nucleolus" 1
+0 0.430316153466752 3 49 "GO:0005737" "cytoplasm" 1
+0 0.594450635406291 3 43 "GO:0005739" "mitochondrion" 1
+0 0.0975791813045143 2 20 "GO:0005743;GO:0019866;GO:0031966" "organelle inner membrane" 1
+0 0.840387932459533 4 10 "GO:0005758;GO:0031970;GO:0070013;GO:0043233;GO:0031974" "intracellular organelle lumen" 1
+0 0.706422998021454 5 14 "GO:0005768;GO:0031410;GO:0097708;GO:0031982" "cytoplasmic vesicle" 1
+0 0.816224473620533 4 25 "GO:0005773" "vacuole" 1
+0 0.0456827856444788 3 30 "GO:0005774;GO:0044437" "vacuolar part" 1
+0 0.674373617321767 3 20 "GO:0005783" "endoplasmic reticulum" 1
+0 0.706422998021454 2 14 "GO:0005789" "endoplasmic reticulum membrane" 1
+0 1 3 12 "GO:0005794" "Golgi apparatus" 1
+0 0.381057443108694 2 30 "GO:0005829" "cytosol" 1
+0 0.329417363889645 2 7 "GO:0005840" "ribosome" 1
+0 0.768550645421059 2 37 "GO:0005886" "plasma membrane" 1
+0 0.873250827710264 4 20 "GO:0009535;GO:0055035;GO:0042651;GO:0034357;GO:0044436" "thylakoid part" 1
+0 0.0370311720495494 4 29 "GO:0009536;GO:0009507" "plastid" 1
+0 0.807946455317161 4 9 "GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867" "plastid membrane" 1
+0 0.890654160008053 3 21 "GO:0016021;GO:0031224" "integral component of membrane" 1
+0 0.768990361061007 3 8 "GO:0017117;GO:0033202;GO:1904949" "DNA helicase complex" 1
+0 0.601137827920608 3 37 "GO:0043232;GO:0043228" "intracellular non-membrane-bounded organelle" 1
+0 0.738682715936129 1 75 "GO:0044425" "membrane part" 1
+0 0.76607079162846 3 30 "GO:0044427" "chromosomal part" 1
+0 0.353576897863126 3 69 "GO:0044428" "nuclear part" 1
+0 0.730102864863786 3 42 "GO:0044429" "mitochondrial part" 1
+0 0.262214285564373 3 6 "GO:0044430" "cytoskeletal part" 1
+0 0.707919170881272 3 21 "GO:0044432" "endoplasmic reticulum part" 1
+0 0.856400965190031 4 27 "GO:0044434;GO:0044435" "chloroplast part" 1
+0 1 2 5 "GO:0044451" "nucleoplasm part" 1
+0 0.19516896094409 2 5 "GO:0044454" "nuclear chromosome part" 1
+0 0.768990361061007 2 8 "GO:0044459" "plasma membrane part" 1
+0 0.571871872474871 2 36 "GO:0098796" "membrane protein complex" 1
+0 0.30113633216282 2 33 "GO:0098805" "whole membrane" 1
+0 0.666111574488986 4 6 "GO:0098852" "lytic vacuole membrane" 1
+0 0.987749203538968 2 62 "GO:1902494" "catalytic complex" 1
+0 1 3 19 "GO:1905368" "peptidase complex" 1
+0 0.473100295964733 3 21 "GO:1990234" "transferase complex" 1
+0 0.164320420258995 2 18 "GO:1990904" "ribonucleoprotein complex" 1
