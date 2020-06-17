@@ -5,9 +5,153 @@ date: "4/13/2020"
 output: html_document
 ---
 
-In this R Markdown document, I will characterize GO Slim terms.
+In this R Markdown document, I will characterize GO Slim terms associated with all detected genes (gene background) and differentially expressed genes (DEG).
+
+# Set up R Markdown file
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Install packages
+
+```{r}
+#install.packages("dichromat")
+require(dichromat)
+```
+
+# Obtain session information
+
+```{r}
+sessionInfo() #Obtain session information
+```
+
+# *Z. marina*
+
+## Import data
+
+```{r}
+zosteraBGGOSlim <- read.table("Zostera_full_blastquery-GOslim-BP.sorted.unique.noOther", header = FALSE, sep = "\t") #GO Slim terms for gene background
+colnames(zosteraBGGOSlim) <- c("geneID", "GOSlim") #Add column names
+head(zosteraBGGOSlim)
+```
+
+```{r}
+zosteraDEGGOSlim <- read.table("Zostera_blastquery-GOslim-BP.sorted.unique.noOther", header = FALSE, sep = "\t") #GO Slim terms for gene background
+colnames(zosteraDEGGOSlim) <- c("geneID", "GOSlim") #Add column names
+head(zosteraDEGGOSlim)
+```
+
+## Format data
+
+```{r}
+zosteraBGGOSlimCounts <- as.data.frame(table(zosteraBGGOSlim$GOSlim)) #Count the frequency of each GO Slim term
+colnames(zosteraBGGOSlimCounts) <- c("BGGOSlim", "frequency") #Rename columns
+head(zosteraBGGOSlimCounts) #Confirm counts
+```
+
+```{r}
+zosteraBGGOSlimCounts$percentage <- (zosteraBGGOSlimCounts$frequency/sum(zosteraBGGOSlimCounts$frequency)*100) #Create a new column with percentages of GOSlim terms instead of raw counts
+head(zosteraBGGOSlimCounts) #Confirm column creation
+max(zosteraBGGOSlimCounts$percentage) #Obtain the max percentage to inform plot axes
+```
+
+```{r}
+zosteraBGGOSlimCounts <- zosteraBGGOSlimCounts[c(4, 1, 5, 11, 13,
+                                                 2, 6, 3,
+                                                 12,
+                                                 7, 10, 9, 8),] #Reorganize rows based on broader functions. Rows are general activity, development, stress response, and metabolic processes
+head(zosteraBGGOSlimCounts) #Confirm organization
+```
+
+```{r}
+zosteraBGGOSlimCounts$GOSlim <- c("Cell-Cell Signaling", "Cell Adhesion", "Death", "Signal Transduction", "Transport",
+                                   "Cell Cycle and Proliferation", "Developmental Processes", "Cell Organization and Biogenesis",
+                                   "Stress Response",
+                                   "DNA Metabolism", "RNA Metabolism", "Protein Metabolism", "Other Metabolic Processes") #Capitalize labels
+head(zosteraBGGOSlimCounts) #Confirm capitalization
+```
+
+```{r}
+zosteraDEGGOSlimCounts <- as.data.frame(table(zosteraDEGGOSlim$GOSlim)) #Count the frequency of each GO Slim term
+colnames(zosteraDEGGOSlimCounts) <- c("DEGGOSlim", "frequency") #Rename columns
+head(zosteraDEGGOSlimCounts) #Confirm counts
+```
+
+```{r}
+zosteraDEGGOSlimCounts$percentage <- (zosteraDEGGOSlimCounts$frequency/sum(zosteraDEGGOSlimCounts$frequency)*100) #Create a new column with percentages of GOSlim terms instead of raw counts
+head(zosteraDEGGOSlimCounts) #Confirm column creation
+max(zosteraDEGGOSlimCounts$percentage) #Obtain the max percentage to inform plot axes
+```
+
+```{r}
+zosteraDEGGOSlimCounts <- zosteraDEGGOSlimCounts[c(4, 1, 5, 11, 13,
+                                                 2, 6, 3,
+                                                 12,
+                                                 7, 10, 9, 8),] #Reorganize rows based on broader functions. Rows are general activity, development, stress response, and metabolic processes
+head(zosteraDEGGOSlimCounts) #Confirm organization
+```
+
+```{r}
+zosteraDEGGOSlimCounts$GOSlim <- c("Cell-Cell Signaling", "Cell Adhesion", "Death", "Signal Transduction", "Transport",
+                                   "Cell Cycle and Proliferation", "Developmental Processes", "Cell Organization and Biogenesis",
+                                   "Stress Response",
+                                   "DNA Metabolism", "RNA Metabolism", "Protein Metabolism", "Other Metabolic Processes") #Capitalize labels
+head(zosteraDEGGOSlimCounts) #Confirm capitalization
+```
+
+## Create color palette
+
+```{r}
+RColorBrewer::display.brewer.all() #Show all RColorBrewer palettes.
+plotColors <- rev(RColorBrewer::brewer.pal(5, "YlGn")) #Create a color palette for the barplots. Use 5 yellow-green shades from RColorBrewer. Reverse the order so the darkest shade is used first.
+barplot(zosteraBGGOSlimCounts$percentage,
+        col = plotColors) #See what plot looks like with new scheme
+barplot(zosteraBGGOSlimCounts$percentage,
+        col = dichromat(plotColors)) #Check that the plot colors will be easy to interpret for those with color blindess
+```
+
+## Create figure
+
+```{r}
+pdf("zostera-BP-GOSlim-BG-Versus-DEG.pdf", width = 11, height = 8.5) #Save as a pdf
+
+par(mfrow = c(1, 2), oma = c(5, 20, 0, 3), mar = c(0, 0, 0, 0)) #Set up parameters for multipanel plot
+
+barsGOSlimBG <- barplot(-1*(zosteraBGGOSlimCounts$percentage),
+                      horiz = TRUE,
+                      axes = FALSE,
+                      xlim = c(-20,0),
+                      col = plotColors[4]) #Create a barplot that is horizontal (horiz = TRUE). Use axes = FALSE to remove all axes. Set xlim based on maximum percentage value. Colors correspond to broader GOSlim groupings. Save plot as a new object.
+
+axis(side = 2, at = barsGOSlimBG, labels = zosteraBGGOSlimCounts$GOSlim, tick = FALSE, las = 2, col = "grey80", cex.axis = 1.5) #Add y-axis with GOSlim terms from BPGOSlimCounts. Place labels at specific barplot values from barsGOSlim. Remove tick marks (tick) and change orientation of labels (las)
+axis(side = 1, at = seq(from = -20, to = 0, by = 5), labels = c(seq(from = 20, to = 0, by = -5)), cex = 1.2, col = "grey80") #Add x-axis
+mtext(side = 1, "% BG", line = 3, cex = 1.5) #Add x-axis label
+
+barsGOSlimDEG <- barplot(zosteraDEGGOSlimCounts$percentage,
+                         horiz = TRUE,
+                         axes = FALSE,
+                         xlim = c(0,20),
+                         col = plotColors[1]) #Create a barplot that is horizontal (horiz = TRUE). Use axes = FALSE to remove all axes. Set xlim based on maximum percentage value. Colors correspond to broader GOSlim groupings. Save plot as a new object.
+axis(side = 1, at = seq(from = 0, to = 20, by = 5), cex = 1.2, col = "grey80") #Add x-axis
+mtext(side = 1, "% DEG", line = 3, cex = 1.5) #Add x-axis label
+
+#dev.off()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
