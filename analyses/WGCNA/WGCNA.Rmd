@@ -243,36 +243,106 @@ labeledHeatmap(Matrix = moduleTraitCor,
                main = paste("Module-Treatment relationships")) # Display the correlation values from textMatrix within a heatmap plot. Text is the correlation value along with p-value. Red colors represent positive correlations (1) and blue colors represent negative correlations (-1)
 ```
 
-## Obtain gene list for each module
+## Gene significance and module membership
+
+Module membership information is needed for downstream GO-MWU enrichment analysis. Gene significance may guide discussion writing.
 
 ```{r}
-probes <-  names(zosteraExpr0) #Save gene names as probes
-namesModules <- substr(names(MEs), 3, nchar(names(MEs))) #Save module names without "ME" at the beginning of each entry. I could subset modules that have significant p-values, but I would need metadata for all modules anyways
+exposed <- as.data.frame(zosteraTraits$exposed) #Define "exposed" using the information from the trait matrix
+names(exposed) <- "exposed" #Modify names
+modNames <- substr(names(MEs), 3, nchar(names(MEs))) #Save module names without "ME" at the beginning of each entry.
+```
+
+### Gene significance
+
+```{r}
+geneTraitSignificance <- as.data.frame(cor(zosteraExpr0, exposed, use = "p")) #Obtain gene significance statistics
+names(geneTraitSignificance) <- paste("GS.", names(exposed), sep = "") #Add column names
+head(geneTraitSignificance) #Confirm formatting
 ```
 
 ```{r}
+GSPvalue <- as.data.frame(corPvalueStudent(as.matrix(geneTraitSignificance), nSamples)) #Obtain p-values for each gene significance statistic
+names(GSPvalue) <- paste("p.GS.", names(exposed), sep = "") #Add column names
+head(GSPvalue) #Confirm formatting
+```
+
+### Module membership
+
+```{r}
+geneModuleMembership <- as.data.frame(cor(zosteraExpr0, MEs, use = "p")) #Obtain gene module membership statistics
+names(geneModuleMembership) <- paste("MM", modNames, sep = "") #Add column names
+head(geneModuleMembership) #Confirm formatting
+```
+
+```{r}
+MMPvalue <- as.data.frame(corPvalueStudent(as.matrix(geneModuleMembership), nSamples)) #Obtain p-values for each module membership statistic
+names(MMPvalue) <- paste("p.MM", modNames, sep = "") #Add column names
+head(MMPvalue) #Confirm formatting
+```
+
+# Obtain gene lists
+
+## For each module
+
+```{r}
 # Write out the gene lists for each module of interest
-for (module in namesModules) {
+for (module in modNames) {
   modGenes <- (moduleColors == module) # Select module probes
   modLLIDs <- probes[modGenes] # Get their gene IDs
   fileName <- paste("zosteraGeneList-", module, ".txt", sep = "") #Assign filename for each module
-  write.table(as.data.frame(annotLLIDs), file = fileName, sep = "\t",
+  write.table(as.data.frame(modLLIDs), file = fileName, sep = "\t",
               row.names = FALSE, col.names = FALSE) # Write out files
 }
 ```
 
+## Master list with membership and gene significance information
 
+```{r}
+zosteraGeneAnnot <- read.delim("../../data/Zostera-blast-annot-withGeneID-noIsoforms.tab", header = FALSE, sep = "\t") #Import gene annotation information
+zosteraGeneAnnot <- zosteraGeneAnnot[,-c(3,10)] #Remove unecessary columns
+colnames(zosteraGeneAnnot) <- c("geneIDs", "Uniprot", "e-value", "annot", "BPGO", "CCGO", "MFGO", "GOterms", "organism")
+head(zosteraGeneAnnot) #Confirm import and formatting
+```
 
+```{r}
+probes <- names(zosteraExpr0) #Save gene names as probes
+probes2annot <- match(probes, zosteraGeneAnnot$geneIDs) #Match probes with annotations
+sum(is.na(probes2annot)) #Check that no probe does not have an annotation. Should return 0
+```
 
+```{r}
+geneInfo0 <- data.frame("geneID" = probes,
+                        "Uniprot" = zosteraGeneAnnot$Uniprot[probes2annot],
+                        "annot" = zosteraGeneAnnot$annot[probes2annot],
+                        "BPGO" = zosteraGeneAnnot$BPGO[probes2annot],
+                        "CCGO" = zosteraGeneAnnot$CCGO[probes2annot],
+                        "MFGO" = zosteraGeneAnnot$MFGO[probes2annot],
+                        moduleColor = moduleColors,
+                        geneTraitSignificance,
+                        GSPvalue) #Create starter matrix
+head(geneInfo0) #Confirm matrix creation
+```
 
+```{r}
+modOrder <- order(-abs(cor(MEs, exposed, use = "p"))) #Order modules by their significance for Laby exposure
+for (mod in 1:ncol(geneModuleMembership)) {
+  oldNames = names(geneInfo0)
+  geneInfo0 = data.frame(geneInfo0, geneModuleMembership[, modOrder[mod]],
+                         MMPvalue[, modOrder[mod]])
+  names(geneInfo0) = c(oldNames, paste("MM.", modNames[modOrder[mod]], sep=""),
+                       paste("p.MM.", modNames[modOrder[mod]], sep=""))
+} #Add module membership information in the chosen order
+geneOrder <- order(geneInfo0$moduleColor, -abs(geneInfo0$GS.exposed)) #Order genes by module color, then gene trait significance
+geneInfo <- geneInfo0[geneOrder,] #Reorder genes into a final matrix
+geneInfo <- geneInfo[,-1] #Remove gene ID column since it's redundant with row names
+head(geneInfo) #Check formatting
+```
 
+```{r}
+write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table
+```
 
-
-
-
-
-
-
-
-
-
+```{bash}
+head zosteraGeneList-WGCNA-MM-GS-Annot.txt
+```
