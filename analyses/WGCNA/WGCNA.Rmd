@@ -1,0 +1,68 @@
+---
+title: "WGCNA"
+author: "Yaamini Venkataraman"
+date: "7/8/2020"
+output: github_document
+---
+
+# Set up R Markdown file
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Install packages
+
+```{r}
+#install.packages("dichromat")
+install.packages("BiocManager")
+BiocManager::install("WGCNA")
+```
+
+```{r}
+require(dichromat)
+require(WGCNA)
+options(stringsAsFactors = FALSE) #Important setting to include from tutorial
+```
+
+# Obtain session information
+
+```{r}
+sessionInfo() #Obtain session information
+```
+
+# Format data
+
+## Import log CPM data
+
+```{r}
+zosteraAllGenes <- read.delim("../EdgeR/EXP.CON.Zostera.logCPM.txt", header = TRUE, quote = "") #Import data with log CPM information for all expressed genes
+head(zosteraAllGenes) #Confirm import
+```
+
+```{r}
+zosteraExpr0 <- as.data.frame(t(zosteraAllGenes[,-1])) #Transpose dataframe to format for WGCNA package. Do not include the first column of gene IDs
+names(zosteraExpr0) <- zosteraAllGenes$GeneID #Use gene ID as column names
+head(zosteraExpr0) #Confirm formatting
+```
+
+## Check for missing values and outliers
+
+```{r}
+gsg <- goodSamplesGenes(zosteraExpr0, verbose = 3) #Check for genes and samples with too many missing values
+gsg$allOK #TRUE = all genes have passed test, can continue
+```
+ 
+```{r}
+sampleTree <- hclust(dist(zosteraExpr0), method = "average")
+plot(sampleTree) #No obvious outliers, can proceed
+```
+
+# Create clinical trait data matrix
+
+```{r}
+datTraits <- 
+```
+
+
+
