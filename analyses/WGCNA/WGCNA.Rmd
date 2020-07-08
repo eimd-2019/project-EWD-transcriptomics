@@ -5,6 +5,8 @@ date: "7/8/2020"
 output: github_document
 ---
 
+In this script, I will conduct a WGCNA to understand *Z. marina* gene expression patterns. The code is based on [ tutorials from the WGCNA package](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/index.html).
+
 # Set up R Markdown file
 
 ```{r setup, include=FALSE}
@@ -32,6 +34,8 @@ sessionInfo() #Obtain session information
 ```
 
 # Format data
+
+Relevant tutorial: https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-01-dataInput.pdf
 
 ## Import log CPM data
 
@@ -68,6 +72,153 @@ head(zosteraTraits) #Confirm dataframe creation
 ```
 
 ```{r}
+sampleTree2 <- hclust(dist(zosteraExpr0), method = "average") #Create a dendogram to look at sample and trait clustering
+traitColors <- numbers2colors(zosteraTraits, signed = FALSE) #Convert traits to color values
+plotDendroAndColors(sampleTree2, traitColors,
+                    groupLabels = names(zosteraTraits)) #Plot dendogram. S_2A funky
+```
+
+```{r}
 save(zosteraExpr0, zosteraTraits, file = "zostera-WGCNA-dataInput.RData") #Save expression and trait data
 ```
+
+# Network connection and module detection
+
+Relevant tutorial: https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf
+
+## Determine soft-thresholding power
+
+```{r}
+#lnames <- load(file = "zostera-WGCNA-dataInput.RData") #Load data input from previous section, if needed
+```
+
+
+```{r}
+powers <- c(c(1:10), seq(from = 12, to = 20, by = 2)) #Create a set of soft-thresholding powers
+sft <- pickSoftThreshold(zosteraExpr0, powerVector = powers, verbose = 5) #Use the network topology analysis function to evaluate soft-thresolding power values
+```
+
+```{r}
+plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
+     xlab = "Soft Threshold (power)", ylab = "Scale Free Topology Model Fit,signed R^2", type = "n",
+     main = paste("Scale independence")) #Plot scale-free topology fit index as a function of the soft-thresholding power
+text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2], labels = powers, cex = 1, col = "red") #Add sft values
+abline(h=0.90,col="red") #Add line corresponding to a R^2 cutoff of h = 0.90. Lowest power that reaches 0.90 is sft = 14
+```
+
+```{r}
+plot(sft$fitIndices[,1], sft$fitIndices[,5],
+     xlab = "Soft Threshold (power)", ylab = "Mean Connectivity", type = "n",
+     main = paste("Mean connectivity")) #Plot mean connectivity as a function of soft-thresholding power
+text(sft$fitIndices[,1], sft$fitIndices[,5], labels = powers, cex = 1, col = "red") #Add sft values. 14 still looks good
+```
+
+## Co-expression similarity and adjacency
+
+```{r}
+softPower <- 14 #Set soft power based on plots above
+adjacency <- adjacency(zosteraExpr0, power = softPower) #Calculate adjacencies using softPower = 14
+```
+
+## Topological Overlap Matrix (TOM)
+
+```{r}
+TOM <- TOMsimilarity(adjacency) #Minimize noise and spurious associations by transforming adjacency into TOM
+dissTOM <- 1-TOM #Calculate dissimilarity matrix
+```
+
+## Clustering using TOM
+
+```{r}
+geneTree <- hclust(as.dist(dissTOM), method = "average") #Create hierarchical clustering object
+plot(geneTree, xlab = "", sub = "", main = "Gene clustering on TOM-based dissimilarity",
+     labels = FALSE, hang = 0.04) #Plot initial dendogram. Dissimilarity is based on topological overlap
+```
+
+```{r}
+minModuleSize <- 30 #Set the minimum module size (# of genes that need to be in a module). Default from WGCNA tutorial
+dynamicMods <- cutreeDynamic(dendro = geneTree, distM = dissTOM,
+                             deepSplit = 2, pamRespectsDendro = FALSE,
+                             minClusterSize = minModuleSize) #Cut the branches of the dendogram to identify WGCNA modules
+table(dynamicMods) #Look at the table of modules. There are 18 modules, and 272 genes that do not fit into a module (label 0). Modules have between 42 and 557 genes
+```
+
+```{r}
+dynamicColors <- labels2colors(dynamicMods) #Convert module numbers into colors
+table(dynamicColors) #Look at the list of colors
+```
+
+```{r}
+plotDendroAndColors(geneTree, dynamicColors, "Dynamic Tree Cut",
+                    dendroLabels = FALSE, hang = 0.03,
+                    addGuide = TRUE, guideHang = 0.05,
+                    main = "Gene dendrogram and module colors") #Plot dendogram with module colors 
+```
+
+## Merge modules with similar expression profiles
+
+Merging allows us to combine modules with genes that are highly co-expressed. To do this, we can create eigengenes and cluster them.
+
+```{r}
+MEList = moduleEigengenes(zosteraExpr0, colors = dynamicColors) #Calculate eigengenes
+MEs <- MEList$eigengenes #Save eigengenes as a new object
+MEDiss <- 1-cor(MEs) #Calculate dissimilarity of eigengenes
+METree <- hclust(as.dist(MEDiss), method = "average") #Create cluster object
+```
+
+```{r}
+plot(METree, main = "Clustering of module eigengenes",
+     xlab = "", sub = "") #Plot dendogram of clustered eigengenes
+dynamicMergeCut(15) #Identify cut height based on sample number (15)
+MEDissThres <- dynamicMergeCut(15) #Set cut height threshold based on the number of samples. 1-MEDissThres = correlation
+abline(h = MEDissThres, col = "red") #Add cut line
+```
+
+```{r}
+merge <- mergeCloseModules(zosteraExpr0, dynamicColors, cutHeight = MEDissThres, verbose = 3) #Use an automatic merging function to merge eigengenes
+mergedColors <- merge$colors #Extract merged module colors
+mergedMEs <- merge$newMEs #Extract eigengenes of merged modules
+```
+
+```{r}
+plotDendroAndColors(geneTree, cbind(dynamicColors, mergedColors),
+                    c("Dynamic Tree Cut", "Merged dynamic"), 
+                    dendroLabels = FALSE, hang = 0.03, 
+                    addGuide = TRUE, guideHang = 0.05) #Plot the dendogram with original and merged eigengene colors
+```
+
+## Rename and save variables for subsequent analysis
+
+```{r}
+moduleColors <- mergedColors #Rename to moduleColors
+colorOrder = c("grey", standardColors(50)) #Determine color order
+moduleLabels = match(moduleColors, colorOrder)-1 #Construct numerical lables based on colors
+MEs <- mergedMEs #Replace unmerged MEs
+save(MEs, moduleLabels, moduleColors, geneTree, file = "zostera-WGCNA-networkConstruction.RData")
+```
+
+# Relate modules to external clinical traits (*L. zosterae* exposed vs. control)
+
+Relevant tutorial: https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-03-relateModsToExt.pdf
+
+## Quantify module-trait associations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
