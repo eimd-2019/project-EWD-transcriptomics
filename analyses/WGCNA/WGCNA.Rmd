@@ -54,15 +54,20 @@ gsg$allOK #TRUE = all genes have passed test, can continue
 ```
  
 ```{r}
-sampleTree <- hclust(dist(zosteraExpr0), method = "average")
+sampleTree <- hclust(dist(zosteraExpr0), method = "average") #Create dendogram to visually inspect for outliers
 plot(sampleTree) #No obvious outliers, can proceed
 ```
 
-# Create clinical trait data matrix
+## Create clinical trait data matrix
 
 ```{r}
-datTraits <- 
+zosteraTraits <- data.frame("exposed" = c(rep(1, times = 7), rep(0, times = 8)),
+                            "control" = c(rep(0, times = 8), rep(1, times = 7))) #Create a dataframe with clinical trait (laby exposed vs. not exposed) information
+rownames(zosteraTraits) <- rownames(zosteraExpr0) #Use same rownames as expression data to create an analagous matrix
+head(zosteraTraits) #Confirm dataframe creation
 ```
 
-
+```{r}
+save(zosteraExpr0, zosteraTraits, file = "zostera-WGCNA-dataInput.RData") #Save expression and trait data
+```
 
