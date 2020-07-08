@@ -262,8 +262,9 @@ head(zosteraGeneAnnot) #Confirm import and formatting
 for (module in namesModules) {
   modGenes <- (moduleColors == module) # Select module probes
   modLLIDs <- probes[modGenes] # Get their gene IDs
-    fileName <- paste("zosteraGeneList-", module, ".txt", sep = "") #Assign filename for each module
-  write.table(as.data.frame(modLLIDs), file = fileName, sep = "\t",
+  annotLLIDs <- subset(zosteraGeneAnnot, subset = zosteraGeneAnnot$geneIDs == modLLIDs) #Subset annotated list based on gene IDs in each module
+  fileName <- paste("zosteraGeneList-", module, ".txt", sep = "") #Assign filename for each module
+  write.table(as.data.frame(annotLLIDs), file = fileName, sep = "\t",
               row.names = FALSE, col.names = FALSE) # Write out files
 }
 ```
