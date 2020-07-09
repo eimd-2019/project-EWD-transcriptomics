@@ -234,7 +234,7 @@ dim(textMatrix) <- dim(moduleTraitCor) #Ensure that matrix has the same dimensio
 ```{r}
 par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
 labeledHeatmap(Matrix = moduleTraitCor,
-               xLabels = names(datTraits),
+               xLabels = names(zosteraTraits),
                yLabels = names(MEs),
                ySymbols = names(MEs),
                colorLabels = FALSE,
@@ -286,6 +286,7 @@ head(MMPvalue) #Confirm formatting
 ## For each module
 
 ```{r}
+probes <- names(zosteraExpr0) #Save gene names as probes
 # Write out the gene lists for each module of interest
 for (module in modNames) {
   modGenes <- (moduleColors == module) # Select module probes
@@ -306,7 +307,6 @@ head(zosteraGeneAnnot) #Confirm import and formatting
 ```
 
 ```{r}
-probes <- names(zosteraExpr0) #Save gene names as probes
 probes2annot <- match(probes, zosteraGeneAnnot$geneIDs) #Match probes with annotations
 sum(is.na(probes2annot)) #Check that no probe does not have an annotation. Should return 0
 ```
