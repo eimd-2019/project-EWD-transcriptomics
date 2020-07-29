@@ -61,7 +61,7 @@ sessionInfo() #Obtain session information
 
     ## R version 4.0.0 (2020-04-24)
     ## Platform: x86_64-apple-darwin17.0 (64-bit)
-    ## Running under: macOS Catalina 10.15.5
+    ## Running under: macOS Catalina 10.15.6
     ## 
     ## Matrix products: default
     ## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
@@ -7625,7 +7625,7 @@ MEs <- mergedMEs #Replace unmerged MEs
 save(MEs, moduleLabels, moduleColors, geneTree, file = "zostera-WGCNA-networkConstruction.RData")
 ```
 
-# Relate modules to external clinical traits (*L. zosterae* exposed vs. control)
+# Relate modules to external clinical traits (*Z. marina* exposed vs. control)
 
 Relevant tutorial:
 <https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-03-relateModsToExt.pdf>
@@ -8038,3 +8038,6026 @@ head zosteraGeneList-WGCNA-MM-GS-Annot.txt
     ## TRINITY_DN296759_c4_g1   P02556  Tubulin beta chain (Beta-tubulin) (Fragment)    microtubule-based process [GO:0007017]  cytoplasm [GO:0005737]; microtubule [GO:0005874]    GTP binding [GO:0005525]; structural constituent of cytoskeleton [GO:0005200]   black   0.578622263633673   0.0238314160935853  0.613950290146569   0.0149039890091107  -0.165364526139154  0.555880856841414   0.902798388751814   4.07940069616618e-06    0.221978252901265   0.42653803885998    -0.242006110702357  0.384849547782539   0.375651392924775   0.167635238673702   -0.184848791012607  0.509556507173502   0.384318709860531   0.15726036477032    -0.333737998358461  0.224112738160684   -0.209899795706004  0.452750120300636   0.0257809387151855  0.927332909055606   -0.0921382911904658 0.743980017805338   -0.234024625369736  0.401192970279907
     ## TRINITY_DN276418_c0_g1   Q3IJK2  30S ribosomal protein S5    translation [GO:0006412]    small ribosomal subunit [GO:0015935]    rRNA binding [GO:0019843]; structural constituent of ribosome [GO:0003735]  black   0.577132061131641   0.0242813326087223  0.61333801025633    0.0150324858815652  -0.385185980229223  0.156246350359502   0.73851423662635    0.00166381478694322 0.364877624533432   0.181147916800807   -0.263161111316399  0.343308664490162   0.0639010449707119  0.82100922838139    -0.190616946772055  0.496193703974987   -0.0957680435284829 0.734224187655875   -0.267534090753133  0.335049257998376   -0.0555370776668447 0.844152938580225   -0.0817817012562264 0.7720106802496 -0.0162929789377725 0.954042408746201   -0.234993016636288  0.399190767759116
     ## TRINITY_DN293689_c0_g3   Q8ISN9  40S ribosomal protein S25       ribosome [GO:0005840]       black   0.57180864988083    0.0259414573388643  0.612152889728649   0.0152836314644542  -0.147795282962165  0.599130262345908   0.76052656272438    0.000995701876364316    0.161788846328067   0.564573283336445   -0.0463216152384965 0.869789810539882   0.408985974091277   0.130102568707297   -0.21166746449454   0.448864923211071   0.443254489526374   0.0979569652482145  -0.379348229909711  0.163156345879142   -0.130588562583901  0.642730068522673   0.0317196749080154  0.910649685949633   -0.122247782311012  0.664271798692706   -0.190304288395908  0.496913782287482
+
+# GO-MWU
+
+## Create GO-MWU inputs
+
+For each significant module, I need a .csv of genes and module
+membership scores (kME) for my table of significance measures. Genes
+that are not in the module should have a kME = 0. I already have my GO
+annotations table from my previous GO-MWU run.
+
+### Brown (exposed and control)
+
+``` r
+brownGeneList <- data.frame("geneID" = rownames(geneInfo),
+                            "moduleColor" = geneInfo$moduleColor,
+                            "MM.brown" = geneInfo$MM.brown,
+                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the brown module. Also include a column of 0s
+brownGeneList$kME[which(brownGeneList$moduleColor == "brown")] <- brownGeneList$MM.brown[which(brownGeneList$moduleColor == "brown")] #Replace kME with the MM.brown score when the gene was in the brown module
+brownGeneList <- brownGeneList[c(1,4)] #Keep the gene ID and kME columns
+head(brownGeneList) #Confirm changes
+```
+
+    ##                   geneID kME
+    ## 1 TRINITY_DN295075_c3_g1   0
+    ## 2 TRINITY_DN294775_c0_g1   0
+    ## 3 TRINITY_DN312737_c2_g5   0
+    ## 4 TRINITY_DN293689_c0_g1   0
+    ## 5 TRINITY_DN311476_c1_g3   0
+    ## 6 TRINITY_DN294775_c0_g2   0
+
+``` r
+write.csv(brownGeneList,"BrownGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+### Black (exposed)
+
+``` r
+blackGeneList <- data.frame("geneID" = rownames(geneInfo),
+                            "moduleColor" = geneInfo$moduleColor,
+                            "MM.black" = geneInfo$MM.black,
+                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the black module. Also include a column of 0s
+blackGeneList$kME[which(blackGeneList$moduleColor == "black")] <- blackGeneList$MM.black[which(blackGeneList$moduleColor == "black")] #Replace kME with the MM.black score when the gene was in the black module
+blackGeneList <- blackGeneList[c(1,4)] #Keep the gene ID and kME columns
+head(blackGeneList) #Confirm changes
+```
+
+    ##                   geneID       kME
+    ## 1 TRINITY_DN295075_c3_g1 0.8632670
+    ## 2 TRINITY_DN294775_c0_g1 0.8825685
+    ## 3 TRINITY_DN312737_c2_g5 0.7990879
+    ## 4 TRINITY_DN293689_c0_g1 0.9170508
+    ## 5 TRINITY_DN311476_c1_g3 0.8234841
+    ## 6 TRINITY_DN294775_c0_g2 0.7954996
+
+``` r
+write.csv(blackGeneList,"BlackGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+### Blue (exposed and control)
+
+``` r
+blueGeneList <- data.frame("geneID" = rownames(geneInfo),
+                            "moduleColor" = geneInfo$moduleColor,
+                            "MM.blue" = geneInfo$MM.blue,
+                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the blue module. Also include a column of 0s
+blueGeneList$kME[which(blueGeneList$moduleColor == "blue")] <- blueGeneList$MM.blue[which(blueGeneList$moduleColor == "blue")] #Replace kME with the MM.blue score when the gene was in the blue module
+blueGeneList <- blueGeneList[c(1,4)] #Keep the gene ID and kME columns
+head(blueGeneList) #Confirm changes
+```
+
+    ##                   geneID kME
+    ## 1 TRINITY_DN295075_c3_g1   0
+    ## 2 TRINITY_DN294775_c0_g1   0
+    ## 3 TRINITY_DN312737_c2_g5   0
+    ## 4 TRINITY_DN293689_c0_g1   0
+    ## 5 TRINITY_DN311476_c1_g3   0
+    ## 6 TRINITY_DN294775_c0_g2   0
+
+``` r
+write.csv(blueGeneList,"BlueGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+### Yellow (control)
+
+``` r
+yellowGeneList <- data.frame("geneID" = rownames(geneInfo),
+                            "moduleColor" = geneInfo$moduleColor,
+                            "MM.yellow" = geneInfo$MM.yellow,
+                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the yellow module. Also include a column of 0s
+yellowGeneList$kME[which(yellowGeneList$moduleColor == "yellow")] <- yellowGeneList$MM.yellow[which(yellowGeneList$moduleColor == "yellow")] #Replace kME with the MM.yellow score when the gene was in the yellow module
+yellowGeneList <- yellowGeneList[c(1,4)] #Keep the gene ID and kME columns
+head(yellowGeneList) #Confirm changes
+```
+
+    ##                   geneID kME
+    ## 1 TRINITY_DN295075_c3_g1   0
+    ## 2 TRINITY_DN294775_c0_g1   0
+    ## 3 TRINITY_DN312737_c2_g5   0
+    ## 4 TRINITY_DN293689_c0_g1   0
+    ## 5 TRINITY_DN311476_c1_g3   0
+    ## 6 TRINITY_DN294775_c0_g2   0
+
+``` r
+write.csv(yellowGeneList,"YellowGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+### Light green (control)
+
+``` r
+lightgreenGeneList <- data.frame("geneID" = rownames(geneInfo),
+                            "moduleColor" = geneInfo$moduleColor,
+                            "MM.lightgreen" = geneInfo$MM.lightgreen,
+                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the lightgreen module. Also include a column of 0s
+lightgreenGeneList$kME[which(lightgreenGeneList$moduleColor == "lightgreen")] <- lightgreenGeneList$MM.lightgreen[which(lightgreenGeneList$moduleColor == "lightgreen")] #Replace kME with the MM.lightgreen score when the gene was in the lightgreen module
+lightgreenGeneList <- lightgreenGeneList[c(1,4)] #Keep the gene ID and kME columns
+head(lightgreenGeneList) #Confirm changes
+```
+
+    ##                   geneID kME
+    ## 1 TRINITY_DN295075_c3_g1   0
+    ## 2 TRINITY_DN294775_c0_g1   0
+    ## 3 TRINITY_DN312737_c2_g5   0
+    ## 4 TRINITY_DN293689_c0_g1   0
+    ## 5 TRINITY_DN311476_c1_g3   0
+    ## 6 TRINITY_DN294775_c0_g2   0
+
+``` r
+write.csv(lightgreenGeneList,"LightgreenGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+## Run GO-MWU
+
+### Brown (exposed and control)
+
+#### Biological processes
+
+``` r
+input="BrownGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="Zostera-GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
+goDivision="BP" # either MF, or BP, or CC
+source("gomwu.functions.R")
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Cellular components
+
+``` r
+goDivision="CC" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Molecular function
+
+``` r
+goDivision="MF" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+### Black (exposed)
+
+#### Biological processes
+
+``` r
+input="BlackGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goDivision="BP" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Cellular components
+
+``` r
+goDivision="CC" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 2
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 3
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 4
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 5
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 6
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 7
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 8
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 9
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 10
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 11
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 12
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 13
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 14
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 15
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 16
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 17
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 18
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 19
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 20
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Molecular function
+
+``` r
+goDivision="MF" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 1 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 4  GO terms at 10% FDR.
+```
+
+### Blue (exposed and control)
+
+#### Biological processes
+
+``` r
+input="BlueGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goDivision="BP" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 3 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Cellular components
+
+``` r
+goDivision="CC" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Molecular function
+
+``` r
+goDivision="MF" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+### Yellow (control)
+
+#### Biological processes
+
+``` r
+input="YellowGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goDivision="BP" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Cellular components
+
+``` r
+goDivision="CC" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Molecular function
+
+``` r
+goDivision="MF" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## replicate 2
+
+    ## replicate 3
+
+    ## replicate 4
+
+    ## replicate 5
+
+    ## replicate 6
+
+    ## replicate 7
+
+    ## replicate 8
+
+    ## replicate 9
+
+    ## replicate 10
+
+    ## replicate 11
+
+    ## replicate 12
+
+    ## replicate 13
+
+    ## replicate 14
+
+    ## replicate 15
+
+    ## replicate 16
+
+    ## replicate 17
+
+    ## replicate 18
+
+    ## replicate 19
+
+    ## replicate 20
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+### Light green (control)
+
+#### Biological processes
+
+``` r
+input="LightgreenGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goDivision="BP" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 2
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 3
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 4
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 5
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 6
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 7
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 8
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 9
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 10
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 11
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 12
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 13
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 14
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 15
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 16
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 17
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 18
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 19
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 20
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Cellular components
+
+``` r
+goDivision="CC" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 2
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 3
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 4
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 5
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 6
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 7
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 8
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 9
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 10
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 11
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 12
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 13
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 14
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 15
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 16
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 17
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 18
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 19
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 20
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+#### Molecular function
+
+``` r
+goDivision="MF" # either MF, or BP, or CC
+```
+
+``` r
+# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
+gomwuStats(input, goDatabase, goAnnotations, goDivision,
+    perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+    largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+    smallest=5,   # a GO category should contain at least this many genes to be considered
+    clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#   Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+    Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#   Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+)
+```
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## shuffling values to calculate FDR, 20 reps
+
+    ## replicate 1
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 2
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 3
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 4
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 5
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 6
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 7
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 8
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 9
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 10
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 11
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 12
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 13
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 14
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 15
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 16
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 17
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 18
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 19
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## replicate 20
+
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+    
+    ## Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative =
+    ## Alternative): cannot compute exact p-value with ties
+
+    ## 0 GO terms at 10% FDR
+
+``` r
+# do not continue if the printout shows that no GO terms pass 10% FDR.
+
+# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
