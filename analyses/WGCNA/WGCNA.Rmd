@@ -340,11 +340,40 @@ head(geneInfo) #Check formatting
 ```
 
 ```{r}
-write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table
+write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE, na = "") #Save master table
 ```
 
+```{r}
+geneInfo <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot.txt", header = TRUE, sep = "\t", na.strings = "") #Import table using "" as NA
+head(geneInfo) #Confirm import
+```
+
+```{r}
+write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table again, but with NA instead of blank cells
+```
+
+### Parse out biological process GOterms
+
 ```{bash}
-head zosteraGeneList-WGCNA-MM-GS-Annot.txt
+cut -f4 zosteraGeneList-WGCNA-MM-GS-Annot.txt \
+| tail -n +2 \
+| awk '{gsub(";","\t",$0); print;}' \
+> zosteraGeneList-WGCNA-MM-GS-Annot-BPGOParse.txt #Isolate BP GOterm column, remove header, replace ; with \t, and save output
+```
+
+```{r}
+geneInfoBPGO <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot-BPGOParse.txt", header = FALSE, col.names = paste("BPGO", 1:697, sep = "")) #Import file with parsed BP GOterms and include columm names
+geneInfoBPGO <- geneInfoBPGO[,1:114] #Only keep columns with content
+head(geneInfoBPGO) #Confirm formatting
+```
+
+```{r}
+geneInfoBPGOParse <- cbind(geneInfo, geneInfoBPGO) #Combine dataframes
+head(geneInfoBPGOParse) #Confirm formatting
+```
+
+```{r}
+write.table(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.txt", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
 ```
 
 # GO-MWU
@@ -461,6 +490,10 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
 # 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```
+
+```{r}
+
 ```
 
 #### Cellular components
