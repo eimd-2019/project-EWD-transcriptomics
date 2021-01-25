@@ -373,6 +373,10 @@ head(geneInfoBPGOParse) #Confirm formatting
 ```
 
 ```{r}
+write.csv(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.csv", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
+```
+
+```{r}
 write.table(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.txt", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
 ```
 
