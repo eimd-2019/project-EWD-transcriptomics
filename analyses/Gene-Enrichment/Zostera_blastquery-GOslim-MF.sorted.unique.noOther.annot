@@ -1,0 +1,666 @@
+TRINITY_DN102431_c0_g1	nucleic acid binding activity	Tyrosine--tRNA ligase, cytoplasmic (EC 6.1.1.1) (Tyrosyl-tRNA synthetase) (TyrRS)
+TRINITY_DN102431_c0_g1	other molecular function	Tyrosine--tRNA ligase, cytoplasmic (EC 6.1.1.1) (Tyrosyl-tRNA synthetase) (TyrRS)
+TRINITY_DN104822_c0_g1	nucleic acid binding activity	Zinc finger A20 and AN1 domain-containing stress-associated protein 10 (OsSAP10)
+TRINITY_DN104822_c0_g1	other molecular function	Zinc finger A20 and AN1 domain-containing stress-associated protein 10 (OsSAP10)
+TRINITY_DN111410_c0_g1	nucleic acid binding activity	Nucleolar MIF4G domain-containing protein 1 homolog
+TRINITY_DN111543_c0_g1	other molecular function	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN111591_c0_g1	other molecular function	Delta-aminolevulinic acid dehydratase (ALAD) (ALADH) (EC 4.2.1.24) (Porphobilinogen synthase)
+TRINITY_DN139711_c0_g1	nucleic acid binding activity	Polyadenylate-binding protein (PABP) (Poly(A)-binding protein)
+TRINITY_DN151645_c0_g1	other molecular function	ATP-binding cassette sub-family B member 9 (ATP-binding cassette transporter 9) (ABC transporter 9 protein) (hABCB9) (TAP-like protein) (TAPL)
+TRINITY_DN151645_c0_g1	transporter activity	ATP-binding cassette sub-family B member 9 (ATP-binding cassette transporter 9) (ABC transporter 9 protein) (hABCB9) (TAP-like protein) (TAPL)
+TRINITY_DN151688_c0_g1	enzyme regulator activity	26S proteasome non-ATPase regulatory subunit 2 (26S proteasome regulatory subunit RPN1) (26S proteasome regulatory subunit S2) (26S proteasome subunit p97) (Tumor necrosis factor type 1 receptor-associated protein 2)
+TRINITY_DN151705_c0_g1	other molecular function	Endoplasmic reticulum resident protein 44 (ER protein 44) (ERp44) (Thioredoxin domain-containing protein 4)
+TRINITY_DN172833_c0_g1	other molecular function	Gibberellin 2-beta-dioxygenase 8 (EC 1.14.11.13) (GA 2-oxidase 8) (Gibberellin 2-beta-hydroxylase 8) (Gibberellin 2-oxidase 8)
+TRINITY_DN172940_c0_g1	other molecular function	Glycine cleavage system H protein, mitochondrial (Lipoic acid-containing protein)
+TRINITY_DN175296_c0_g1	other molecular function	3-hydroxy-3-methylglutaryl-coenzyme A reductase 1 (HMG-CoA reductase 1) (EC 1.1.1.34)
+TRINITY_DN2119_c1_g1	other molecular function	Cytochrome c oxidase assembly protein COX11, mitochondrial
+TRINITY_DN22035_c0_g1	other molecular function	Protein sco1
+TRINITY_DN223640_c0_g1	nucleic acid binding activity	Mini-ribonuclease 3 (Mini-3) (Mini-RNase 3) (EC 3.1.26.-) (Mini-RNase III) (Mini-III)
+TRINITY_DN223640_c0_g1	other molecular function	Mini-ribonuclease 3 (Mini-3) (Mini-RNase 3) (EC 3.1.26.-) (Mini-RNase III) (Mini-III)
+TRINITY_DN223830_c0_g1	other molecular function	Preprotein translocase subunit SCY1, chloroplastic (CpSecY)
+TRINITY_DN223830_c0_g1	transporter activity	Preprotein translocase subunit SCY1, chloroplastic (CpSecY)
+TRINITY_DN226183_c0_g1	other molecular function	Serine hydroxymethyltransferase 2 (SHMT 2) (EC 2.1.2.1) (Glycine hydroxymethyltransferase 2) (Serine methylase 2)
+TRINITY_DN226613_c0_g1	nucleic acid binding activity	Aspartate aminotransferase, mitochondrial (mAspAT) (EC 2.6.1.1) (EC 2.6.1.7) (Fatty acid-binding protein) (FABP-1) (Glutamate oxaloacetate transaminase 2) (Kynurenine aminotransferase 4) (Kynurenine aminotransferase IV) (Kynurenine--oxoglutarate transaminase 4) (Kynurenine--oxoglutarate transaminase IV) (Plasma membrane-associated fatty acid-binding protein) (FABPpm) (Transaminase A)
+TRINITY_DN226613_c0_g1	other molecular function	Aspartate aminotransferase, mitochondrial (mAspAT) (EC 2.6.1.1) (EC 2.6.1.7) (Fatty acid-binding protein) (FABP-1) (Glutamate oxaloacetate transaminase 2) (Kynurenine aminotransferase 4) (Kynurenine aminotransferase IV) (Kynurenine--oxoglutarate transaminase 4) (Kynurenine--oxoglutarate transaminase IV) (Plasma membrane-associated fatty acid-binding protein) (FABPpm) (Transaminase A)
+TRINITY_DN226664_c0_g1	kinase activity	Mitogen-activated protein kinase kinase kinase 18 (EC 2.7.11.25)
+TRINITY_DN226664_c0_g1	other molecular function	Mitogen-activated protein kinase kinase kinase 18 (EC 2.7.11.25)
+TRINITY_DN226664_c0_g1	signal transduction activity	Mitogen-activated protein kinase kinase kinase 18 (EC 2.7.11.25)
+TRINITY_DN226686_c0_g1	other molecular function	GDP-L-fucose synthase (EC 1.1.1.271) (GDP-4-keto-6-deoxy-D-mannose-3,5-epimerase-4-reductase) (Protein FX) (Red cell NADP(H)-binding protein) (Short-chain dehydrogenase/reductase family 4E member 1)
+TRINITY_DN226922_c0_g1	other molecular function	Galacturonosyltransferase 8 (EC 2.4.1.-) (Glycosyltransferase QUASIMODO1)
+TRINITY_DN227360_c0_g2	cytoskeletal activity	Kinesin-like protein KIN-14H
+TRINITY_DN227360_c0_g2	other molecular function	Kinesin-like protein KIN-14H
+TRINITY_DN228040_c0_g1	nucleic acid binding activity	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN228040_c0_g1	other molecular function	Nucleolar GTP-binding protein 1 (Chronic renal failure gene protein) (GTP-binding protein NGB)
+TRINITY_DN228042_c0_g1	kinase activity	Serine/threonine-protein kinase haspin homolog (AtHaspin) (EC 2.7.11.1)
+TRINITY_DN228042_c0_g1	other molecular function	Serine/threonine-protein kinase haspin homolog (AtHaspin) (EC 2.7.11.1)
+TRINITY_DN231504_c0_g1	other molecular function	Lysocardiolipin acyltransferase 1 (EC 2.3.1.-) (1-acylglycerol-3-phosphate O-acyltransferase 8) (1-AGP acyltransferase 8) (1-AGPAT 8) (EC 2.3.1.51) (Acyl-CoA:lysocardiolipin acyltransferase 1)
+TRINITY_DN231598_c0_g2	enzyme regulator activity	DnaJ homolog subfamily A member 1 (DnaJ protein homolog 2) (DJ-2) (Mydj2)
+TRINITY_DN231598_c0_g2	other molecular function	DnaJ homolog subfamily A member 1 (DnaJ protein homolog 2) (DJ-2) (Mydj2)
+TRINITY_DN233686_c0_g1	other molecular function	Peroxidase N1 (EC 1.11.1.7) (Peroxidase B2) (Peroxidase B3)
+TRINITY_DN234168_c0_g1	other molecular function	T-complex protein 1 subunit epsilon (TCP-1-epsilon) (CCT-epsilon) (TCP-K19)
+TRINITY_DN234179_c0_g1	other molecular function	Dual oxidase 2 (EC 1.11.1.-) (EC 1.6.3.1) (Large NOX 2) (Long NOX 2) (NADH/NADPH thyroid oxidase p138-tox) (NADPH oxidase/peroxidase DUOX2) (NADPH thyroid oxidase 2) (Thyroid oxidase 2) (p138 thyroid oxidase)
+TRINITY_DN238280_c0_g1	nucleic acid binding activity	Alanine--tRNA ligase, cytoplasmic (EC 6.1.1.7) (AlaRS A) (Alanyl-tRNA synthetase)
+TRINITY_DN238280_c0_g1	other molecular function	Alanine--tRNA ligase, cytoplasmic (EC 6.1.1.7) (AlaRS A) (Alanyl-tRNA synthetase)
+TRINITY_DN250557_c0_g1	kinase activity	Wall-associated receptor kinase 5 (EC 2.7.11.-)
+TRINITY_DN250557_c0_g1	other molecular function	Wall-associated receptor kinase 5 (EC 2.7.11.-)
+TRINITY_DN251094_c0_g1	other molecular function	RING-H2 finger protein ATL8 (EC 2.3.2.27) (RING-type E3 ubiquitin transferase ATL8)
+TRINITY_DN251132_c0_g1	other molecular function	Phosphate transporter PHO1-3 (Protein PHO1-3) (OsPHO1;3)
+TRINITY_DN251132_c0_g1	transporter activity	Phosphate transporter PHO1-3 (Protein PHO1-3) (OsPHO1;3)
+TRINITY_DN25194_c0_g1	nucleic acid binding activity	DNA (cytosine-5)-methyltransferase 1B (OsMET1b) (EC 2.1.1.37) (DNA methyltransferase 1-2) (OsMET1-2)
+TRINITY_DN25194_c0_g1	other molecular function	DNA (cytosine-5)-methyltransferase 1B (OsMET1b) (EC 2.1.1.37) (DNA methyltransferase 1-2) (OsMET1-2)
+TRINITY_DN252333_c0_g1	transporter activity	Amino acid permease 6 (Amino acid transporter AAP6)
+TRINITY_DN252362_c0_g1	other molecular function	60S ribosomal protein L28-2
+TRINITY_DN252876_c0_g1	enzyme regulator activity	Cysteine proteinase inhibitor 5 (Oryzacystatin V) (OC-V) (Oryzacystatin-5)
+TRINITY_DN254084_c0_g1	enzyme regulator activity	Putative 4-hydroxy-4-methyl-2-oxoglutarate aldolase (HMG aldolase) (EC 4.1.3.17) (Oxaloacetate decarboxylase) (OAA decarboxylase) (EC 4.1.1.112) (Regulator of ribonuclease activity homolog) (RraA-like protein)
+TRINITY_DN254084_c0_g1	other molecular function	Putative 4-hydroxy-4-methyl-2-oxoglutarate aldolase (HMG aldolase) (EC 4.1.3.17) (Oxaloacetate decarboxylase) (OAA decarboxylase) (EC 4.1.1.112) (Regulator of ribonuclease activity homolog) (RraA-like protein)
+TRINITY_DN254239_c0_g1	cytoskeletal activity	Actin-depolymerizing factor 1 (ADF-1)
+TRINITY_DN254309_c0_g1	transporter activity	V-type proton ATPase subunit C (V-ATPase subunit C) (Vacuolar H(+)-ATPase subunit C) (Vacuolar proton pump subunit C)
+TRINITY_DN25521_c0_g1	other molecular function	U-box domain-containing protein 20 (EC 2.3.2.27) (Plant U-box protein 20) (RING-type E3 ubiquitin transferase PUB20)
+TRINITY_DN255257_c0_g1	transporter activity	Protein translocation protein SEC63 (Protein NPL1) (Sec62/63 complex 73 kDa subunit)
+TRINITY_DN255876_c0_g1	nucleic acid binding activity	Phenylalanine--tRNA ligase beta subunit, cytoplasmic (EC 6.1.1.20) (Phenylalanyl-tRNA synthetase beta subunit) (PheRS)
+TRINITY_DN255876_c0_g1	other molecular function	Phenylalanine--tRNA ligase beta subunit, cytoplasmic (EC 6.1.1.20) (Phenylalanyl-tRNA synthetase beta subunit) (PheRS)
+TRINITY_DN255899_c0_g1	kinase activity	Probable inactive receptor kinase At2g26730
+TRINITY_DN255899_c0_g1	other molecular function	Probable inactive receptor kinase At2g26730
+TRINITY_DN255905_c0_g1	kinase activity	Cyclin-dependent kinase-like 5 (EC 2.7.11.22) (Serine/threonine-protein kinase 9)
+TRINITY_DN255905_c0_g1	other molecular function	Cyclin-dependent kinase-like 5 (EC 2.7.11.22) (Serine/threonine-protein kinase 9)
+TRINITY_DN255960_c0_g1	kinase activity	Pyruvate kinase PKM (EC 2.7.1.40) (Cytosolic thyroid hormone-binding protein) (CTHBP)
+TRINITY_DN255960_c0_g1	other molecular function	Pyruvate kinase PKM (EC 2.7.1.40) (Cytosolic thyroid hormone-binding protein) (CTHBP)
+TRINITY_DN255993_c0_g1	nucleic acid binding activity	60S ribosomal protein L8
+TRINITY_DN255993_c0_g1	other molecular function	60S ribosomal protein L8
+TRINITY_DN256219_c0_g2	other molecular function	Molybdenum cofactor biosynthesis protein 1 (Cell migration-inducing gene 11 protein) (Molybdenum cofactor synthesis-step 1 protein A-B) [Includes: GTP 3',8-cyclase (EC 4.1.99.22) (Molybdenum cofactor biosynthesis protein A); Cyclic pyranopterin monophosphate synthase (EC 4.6.1.17) (Molybdenum cofactor biosynthesis protein C)]
+TRINITY_DN256326_c0_g1	other molecular function	1-acyl-sn-glycerol-3-phosphate acyltransferase LPAT1, chloroplastic (EC 2.3.1.51) (EC 2.3.1.n4) (Lysophosphatidyl acyltransferase 1) (Protein EMBRYO DEFECTIVE 1995)
+TRINITY_DN256514_c0_g2	nucleic acid binding activity	40S ribosomal protein S20
+TRINITY_DN256514_c0_g2	other molecular function	40S ribosomal protein S20
+TRINITY_DN256557_c0_g2	other molecular function	Tripeptidyl-peptidase 2 (TPP2) (EC 3.4.14.10) (Tripeptidyl aminopeptidase) (Tripeptidyl peptidase II) (TPPII)
+TRINITY_DN259162_c0_g1	other molecular function	60S ribosomal protein L2, mitochondrial
+TRINITY_DN259522_c0_g1	kinase activity	Calcium-dependent protein kinase 11 (OsCDPK11) (OsCPK11) (EC 2.7.11.1)
+TRINITY_DN259522_c0_g1	other molecular function	Calcium-dependent protein kinase 11 (OsCDPK11) (OsCPK11) (EC 2.7.11.1)
+TRINITY_DN259522_c1_g1	kinase activity	Calcium-dependent protein kinase 3 (OsCDPK3) (OsCPK3) (EC 2.7.11.1)
+TRINITY_DN259522_c1_g1	other molecular function	Calcium-dependent protein kinase 3 (OsCDPK3) (OsCPK3) (EC 2.7.11.1)
+TRINITY_DN259595_c0_g1	other molecular function	DnaJ protein homolog ANJ1
+TRINITY_DN271000_c0_g1	other molecular function	3-isopropylmalate dehydrogenase (EC 1.1.1.85) (3-IPM-DH) (Beta-IPM dehydrogenase) (IMDH)
+TRINITY_DN271251_c0_g1	transcription regulatory activity	COP9 signalosome complex subunit 2 (Signalosome subunit 2) (Protein FUSCA 12)
+TRINITY_DN271265_c0_g1	nucleic acid binding activity	Acetyl-CoA carboxylase (ACC) (EC 6.4.1.2) [Includes: Biotin carboxylase (EC 6.3.4.14)]
+TRINITY_DN271265_c0_g1	other molecular function	Acetyl-CoA carboxylase (ACC) (EC 6.4.1.2) [Includes: Biotin carboxylase (EC 6.3.4.14)]
+TRINITY_DN271265_c0_g1	signal transduction activity	Acetyl-CoA carboxylase (ACC) (EC 6.4.1.2) [Includes: Biotin carboxylase (EC 6.3.4.14)]
+TRINITY_DN271268_c0_g1	kinase activity	EKC/KEOPS complex subunit SPAP27G11.07c (EC 3.6.-.-) (Atypical serine/threonine protein kinase BUD32 homolog) (EC 2.7.11.1)
+TRINITY_DN271268_c0_g1	other molecular function	EKC/KEOPS complex subunit SPAP27G11.07c (EC 3.6.-.-) (Atypical serine/threonine protein kinase BUD32 homolog) (EC 2.7.11.1)
+TRINITY_DN271596_c0_g1	other molecular function	Glutaredoxin-1 (Glutathione-dependent oxidoreductase 1)
+TRINITY_DN271641_c0_g3	other molecular function	Vesicle-associated membrane protein 7B
+TRINITY_DN271649_c0_g1	nucleic acid binding activity	Lysine--tRNA ligase (EC 2.7.7.-) (EC 6.1.1.6) (Lysyl-tRNA synthetase) (LysRS)
+TRINITY_DN271649_c0_g1	other molecular function	Lysine--tRNA ligase (EC 2.7.7.-) (EC 6.1.1.6) (Lysyl-tRNA synthetase) (LysRS)
+TRINITY_DN271662_c0_g1	other molecular function	PLAT domain-containing protein 1 (AtPLAT1) (PLAT domain protein 1)
+TRINITY_DN271688_c0_g1	nucleic acid binding activity	Regulatory protein viviparous-1
+TRINITY_DN274001_c0_g1	other molecular function	Ribonucleoside-diphosphate reductase subunit M2 (EC 1.17.4.1) (Ribonucleotide reductase protein R2 class I) (Ribonucleotide reductase small chain) (Ribonucleotide reductase small subunit)
+TRINITY_DN274005_c0_g1	other molecular function	Protein HESO1 (EC 2.7.7.52) (HEN1 suppressor 1) (RNA uridylyltransferase)
+TRINITY_DN274054_c0_g1	other molecular function	Probable protein S-acyltransferase 13 (EC 2.3.1.225) (Probable palmitoyltransferase At4g22750) (Zinc finger DHHC domain-containing protein At4g22750)
+TRINITY_DN274058_c0_g1	other molecular function	Ras-related protein RABH1d (AtRABH1d)
+TRINITY_DN274570_c1_g1	other molecular function	Chromatin assembly factor 1 subunit FAS2 homolog (CAF-1 subunit FAS2 homolog) (CAF-1 p60 homolog) (Protein FASCIATA 2 homolog)
+TRINITY_DN274635_c0_g1	kinase activity	Adenylate kinase isoenzyme 6 homolog FAP7 (AK6) (EC 2.7.4.3) (Dual activity adenylate kinase/ATPase) (AK/ATPase) (POS9-activating factor 7)
+TRINITY_DN274635_c0_g1	other molecular function	Adenylate kinase isoenzyme 6 homolog FAP7 (AK6) (EC 2.7.4.3) (Dual activity adenylate kinase/ATPase) (AK/ATPase) (POS9-activating factor 7)
+TRINITY_DN274662_c0_g1	enzyme regulator activity	General transcription factor IIH subunit 4 (TFIIH basal transcription factor complex subunit 4)
+TRINITY_DN274662_c0_g1	nucleic acid binding activity	General transcription factor IIH subunit 4 (TFIIH basal transcription factor complex subunit 4)
+TRINITY_DN274697_c0_g1	nucleic acid binding activity	Staphylococcal nuclease domain-containing protein 1 (EC 3.1.31.1) (100 kDa coactivator) (p100 co-activator)
+TRINITY_DN274697_c0_g1	other molecular function	Staphylococcal nuclease domain-containing protein 1 (EC 3.1.31.1) (100 kDa coactivator) (p100 co-activator)
+TRINITY_DN274731_c0_g1	other molecular function	Protein MARD1 (FCS-Like Zinc finger 9) (Mediator of ABA-regulated dormancy1) (Senescence-associated protein SAG102)
+TRINITY_DN274735_c0_g1	nucleic acid binding activity	50S ribosomal protein L9, chloroplastic (CL9)
+TRINITY_DN274735_c0_g1	other molecular function	50S ribosomal protein L9, chloroplastic (CL9)
+TRINITY_DN274795_c0_g2	other molecular function	GDSL esterase/lipase At5g55050 (EC 3.1.1.-) (Extracellular lipase At5g55050)
+TRINITY_DN274796_c0_g1	other molecular function	Obtusifoliol 14-alpha demethylase (EC 1.14.14.154) (CYPLI) (Cytochrome P450 51) (Cytochrome P450-LIA1) (Fragment)
+TRINITY_DN274800_c0_g1	other molecular function	GBF-interacting protein 1-like (Protein GIP1-like)
+TRINITY_DN274808_c0_g1	other molecular function	GMP synthase [glutamine-hydrolyzing] (EC 6.3.5.2) (GMP synthetase) (Glutamine amidotransferase)
+TRINITY_DN274809_c0_g1	nucleic acid binding activity	tRNA pseudouridine synthase B (EC 5.4.99.25) (tRNA pseudouridine(55) synthase) (Psi55 synthase) (tRNA pseudouridylate synthase) (tRNA-uridine isomerase)
+TRINITY_DN274823_c0_g1	other molecular function	Glucose-6-phosphate 1-dehydrogenase (G6PD) (EC 1.1.1.49)
+TRINITY_DN274831_c0_g1	other molecular function	2-oxoglutarate dehydrogenase, mitochondrial (EC 1.2.4.2) (2-oxoglutarate dehydrogenase complex component E1) (OGDC-E1) (Alpha-ketoglutarate dehydrogenase)
+TRINITY_DN274840_c0_g2	other molecular function	Hypoxanthine-guanine phosphoribosyltransferase (HGPRT) (HGPRTase) (EC 2.4.2.8)
+TRINITY_DN276015_c0_g1	other molecular function	Protein CLP1 homolog (CLP-like protein 3) (Protein CLP-SIMILAR PROTEIN 3)
+TRINITY_DN276016_c0_g1	nucleic acid binding activity	Small nuclear ribonucleoprotein SmD1a (AtSmD1-a)
+TRINITY_DN276022_c0_g1	other molecular function	Serine hydroxymethyltransferase 2 (SHMT 2) (EC 2.1.2.1) (Glycine hydroxymethyltransferase 2) (Serine methylase 2)
+TRINITY_DN276025_c0_g1	other molecular function	3-hydroxyacyl-CoA dehydrogenase type-2 (EC 1.1.1.35) (17-beta-hydroxysteroid dehydrogenase 10) (17-beta-HSD 10) (EC 1.1.1.51) (3-hydroxy-2-methylbutyryl-CoA dehydrogenase) (EC 1.1.1.178) (3-hydroxyacyl-CoA dehydrogenase type II) (Mitochondrial ribonuclease P protein 2) (Mitochondrial RNase P protein 2) (Scully protein) (Type II HADH)
+TRINITY_DN276063_c0_g1	other molecular function	Peroxisomal targeting signal 1 receptor (PTS1 receptor) (PTS1R) (PTS1-BP) (Peroxin-5) (Peroxisomal C-terminal targeting signal import receptor) (Peroxisome receptor 1)
+TRINITY_DN276081_c0_g1	nucleic acid binding activity	DNA-directed RNA polymerase subunit beta' (RNAP subunit beta') (EC 2.7.7.6) (RNA polymerase subunit beta') (Transcriptase subunit beta')
+TRINITY_DN276081_c0_g1	other molecular function	DNA-directed RNA polymerase subunit beta' (RNAP subunit beta') (EC 2.7.7.6) (RNA polymerase subunit beta') (Transcriptase subunit beta')
+TRINITY_DN276081_c0_g2	nucleic acid binding activity	DNA-directed RNA polymerase subunit beta' (RNAP subunit beta') (EC 2.7.7.6) (RNA polymerase subunit beta') (Transcriptase subunit beta')
+TRINITY_DN276081_c0_g2	other molecular function	DNA-directed RNA polymerase subunit beta' (RNAP subunit beta') (EC 2.7.7.6) (RNA polymerase subunit beta') (Transcriptase subunit beta')
+TRINITY_DN276264_c0_g1	nucleic acid binding activity	Heat shock protein 75 kDa, mitochondrial (HSP 75) (TNFR-associated protein 1) (Tumor necrosis factor type 1 receptor-associated protein) (TRAP-1)
+TRINITY_DN276264_c0_g1	other molecular function	Heat shock protein 75 kDa, mitochondrial (HSP 75) (TNFR-associated protein 1) (Tumor necrosis factor type 1 receptor-associated protein) (TRAP-1)
+TRINITY_DN276264_c0_g3	other molecular function	NADP-dependent alcohol dehydrogenase C 1 (Ms-ADHC 1) (EC 1.1.1.2)
+TRINITY_DN276409_c0_g1	other molecular function	Cytochrome c1, heme protein, mitochondrial (Complex III subunit 4) (Complex III subunit IV) (Cytochrome b-c1 complex subunit 4) (Ubiquinol-cytochrome-c reductase complex cytochrome c1 subunit) (Cytochrome c-1)
+TRINITY_DN276418_c0_g1	nucleic acid binding activity	30S ribosomal protein S5
+TRINITY_DN276418_c0_g1	other molecular function	30S ribosomal protein S5
+TRINITY_DN276539_c0_g1	kinase activity	Phosphoenolpyruvate carboxylase kinase 1 (AtPPCK1) (EC 2.7.11.1)
+TRINITY_DN276539_c0_g1	other molecular function	Phosphoenolpyruvate carboxylase kinase 1 (AtPPCK1) (EC 2.7.11.1)
+TRINITY_DN276554_c0_g1	nucleic acid binding activity	Adenine DNA glycosylase (EC 3.2.2.31) (MutY homolog) (AtMYH)
+TRINITY_DN276554_c0_g1	other molecular function	Adenine DNA glycosylase (EC 3.2.2.31) (MutY homolog) (AtMYH)
+TRINITY_DN276572_c0_g1	nucleic acid binding activity	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN276572_c0_g1	other molecular function	Chromodomain-helicase-DNA-binding protein 4 (CHD-4) (EC 3.6.4.12)
+TRINITY_DN276582_c0_g1	nucleic acid binding activity	60S ribosomal protein L9
+TRINITY_DN276582_c0_g1	other molecular function	60S ribosomal protein L9
+TRINITY_DN276607_c0_g1	nucleic acid binding activity	Probable tRNA methyltransferase 9B (Probable tRNA methyltransferase 9-like protein) (EC 2.1.1.-)
+TRINITY_DN276607_c0_g1	other molecular function	Probable tRNA methyltransferase 9B (Probable tRNA methyltransferase 9-like protein) (EC 2.1.1.-)
+TRINITY_DN276631_c0_g2	other molecular function	Dimethylaniline monooxygenase [N-oxide-forming] 3 (EC 1.14.13.8) (EC 1.14.14.73) (Dimethylaniline oxidase 3) (Hepatic flavin-containing monooxygenase 3) (FMO 3) (Trimethylamine monooxygenase) (EC 1.14.13.148)
+TRINITY_DN276843_c0_g1	transporter activity	ATP synthase subunit gamma, mitochondrial (F-ATPase gamma subunit)
+TRINITY_DN276910_c0_g1	other molecular function	Histone-lysine N-methyltransferase SETMAR (EC 2.1.1.43) (SET domain and mariner transposase fusion protein homolog)
+TRINITY_DN276910_c0_g2	other molecular function	Histone-lysine N-methyltransferase SETMAR (EC 2.1.1.43) (SET domain and mariner transposase fusion protein homolog)
+TRINITY_DN276935_c0_g1	nucleic acid binding activity	Cold shock-like protein CspLA (CspL)
+TRINITY_DN276943_c0_g1	nucleic acid binding activity	Nucleolysin TIAR (TIA-1-related protein)
+TRINITY_DN276974_c0_g1	other molecular function	Nudix hydrolase 1 (AtNUDT1) (7,8-dihydro-8-oxoguanine-triphosphatase) (8-oxo-dGTP diphosphatase) (8-oxo-dGTPase) (EC 3.6.1.55) (Dihydroneopterin triphosphate diphosphatase) (EC 3.6.1.67) (Dihydroneopterin triphosphate pyrophosphohydrolase) (DHNTP pyrophosphohydrolase) (NADH pyrophosphatase) (EC 3.6.1.22)
+TRINITY_DN276983_c0_g1	nucleic acid binding activity	Transcription termination factor MTERF5, chloroplastic (Mitochondrial transcription termination factor 5) (Protein MTERF DEFECTIVE IN ARABIDOPSIS 1)
+TRINITY_DN276992_c0_g1	nucleic acid binding activity	Eukaryotic initiation factor 4A-III (eIF-4A-III) (eIF4A-III) (EC 3.6.4.13)
+TRINITY_DN276992_c0_g1	other molecular function	Eukaryotic initiation factor 4A-III (eIF-4A-III) (eIF4A-III) (EC 3.6.4.13)
+TRINITY_DN277000_c0_g1	nucleic acid binding activity	Phenylalanine--tRNA ligase, chloroplastic/mitochondrial (EC 6.1.1.20) (Phenylalanyl-tRNA synthetase) (PheRS)
+TRINITY_DN277000_c0_g1	other molecular function	Phenylalanine--tRNA ligase, chloroplastic/mitochondrial (EC 6.1.1.20) (Phenylalanyl-tRNA synthetase) (PheRS)
+TRINITY_DN277003_c0_g1	nucleic acid binding activity	APO protein 2, chloroplastic (Accumulation of photosystem I protein 2) (Protein EMBRYO DEFECTIVE 1629)
+TRINITY_DN277043_c0_g1	nucleic acid binding activity	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g1	other molecular function	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g2	nucleic acid binding activity	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277043_c0_g2	other molecular function	25S rRNA (cytosine(2870)-C(5))-methyltransferase (EC 2.1.1.310) (Nucleolar protein 2)
+TRINITY_DN277053_c0_g1	transporter activity	S-type anion channel SLAH3 (SLAC1-homolog protein 3)
+TRINITY_DN277209_c0_g1	other molecular function	Serine carboxypeptidase 3 (EC 3.4.16.5) (Serine carboxypeptidase III)
+TRINITY_DN277215_c0_g1	other molecular function	Peptide methionine sulfoxide reductase MsrA 1 (Protein-methionine-S-oxide reductase 1) (EC 1.8.4.11) (Peptide-methionine (S)-S-oxide reductase 1) (Peptide Met(O) reductase 1)
+TRINITY_DN277252_c0_g1	other molecular function	ATP-binding cassette sub-family F member 2
+TRINITY_DN277292_c0_g1	transporter activity	Protein TIC 20-I, chloroplastic (Translocon at the inner envelope membrane of chloroplasts 20-I) (AtTIC20-I)
+TRINITY_DN277371_c0_g1	other molecular function	Reducing polyketide synthase swnK (EC 2.3.1.-) (Swainsonine biosynthesis gene cluster protein K)
+TRINITY_DN277373_c0_g1	kinase activity	Serine/threonine-protein kinase chk-2 (EC 2.7.11.1) (Ce-cds-1) (Ce-chk-2)
+TRINITY_DN277373_c0_g1	other molecular function	Serine/threonine-protein kinase chk-2 (EC 2.7.11.1) (Ce-cds-1) (Ce-chk-2)
+TRINITY_DN277393_c0_g1	other molecular function	Signal peptide peptidase-like 2 (OsSPPL2) (EC 3.4.23.-)
+TRINITY_DN277394_c0_g1	nucleic acid binding activity	mRNA 3'-end-processing protein rna14
+TRINITY_DN277395_c0_g1	signal transduction activity	Glutamate receptor 2.9 (Ligand-gated ion channel 2.9)
+TRINITY_DN277395_c0_g1	transporter activity	Glutamate receptor 2.9 (Ligand-gated ion channel 2.9)
+TRINITY_DN277915_c0_g1	nucleic acid binding activity	Elongation factor 3 (EF-3)
+TRINITY_DN277915_c0_g1	other molecular function	Elongation factor 3 (EF-3)
+TRINITY_DN277933_c0_g1	nucleic acid binding activity	Lysine-specific demethylase JMJ705 (EC 1.14.11.-) (Jumonji domain-containing protein 705) (Lysine-specific histone demethylase JMJ705) (Protein JUMONJI 705)
+TRINITY_DN277933_c0_g1	other molecular function	Lysine-specific demethylase JMJ705 (EC 1.14.11.-) (Jumonji domain-containing protein 705) (Lysine-specific histone demethylase JMJ705) (Protein JUMONJI 705)
+TRINITY_DN278325_c0_g1	nucleic acid binding activity	Pumilio domain-containing protein C6G9.14
+TRINITY_DN278380_c0_g1	other molecular function	Mitochondrial import inner membrane translocase subunit TIM8
+TRINITY_DN278387_c0_g1	other molecular function	Long chain acyl-CoA synthetase 9, chloroplastic (EC 6.2.1.3)
+TRINITY_DN278824_c0_g1	other molecular function	Ribosome-binding ATPase YchF
+TRINITY_DN278824_c0_g1	translation activity	Ribosome-binding ATPase YchF
+TRINITY_DN278923_c1_g1	nucleic acid binding activity	Transcription factor MYB61 (Myb-related protein 61) (AtMYB61)
+TRINITY_DN278923_c1_g1	transcription regulatory activity	Transcription factor MYB61 (Myb-related protein 61) (AtMYB61)
+TRINITY_DN278928_c0_g1	other molecular function	Probable clathrin heavy chain 1
+TRINITY_DN278965_c0_g1	other molecular function	Prolyl 4-hydroxylase subunit alpha-2 (4-PH alpha-2) (EC 1.14.11.2) (Procollagen-proline,2-oxoglutarate-4-dioxygenase subunit alpha-2)
+TRINITY_DN278966_c0_g1	nucleic acid binding activity	Ethylene-responsive transcription factor 5 (Ethylene-responsive element-binding factor 4) (EREBP-4) (Ethylene-responsive element-binding factor 5 homolog) (NtERF4)
+TRINITY_DN278966_c0_g1	transcription regulatory activity	Ethylene-responsive transcription factor 5 (Ethylene-responsive element-binding factor 4) (EREBP-4) (Ethylene-responsive element-binding factor 5 homolog) (NtERF4)
+TRINITY_DN278966_c0_g2	nucleic acid binding activity	Ethylene-responsive transcription factor 5 (Ethylene-responsive element-binding factor 4) (EREBP-4) (Ethylene-responsive element-binding factor 5 homolog) (NtERF4)
+TRINITY_DN278966_c0_g2	transcription regulatory activity	Ethylene-responsive transcription factor 5 (Ethylene-responsive element-binding factor 4) (EREBP-4) (Ethylene-responsive element-binding factor 5 homolog) (NtERF4)
+TRINITY_DN292320_c0_g2	nucleic acid binding activity	60S ribosomal protein L4-2 (L1)
+TRINITY_DN292320_c0_g2	other molecular function	60S ribosomal protein L4-2 (L1)
+TRINITY_DN292320_c0_g4	other molecular function	Acyl-coenzyme A thioesterase 8 (Acyl-CoA thioesterase 8) (EC 3.1.2.1) (EC 3.1.2.11) (EC 3.1.2.2) (EC 3.1.2.3) (EC 3.1.2.5) (Choloyl-coenzyme A thioesterase) (EC 3.1.2.27) (HIV-Nef-associated acyl-CoA thioesterase) (Peroxisomal acyl-CoA thioesterase 2) (PTE-2) (Peroxisomal acyl-coenzyme A thioester hydrolase 1) (PTE-1) (Peroxisomal long-chain acyl-CoA thioesterase 1) (Thioesterase II) (hACTE-III) (hACTEIII) (hTE)
+TRINITY_DN292320_c0_g4	signal transduction activity	Acyl-coenzyme A thioesterase 8 (Acyl-CoA thioesterase 8) (EC 3.1.2.1) (EC 3.1.2.11) (EC 3.1.2.2) (EC 3.1.2.3) (EC 3.1.2.5) (Choloyl-coenzyme A thioesterase) (EC 3.1.2.27) (HIV-Nef-associated acyl-CoA thioesterase) (Peroxisomal acyl-CoA thioesterase 2) (PTE-2) (Peroxisomal acyl-coenzyme A thioester hydrolase 1) (PTE-1) (Peroxisomal long-chain acyl-CoA thioesterase 1) (Thioesterase II) (hACTE-III) (hACTEIII) (hTE)
+TRINITY_DN292331_c0_g1	nucleic acid binding activity	U4/U6.U5 tri-snRNP-associated protein 1 (SNU66 homolog) (hSnu66) (Squamous cell carcinoma antigen recognized by T-cells 1) (SART-1) (hSART-1) (U4/U6.U5 tri-snRNP-associated 110 kDa protein) (allergen Hom s 1)
+TRINITY_DN292335_c2_g3	enzyme regulator activity	GTP-binding nuclear protein spi1
+TRINITY_DN292335_c2_g3	other molecular function	GTP-binding nuclear protein spi1
+TRINITY_DN292371_c5_g1	other molecular function	Heat shock 70 kDa protein 1 (HSP70-1)
+TRINITY_DN292378_c0_g2	nucleic acid binding activity	Transcription factor JUNGBRUNNEN 1 (NAC domain-containing protein 42) (ANAC042)
+TRINITY_DN292378_c0_g2	transcription regulatory activity	Transcription factor JUNGBRUNNEN 1 (NAC domain-containing protein 42) (ANAC042)
+TRINITY_DN292382_c1_g2	nucleic acid binding activity	RNA-binding protein CP29B, chloroplastic (Ribonucleoprotein At2g37220)
+TRINITY_DN292383_c0_g1	kinase activity	Ribose-phosphate pyrophosphokinase 5, chloroplastic (EC 2.7.6.1) (Phosphoribosyl pyrophosphate synthase 5)
+TRINITY_DN292383_c0_g1	other molecular function	Ribose-phosphate pyrophosphokinase 5, chloroplastic (EC 2.7.6.1) (Phosphoribosyl pyrophosphate synthase 5)
+TRINITY_DN292384_c0_g1	nucleic acid binding activity	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN292384_c0_g1	other molecular function	Putative general negative regulator of transcription C16C9.04c
+TRINITY_DN292387_c4_g1	nucleic acid binding activity	Protein BZR1 homolog 1 (OsBZR1) (Protein BRASSINAZOLE-RESISTANT 1 homolog 1)
+TRINITY_DN292387_c4_g1	transcription regulatory activity	Protein BZR1 homolog 1 (OsBZR1) (Protein BRASSINAZOLE-RESISTANT 1 homolog 1)
+TRINITY_DN292396_c0_g1	transporter activity	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292396_c0_g2	transporter activity	Probable amino acid permease 7 (Amino acid transporter AAP7)
+TRINITY_DN292396_c0_g3	transporter activity	Amino acid permease 5 (Amino acid transporter AAP5)
+TRINITY_DN292396_c0_g4	transporter activity	Amino acid permease 2 (Amino acid transporter AAP2)
+TRINITY_DN292914_c1_g1	other molecular function	Sucrose synthase 1 (EC 2.4.1.13) (Shrunken-1) (Sucrose-UDP glucosyltransferase 1)
+TRINITY_DN292950_c0_g1	nucleic acid binding activity	Retrovirus-related Pol polyprotein from transposon RE2 (Retro element 2) (AtRE2) [Includes: Protease RE2 (EC 3.4.23.-); Reverse transcriptase RE2 (EC 2.7.7.49); Endonuclease RE2]
+TRINITY_DN292950_c0_g1	other molecular function	Retrovirus-related Pol polyprotein from transposon RE2 (Retro element 2) (AtRE2) [Includes: Protease RE2 (EC 3.4.23.-); Reverse transcriptase RE2 (EC 2.7.7.49); Endonuclease RE2]
+TRINITY_DN292951_c0_g1	cytoskeletal activity	Afadin- and alpha-actinin-binding protein A (ADIP-A) (Afadin DIL domain-interacting protein A) (SSX2-interacting protein A) (XSSX2IP)
+TRINITY_DN292961_c0_g1	other molecular function	Ubiquitin carboxyl-terminal hydrolase 5 (EC 3.4.19.12) (Deubiquitinating enzyme 5) (AtUBP5) (Ubiquitin thioesterase 5) (Ubiquitin-specific-processing protease 5)
+TRINITY_DN292970_c0_g1	nucleic acid binding activity	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g1	other molecular function	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	nucleic acid binding activity	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292970_c0_g2	other molecular function	Exonuclease 3'-5' domain-containing protein 2 (EC 3.1.11.1) (Exonuclease 3'-5' domain-like-containing protein 2)
+TRINITY_DN292973_c0_g1	other molecular function	Coatomer subunit gamma-2 (Gamma-2-coat protein) (Gamma-2-COP)
+TRINITY_DN292973_c0_g2	other molecular function	Coatomer subunit gamma (Gamma-coat protein) (Gamma-COP)
+TRINITY_DN292975_c0_g1	nucleic acid binding activity	Aspartate--tRNA(Asp/Asn) ligase (EC 6.1.1.23) (Aspartyl-tRNA synthetase) (AspRS) (Non-discriminating aspartyl-tRNA synthetase) (ND-AspRS)
+TRINITY_DN292975_c0_g1	other molecular function	Aspartate--tRNA(Asp/Asn) ligase (EC 6.1.1.23) (Aspartyl-tRNA synthetase) (AspRS) (Non-discriminating aspartyl-tRNA synthetase) (ND-AspRS)
+TRINITY_DN292978_c1_g13	other molecular function	ATP synthase subunit alpha, mitochondrial (ATP synthase F1 subunit alpha)
+TRINITY_DN292978_c1_g13	transporter activity	ATP synthase subunit alpha, mitochondrial (ATP synthase F1 subunit alpha)
+TRINITY_DN292979_c1_g2	other molecular function	Transcription initiation factor TFIID subunit 7 (TBP-associated factor 7) (AtTAF7)
+TRINITY_DN292979_c1_g2	transcription regulatory activity	Transcription initiation factor TFIID subunit 7 (TBP-associated factor 7) (AtTAF7)
+TRINITY_DN292998_c2_g1	nucleic acid binding activity	40S ribosomal protein S5 (Fragment)
+TRINITY_DN292998_c2_g1	other molecular function	40S ribosomal protein S5 (Fragment)
+TRINITY_DN292998_c5_g6	nucleic acid binding activity	40S ribosomal protein S5
+TRINITY_DN292998_c5_g6	other molecular function	40S ribosomal protein S5
+TRINITY_DN292999_c3_g1	other molecular function	Caffeoylshikimate esterase (EC 3.1.1.-) (Lysophospholipase 2) (LysoPL2)
+TRINITY_DN293332_c0_g1	other molecular function	Probable protein phosphatase 2C 59 (OsPP2C59) (EC 3.1.3.16)
+TRINITY_DN293332_c0_g2	other molecular function	Stomatin-like protein 2, mitochondrial (SLP-2) (mslp2)
+TRINITY_DN293340_c0_g2	other molecular function	4,5-DOPA dioxygenase extradiol (EC 1.13.11.29)
+TRINITY_DN293346_c7_g1	other molecular function	Ras-related protein ced-10 (CErac1) (Cell death protein 10) (Cell-corpse engulfment protein ced-10) (Ras-related protein rac-1)
+TRINITY_DN293348_c0_g2	kinase activity	Calcium/calmodulin-dependent protein kinase type 1 (EC 2.7.11.17) (CaM kinase I) (CaM-KI) (CaM kinase I alpha) (CaMKI-alpha)
+TRINITY_DN293348_c0_g2	other molecular function	Calcium/calmodulin-dependent protein kinase type 1 (EC 2.7.11.17) (CaM kinase I) (CaM-KI) (CaM kinase I alpha) (CaMKI-alpha)
+TRINITY_DN293349_c0_g1	other molecular function	Histone-lysine N-methyltransferase ASHH3 (EC 2.1.1.43) (ASH1 homolog 3) (Protein SET DOMAIN GROUP 7)
+TRINITY_DN293350_c0_g1	other molecular function	Inositol 2-dehydrogenase (EC 1.1.1.18) (Myo-inositol 2-dehydrogenase) (MI-dehydrogenase)
+TRINITY_DN293383_c0_g1	other molecular function	60S ribosomal protein L13
+TRINITY_DN293385_c0_g1	nucleic acid binding activity	60S ribosomal protein L7
+TRINITY_DN293385_c0_g1	other molecular function	60S ribosomal protein L7
+TRINITY_DN293394_c0_g1	nucleic acid binding activity	60S ribosomal protein L6
+TRINITY_DN293394_c0_g1	other molecular function	60S ribosomal protein L6
+TRINITY_DN293398_c2_g7	other molecular function	ATP synthase subunit beta, mitochondrial (EC 7.1.2.2)
+TRINITY_DN293398_c2_g7	transporter activity	ATP synthase subunit beta, mitochondrial (EC 7.1.2.2)
+TRINITY_DN293450_c1_g1	nucleic acid binding activity	GATA transcription factor 15
+TRINITY_DN293450_c1_g1	other molecular function	GATA transcription factor 15
+TRINITY_DN293450_c1_g1	transcription regulatory activity	GATA transcription factor 15
+TRINITY_DN293455_c0_g1	other molecular function	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN293455_c0_g2	other molecular function	Aldehyde dehydrogenase, dimeric NADP-preferring (EC 1.2.1.5) (Aldehyde dehydrogenase family 3 member A1) (HTC-ALDH) (Tumor-associated aldehyde dehydrogenase)
+TRINITY_DN293456_c0_g2	other molecular function	RING-H2 finger protein ATL65 (EC 2.3.2.27) (RING-type E3 ubiquitin transferase ATL65)
+TRINITY_DN293483_c0_g1	nucleic acid binding activity	60S ribosomal protein L8 (L4) (L7A)
+TRINITY_DN293483_c0_g1	other molecular function	60S ribosomal protein L8 (L4) (L7A)
+TRINITY_DN293491_c0_g1	other molecular function	Delta(14)-sterol reductase (EC 1.3.1.70) (C-14 sterol reductase) (Protein FACKEL) (Sterol C14-reductase)
+TRINITY_DN293492_c0_g1	kinase activity	CTD kinase subunit alpha (CTDK-I subunit alpha) (EC 2.7.11.23) (CTD kinase 58 kDa subunit) (CTD kinase subunit 1)
+TRINITY_DN293492_c0_g1	other molecular function	CTD kinase subunit alpha (CTDK-I subunit alpha) (EC 2.7.11.23) (CTD kinase 58 kDa subunit) (CTD kinase subunit 1)
+TRINITY_DN293493_c3_g1	other molecular function	Glutathione S-transferase U5 (AtGSTU5) (EC 2.5.1.18) (AtGSTU1) (GST class-tau member 5) (Glutathione S-transferase 103-1A)
+TRINITY_DN293493_c3_g4	other molecular function	Glutathione S-transferase U17 (AtGSTU17) (EC 2.5.1.18) (GST class-tau member 17) (Glutathione S-transferase 30) (Protein EARLY RESPONSIVE TO DEHYDRATION 9)
+TRINITY_DN293493_c3_g6	other molecular function	Caffeic acid 3-O-methyltransferase (CAOMT) (COMT) (EC 2.1.1.68) (S-adenosysl-L-methionine:caffeic acid 3-O-methyltransferase)
+TRINITY_DN293494_c0_g1	nucleic acid binding activity	Meiotic nuclear division protein 1 homolog (AtMND1) (Meiotic nuclear division 1-like protein)
+TRINITY_DN293499_c0_g1	nucleic acid binding activity	Protein argonaute 4B (OsAGO4b)
+TRINITY_DN293682_c3_g2	other molecular function	S-adenosylmethionine synthase 3 (AdoMet synthase 3) (EC 2.5.1.6) (Methionine adenosyltransferase 3) (MAT 3)
+TRINITY_DN293691_c0_g1	transporter activity	Mitoferrin (Mitochondrial substrate carrier family protein F)
+TRINITY_DN293813_c0_g1	other molecular function	Ornithine aminotransferase, mitochondrial (EC 2.6.1.13) (Ornithine delta-aminotransferase) (Ornithine--oxo-acid aminotransferase)
+TRINITY_DN293818_c2_g1	other molecular function	Peroxidase 1 (EC 1.11.1.7) (Plasma membrane-bound peroxidase 1) (pmPOX1)
+TRINITY_DN293818_c2_g2	other molecular function	Peroxidase 1 (EC 1.11.1.7) (Plasma membrane-bound peroxidase 1) (pmPOX1)
+TRINITY_DN293818_c3_g2	other molecular function	Calcium-binding mitochondrial carrier protein SCaMC-1 (Small calcium-binding mitochondrial carrier protein 1) (Solute carrier family 25 member 24)
+TRINITY_DN293818_c3_g2	transporter activity	Calcium-binding mitochondrial carrier protein SCaMC-1 (Small calcium-binding mitochondrial carrier protein 1) (Solute carrier family 25 member 24)
+TRINITY_DN293826_c5_g4	nucleic acid binding activity	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN293826_c5_g4	other molecular function	H/ACA ribonucleoprotein complex subunit DKC1 (EC 5.4.99.-) (Dyskerin) (Nopp140-associated protein of 57 kDa) (Nucleolar protein NAP57) (Nucleolar protein family A member 4) (snoRNP protein DKC1)
+TRINITY_DN293895_c0_g1	nucleic acid binding activity	DEAD-box ATP-dependent RNA helicase 21 (EC 3.6.4.13)
+TRINITY_DN293895_c0_g1	other molecular function	DEAD-box ATP-dependent RNA helicase 21 (EC 3.6.4.13)
+TRINITY_DN294142_c0_g1	other molecular function	Protease 2 (EC 3.4.21.83) (Oligopeptidase B) (Protease II)
+TRINITY_DN294161_c0_g1	nucleic acid binding activity	Probable pre-mRNA-splicing factor ATP-dependent RNA helicase DEAH2 (EC 3.6.4.13) (DEAH RNA helicase homolog PRP43)
+TRINITY_DN294161_c0_g1	other molecular function	Probable pre-mRNA-splicing factor ATP-dependent RNA helicase DEAH2 (EC 3.6.4.13) (DEAH RNA helicase homolog PRP43)
+TRINITY_DN294161_c0_g2	nucleic acid binding activity	Probable pre-mRNA-splicing factor ATP-dependent RNA helicase DEAH3 (EC 3.6.4.13) (DEAH RNA helicase homolog PRP43)
+TRINITY_DN294161_c0_g2	other molecular function	Probable pre-mRNA-splicing factor ATP-dependent RNA helicase DEAH3 (EC 3.6.4.13) (DEAH RNA helicase homolog PRP43)
+TRINITY_DN294184_c0_g1	other molecular function	Peroxiredoxin (EC 1.11.1.15) (AsPrx) (Thioredoxin peroxidase)
+TRINITY_DN294185_c1_g1	other molecular function	ER lumen protein-retaining receptor erd-2.2
+TRINITY_DN294187_c0_g1	nucleic acid binding activity	RNA pseudouridine synthase 5 (EC 5.4.99.-) (RNA pseudouridylate synthase 5) (RNA-uridine isomerase 5)
+TRINITY_DN294187_c0_g1	other molecular function	RNA pseudouridine synthase 5 (EC 5.4.99.-) (RNA pseudouridylate synthase 5) (RNA-uridine isomerase 5)
+TRINITY_DN294189_c0_g1	nucleic acid binding activity	50S ribosomal protein L2
+TRINITY_DN294189_c0_g1	other molecular function	50S ribosomal protein L2
+TRINITY_DN294194_c0_g1	other molecular function	26S proteasome non-ATPase regulatory subunit 4 (26S proteasome regulatory subunit RPN10)
+TRINITY_DN294194_c0_g2	transporter activity	V-type proton ATPase subunit H (V-ATPase subunit H) (Vacuolar proton pump subunit H)
+TRINITY_DN294619_c0_g2	other molecular function	Probable cyclic nucleotide-gated ion channel 14 (Cyclic nucleotide- and calmodulin-regulated ion channel 14)
+TRINITY_DN294619_c0_g2	transporter activity	Probable cyclic nucleotide-gated ion channel 14 (Cyclic nucleotide- and calmodulin-regulated ion channel 14)
+TRINITY_DN294650_c0_g4	nucleic acid binding activity	NAC domain-containing protein 68 (ONAC068) (OsNAC4)
+TRINITY_DN294652_c0_g3	other molecular function	Lipase (EC 3.1.1.3) (Lip 42) (Thermostable organic solvent tolerant lipase) (Triacylglycerol hydrolase)
+TRINITY_DN294655_c3_g1	other molecular function	Glutaminyl-peptide cyclotransferase (EC 2.3.2.5) (Glutaminyl cyclase)
+TRINITY_DN294655_c4_g1	other molecular function	NAD(P)H-quinone oxidoreductase subunit M, chloroplastic (EC 7.1.1.-) (NAD(P)H dehydrogenase subunit M) (NDH subunit M) (NDH-M) (NADH-plastoquinone oxidoreductase subunit M)
+TRINITY_DN294655_c4_g2	other molecular function	NAD(P)H-quinone oxidoreductase subunit M, chloroplastic (EC 7.1.1.-) (NAD(P)H dehydrogenase subunit M) (NDH subunit M) (NDH-M) (NADH-plastoquinone oxidoreductase subunit M)
+TRINITY_DN294657_c0_g2	other molecular function	Transmembrane emp24 domain-containing protein 10 (21 kDa transmembrane-trafficking protein) (Transmembrane protein Tmp21) (p24 family protein delta-1) (p24delta1)
+TRINITY_DN294674_c6_g1	other molecular function	Putative L-ascorbate peroxidase 6 (AtAPx08) (EC 1.11.1.11)
+TRINITY_DN294747_c0_g1	other molecular function	Tyrosine-protein phosphatase DSP2 (EC 3.1.3.48) (Protein PLANT AND FUNGI ATYPICAL DUAL-SPECIFICITY PHOSPHATASE 2) (AtPFA-DSP2)
+TRINITY_DN294767_c5_g1	nucleic acid binding activity	60S ribosomal protein L9
+TRINITY_DN294767_c5_g1	other molecular function	60S ribosomal protein L9
+TRINITY_DN294767_c5_g2	nucleic acid binding activity	60S ribosomal protein L9
+TRINITY_DN294767_c5_g2	other molecular function	60S ribosomal protein L9
+TRINITY_DN294772_c2_g5	other molecular function	60S ribosomal protein L31
+TRINITY_DN294775_c0_g1	other molecular function	60S ribosomal protein L32-A
+TRINITY_DN294775_c0_g2	other molecular function	60S ribosomal protein L32 (Cytoplasmic ribosomal protein-63)
+TRINITY_DN294779_c0_g2	other molecular function	Ubiquitin-conjugating enzyme E2-17 kDa (EC 2.3.2.23) (E2 ubiquitin-conjugating enzyme) (Ubiquitin carrier protein) (Ubiquitin-protein ligase)
+TRINITY_DN294779_c1_g2	other molecular function	Ubiquitin-conjugating enzyme E2 28 (EC 2.3.2.23) (AtUBC9A) (E2 ubiquitin-conjugating enzyme 28) (Ubiquitin carrier protein 28)
+TRINITY_DN294779_c1_g9	other molecular function	Ubiquitin-conjugating enzyme E2 28 (EC 2.3.2.23) (AtUBC9A) (E2 ubiquitin-conjugating enzyme 28) (Ubiquitin carrier protein 28)
+TRINITY_DN294781_c1_g1	nucleic acid binding activity	60S ribosomal protein L35
+TRINITY_DN294781_c1_g1	other molecular function	60S ribosomal protein L35
+TRINITY_DN294781_c2_g1	nucleic acid binding activity	60S ribosomal protein L35
+TRINITY_DN294781_c2_g1	other molecular function	60S ribosomal protein L35
+TRINITY_DN294787_c0_g3	kinase activity	AP2-associated protein kinase 1 (EC 2.7.11.1) (Adaptor-associated kinase 1)
+TRINITY_DN294787_c0_g3	other molecular function	AP2-associated protein kinase 1 (EC 2.7.11.1) (Adaptor-associated kinase 1)
+TRINITY_DN294787_c0_g3	signal transduction activity	AP2-associated protein kinase 1 (EC 2.7.11.1) (Adaptor-associated kinase 1)
+TRINITY_DN295071_c1_g1	kinase activity	Probable LRR receptor-like serine/threonine-protein kinase At1g53430 (EC 2.7.11.1)
+TRINITY_DN295071_c1_g1	other molecular function	Probable LRR receptor-like serine/threonine-protein kinase At1g53430 (EC 2.7.11.1)
+TRINITY_DN295075_c3_g1	nucleic acid binding activity	40S ribosomal protein S4
+TRINITY_DN295075_c3_g1	other molecular function	40S ribosomal protein S4
+TRINITY_DN295083_c1_g3	other molecular function	Phospho-2-dehydro-3-deoxyheptonate aldolase 1, chloroplastic (EC 2.5.1.54) (3-deoxy-D-arabino-heptulosonate 7-phosphate synthase 1) (DAHP synthase 1) (Phospho-2-keto-3-deoxyheptonate aldolase 1)
+TRINITY_DN295213_c0_g1	nucleic acid binding activity	Structural maintenance of chromosomes protein 4 (Cell untimely torn protein 3) (Chromosome segregation protein cut3)
+TRINITY_DN295213_c0_g1	other molecular function	Structural maintenance of chromosomes protein 4 (Cell untimely torn protein 3) (Chromosome segregation protein cut3)
+TRINITY_DN295214_c0_g1	other molecular function	17.4 kDa class I heat shock protein (17.4 kDa heat shock protein 1) (AtHsp17.4A)
+TRINITY_DN295216_c0_g2	other molecular function	Probable tocopherol O-methyltransferase, chloroplastic (EC 2.1.1.95) (Gamma-tocopherol methyltransferase) (Vitamin E pathway gene 4 protein)
+TRINITY_DN295218_c0_g1	kinase activity	Inositol hexakisphosphate kinase 3 (InsP6 kinase 3) (EC 2.7.4.21) (Inositol hexaphosphate kinase 3)
+TRINITY_DN295218_c0_g1	other molecular function	Inositol hexakisphosphate kinase 3 (InsP6 kinase 3) (EC 2.7.4.21) (Inositol hexaphosphate kinase 3)
+TRINITY_DN295224_c1_g2	other molecular function	Cell division control protein 42 homolog (CDC42Ce)
+TRINITY_DN295225_c0_g2	transporter activity	Protein DETOXIFICATION 16 (AtDTX16) (Multidrug and toxic compound extrusion protein 16) (MATE protein 16)
+TRINITY_DN295225_c1_g1	transporter activity	Protein DETOXIFICATION 16 (AtDTX16) (Multidrug and toxic compound extrusion protein 16) (MATE protein 16)
+TRINITY_DN295268_c2_g1	other molecular function	Probable methyltransferase PMT2 (EC 2.1.1.-)
+TRINITY_DN295269_c0_g3	kinase activity	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN295269_c0_g3	other molecular function	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN295269_c0_g3	signal transduction activity	Serine/threonine-protein kinase Tao (EC 2.7.11.1)
+TRINITY_DN295269_c0_g4	kinase activity	Probable serine/threonine-protein kinase tsuA (EC 2.7.11.1) (Tsunami)
+TRINITY_DN295269_c0_g4	other molecular function	Probable serine/threonine-protein kinase tsuA (EC 2.7.11.1) (Tsunami)
+TRINITY_DN295269_c0_g5	kinase activity	Serine/threonine-protein kinase 4 homolog B (EC 2.7.11.1) (Kinase responsive to stress B) (STE20-like kinase krsB)
+TRINITY_DN295269_c0_g5	other molecular function	Serine/threonine-protein kinase 4 homolog B (EC 2.7.11.1) (Kinase responsive to stress B) (STE20-like kinase krsB)
+TRINITY_DN295269_c0_g6	kinase activity	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN295269_c0_g6	other molecular function	Serine/threonine-protein kinase KIN82 (EC 2.7.11.1) (Flippase kinase 2)
+TRINITY_DN295270_c0_g1	other molecular function	Importin-11 (Imp11) (Ran-binding protein 11) (RanBP11)
+TRINITY_DN296278_c0_g3	other molecular function	Adenylosuccinate lyase (ASL) (EC 4.3.2.2) (Adenylosuccinase) (ASase)
+TRINITY_DN296278_c0_g4	other molecular function	Adenylosuccinate lyase (ASL) (EC 4.3.2.2) (Adenylosuccinase) (ASase)
+TRINITY_DN296278_c0_g5	other molecular function	Adenylosuccinate lyase (ASL) (EC 4.3.2.2) (Adenylosuccinase) (ASase)
+TRINITY_DN296362_c0_g5	cytoskeletal activity	Dynamin-related protein 1C (Dynamin-like protein 5) (Dynamin-like protein C) (Dynamin-like protein DLP1)
+TRINITY_DN296362_c0_g5	other molecular function	Dynamin-related protein 1C (Dynamin-like protein 5) (Dynamin-like protein C) (Dynamin-like protein DLP1)
+TRINITY_DN296376_c0_g1	other molecular function	Arginine biosynthesis bifunctional protein ArgJ, chloroplastic [Cleaved into: Arginine biosynthesis bifunctional protein ArgJ alpha chain; Arginine biosynthesis bifunctional protein ArgJ beta chain] [Includes: Glutamate N-acetyltransferase (GAT) (EC 2.3.1.35) (Ornithine acetyltransferase) (OATase) (Ornithine transacetylase); Amino-acid acetyltransferase (EC 2.3.1.1) (N-acetylglutamate synthase) (AGS)]
+TRINITY_DN296377_c0_g1	nucleic acid binding activity	Probable RNA-dependent RNA polymerase 1 (OsRDR1) (EC 2.7.7.48)
+TRINITY_DN296377_c0_g1	other molecular function	Probable RNA-dependent RNA polymerase 1 (OsRDR1) (EC 2.7.7.48)
+TRINITY_DN296379_c5_g1	nucleic acid binding activity	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN296379_c5_g1	other molecular function	General negative regulator of transcription subunit 4 (Modulator of transcription 2)
+TRINITY_DN296706_c2_g1	other molecular function	E3 ubiquitin-protein ligase SP1 (EC 2.3.2.27) (DIAP1-like protein 1) (Protein SUPPRESSOR OF PPI1 LOCUS 1) (RING-type E3 ubiquitin transferase SP1)
+TRINITY_DN296757_c3_g1	other molecular function	Isoaspartyl peptidase/L-asparaginase 1 (EC 3.4.19.5) (L-asparagine amidohydrolase 1) [Cleaved into: Isoaspartyl peptidase/L-asparaginase 1 subunit alpha; Isoaspartyl peptidase/L-asparaginase 1 subunit beta]
+TRINITY_DN296758_c2_g5	nucleic acid binding activity	Floral homeotic protein APETALA 2
+TRINITY_DN296758_c2_g5	transcription regulatory activity	Floral homeotic protein APETALA 2
+TRINITY_DN296759_c4_g1	cytoskeletal activity	Tubulin beta chain (Beta-tubulin) (Fragment)
+TRINITY_DN296759_c4_g1	other molecular function	Tubulin beta chain (Beta-tubulin) (Fragment)
+TRINITY_DN296771_c4_g2	other molecular function	Calmodulin (CaM)
+TRINITY_DN296783_c0_g1	other molecular function	Uroporphyrinogen decarboxylase 1, chloroplastic (UPD1) (URO-D1) (EC 4.1.1.37)
+TRINITY_DN296791_c0_g1	other molecular function	Peptide deformylase 1A, chloroplastic (PDF 1A) (EC 3.5.1.88) (Polypeptide deformylase)
+TRINITY_DN296798_c5_g3	cytoskeletal activity	Tubulin beta chain (Beta-tubulin)
+TRINITY_DN296798_c5_g3	other molecular function	Tubulin beta chain (Beta-tubulin)
+TRINITY_DN298149_c0_g1	other molecular function	Importin subunit alpha-1b
+TRINITY_DN298161_c0_g1	enzyme regulator activity	TBC1 domain family member 2A
+TRINITY_DN298161_c0_g1	other molecular function	TBC1 domain family member 2A
+TRINITY_DN298164_c0_g1	transporter activity	Mitochondrial glycine transporter (Solute carrier family 25 member 38 homolog)
+TRINITY_DN298165_c0_g2	other molecular function	Probable isoaspartyl peptidase/L-asparaginase 2 (EC 3.4.19.5) (L-asparagine amidohydrolase 2) [Cleaved into: Isoaspartyl peptidase/L-asparaginase 2 subunit alpha; Isoaspartyl peptidase/L-asparaginase 2 subunit beta]
+TRINITY_DN298167_c1_g1	other molecular function	ADP-ribosylation factor 3 (AtARF3) (Protein ARF-LIKE 1) (AtARL1)
+TRINITY_DN298173_c0_g1	transporter activity	Mitochondrial phosphate carrier protein 3, mitochondrial (Mitochondrial phosphate transporter 3) (MPT3) (Phosphate transporter 3;1)
+TRINITY_DN298177_c0_g1	other molecular function	Pentatricopeptide repeat-containing protein At5g66520
+TRINITY_DN298179_c0_g2	other molecular function	ABC transporter C family member 14 (ABC transporter ABCC.14) (AtABCC14) (EC 7.6.2.2) (ATP-energized glutathione S-conjugate pump 10) (Glutathione S-conjugate-transporting ATPase 10) (Multidrug resistance-associated protein 10)
+TRINITY_DN298179_c0_g2	transporter activity	ABC transporter C family member 14 (ABC transporter ABCC.14) (AtABCC14) (EC 7.6.2.2) (ATP-energized glutathione S-conjugate pump 10) (Glutathione S-conjugate-transporting ATPase 10) (Multidrug resistance-associated protein 10)
+TRINITY_DN298237_c0_g1	other molecular function	Probable glucomannan 4-beta-mannosyltransferase 11 (EC 2.4.1.32) (Cellulose synthase-like protein A11) (OsCslA11) (Glucomannan synthase) (Mannan synthase 11)
+TRINITY_DN298417_c1_g1	other molecular function	Prolyl 4-hydroxylase 1 (AtP4H-1) (AtP4H1) (EC 1.14.11.2)
+TRINITY_DN298447_c0_g1	nucleic acid binding activity	Lysine-specific demethylase JMJ30 (AtJMJ30) (EC 1.14.11.-) (JmjC domain-containing protein 30) (Jumonji domain-containing protein 5) (AtJMJD5)
+TRINITY_DN298447_c0_g1	other molecular function	Lysine-specific demethylase JMJ30 (AtJMJ30) (EC 1.14.11.-) (JmjC domain-containing protein 30) (Jumonji domain-containing protein 5) (AtJMJD5)
+TRINITY_DN298447_c0_g1	transcription regulatory activity	Lysine-specific demethylase JMJ30 (AtJMJ30) (EC 1.14.11.-) (JmjC domain-containing protein 30) (Jumonji domain-containing protein 5) (AtJMJD5)
+TRINITY_DN298447_c1_g1	other molecular function	Organellar oligopeptidase A, chloroplastic/mitochondrial (EC 3.4.24.70) (Thimet metalloendopeptidase 1) (Zincin-like metalloproteases family protein 1)
+TRINITY_DN298449_c3_g4	other molecular function	Ras-related protein RIC1
+TRINITY_DN298449_c4_g2	other molecular function	Ras-related protein Rab-1A
+TRINITY_DN298472_c6_g2	transporter activity	Probable aquaporin SIP2-1 (Small basic intrinsic protein 2-1) (AtSIP2;1)
+TRINITY_DN298472_c6_g3	nucleic acid binding activity	DnaJ homolog subfamily C member 2
+TRINITY_DN298472_c6_g3	other molecular function	DnaJ homolog subfamily C member 2
+TRINITY_DN298476_c0_g1	nucleic acid binding activity	Eukaryotic translation initiation factor 3 subunit A (eIF3a) (Eukaryotic translation initiation factor 3 large subunit) (Eukaryotic translation initiation factor 3 subunit 10) (eIF-3-theta) (p114)
+TRINITY_DN298602_c0_g1	other molecular function	Electron transfer flavoprotein subunit alpha (Alpha-ETF) (Electron transfer flavoprotein large subunit) (ETFLS)
+TRINITY_DN298605_c1_g1	other molecular function	Fumarate reductase (FRDS) (EC 1.3.1.6) (FAD-dependent oxidoreductase) (NADH-dependent fumarate reductase)
+TRINITY_DN298615_c0_g2	other molecular function	Glucan endo-1,3-beta-glucosidase 14 (EC 3.2.1.39) ((1->3)-beta-glucan endohydrolase 14) ((1->3)-beta-glucanase 14) (Beta-1,3-endoglucanase 14) (Beta-1,3-glucanase 14)
+TRINITY_DN298618_c0_g1	other molecular function	Pachytene checkpoint protein 2 homolog
+TRINITY_DN298802_c0_g2	other molecular function	Chlorophyllase-2, chloroplastic (AtCLH2) (EC 3.1.1.14) (Chlorophyll-chlorophyllido hydrolase 2) (Chlase 2)
+TRINITY_DN298805_c0_g1	nucleic acid binding activity	Bystin
+TRINITY_DN298805_c0_g2	other molecular function	DeSI-like protein At4g17486 (EC 3.4.-.-)
+TRINITY_DN298805_c0_g4	nucleic acid binding activity	Bystin
+TRINITY_DN298831_c0_g1	other molecular function	Peroxidase P7 (EC 1.11.1.7) (TP7)
+TRINITY_DN298832_c0_g1	other molecular function	Probable complex I intermediate-associated protein 30
+TRINITY_DN298834_c0_g1	other molecular function	Putative glycine--tRNA ligase (EC 6.1.1.14) (Diadenosine tetraphosphate synthetase) (Ap4A synthetase) (EC 2.7.7.-) (Glycyl-tRNA synthetase) (GlyRS)
+TRINITY_DN298834_c0_g2	nucleic acid binding activity	Ceramide synthase 4 (CerS4) (LAG1 longevity assurance homolog 4)
+TRINITY_DN298834_c0_g2	other molecular function	Ceramide synthase 4 (CerS4) (LAG1 longevity assurance homolog 4)
+TRINITY_DN298836_c0_g1	other molecular function	Probable E3 ubiquitin-protein ligase ARI2 (EC 2.3.2.31) (ARIADNE-like protein ARI2) (Protein ariadne homolog 2) (RING-type E3 ubiquitin transferase ARI2)
+TRINITY_DN298841_c2_g1	other molecular function	40S ribosomal protein S23
+TRINITY_DN298843_c0_g1	cytoskeletal activity	Serine/threonine-protein kinase pakA (dPAKa) (EC 2.7.11.1) (dpak1)
+TRINITY_DN298843_c0_g1	kinase activity	Serine/threonine-protein kinase pakA (dPAKa) (EC 2.7.11.1) (dpak1)
+TRINITY_DN298843_c0_g1	other molecular function	Serine/threonine-protein kinase pakA (dPAKa) (EC 2.7.11.1) (dpak1)
+TRINITY_DN298848_c3_g2	nucleic acid binding activity	60S acidic ribosomal protein P0-1
+TRINITY_DN298848_c3_g2	other molecular function	60S acidic ribosomal protein P0-1
+TRINITY_DN298862_c0_g3	other molecular function	SH3 domain-containing protein 2
+TRINITY_DN298863_c0_g2	other molecular function	Methylesterase 1 (AtMES1) (EC 3.1.1.-)
+TRINITY_DN299020_c1_g1	other molecular function	Probable beta-1,4-xylosyltransferase IRX10L (EC 2.4.2.-) (Glucuronoxylan glucuronosyltransferase 1) (AtGUT1) (Glucuronoxylan glucuronosyltransferase 2) (AtGUT2) (Protein IRREGULAR XYLEM 10-like) (Xylan xylosyltransferase IRX10L)
+TRINITY_DN299024_c0_g1	other molecular function	ATP synthase gamma chain (ATP synthase F1 sector gamma subunit) (F-ATPase gamma subunit)
+TRINITY_DN299024_c0_g1	transporter activity	ATP synthase gamma chain (ATP synthase F1 sector gamma subunit) (F-ATPase gamma subunit)
+TRINITY_DN299032_c0_g1	kinase activity	[Pyruvate dehydrogenase (acetyl-transferring)] kinase, mitochondrial (AtPDHK) (Pyruvate dehydrogenase kinase) (EC 2.7.11.2)
+TRINITY_DN299032_c0_g1	other molecular function	[Pyruvate dehydrogenase (acetyl-transferring)] kinase, mitochondrial (AtPDHK) (Pyruvate dehydrogenase kinase) (EC 2.7.11.2)
+TRINITY_DN299032_c0_g1	signal transduction activity	[Pyruvate dehydrogenase (acetyl-transferring)] kinase, mitochondrial (AtPDHK) (Pyruvate dehydrogenase kinase) (EC 2.7.11.2)
+TRINITY_DN299040_c0_g1	other molecular function	16.9 kDa class I heat shock protein 2 (16.9 kDa heat shock protein 2) (OsHsp16.9B)
+TRINITY_DN299042_c0_g1	kinase activity	UMP-CMP kinase (EC 2.7.4.14) (Deoxycytidylate kinase) (CK) (dCMP kinase) (Nucleoside-diphosphate kinase) (EC 2.7.4.6) (Uridine monophosphate/cytidine monophosphate kinase) (UMP/CMP kinase) (UMP/CMPK)
+TRINITY_DN299042_c0_g1	other molecular function	UMP-CMP kinase (EC 2.7.4.14) (Deoxycytidylate kinase) (CK) (dCMP kinase) (Nucleoside-diphosphate kinase) (EC 2.7.4.6) (Uridine monophosphate/cytidine monophosphate kinase) (UMP/CMP kinase) (UMP/CMPK)
+TRINITY_DN299202_c0_g2	other molecular function	Bacillopeptidase F (EC 3.4.21.-) (90 kDa serine proteinase) (Esterase) (RP-I protease)
+TRINITY_DN299255_c0_g1	nucleic acid binding activity	Trihelix transcription factor GT-3b (Transcription factor GT-1-like) (Trihelix DNA-binding protein GT-3b)
+TRINITY_DN299255_c0_g1	transcription regulatory activity	Trihelix transcription factor GT-3b (Transcription factor GT-1-like) (Trihelix DNA-binding protein GT-3b)
+TRINITY_DN299255_c0_g5	nucleic acid binding activity	Ribonuclease J (RNase J) (EC 3.1.-.-)
+TRINITY_DN299255_c0_g5	other molecular function	Ribonuclease J (RNase J) (EC 3.1.-.-)
+TRINITY_DN299263_c0_g1	kinase activity	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g1	other molecular function	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	kinase activity	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g2	other molecular function	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN299263_c0_g3	kinase activity	cAMP-dependent protein kinase catalytic subunit (EC 2.7.11.11) (Dd GPK2) (DdPK3)
+TRINITY_DN299263_c0_g3	other molecular function	cAMP-dependent protein kinase catalytic subunit (EC 2.7.11.11) (Dd GPK2) (DdPK3)
+TRINITY_DN299270_c7_g1	other molecular function	60S ribosomal protein L17-1
+TRINITY_DN299275_c0_g1	other molecular function	Protein bem46
+TRINITY_DN299276_c0_g3	other molecular function	Protein DEFECTIVE IN MERISTEM SILENCING 3 (Protein INVOLVED IN DE NOVO 1)
+TRINITY_DN299276_c0_g5	nucleic acid binding activity	Transcription factor bHLH13 (Basic helix-loop-helix protein 13) (AtbHLH13) (bHLH 13) (Transcription factor EN 39) (bHLH transcription factor bHLH013)
+TRINITY_DN299276_c0_g5	other molecular function	Transcription factor bHLH13 (Basic helix-loop-helix protein 13) (AtbHLH13) (bHLH 13) (Transcription factor EN 39) (bHLH transcription factor bHLH013)
+TRINITY_DN299276_c0_g5	transcription regulatory activity	Transcription factor bHLH13 (Basic helix-loop-helix protein 13) (AtbHLH13) (bHLH 13) (Transcription factor EN 39) (bHLH transcription factor bHLH013)
+TRINITY_DN299296_c0_g1	other molecular function	Probable E3 ubiquitin-protein ligase XBOS32 (EC 2.3.2.27) (Ankyrin repeat domain and RING finger-containing protein XBOS32) (RING-type E3 ubiquitin transferase XBOS32) (XB3 protein homolog 2)
+TRINITY_DN299653_c1_g2	other molecular function	60S ribosomal protein L4
+TRINITY_DN299656_c3_g3	other molecular function	Cytochrome c
+TRINITY_DN299658_c5_g1	nucleic acid binding activity	Probable WRKY transcription factor 74 (WRKY DNA-binding protein 74)
+TRINITY_DN299658_c5_g1	other molecular function	Probable WRKY transcription factor 74 (WRKY DNA-binding protein 74)
+TRINITY_DN299658_c5_g1	transcription regulatory activity	Probable WRKY transcription factor 74 (WRKY DNA-binding protein 74)
+TRINITY_DN299722_c1_g1	nucleic acid binding activity	DNA replication licensing factor MCM4 (EC 3.6.4.12) (Minichromosome maintenance protein 4) (OsMCM4)
+TRINITY_DN299722_c1_g1	other molecular function	DNA replication licensing factor MCM4 (EC 3.6.4.12) (Minichromosome maintenance protein 4) (OsMCM4)
+TRINITY_DN299726_c0_g1	other molecular function	Nicotinate-nucleotide pyrophosphorylase [carboxylating], chloroplastic (EC 2.4.2.19) (Quinolinate phosphoribosyltransferase [decarboxylating])
+TRINITY_DN299729_c1_g1	nucleic acid binding activity	Eukaryotic translation initiation factor 2A (eIF-2A)
+TRINITY_DN299750_c2_g1	nucleic acid binding activity	RNA-dependent RNA polymerase 2 (AtRDRP2) (EC 2.7.7.48) (Protein SILENCING MOVEMENT DEFICIENT 1) (RNA-directed RNA polymerase 2)
+TRINITY_DN299750_c2_g1	other molecular function	RNA-dependent RNA polymerase 2 (AtRDRP2) (EC 2.7.7.48) (Protein SILENCING MOVEMENT DEFICIENT 1) (RNA-directed RNA polymerase 2)
+TRINITY_DN299750_c3_g1	transporter activity	D-xylose-proton symporter-like 2
+TRINITY_DN299750_c3_g2	other molecular function	Phosphoinositide phospholipase C 6 (EC 3.1.4.11) (Phosphoinositide phospholipase PLC6) (AtPLC6) (AtPLC8) (PI-PLC6)
+TRINITY_DN299750_c3_g3	nucleic acid binding activity	B3 domain-containing protein Os03g0184500
+TRINITY_DN299755_c1_g3	other molecular function	Protein phosphatase 2C homolog 3 (PP2C-3) (EC 3.1.3.16)
+TRINITY_DN299755_c1_g4	other molecular function	Phosphatidylinositol N-acetylglucosaminyltransferase subunit A (EC 2.4.1.198) (GlcNAc-PI synthesis protein) (Phosphatidylinositol-glycan biosynthesis class A protein)
+TRINITY_DN299758_c1_g1	kinase activity	Cell division control protein 2 homolog A (EC 2.7.11.22) (EC 2.7.11.23)
+TRINITY_DN299758_c1_g1	other molecular function	Cell division control protein 2 homolog A (EC 2.7.11.22) (EC 2.7.11.23)
+TRINITY_DN299758_c1_g2	kinase activity	Cell division control protein 2 homolog (EC 2.7.11.22) (EC 2.7.11.23) (p34cdc2)
+TRINITY_DN299758_c1_g2	other molecular function	Cell division control protein 2 homolog (EC 2.7.11.22) (EC 2.7.11.23) (p34cdc2)
+TRINITY_DN299783_c0_g3	other molecular function	Acyl-protein thioesterase 2 (APT-2) (EC 3.1.2.-) (Lysophospholipase II) (LPL-II) (LysoPLA II)
+TRINITY_DN299788_c0_g1	nucleic acid binding activity	Cytoplasmic 60S subunit biogenesis factor REI1 homolog 1 (Protein REI1-LIKE 1) (pre-60S factor REI1 homolog 1)
+TRINITY_DN299788_c0_g1	other molecular function	Cytoplasmic 60S subunit biogenesis factor REI1 homolog 1 (Protein REI1-LIKE 1) (pre-60S factor REI1 homolog 1)
+TRINITY_DN299789_c0_g1	other molecular function	Sorting nexin 1 (AtSNX1) (Vacuolar protein sorting-associated protein 5 homolog)
+TRINITY_DN299795_c0_g1	other molecular function	TOM1-like protein 6
+TRINITY_DN310027_c1_g1	other molecular function	GTP-binding protein yptV1
+TRINITY_DN310080_c0_g1	other molecular function	Polygalacturonase At1g48100 (PG) (EC 3.2.1.15) (Pectinase At1g48100)
+TRINITY_DN310080_c0_g3	other molecular function	Polygalacturonase At1g48100 (PG) (EC 3.2.1.15) (Pectinase At1g48100)
+TRINITY_DN310082_c1_g1	other molecular function	Arogenate dehydrogenase 2, chloroplastic (EC 1.3.1.78) (TyrAAT2)
+TRINITY_DN310084_c1_g1	other molecular function	Neutral ceramidase (N-CDase) (NCDase) (EC 3.5.1.23) (Acylsphingosine deacylase) (N-acylsphingosine amidohydrolase)
+TRINITY_DN310084_c1_g2	other molecular function	Neutral ceramidase B (N-CDase B) (NCDase B) (EC 3.5.1.23) (Acylsphingosine deacylase 2B) (N-acylsphingosine amidohydrolase 2B)
+TRINITY_DN310085_c0_g1	cytoskeletal activity	Villin-4
+TRINITY_DN310729_c0_g1	nucleic acid binding activity	H/ACA ribonucleoprotein complex subunit 4 (EC 5.4.99.-) (CBF5 homolog) (Dyskerin) (Nopp-140-associated protein of 57 kDa homolog) (AtNAP57) (Nucleolar protein NAP57 homolog)
+TRINITY_DN310729_c0_g1	other molecular function	H/ACA ribonucleoprotein complex subunit 4 (EC 5.4.99.-) (CBF5 homolog) (Dyskerin) (Nopp-140-associated protein of 57 kDa homolog) (AtNAP57) (Nucleolar protein NAP57 homolog)
+TRINITY_DN310742_c0_g4	nucleic acid binding activity	GTP-binding protein BRASSINAZOLE INSENSITIVE PALE GREEN 2, chloroplastic (Protein BRZ-INSENSITIVE-PALE GREEN 2)
+TRINITY_DN310742_c0_g4	other molecular function	GTP-binding protein BRASSINAZOLE INSENSITIVE PALE GREEN 2, chloroplastic (Protein BRZ-INSENSITIVE-PALE GREEN 2)
+TRINITY_DN310742_c1_g1	other molecular function	Dihydrofolate reductase (EC 1.5.1.3)
+TRINITY_DN310742_c1_g3	kinase activity	Mitogen-activated protein kinase 12 (MAP kinase 12) (EC 2.7.11.24) (Blast- and wound-induced MAP kinase 1) (MAP kinase 1) (OsBWMK1) (OsMAPK1)
+TRINITY_DN310742_c1_g3	other molecular function	Mitogen-activated protein kinase 12 (MAP kinase 12) (EC 2.7.11.24) (Blast- and wound-induced MAP kinase 1) (MAP kinase 1) (OsBWMK1) (OsMAPK1)
+TRINITY_DN310742_c1_g3	signal transduction activity	Mitogen-activated protein kinase 12 (MAP kinase 12) (EC 2.7.11.24) (Blast- and wound-induced MAP kinase 1) (MAP kinase 1) (OsBWMK1) (OsMAPK1)
+TRINITY_DN310743_c0_g1	other molecular function	60S ribosomal protein L27
+TRINITY_DN310743_c5_g1	other molecular function	60S ribosomal protein L27-B
+TRINITY_DN310744_c0_g3	kinase activity	cAMP-dependent protein kinase, catalytic subunit-like (EC 2.7.11.11)
+TRINITY_DN310744_c0_g3	other molecular function	cAMP-dependent protein kinase, catalytic subunit-like (EC 2.7.11.11)
+TRINITY_DN310765_c2_g2	other molecular function	Kynurenine--oxoglutarate transaminase (EC 2.6.1.7) (Glutamine transaminase K) (EC 4.4.1.13) (Glutamine--phenylpyruvate transaminase) (EC 2.6.1.64) (Kynurenine aminotransferase)
+TRINITY_DN310768_c2_g1	nucleic acid binding activity	DExH-box ATP-dependent RNA helicase DExH14 (EC 3.6.4.13) (BRR2 homolog C) (AtBRR2C) (Pre-mRNA-splicing helicase BRR2C)
+TRINITY_DN310768_c2_g1	other molecular function	DExH-box ATP-dependent RNA helicase DExH14 (EC 3.6.4.13) (BRR2 homolog C) (AtBRR2C) (Pre-mRNA-splicing helicase BRR2C)
+TRINITY_DN310768_c2_g2	nucleic acid binding activity	SUPPRESSOR OF ABI3-5 (REQUIRED FOR SNC4-1D protein 1) (Splicing factor SUA)
+TRINITY_DN310768_c2_g2	other molecular function	SUPPRESSOR OF ABI3-5 (REQUIRED FOR SNC4-1D protein 1) (Splicing factor SUA)
+TRINITY_DN311070_c0_g2	other molecular function	Heme oxygenase 1, chloroplastic (AtHO1) (EC 1.14.14.18) (Protein GENOMES UNCOUPLED 2) (Protein REVERSAL OF THE DET PHENOTYPE 4)
+TRINITY_DN311070_c0_g3	other molecular function	Photosynthetic NDH subunit of subcomplex B 3, chloroplastic (Protein PnsB3) (NDH-DEPENDENT CYCLIC ELECTRON FLOW 4)
+TRINITY_DN311077_c1_g1	other molecular function	Putative phospholipid-transporting ATPase 9 (AtALA9) (EC 7.6.2.1) (Aminophospholipid flippase 9)
+TRINITY_DN311077_c1_g1	transporter activity	Putative phospholipid-transporting ATPase 9 (AtALA9) (EC 7.6.2.1) (Aminophospholipid flippase 9)
+TRINITY_DN311412_c1_g1	other molecular function	Protein arginine N-methyltransferase 1 (EC 2.1.1.-)
+TRINITY_DN311414_c0_g1	other molecular function	Developmentally-regulated GTP-binding protein 1 homolog (DRG-1)
+TRINITY_DN311418_c0_g2	enzyme regulator activity	X-linked retinitis pigmentosa GTPase regulator homolog (Gut granule loss protein 4)
+TRINITY_DN311418_c0_g3	other molecular function	Probable E3 ubiquitin-protein ligase HERC2 (EC 2.3.2.26) (HECT domain and RCC1-like domain-containing protein 2) (HECT-type E3 ubiquitin transferase HERC2)
+TRINITY_DN311419_c1_g1	nucleic acid binding activity	bZIP transcription factor 53 (AtbZIP53)
+TRINITY_DN311419_c1_g1	other molecular function	bZIP transcription factor 53 (AtbZIP53)
+TRINITY_DN311419_c1_g1	transcription regulatory activity	bZIP transcription factor 53 (AtbZIP53)
+TRINITY_DN311463_c2_g1	nucleic acid binding activity	Elongation factor 2 (EF-2)
+TRINITY_DN311463_c2_g1	other molecular function	Elongation factor 2 (EF-2)
+TRINITY_DN311463_c3_g2	nucleic acid binding activity	Elongation factor 2 (EF-2)
+TRINITY_DN311463_c3_g2	other molecular function	Elongation factor 2 (EF-2)
+TRINITY_DN311468_c0_g1	other molecular function	E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)
+TRINITY_DN311475_c2_g1	nucleic acid binding activity	Histone-lysine N-methyltransferase SUVR5 (EC 2.1.1.43) (C2H2 zinc finger-SET histone methyltransferase) (Protein C2H2 SET) (Protein SET DOMAIN GROUP 6) (Suppressor of variegation 3-9-related protein 5) (Su(var)3-9-related protein 5)
+TRINITY_DN311475_c2_g1	other molecular function	Histone-lysine N-methyltransferase SUVR5 (EC 2.1.1.43) (C2H2 zinc finger-SET histone methyltransferase) (Protein C2H2 SET) (Protein SET DOMAIN GROUP 6) (Suppressor of variegation 3-9-related protein 5) (Su(var)3-9-related protein 5)
+TRINITY_DN311475_c2_g1	transcription regulatory activity	Histone-lysine N-methyltransferase SUVR5 (EC 2.1.1.43) (C2H2 zinc finger-SET histone methyltransferase) (Protein C2H2 SET) (Protein SET DOMAIN GROUP 6) (Suppressor of variegation 3-9-related protein 5) (Su(var)3-9-related protein 5)
+TRINITY_DN311476_c1_g3	cytoskeletal activity	Tubulin alpha-1 chain (Alpha-1-tubulin)
+TRINITY_DN311476_c1_g3	other molecular function	Tubulin alpha-1 chain (Alpha-1-tubulin)
+TRINITY_DN311478_c1_g1	other molecular function	Uncharacterized acetyltransferase At3g50280 (EC 2.3.1.-)
+TRINITY_DN311478_c1_g2	other molecular function	Dihydroflavonol 4-reductase (DFR) (EC 1.1.1.219) (Dihydrokaempferol 4-reductase) (Flavanone 4-reductase) (FNR) (EC 1.1.1.234)
+TRINITY_DN311484_c1_g1	cytoskeletal activity	Kinesin-like protein KIF3B (HH0048) (Microtubule plus end-directed kinesin motor 3B) [Cleaved into: Kinesin-like protein KIF3B, N-terminally processed]
+TRINITY_DN311484_c1_g1	other molecular function	Kinesin-like protein KIF3B (HH0048) (Microtubule plus end-directed kinesin motor 3B) [Cleaved into: Kinesin-like protein KIF3B, N-terminally processed]
+TRINITY_DN311484_c1_g3	nucleic acid binding activity	Neutral alpha-glucosidase AB (EC 3.2.1.207) (Alpha-glucosidase 2) (Glucosidase II subunit alpha)
+TRINITY_DN311484_c1_g3	other molecular function	Neutral alpha-glucosidase AB (EC 3.2.1.207) (Alpha-glucosidase 2) (Glucosidase II subunit alpha)
+TRINITY_DN311484_c1_g5	other molecular function	Protein GstA
+TRINITY_DN311486_c4_g1	other molecular function	Long chain acyl-CoA synthetase 6, peroxisomal (EC 6.2.1.3)
+TRINITY_DN311493_c0_g1	other molecular function	Sodium/potassium-transporting ATPase subunit alpha (Na(+)/K(+) ATPase alpha subunit) (EC 7.2.2.13) (Sodium pump subunit alpha)
+TRINITY_DN311493_c0_g1	transporter activity	Sodium/potassium-transporting ATPase subunit alpha (Na(+)/K(+) ATPase alpha subunit) (EC 7.2.2.13) (Sodium pump subunit alpha)
+TRINITY_DN311730_c0_g1	other molecular function	NPC intracellular cholesterol transporter 1 (Niemann-Pick C1 protein)
+TRINITY_DN311730_c0_g1	transporter activity	NPC intracellular cholesterol transporter 1 (Niemann-Pick C1 protein)
+TRINITY_DN311738_c1_g1	other molecular function	Cathepsin D (EC 3.4.23.5) (Ddp44)
+TRINITY_DN311742_c0_g1	enzyme regulator activity	Ultraviolet-B receptor UVR8 (Protein UV-B RESISTANCE 8) (RCC1 domain-containing protein UVR8)
+TRINITY_DN311742_c0_g1	other molecular function	Ultraviolet-B receptor UVR8 (Protein UV-B RESISTANCE 8) (RCC1 domain-containing protein UVR8)
+TRINITY_DN311742_c0_g1	signal transduction activity	Ultraviolet-B receptor UVR8 (Protein UV-B RESISTANCE 8) (RCC1 domain-containing protein UVR8)
+TRINITY_DN311743_c1_g1	other molecular function	Multiple organellar RNA editing factor 8, chloroplastic/mitochondrial (RNA editing-interacting protein 1)
+TRINITY_DN311745_c0_g3	other molecular function	Rac-like GTP-binding protein 4 (GTPase protein ROP4) (OsRac4)
+TRINITY_DN311752_c0_g1	other molecular function	4-coumarate--CoA ligase-like 1 (EC 6.2.1.-)
+TRINITY_DN311753_c2_g3	nucleic acid binding activity	Pumilio homolog 9 (APUM-9) (AtPUM9)
+TRINITY_DN311753_c2_g8	other molecular function	Carbonyl reductase [NADPH] 1 (EC 1.1.1.184) (15-hydroxyprostaglandin dehydrogenase [NADP(+)]) (EC 1.1.1.197) (NADPH-dependent carbonyl reductase 1) (Prostaglandin 9-ketoreductase) (Prostaglandin-E(2) 9-reductase) (EC 1.1.1.189)
+TRINITY_DN311774_c0_g1	other molecular function	Cytochrome P450 94A1 (EC 1.14.-.-) (P450-dependent fatty acid omega-hydroxylase)
+TRINITY_DN311783_c0_g2	kinase activity	Calcium and calcium/calmodulin-dependent serine/threonine-protein kinase (LlCCaMK) (EC 2.7.11.17)
+TRINITY_DN311783_c0_g2	other molecular function	Calcium and calcium/calmodulin-dependent serine/threonine-protein kinase (LlCCaMK) (EC 2.7.11.17)
+TRINITY_DN311788_c0_g1	nucleic acid binding activity	tRNA pseudouridine synthase A (EC 5.4.99.12) (tRNA pseudouridine(38-40) synthase) (tRNA pseudouridylate synthase I) (tRNA-uridine isomerase I)
+TRINITY_DN311789_c4_g1	cytoskeletal activity	Tubulin alpha chain
+TRINITY_DN311789_c4_g1	other molecular function	Tubulin alpha chain
+TRINITY_DN311790_c1_g3	nucleic acid binding activity	rRNA biogenesis protein RRP5 (Ribosomal RNA-processing protein 5) (U3 small nucleolar RNA-associated protein RRP5) (U3 snoRNA-associated protein RRP5)
+TRINITY_DN311791_c1_g2	other molecular function	Pentatricopeptide repeat-containing protein At3g49170, chloroplastic (Protein EMBRYO DEFECTIVE 2261)
+TRINITY_DN311791_c2_g1	nucleic acid binding activity	DNA-directed RNA polymerase III subunit 1 (DNA-directed RNA polymerase III subunit RPC1) (DNA polymerase I subunit C1) (EC 2.7.7.6) (Nuclear RNA polymerase C1)
+TRINITY_DN311791_c2_g1	other molecular function	DNA-directed RNA polymerase III subunit 1 (DNA-directed RNA polymerase III subunit RPC1) (DNA polymerase I subunit C1) (EC 2.7.7.6) (Nuclear RNA polymerase C1)
+TRINITY_DN311792_c1_g1	other molecular function	Chaperonin 60 subunit alpha 1, chloroplastic (CPN-60 alpha 1) (Protein SCHLEPPERLESS) (RuBisCO large subunit-binding protein subunit alpha 1)
+TRINITY_DN311798_c0_g2	other molecular function	Putative lipase ROG1 (EC 3.1.-.-) (Revertant of glycogen synthase kinase mutation protein 1)
+TRINITY_DN311986_c0_g1	other molecular function	ATP-dependent Clp protease proteolytic subunit 4, chloroplastic (EC 3.4.21.92) (Endopeptidase ClpP4) (nClpP4) (nClpP3)
+TRINITY_DN311987_c0_g1	other molecular function	Acyl carrier protein 2, mitochondrial (MtACP-2) (ACP) (NADH-ubiquinone oxidoreductase 9.6 kDa subunit)
+TRINITY_DN311987_c0_g1	transporter activity	Acyl carrier protein 2, mitochondrial (MtACP-2) (ACP) (NADH-ubiquinone oxidoreductase 9.6 kDa subunit)
+TRINITY_DN311987_c0_g6	other molecular function	Thioredoxin reductase 1 (EC 1.8.1.9)
+TRINITY_DN312001_c0_g1	kinase activity	Putative GTP diphosphokinase RSH1, chloroplastic (EC 2.7.6.5) (RelA/SpoT homolog 1) (AtRSH1) (ppGpp synthetase RSH1)
+TRINITY_DN312001_c0_g1	other molecular function	Putative GTP diphosphokinase RSH1, chloroplastic (EC 2.7.6.5) (RelA/SpoT homolog 1) (AtRSH1) (ppGpp synthetase RSH1)
+TRINITY_DN312003_c1_g6	enzyme regulator activity	Arf-GAP with coiled-coil, ANK repeat and PH domain-containing protein 2 (Centaurin-beta-2) (Cnt-b2)
+TRINITY_DN312003_c1_g6	other molecular function	Arf-GAP with coiled-coil, ANK repeat and PH domain-containing protein 2 (Centaurin-beta-2) (Cnt-b2)
+TRINITY_DN312005_c0_g4	other molecular function	Cytochrome c peroxidase, mitochondrial (CCP) (EC 1.11.1.5)
+TRINITY_DN312007_c1_g4	other molecular function	Adenylyltransferase and sulfurtransferase MOCS3-2 (Molybdenum cofactor synthesis protein 3-2) [Includes: Molybdopterin-synthase adenylyltransferase 2 (EC 2.7.7.80) (Adenylyltransferase MOCS3-2) (Sulfur carrier protein MOCS2A adenylyltransferase 2); Molybdopterin-synthase sulfurtransferase 2 (EC 2.8.1.11) (Sulfur carrier protein MOCS2A sulfurtransferase 2) (Sulfurtransferase MOCS3-2)]
+TRINITY_DN312065_c5_g1	other molecular function	Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase (EC 2.4.1.101) (N-acetylglucosaminyltransferase I) (GlcNAcT-I) (N-glycosyl-oligosaccharide-glycoprotein N-acetylglucosaminyltransferase I) (Protein COMPLEX GLYCAN LESS 1)
+TRINITY_DN312090_c4_g1	other molecular function	Sulfite reductase [NADPH] flavoprotein component (EC 1.8.1.2)
+TRINITY_DN312093_c0_g7	other molecular function	MOB kinase activator-like 1B (Mob1 homolog 1B) (Mps one binder kinase activator-like 1B)
+TRINITY_DN312095_c1_g3	other molecular function	Cation-transporting ATPase pma1 (EC 3.6.3.-)
+TRINITY_DN312095_c1_g3	transporter activity	Cation-transporting ATPase pma1 (EC 3.6.3.-)
+TRINITY_DN312702_c0_g1	nucleic acid binding activity	ATP-dependent RNA helicase DBP1 (EC 3.6.4.13) (DEAD box protein 1) (Helicase CA1)
+TRINITY_DN312702_c0_g1	other molecular function	ATP-dependent RNA helicase DBP1 (EC 3.6.4.13) (DEAD box protein 1) (Helicase CA1)
+TRINITY_DN312705_c0_g2	other molecular function	Mannosylglycoprotein endo-beta-mannosidase (Endo-beta-mannosidase) (EC 3.2.1.152) [Cleaved into: Mannosylglycoprotein endo-beta-mannosidase 31 kDa subunit; Mannosylglycoprotein endo-beta-mannosidase 28 kDa subunit; Mannosylglycoprotein endo-beta-mannosidase 42 kDa subunit]
+TRINITY_DN312705_c0_g3	nucleic acid binding activity	DExH-box ATP-dependent RNA helicase DExH7, chloroplastic (EC 3.6.4.13)
+TRINITY_DN312705_c0_g3	other molecular function	DExH-box ATP-dependent RNA helicase DExH7, chloroplastic (EC 3.6.4.13)
+TRINITY_DN312707_c1_g1	other molecular function	Histone acetyltransferase HAC1 (EC 2.3.1.48)
+TRINITY_DN312707_c1_g1	transcription regulatory activity	Histone acetyltransferase HAC1 (EC 2.3.1.48)
+TRINITY_DN312713_c2_g1	signal transduction activity	Glutamate receptor 3.1 (Ligand-gated ion channel 3.1)
+TRINITY_DN312716_c1_g1	other molecular function	ADP-ribosylation factor 1
+TRINITY_DN312717_c0_g3	nucleic acid binding activity	Elongation factor 2 (EF-2)
+TRINITY_DN312717_c0_g3	other molecular function	Elongation factor 2 (EF-2)
+TRINITY_DN312725_c0_g2	other molecular function	Metacaspase-1B (EC 3.4.22.-)
+TRINITY_DN312726_c1_g1	other molecular function	Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 11 (EC 2.4.1.15) (Trehalose-6-phosphate synthase 11) (AtTPS11)
+TRINITY_DN312726_c1_g3	other molecular function	Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 10 (EC 2.4.1.15) (Trehalose-6-phosphate synthase 10) (AtTPS10)
+TRINITY_DN312728_c0_g1	other molecular function	Protein O-linked-mannose beta-1,4-N-acetylglucosaminyltransferase 2 (POMGnT2) (EC 2.4.1.312) (Extracellular O-linked N-acetylglucosamine transferase-like) (Glycosyltransferase-like domain-containing protein 2)
+TRINITY_DN312737_c2_g3	other molecular function	Probable inactive 1-aminocyclopropane-1-carboxylate synthase-like protein 2 (ACC synthase-like protein 2)
+TRINITY_DN312737_c2_g4	other molecular function	Peptidyl-prolyl cis-trans isomerase (PPIase) (EC 5.2.1.8) (Cyclophilin) (Cyp) (Cyclosporin A-binding protein) (Rotamase) (allergen Cat r 1)
+TRINITY_DN312737_c2_g5	cytoskeletal activity	Myosin-4 (MYOSIN VIII B) (AtVIIIB)
+TRINITY_DN312737_c2_g5	other molecular function	Myosin-4 (MYOSIN VIII B) (AtVIIIB)
+TRINITY_DN312738_c3_g1	nucleic acid binding activity	Serine/arginine-rich splicing factor SR45 (At-SR45) (AtSR45) (Serine/arginine-rich ribonucleoprotein 1)
+TRINITY_DN312740_c0_g1	nucleic acid binding activity	Polypyrimidine tract-binding protein homolog 2
+TRINITY_DN312741_c6_g2	other molecular function	Actin-1
+TRINITY_DN312741_c6_g4	other molecular function	Actin-1
+TRINITY_DN312745_c1_g1	kinase activity	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g1	nucleic acid binding activity	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g1	other molecular function	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g2	kinase activity	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g2	other molecular function	cAMP-dependent protein kinase catalytic subunit gamma (PKA C-gamma) (EC 2.7.11.11)
+TRINITY_DN312745_c1_g3	kinase activity	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	nucleic acid binding activity	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g3	other molecular function	Serine/threonine-protein kinase RAD53 (EC 2.7.12.1) (CHEK2 homolog) (Serine-protein kinase 1)
+TRINITY_DN312745_c1_g6	kinase activity	cGMP-dependent protein kinase, isozyme 1 (cGK) (EC 2.7.11.12)
+TRINITY_DN312745_c1_g6	other molecular function	cGMP-dependent protein kinase, isozyme 1 (cGK) (EC 2.7.11.12)
+TRINITY_DN312752_c3_g1	other molecular function	Phospho-2-dehydro-3-deoxyheptonate aldolase (EC 2.5.1.54) (3-deoxy-D-arabino-heptulosonate 7-phosphate synthase) (DAHP synthase) (Phospho-2-keto-3-deoxyheptonate aldolase)
+TRINITY_DN312753_c3_g2	other molecular function	L-ascorbate peroxidase 3 (AtAPx03) (EC 1.11.1.11)
+TRINITY_DN312799_c0_g2	cytoskeletal activity	Myosin-15 (Myosin XI I) (AtXI-I)
+TRINITY_DN312799_c0_g2	other molecular function	Myosin-15 (Myosin XI I) (AtXI-I)
+TRINITY_DN314109_c1_g1	nucleic acid binding activity	Probable nucleolar protein 5-2 (MAR-binding NOP56/58 homolog 2) (Nucleolar protein 58-2)
+TRINITY_DN314109_c2_g1	kinase activity	G-type lectin S-receptor-like serine/threonine-protein kinase At4g27290 (EC 2.7.11.1)
+TRINITY_DN314109_c2_g1	other molecular function	G-type lectin S-receptor-like serine/threonine-protein kinase At4g27290 (EC 2.7.11.1)
+TRINITY_DN314157_c1_g1	kinase activity	EKC/KEOPS complex subunit bud32 (EC 3.6.-.-) (Atypical serine/threonine protein kinase bud32) (EC 2.7.11.1)
+TRINITY_DN314157_c1_g1	other molecular function	EKC/KEOPS complex subunit bud32 (EC 3.6.-.-) (Atypical serine/threonine protein kinase bud32) (EC 2.7.11.1)
+TRINITY_DN314157_c1_g3	other molecular function	Probable aldo-keto reductase 2 (EC 1.1.1.-)
+TRINITY_DN314160_c4_g1	other molecular function	Serine protease SPPA, chloroplastic (EC 3.4.21.-) (Signal peptide peptidase SPPA)
+TRINITY_DN314167_c0_g1	other molecular function	Probable inactive purple acid phosphatase 2
+TRINITY_DN314168_c2_g5	other molecular function	Insulin-degrading enzyme-like 1, peroxisomal (EC 3.4.24.-) (Insulysin-like 1) (Peroxisomal M16 protease) (Zinc-metallopeptidase)
+TRINITY_DN314170_c2_g1	other molecular function	Peroxisomal acyl-coenzyme A oxidase 1 (AOX 1) (EC 1.3.3.6) (Long-chain acyl-CoA oxidase) (AtCX1)
+TRINITY_DN314173_c1_g1	nucleic acid binding activity	Aspartate--tRNA ligase 2, cytoplasmic (EC 6.1.1.12) (Aspartyl-tRNA synthetase) (AspRS) (Protein IMPAIRED IN BABA-INDUCED DISEASE IMMUNITY 1)
+TRINITY_DN314173_c1_g1	other molecular function	Aspartate--tRNA ligase 2, cytoplasmic (EC 6.1.1.12) (Aspartyl-tRNA synthetase) (AspRS) (Protein IMPAIRED IN BABA-INDUCED DISEASE IMMUNITY 1)
+TRINITY_DN314173_c2_g1	nucleic acid binding activity	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN314173_c2_g1	other molecular function	E3 ubiquitin-protein ligase SHPRH (EC 2.3.2.27) (EC 3.6.4.-) (RING-type E3 ubiquitin transferase SHPRH) (SNF2, histone-linker, PHD and RING finger domain-containing helicase)
+TRINITY_DN314176_c0_g1	other molecular function	25.3 kDa vesicle transport protein (AtSEC22)
+TRINITY_DN314176_c1_g1	other molecular function	Siroheme synthase 2 [Includes: Uroporphyrinogen-III C-methyltransferase 2 (Urogen III methylase 2) (EC 2.1.1.107) (SUMT 2) (Uroporphyrinogen III methylase 2) (UROM 2); Precorrin-2 dehydrogenase 2 (EC 1.3.1.76); Sirohydrochlorin ferrochelatase 2 (EC 4.99.1.4)]
+TRINITY_DN314196_c0_g1	nucleic acid binding activity	U5 small nuclear ribonucleoprotein 200 kDa helicase (EC 3.6.4.13) (Activating signal cointegrator 1 complex subunit 3-like 1) (BRR2 homolog) (U5 snRNP-specific 200 kDa protein) (U5-200KD)
+TRINITY_DN314196_c0_g1	other molecular function	U5 small nuclear ribonucleoprotein 200 kDa helicase (EC 3.6.4.13) (Activating signal cointegrator 1 complex subunit 3-like 1) (BRR2 homolog) (U5 snRNP-specific 200 kDa protein) (U5-200KD)
+TRINITY_DN314218_c0_g2	nucleic acid binding activity	RNA polymerase II C-terminal domain phosphatase-like 4 (FCP-like 4) (EC 3.1.3.16) (Carboxyl-terminal phosphatase-like 4) (AtCPL4) (CTD phosphatase-like 4)
+TRINITY_DN314218_c0_g2	other molecular function	RNA polymerase II C-terminal domain phosphatase-like 4 (FCP-like 4) (EC 3.1.3.16) (Carboxyl-terminal phosphatase-like 4) (AtCPL4) (CTD phosphatase-like 4)
+TRINITY_DN314234_c0_g5	nucleic acid binding activity	KIN17-like protein
+TRINITY_DN314234_c0_g5	other molecular function	KIN17-like protein
+TRINITY_DN314236_c0_g1	other molecular function	Midasin (Dynein-related AAA-ATPase REA1) (MIDAS-containing protein) (Ribosome export/assembly protein 1)
+TRINITY_DN314275_c4_g1	other molecular function	Cathepsin D (EC 3.4.23.5)
+TRINITY_DN314626_c2_g5	other molecular function	(R)-specific enoyl-CoA hydratase (EC 4.2.1.119)
+TRINITY_DN314641_c0_g1	other molecular function	Peroxisomal acyl-coenzyme A oxidase 1 (AOX) (EC 1.3.3.6) (Palmitoyl-CoA oxidase) [Cleaved into: Peroxisomal acyl-CoA oxidase 1, A chain; Peroxisomal acyl-CoA oxidase 1, B chain; Peroxisomal acyl-CoA oxidase 1, C chain]
+TRINITY_DN314643_c0_g3	nucleic acid binding activity	Retrovirus-related Pol polyprotein from transposon 297 [Includes: Protease (EC 3.4.23.-); Reverse transcriptase (EC 2.7.7.49); Endonuclease]
+TRINITY_DN314643_c0_g3	other molecular function	Retrovirus-related Pol polyprotein from transposon 297 [Includes: Protease (EC 3.4.23.-); Reverse transcriptase (EC 2.7.7.49); Endonuclease]
+TRINITY_DN314645_c3_g1	other molecular function	Ubiquitin domain-containing protein DSK2
+TRINITY_DN314645_c3_g2	other molecular function	Angio-associated migratory cell protein
+TRINITY_DN314645_c3_g3	other molecular function	Angio-associated migratory cell protein
+TRINITY_DN314831_c0_g1	other molecular function	Guanine nucleotide-binding protein G(o) subunit alpha
+TRINITY_DN314831_c1_g1	other molecular function	Ubiquitin thioesterase otubain-like (EC 3.4.19.12) (Deubiquitinating enzyme otubain-like) (Ubiquitin-specific-processing protease otubain-like)
+TRINITY_DN314832_c0_g1	other molecular function	eEF1A lysine and N-terminal methyltransferase (Methyltransferase-like protein 13) [Includes: eEF1A lysine methyltransferase (EC 2.1.1.-); eEF1A N-terminal methyltransferase (EC 2.1.1.-)]
+TRINITY_DN314842_c0_g2	nucleic acid binding activity	DEAD-box ATP-dependent RNA helicase 13 (EC 3.6.4.13)
+TRINITY_DN314842_c0_g2	other molecular function	DEAD-box ATP-dependent RNA helicase 13 (EC 3.6.4.13)
+TRINITY_DN314848_c0_g1	other molecular function	Biotin carboxylase 2, chloroplastic (EC 6.3.4.14) (Acetyl-CoA carboxylase subunit A 2) (ACC) (EC 6.4.1.2)
+TRINITY_DN314863_c3_g4	other molecular function	Putative germin-like protein 2-1
+TRINITY_DN314883_c0_g1	other molecular function	ABC transporter G family member 22 (ABC transporter ABCG.22) (AtABCG22) (White-brown complex homolog protein 23) (AtWBC23)
+TRINITY_DN314883_c0_g1	transporter activity	ABC transporter G family member 22 (ABC transporter ABCG.22) (AtABCG22) (White-brown complex homolog protein 23) (AtWBC23)
+TRINITY_DN316210_c2_g1	nucleic acid binding activity	Nodulin homeobox (NDX1 homeobox protein homolog) (AtNDX1)
+TRINITY_DN316221_c2_g2	nucleic acid binding activity	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN316221_c2_g2	other molecular function	DNA replication ATP-dependent helicase/nuclease DNA2 (DNA replication ATP-dependent helicase-like homolog) [Includes: DNA replication nuclease DNA2 (EC 3.1.-.-); DNA replication ATP-dependent helicase DNA2 (EC 3.6.4.12)]
+TRINITY_DN316221_c2_g4	nucleic acid binding activity	DNA replication ATP-dependent helicase/nuclease dna2 [Includes: DNA replication nuclease dna2 (EC 3.1.-.-); DNA replication ATP-dependent helicase dna2 (EC 3.6.4.12)]
+TRINITY_DN316221_c2_g4	other molecular function	DNA replication ATP-dependent helicase/nuclease dna2 [Includes: DNA replication nuclease dna2 (EC 3.1.-.-); DNA replication ATP-dependent helicase dna2 (EC 3.6.4.12)]
+TRINITY_DN316223_c6_g3	other molecular function	Aspartyl protease family protein At5g10770 (EC 3.4.23.-)
+TRINITY_DN316260_c0_g1	nucleic acid binding activity	ATP-dependent DNA helicase chl1 (EC 3.6.4.12) (Chromosome loss protein 1)
+TRINITY_DN316260_c0_g1	other molecular function	ATP-dependent DNA helicase chl1 (EC 3.6.4.12) (Chromosome loss protein 1)
+TRINITY_DN316260_c0_g3	nucleic acid binding activity	ATP-dependent DNA helicase chl1 (EC 3.6.4.12) (Chromosome loss protein 1)
+TRINITY_DN316260_c0_g3	other molecular function	ATP-dependent DNA helicase chl1 (EC 3.6.4.12) (Chromosome loss protein 1)
+TRINITY_DN316647_c2_g1	other molecular function	mRNA export factor elf1
+TRINITY_DN316649_c0_g1	nucleic acid binding activity	tRNA (guanine(10)-N2)-methyltransferase homolog (EC 2.1.1.-) (tRNA guanosine-2'-O-methyltransferase TRM11 homolog)
+TRINITY_DN316649_c0_g1	other molecular function	tRNA (guanine(10)-N2)-methyltransferase homolog (EC 2.1.1.-) (tRNA guanosine-2'-O-methyltransferase TRM11 homolog)
+TRINITY_DN316900_c0_g1	other molecular function	Lysosomal aspartic protease (EC 3.4.23.-)
+TRINITY_DN316900_c0_g2	other molecular function	Phytepsin (EC 3.4.23.40) (Aspartic proteinase) [Cleaved into: Phytepsin 32 kDa subunit; Phytepsin 29 kDa subunit; Phytepsin 16 kDa subunit; Phytepsin 11 kDa subunit]
+TRINITY_DN316900_c0_g3	other molecular function	Lysosomal aspartic protease (EC 3.4.23.-)
+TRINITY_DN316904_c8_g6	other molecular function	Ubiquitin-60S ribosomal protein L40 (CEP52) [Cleaved into: Ubiquitin; 60S ribosomal protein L40]
+TRINITY_DN316936_c5_g1	nucleic acid binding activity	Ribosomal RNA-processing protein 7 homolog A (Gastric cancer antigen Zg14)
+TRINITY_DN316951_c1_g2	other molecular function	Very-long-chain 3-oxoacyl-CoA reductase 1 (EC 1.1.1.330) (Beta-ketoacyl reductase 1) (AtKCR1) (Protein GLOSSY 8) (gl8At)
+TRINITY_DN316973_c2_g1	nucleic acid binding activity	NAC transcription factor 29 (AtNAC029) (Protein NAC-LIKE, ACTIVATED BY AP3/PI) (AtNAP)
+TRINITY_DN316973_c2_g1	transcription regulatory activity	NAC transcription factor 29 (AtNAC029) (Protein NAC-LIKE, ACTIVATED BY AP3/PI) (AtNAP)
+TRINITY_DN316974_c2_g2	other molecular function	Metallothionein-like protein 3 (MT-3)
+TRINITY_DN316993_c2_g1	nucleic acid binding activity	Elongation factor 1-alpha (EF-1-alpha) (Elongation factor Tu) (EF-Tu)
+TRINITY_DN316993_c2_g1	other molecular function	Elongation factor 1-alpha (EF-1-alpha) (Elongation factor Tu) (EF-Tu)
+TRINITY_DN317243_c9_g4	other molecular function	LINE-1 retrotransposable element ORF2 protein (ORF2p) (Long interspersed element-1) (L1) (Retrovirus-related Pol polyprotein LINE-1) [Includes: Reverse transcriptase (EC 2.7.7.49); Endonuclease (EC 3.1.21.-)]
+TRINITY_DN317261_c5_g1	nucleic acid binding activity	Transposon Ty3-I Gag-Pol polyprotein (Gag3-Pol3) (Transposon Ty3-2 TYA-TYB polyprotein) [Cleaved into: Capsid protein (CA) (p24); Spacer peptide p3; Nucleocapsid protein p11 (NC); Ty3 protease (PR) (EC 3.4.23.-) (p16); Spacer peptide J; Reverse transcriptase/ribonuclease H (RT) (RT-RH) (EC 2.7.7.49) (EC 2.7.7.7) (EC 3.1.26.4) (p55); Integrase p52 (IN); Integrase p49 (IN)]
+TRINITY_DN317261_c5_g1	other molecular function	Transposon Ty3-I Gag-Pol polyprotein (Gag3-Pol3) (Transposon Ty3-2 TYA-TYB polyprotein) [Cleaved into: Capsid protein (CA) (p24); Spacer peptide p3; Nucleocapsid protein p11 (NC); Ty3 protease (PR) (EC 3.4.23.-) (p16); Spacer peptide J; Reverse transcriptase/ribonuclease H (RT) (RT-RH) (EC 2.7.7.49) (EC 2.7.7.7) (EC 3.1.26.4) (p55); Integrase p52 (IN); Integrase p49 (IN)]
+TRINITY_DN318563_c0_g1	other molecular function	Trehalose-phosphate phosphatase B (AtTPPB) (EC 3.1.3.12) (Trehalose 6-phosphate phosphatase)
+TRINITY_DN3463_c0_g1	other molecular function	Peroxiredoxin-6 (EC 1.11.1.15) (1-Cys peroxiredoxin) (1-Cys PRX) (Acidic calcium-independent phospholipase A2) (aiPLA2) (EC 3.1.1.4) (Non-selenium glutathione peroxidase) (NSGPx)
+TRINITY_DN3495_c0_g1	other molecular function	GTP-binding protein ypt2 (SEC4 homolog)
+TRINITY_DN371660_c0_g1	kinase activity	Casein kinase 1-like protein HD16 (EC 2.7.11.1) (Os03g0793500 protein) (Protein EARLY FLOWERING 1) (Protein HEADING DATE 16)
+TRINITY_DN371660_c0_g1	other molecular function	Casein kinase 1-like protein HD16 (EC 2.7.11.1) (Os03g0793500 protein) (Protein EARLY FLOWERING 1) (Protein HEADING DATE 16)
+TRINITY_DN45784_c0_g1	other molecular function	Nitrilase homolog 2 (EC 3.5.-.-)
+TRINITY_DN46127_c0_g1	nucleic acid binding activity	Splicing factor 3A subunit 1
+TRINITY_DN4638_c0_g1	other molecular function	Heat shock 70 kDa protein 16 (Heat shock protein 70-16) (AtHsp70-16)
+TRINITY_DN524499_c0_g1	other molecular function	60S ribosomal protein L35
+TRINITY_DN544815_c0_g1	other molecular function	CDP-diacylglycerol--inositol 3-phosphatidyltransferase (EC 2.7.8.11) (Phosphatidylinositol synthase) (PI synthase) (PtdIns synthase)
+TRINITY_DN546034_c0_g1	nucleic acid binding activity	60S ribosomal protein L18-3
+TRINITY_DN546034_c0_g1	other molecular function	60S ribosomal protein L18-3
+TRINITY_DN553854_c0_g1	kinase activity	MAP3K epsilon protein kinase 1 (AtM3KE1) (EC 2.7.11.1) (Mitogen-activated protein kinase kinase kinase 7)
+TRINITY_DN553854_c0_g1	other molecular function	MAP3K epsilon protein kinase 1 (AtM3KE1) (EC 2.7.11.1) (Mitogen-activated protein kinase kinase kinase 7)
+TRINITY_DN6259_c0_g1	other molecular function	ATP-dependent Clp protease ATP-binding subunit ClpX
+TRINITY_DN680_c0_g1	other molecular function	Chaperone protein DnaK (HSP70) (Heat shock 70 kDa protein) (Heat shock protein 70)
