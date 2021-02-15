@@ -380,6 +380,30 @@ write.csv(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.cs
 write.table(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.txt", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
 ```
 
+### Parse out molecular function GOterms
+
+```{bash}
+cut -f6 zosteraGeneList-WGCNA-MM-GS-Annot.txt \
+| tail -n +2 \
+| awk '{gsub(";","\t",$0); print;}' \
+> zosteraGeneList-WGCNA-MM-GS-Annot-MFGOParse.txt #Isolate MF GOterm column, remove header, replace ; with \t, and save output
+```
+
+```{r}
+geneInfoMFGO <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot-MFGOParse.txt", header = FALSE, col.names = paste("MFGO", 1:697, sep = "")) #Import file with parsed MF GOterms and include columm names
+geneInfoMFGO <- geneInfoMFGO[,1:31] #Only keep columns with content
+head(geneInfoMFGO) #Confirm formatting
+```
+
+```{r}
+geneInfoMFGOParse <- cbind(geneInfo, geneInfoMFGO) #Combine dataframes
+head(geneInfoMFGOParse) #Confirm formatting
+```
+
+```{r}
+write.csv(geneInfoMFGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allMFGOParsed.csv", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed MFGO information
+```
+
 # GO-MWU
 
 ## Create GO-MWU inputs
