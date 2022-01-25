@@ -309,9 +309,9 @@ head(zosteraGeneAnnot) #Confirm import and formatting
 ```
 
 ```{r}
-zosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.Z.Annot.txt") #Import Z. marina differentially expressed genes from edgeR
+zosteraDEG <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
 head(zosteraDEG) #Confirm import
-zosteraDEG <- data.frame("geneIDs" = zosteraDEG$GeneID,
+zosteraDEG <- data.frame("geneIDs" = rownames(zosteraDEG),
                          "logFC" = zosteraDEG$logFC,
                          "logCPM" = zosteraDEG$logCPM,
                          "FDR" = zosteraDEG$FDR,
@@ -320,10 +320,9 @@ head(zosteraDEG) #Confirm changes
 ```
 
 ```{r}
-zosteraGeneAnnot <- left_join(zosteraGeneAnnot, zosteraDEG) #Add edgeR information to annotation table
+zosteraGeneAnnot <- left_join(zosteraGeneAnnot, zosteraDEG, "geneIDs") #Add edgeR information to annotation table
 head(zosteraGeneAnnot) #Confirm formatting
 ```
-
 
 ```{r}
 probes2annot <- match(probes, zosteraGeneAnnot$geneIDs) #Match probes with annotations
@@ -618,7 +617,7 @@ head(blackMFGOMWUResults) #Confirm import
 
 ```{r}
 blackMFGOMWUSig <- blackMFGOMWUResults %>% 
-  filter(., p.adj < 0.10) %>%
+  filter(., p.adj < 0.05) %>%
   select(., term, name, p.adj) %>%
   separate_rows(., term, sep=";") #Filter rows with significant GOterms, retain GOterm information columns, then separate GOterms into different rows
 colnames(blackMFGOMWUSig) <- c("GOID", "GOterm", "GOMWU.p.adj") #Revise column names
@@ -633,9 +632,17 @@ blackGeneAnnot <- blackGeneAnnot %>%
   separate_rows(., GOterms, sep=";") #Subset genes from black module, retain annotation columns, then separate GOterms into different rows
 colnames(blackGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID", "logFC", "logCPM", "FDR", "edgeR.pvalue") #Revise column names
 head(blackGeneAnnot) #Confirm formatting
-
-sum(is.na(blackGeneAnnot$edgeR.pvalue) == "FALSE") #Number of DEG = 485
 ```
+
+```{r}
+blackGeneAnnot %>% 
+  filter(., edgeR.pvalue != "NA") %>%
+  distinct(., geneID) %>%
+  summarise(., length(geneID)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
+
+#Number of DEG in module = 61
+```
+
 
 ```{r}
 blackGeneAnnotGOMWU <- left_join(blackMFGOMWUSig, blackGeneAnnot, by = "GOID") #Join by GOID
@@ -671,6 +678,52 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
 # 2  GO terms at 10% FDR, no significant GOterms.
+```
+
+##### Match significant results with gene information
+
+```{r}
+blueBPGOMWUResults <- read.csv("MWU_BP_BlueGeneList.csv", sep = "") #Import GO-MWU results for significant test
+head(blueBPGOMWUResults) #Confirm import
+```
+
+```{r}
+blueBPGOMWUSig <- blueBPGOMWUResults %>% 
+  filter(., p.adj < 0.05) %>%
+  select(., term, name, p.adj) %>%
+  separate_rows(., term, sep=";") #Filter rows with significant GOterms, retain GOterm information columns, then separate GOterms into different rows
+colnames(blueBPGOMWUSig) <- c("GOID", "GOterm", "GOMWU.p.adj") #Revise column names
+head(blueBPGOMWUSig) #Confirm formatting
+```
+
+```{r}
+blueGeneAnnot <- cbind(rownames(geneInfo), geneInfo) #Create new dataframe for blue module gene annotations and include rownames (trinity IDs) as a separate column
+blueGeneAnnot <- blueGeneAnnot %>% 
+  filter(., moduleColor == "blue") %>% 
+  select(., 1:3, GOterms, logFC, logCPM, FDR, edgeR.pvalue) %>% 
+  separate_rows(., GOterms, sep=";") #Subset genes from blue module, retain annotation columns, then separate GOterms into different rows
+colnames(blueGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID", "logFC", "logCPM", "FDR", "edgeR.pvalue") #Revise column names
+head(blueGeneAnnot) #Confirm formatting
+```
+
+```{r}
+blueGeneAnnot %>% 
+  filter(., edgeR.pvalue != "NA") %>%
+  distinct(., geneID) %>%
+  summarise(., length(geneID)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
+
+#Number of DEG in module = 355
+```
+
+```{r}
+blueGeneAnnotGOMWU <- left_join(blueBPGOMWUSig, blueGeneAnnot, by = "GOID") #Join by GOID
+head(blueGeneAnnotGOMWU) #Confirm formatting
+length(unique(blueGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 1
+sum(is.na(blueGeneAnnotGOMWU$edgeR.pvalue) == "FALSE") #Number of DEG = 0
+```
+
+```{r}
+write.csv(blueGeneAnnotGOMWU, "zostera-BlueModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
 ```
 
 #### Cellular components
