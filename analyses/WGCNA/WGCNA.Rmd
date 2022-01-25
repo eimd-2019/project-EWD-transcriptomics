@@ -17,13 +17,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 #install.packages("dichromat")
-#install.packages("BiocManager")
-#BiocManager::install("WGCNA")
+install.packages("BiocManager")
+BiocManager::install("WGCNA")
+#install.packages("tidyverse")
 ```
 
 ```{r}
 require(dichromat)
 require(WGCNA)
+require(tidyverse)
 options(stringsAsFactors = FALSE) #Important setting to include from tutorial
 ```
 
@@ -318,6 +320,7 @@ geneInfo0 <- data.frame("geneID" = probes,
                         "BPGO" = zosteraGeneAnnot$BPGO[probes2annot],
                         "CCGO" = zosteraGeneAnnot$CCGO[probes2annot],
                         "MFGO" = zosteraGeneAnnot$MFGO[probes2annot],
+                        "GOterms" = zosteraGeneAnnot$GOterms[probes2annot],
                         moduleColor = moduleColors,
                         geneTraitSignificance,
                         GSPvalue) #Create starter matrix
@@ -350,58 +353,6 @@ head(geneInfo) #Confirm import
 
 ```{r}
 write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table again, but with NA instead of blank cells
-```
-
-### Parse out biological process GOterms
-
-```{bash}
-cut -f4 zosteraGeneList-WGCNA-MM-GS-Annot.txt \
-| tail -n +2 \
-| awk '{gsub(";","\t",$0); print;}' \
-> zosteraGeneList-WGCNA-MM-GS-Annot-BPGOParse.txt #Isolate BP GOterm column, remove header, replace ; with \t, and save output
-```
-
-```{r}
-geneInfoBPGO <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot-BPGOParse.txt", header = FALSE, col.names = paste("BPGO", 1:697, sep = "")) #Import file with parsed BP GOterms and include columm names
-geneInfoBPGO <- geneInfoBPGO[,1:114] #Only keep columns with content
-head(geneInfoBPGO) #Confirm formatting
-```
-
-```{r}
-geneInfoBPGOParse <- cbind(geneInfo, geneInfoBPGO) #Combine dataframes
-head(geneInfoBPGOParse) #Confirm formatting
-```
-
-```{r}
-write.csv(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.csv", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
-```
-
-```{r}
-write.table(geneInfoBPGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allBPGOParsed.txt", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed BPGO information
-```
-
-### Parse out molecular function GOterms
-
-```{bash}
-cut -f6 zosteraGeneList-WGCNA-MM-GS-Annot.txt \
-| tail -n +2 \
-| awk '{gsub(";","\t",$0); print;}' \
-> zosteraGeneList-WGCNA-MM-GS-Annot-MFGOParse.txt #Isolate MF GOterm column, remove header, replace ; with \t, and save output
-```
-
-```{r}
-geneInfoMFGO <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot-MFGOParse.txt", header = FALSE, col.names = paste("MFGO", 1:697, sep = "")) #Import file with parsed MF GOterms and include columm names
-geneInfoMFGO <- geneInfoMFGO[,1:31] #Only keep columns with content
-head(geneInfoMFGO) #Confirm formatting
-```
-
-```{r}
-geneInfoMFGOParse <- cbind(geneInfo, geneInfoMFGO) #Combine dataframes
-head(geneInfoMFGOParse) #Confirm formatting
-```
-
-```{r}
-write.csv(geneInfoMFGOParse, "zosteraGeneList-WGCNA-MM-GS-Annot-allMFGOParsed.csv", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table with all parsed MFGO information
 ```
 
 # GO-MWU
@@ -634,8 +585,24 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
-# 4  GO terms at 10% FDR.
+# 2  GO terms at 10% FDR.
 ```
+
+##### Match significant results with gene information
+
+```{r}
+blackMFGOMWUResults <- read.csv("MWU_MF_BlackGeneList.csv", sep = "") #Import GO-MWU results for significant test
+head(blackMFGOMWUResults) #Confirm import
+```
+
+```{r}
+blackMFGOMWUSig <- blackMFGOMWUResults %>% 
+  filter(., p.adj < 0.10) %>%
+  separate_rows(., term, sep=";") #Filter rows with significant GOterms, then separate GOterms into different rows
+head(blackMFGOMWUSig) #Confirm formatting
+```
+
+
 
 ### Blue (exposed and control)
 
@@ -659,7 +626,7 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+# 2  GO terms at 10% FDR, no significant GOterms.
 ```
 
 #### Cellular components
