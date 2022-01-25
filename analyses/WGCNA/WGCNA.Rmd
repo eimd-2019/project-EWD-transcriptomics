@@ -309,6 +309,23 @@ head(zosteraGeneAnnot) #Confirm import and formatting
 ```
 
 ```{r}
+zosteraDEG <- read.delim("../EdgeR/DE.EXP.CON.FDR.Z.Annot.txt") #Import Z. marina differentially expressed genes from edgeR
+head(zosteraDEG) #Confirm import
+zosteraDEG <- data.frame("geneIDs" = zosteraDEG$GeneID,
+                         "logFC" = zosteraDEG$logFC,
+                         "logCPM" = zosteraDEG$logCPM,
+                         "FDR" = zosteraDEG$FDR,
+                         "edgeR.pvalue" = zosteraDEG$PValue) #Only save gene ID, log fold change, log counts per million, FDR, and p-values from edgeR
+head(zosteraDEG) #Confirm changes
+```
+
+```{r}
+zosteraGeneAnnot <- left_join(zosteraGeneAnnot, zosteraDEG) #Add edgeR information to annotation table
+head(zosteraGeneAnnot) #Confirm formatting
+```
+
+
+```{r}
 probes2annot <- match(probes, zosteraGeneAnnot$geneIDs) #Match probes with annotations
 sum(is.na(probes2annot)) #Check that no probe does not have an annotation. Should return 0
 ```
@@ -323,7 +340,11 @@ geneInfo0 <- data.frame("geneID" = probes,
                         "GOterms" = zosteraGeneAnnot$GOterms[probes2annot],
                         moduleColor = moduleColors,
                         geneTraitSignificance,
-                        GSPvalue) #Create starter matrix
+                        GSPvalue,
+                        "logFC" = zosteraGeneAnnot$logFC[probes2annot],
+                        "logCPM" = zosteraGeneAnnot$logCPM[probes2annot],
+                        "FDR" = zosteraGeneAnnot$FDR[probes2annot],
+                        "edgeR.pvalue" = zosteraGeneAnnot$edgeR.pvalue[probes2annot]) #Create starter matrix
 head(geneInfo0) #Confirm matrix creation
 ```
 
@@ -598,10 +619,27 @@ head(blackMFGOMWUResults) #Confirm import
 ```{r}
 blackMFGOMWUSig <- blackMFGOMWUResults %>% 
   filter(., p.adj < 0.10) %>%
-  separate_rows(., term, sep=";") #Filter rows with significant GOterms, then separate GOterms into different rows
+  select(., term, name, p.adj) %>%
+  separate_rows(., term, sep=";") #Filter rows with significant GOterms, retain GOterm information columns, then separate GOterms into different rows
+colnames(blackMFGOMWUSig) <- c("GOID", "GOterm", "GOMWU.p.adj") #Revise column names
 head(blackMFGOMWUSig) #Confirm formatting
 ```
 
+```{r}
+blackGeneAnnot <- cbind(rownames(geneInfo), geneInfo) #Create new dataframe for black module gene annotations and include rownames (trinity IDs) as a separate column
+blackGeneAnnot <- blackGeneAnnot %>% 
+  filter(., moduleColor == "black") %>% 
+  select(., 1:3, GOterms) %>% 
+  separate_rows(., GOterms, sep=";") #Subset genes from black module, retain annotation columns, then separate GOterms into different rows
+colnames(blackGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID") #Revise column names
+head(blackGeneAnnot) #Confirm formatting
+```
+
+```{r}
+blackGeneAnnotGOMWU <- left_join(blackMFGOMWUSig, blackGeneAnnot, by = "GOID") #Join by GOID
+head(blackGeneAnnotGOMWU) #Confirm formatting
+length(unique(blackGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 17
+```
 
 
 ### Blue (exposed and control)
