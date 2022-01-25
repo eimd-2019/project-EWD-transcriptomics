@@ -629,18 +629,24 @@ head(blackMFGOMWUSig) #Confirm formatting
 blackGeneAnnot <- cbind(rownames(geneInfo), geneInfo) #Create new dataframe for black module gene annotations and include rownames (trinity IDs) as a separate column
 blackGeneAnnot <- blackGeneAnnot %>% 
   filter(., moduleColor == "black") %>% 
-  select(., 1:3, GOterms) %>% 
+  select(., 1:3, GOterms, logFC, logCPM, FDR, edgeR.pvalue) %>% 
   separate_rows(., GOterms, sep=";") #Subset genes from black module, retain annotation columns, then separate GOterms into different rows
-colnames(blackGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID") #Revise column names
+colnames(blackGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID", "logFC", "logCPM", "FDR", "edgeR.pvalue") #Revise column names
 head(blackGeneAnnot) #Confirm formatting
+
+sum(is.na(blackGeneAnnot$edgeR.pvalue) == "FALSE") #Number of DEG = 485
 ```
 
 ```{r}
 blackGeneAnnotGOMWU <- left_join(blackMFGOMWUSig, blackGeneAnnot, by = "GOID") #Join by GOID
 head(blackGeneAnnotGOMWU) #Confirm formatting
 length(unique(blackGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 17
+sum(is.na(blackGeneAnnotGOMWU$edgeR.pvalue) == "FALSE") #Number of DEG = 7
 ```
 
+```{r}
+write.csv(blackGeneAnnotGOMWU, "zostera-BlackModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
+```
 
 ### Blue (exposed and control)
 

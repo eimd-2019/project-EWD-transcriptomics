@@ -1,0 +1,18 @@
+GOID,GOterm,GOMWU.p.adj,geneID,Uniprot,annotation,logFC,logCPM,FDR,edgeR.pvalue
+GO:0003735,structural molecule activity,0,TRINITY_DN295075_c3_g1,Q5UAP0,40S ribosomal protein S4,9.71611634037831,4.64618551825481,0.00384590580280239,0.000383969270780594
+GO:0003735,structural molecule activity,0,TRINITY_DN294775_c0_g2,Q7RXY1,60S ribosomal protein L32 (Cytoplasmic ribosomal protein-63),9.72987045063953,2.77622088589291,0.0101013517363914,0.00118801034961113
+GO:0003735,structural molecule activity,0,TRINITY_DN276418_c0_g1,Q3IJK2,30S ribosomal protein S5,10.2695681445767,2.37262823734835,0.0129692699895426,0.00161330175960385
+GO:0003735,structural molecule activity,0,TRINITY_DN299653_c1_g2,O02056,60S ribosomal protein L4,18.2549608166824,5.62832708903221,0.00173465322262479,0.000147963958246509
+GO:0003735,structural molecule activity,0,TRINITY_DN293383_c0_g1,P91128,60S ribosomal protein L13,15.7511621531288,5.27209405286017,0.00222887152234353,0.000198041896169458
+GO:0003735,structural molecule activity,0,TRINITY_DN255993_c0_g1,P0DJ52,60S ribosomal protein L8,12.3811057051814,3.19235588713018,0.00678778070369908,0.000736896386572825
+GO:0003735,structural molecule activity,0,TRINITY_DN59463_c0_g1,Q8GYL5,40S ribosomal protein S25-3,NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN294767_c5_g3,P30707,60S ribosomal protein L9 (Gibberellin-regulated protein GA),NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN210344_c0_g2,Q54LV8,60S ribosomal protein L34,NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN254215_c0_g1,O62738,40S ribosomal protein S4, X isoform,NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN314624_c7_g1,P59271,Ubiquitin-40S ribosomal protein S27a-1 [Cleaved into: Ubiquitin; 40S ribosomal protein S27a-1],NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN294675_c1_g3,P34091,60S ribosomal protein L6 (YL16-like),NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN316904_c5_g1,P49632,Ubiquitin-60S ribosomal protein L40 (CEP52) [Cleaved into: Ubiquitin; 60S ribosomal protein L40],NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN316904_c8_g7,P63048,Ubiquitin-60S ribosomal protein L40 (Ubiquitin A-52 residue ribosomal protein fusion product 1) [Cleaved into: Ubiquitin; 60S ribosomal protein L40 (CEP52)],NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN276917_c1_g1,Q0SN26,50S ribosomal protein L2,NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN254235_c0_g2,Q9SF35,40S ribosomal protein S23-1 (S12),NA,NA,NA,NA
+GO:0005198,structural molecule activity,0,TRINITY_DN278928_c0_g1,P34574,Probable clathrin heavy chain 1,11.987993529716,2.61372644155218,0.0139414913194636,0.00177027660373156
