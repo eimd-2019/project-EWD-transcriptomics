@@ -625,30 +625,35 @@ head(blackMFGOMWUSig) #Confirm formatting
 ```
 
 ```{r}
-blackGeneAnnot <- cbind(rownames(geneInfo), geneInfo) #Create new dataframe for black module gene annotations and include rownames (trinity IDs) as a separate column
-blackGeneAnnot <- blackGeneAnnot %>% 
-  filter(., moduleColor == "black") %>% 
-  select(., 1:3, GOterms, logFC, logCPM, FDR, edgeR.pvalue) %>% 
-  separate_rows(., GOterms, sep=";") #Subset genes from black module, retain annotation columns, then separate GOterms into different rows
-colnames(blackGeneAnnot) <- c("geneID", "Uniprot", "annotation", "GOID", "logFC", "logCPM", "FDR", "edgeR.pvalue") #Revise column names
-head(blackGeneAnnot) #Confirm formatting
+blackMFGOMWUMatchedGenes <- read.csv("MF_BlackGeneList.csv", sep = "") #Import GO-MWU generated list of GOterms and matched genes
+blackMFGOMWUMatchedGenes <- blackMFGOMWUMatchedGenes %>%
+  select(., term, seq) %>%
+  separate_rows(., term, sep=";") #Select GOterm and geneID columns, then separate GOterms into different rows
+colnames(blackMFGOMWUMatchedGenes) <- c("GOID", "geneIDs") #Revise column names
+head(blackMFGOMWUMatchedGenes) #Confirm import
+```
+
+COMBINE MATCHED GENE LIST WITH GO MWU LIST, THEN MATCH WITH ZOSTERA DEG (have gene ID in hand).
+
+```{r}
+blackMFGOMWUGeneGOterms <- left_join(blackMFGOMWUSig, blackMFGOMWUMatchedGenes, by = "GOID") #Join GOterms with gene IDs
+head(blackMFGOMWUGeneGOterms) #Confirm formatting
+
+blackMFGOMWUGeneGOtermsEdgeR <- left_join(blackMFGOMWUGeneGOterms, zosteraDEG, by = "geneIDs") #Join geneIDs with edgeR results
+head(blackMFGOMWUGeneGOtermsEdgeR) #Confirm formatting
+
+length(unique(blackMFGOMWUGeneGOterms$geneIDs)) == length(unique(blackMFGOMWUGeneGOtermsEdgeR$geneIDs)) #Confirm all matched genes have edgeR values
 ```
 
 ```{r}
-blackGeneAnnot %>% 
-  filter(., edgeR.pvalue != "NA") %>%
-  distinct(., geneID) %>%
-  summarise(., length(geneID)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
+length(unique(blackMFGOMWUGeneGOtermsEdgeR$geneIDs)) #Number of unique genes associated with GOterms = 126
 
-#Number of DEG in module = 61
-```
+blackMFGOMWUGeneGOtermsEdgeR %>% 
+  filter(., edgeR.pvalue < 0.05) %>%
+  distinct(., geneIDs) %>%
+  summarise(., length(geneIDs)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
 
-
-```{r}
-blackGeneAnnotGOMWU <- left_join(blackMFGOMWUSig, blackGeneAnnot, by = "GOID") #Join by GOID
-head(blackGeneAnnotGOMWU) #Confirm formatting
-length(unique(blackGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 17
-sum(is.na(blackGeneAnnotGOMWU$edgeR.pvalue) == "FALSE") #Number of DEG = 7
+#Number of DEG in module = 32
 ```
 
 ```{r}
@@ -708,18 +713,18 @@ head(blueGeneAnnot) #Confirm formatting
 
 ```{r}
 blueGeneAnnot %>% 
-  filter(., edgeR.pvalue != "NA") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
   distinct(., geneID) %>%
-  summarise(., length(geneID)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
+  summarise(., length(geneID)) #Retain rows where there is a significant edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
 
-#Number of DEG in module = 355
+#Number of DEG in module = 420
 ```
 
 ```{r}
 blueGeneAnnotGOMWU <- left_join(blueBPGOMWUSig, blueGeneAnnot, by = "GOID") #Join by GOID
 head(blueGeneAnnotGOMWU) #Confirm formatting
-length(unique(blueGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 1
-sum(is.na(blueGeneAnnotGOMWU$edgeR.pvalue) == "FALSE") #Number of DEG = 0
+length(unique(blueGeneAnnotGOMWU$geneID)) #Number of unique genes associated with GOterms = 17
+sum(blueGeneAnnotGOMWU$edgeR.pvalue < 0.05) #Number of DEG = 9
 ```
 
 ```{r}

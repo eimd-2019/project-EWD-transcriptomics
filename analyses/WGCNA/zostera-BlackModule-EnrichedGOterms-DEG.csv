@@ -5,14 +5,14 @@ GO:0003735,structural molecule activity,0,TRINITY_DN276418_c0_g1,Q3IJK2,30S ribo
 GO:0003735,structural molecule activity,0,TRINITY_DN299653_c1_g2,O02056,60S ribosomal protein L4,18.2549608166824,5.62832708903221,0.00173465322262479,0.000147963958246509
 GO:0003735,structural molecule activity,0,TRINITY_DN293383_c0_g1,P91128,60S ribosomal protein L13,15.7511621531288,5.27209405286017,0.00222887152234353,0.000198041896169458
 GO:0003735,structural molecule activity,0,TRINITY_DN255993_c0_g1,P0DJ52,60S ribosomal protein L8,12.3811057051814,3.19235588713018,0.00678778070369908,0.000736896386572825
-GO:0003735,structural molecule activity,0,TRINITY_DN59463_c0_g1,Q8GYL5,40S ribosomal protein S25-3,NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN294767_c5_g3,P30707,60S ribosomal protein L9 (Gibberellin-regulated protein GA),NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN210344_c0_g2,Q54LV8,60S ribosomal protein L34,NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN254215_c0_g1,O62738,40S ribosomal protein S4, X isoform,NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN314624_c7_g1,P59271,Ubiquitin-40S ribosomal protein S27a-1 [Cleaved into: Ubiquitin; 40S ribosomal protein S27a-1],NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN294675_c1_g3,P34091,60S ribosomal protein L6 (YL16-like),NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN316904_c5_g1,P49632,Ubiquitin-60S ribosomal protein L40 (CEP52) [Cleaved into: Ubiquitin; 60S ribosomal protein L40],NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN316904_c8_g7,P63048,Ubiquitin-60S ribosomal protein L40 (Ubiquitin A-52 residue ribosomal protein fusion product 1) [Cleaved into: Ubiquitin; 60S ribosomal protein L40 (CEP52)],NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN276917_c1_g1,Q0SN26,50S ribosomal protein L2,NA,NA,NA,NA
-GO:0003735,structural molecule activity,0,TRINITY_DN254235_c0_g2,Q9SF35,40S ribosomal protein S23-1 (S12),NA,NA,NA,NA
+GO:0003735,structural molecule activity,0,TRINITY_DN59463_c0_g1,Q8GYL5,40S ribosomal protein S25-3,4.92580341689266,2.18847548223105,0.188082731086903,0.0517759246804656
+GO:0003735,structural molecule activity,0,TRINITY_DN294767_c5_g3,P30707,60S ribosomal protein L9 (Gibberellin-regulated protein GA),5.99843807825628,1.92654168649998,0.113435568607048,0.0244830241775471
+GO:0003735,structural molecule activity,0,TRINITY_DN210344_c0_g2,Q54LV8,60S ribosomal protein L34,5.4788957525085,1.74445437645647,0.150008454181402,0.0371889666224925
+GO:0003735,structural molecule activity,0,TRINITY_DN254215_c0_g1,O62738,40S ribosomal protein S4, X isoform,4.92596272051579,2.86959115360444,0.999895446034155,0.999646134685058
+GO:0003735,structural molecule activity,0,TRINITY_DN314624_c7_g1,P59271,Ubiquitin-40S ribosomal protein S27a-1 [Cleaved into: Ubiquitin; 40S ribosomal protein S27a-1],3.67278383417041,1.71385288258231,0.313386944563917,0.115910105201744
+GO:0003735,structural molecule activity,0,TRINITY_DN294675_c1_g3,P34091,60S ribosomal protein L6 (YL16-like),3.30077036385196,1.70920460311309,0.439948428023698,0.200264239313031
+GO:0003735,structural molecule activity,0,TRINITY_DN316904_c5_g1,P49632,Ubiquitin-60S ribosomal protein L40 (CEP52) [Cleaved into: Ubiquitin; 60S ribosomal protein L40],4.6373995647702,2.03127994077603,0.325956322372772,0.124274139062963
+GO:0003735,structural molecule activity,0,TRINITY_DN316904_c8_g7,P63048,Ubiquitin-60S ribosomal protein L40 (Ubiquitin A-52 residue ribosomal protein fusion product 1) [Cleaved into: Ubiquitin; 60S ribosomal protein L40 (CEP52)],5.2021942738226,4.03325153127127,0.194919527124454,0.0544767014418911
+GO:0003735,structural molecule activity,0,TRINITY_DN276917_c1_g1,Q0SN26,50S ribosomal protein L2,2.55986050311419,1.43200642560371,0.34010709236575,0.133735163621686
+GO:0003735,structural molecule activity,0,TRINITY_DN254235_c0_g2,Q9SF35,40S ribosomal protein S23-1 (S12),0.387915418228557,1.31286660166239,0.866802633178599,0.614743709152512
 GO:0005198,structural molecule activity,0,TRINITY_DN278928_c0_g1,P34574,Probable clathrin heavy chain 1,11.987993529716,2.61372644155218,0.0139414913194636,0.00177027660373156
