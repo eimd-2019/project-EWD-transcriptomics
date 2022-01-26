@@ -1,0 +1,16 @@
+GOID,GOterm,GOMWU.p.adj,geneID,Uniprot,annotation,logFC,logCPM,FDR,edgeR.pvalue
+GO:0002376,immune system process,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002758,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002757,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002253,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002764,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0050778,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0050776,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002684,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002682,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0002218,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0045089,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0031349,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0045088,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0031347,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
+GO:0080134,activation of immune response,0,NA,NA,NA,NA,NA,NA,NA
