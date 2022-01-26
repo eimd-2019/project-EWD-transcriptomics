@@ -381,7 +381,20 @@ write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.n
 
 For each significant module, I need a .csv of genes and module membership scores (kME) for my table of significance measures. Genes that are not in the module should have a kME = 0. I already have my GO annotations table from my previous GO-MWU run.
 
+I'm also going to count the number of genes and DEG in each module.
+
 ### Brown (exposed and control)
+
+```{r}
+geneInfo %>% 
+  filter(., moduleColor == "brown") %>%
+  summarise(., length(moduleColor)) #Number of genes in the module = 241
+
+geneInfo %>% 
+  filter(., moduleColor == "brown") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  summarise(., length(moduleColor)) #Number of DEG in the module = 144
+```
 
 ```{r}
 brownGeneList <- data.frame("geneID" = rownames(geneInfo),
@@ -400,6 +413,17 @@ write.csv(brownGeneList,"BrownGeneList.csv", quote = FALSE, row.names = FALSE) #
 ### Black (exposed)
 
 ```{r}
+geneInfo %>% 
+  filter(., moduleColor == "black") %>%
+  summarise(., length(moduleColor)) #Number of genes in the module = 132
+
+geneInfo %>% 
+  filter(., moduleColor == "black") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  summarise(., length(moduleColor)) #Number of DEG in the module = 71
+```
+
+```{r}
 blackGeneList <- data.frame("geneID" = rownames(geneInfo),
                             "moduleColor" = geneInfo$moduleColor,
                             "MM.black" = geneInfo$MM.black,
@@ -414,6 +438,17 @@ write.csv(blackGeneList,"BlackGeneList.csv", quote = FALSE, row.names = FALSE) #
 ```
 
 ### Blue (exposed and control)
+
+```{r}
+geneInfo %>% 
+  filter(., moduleColor == "blue") %>%
+  summarise(., length(moduleColor)) #Number of genes in the module = 450
+
+geneInfo %>% 
+  filter(., moduleColor == "blue") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  summarise(., length(moduleColor)) #Number of DEG in the module = 420
+```
 
 ```{r}
 blueGeneList <- data.frame("geneID" = rownames(geneInfo),
@@ -432,6 +467,17 @@ write.csv(blueGeneList,"BlueGeneList.csv", quote = FALSE, row.names = FALSE) #Sa
 ### Yellow (control)
 
 ```{r}
+geneInfo %>% 
+  filter(., moduleColor == "yellow") %>%
+  summarise(., length(moduleColor)) #Number of genes in the module = 229
+
+geneInfo %>% 
+  filter(., moduleColor == "yellow") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  summarise(., length(moduleColor)) #Number of DEG in the module = 38
+```
+
+```{r}
 yellowGeneList <- data.frame("geneID" = rownames(geneInfo),
                             "moduleColor" = geneInfo$moduleColor,
                             "MM.yellow" = geneInfo$MM.yellow,
@@ -446,6 +492,17 @@ write.csv(yellowGeneList,"YellowGeneList.csv", quote = FALSE, row.names = FALSE)
 ```
 
 ### Light green (control)
+
+```{r}
+geneInfo %>% 
+  filter(., moduleColor == "lightgreen") %>%
+  summarise(., length(moduleColor)) #Number of genes in the module = 42
+
+geneInfo %>% 
+  filter(., moduleColor == "lightgreen") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  summarise(., length(moduleColor)) #Number of DEG in the module = 20
+```
 
 ```{r}
 lightgreenGeneList <- data.frame("geneID" = rownames(geneInfo),
