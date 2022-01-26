@@ -655,7 +655,7 @@ blackMFGOMWUGeneGOtermsEdgeR %>%
 ```
 
 ```{r}
-write.csv(blackGeneAnnotGOMWU, "zostera-BlackModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
+write.csv(blackMFGOMWUGeneGOtermsEdgeR, "zostera-BlackModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
 ```
 
 ### Blue (exposed and control)
@@ -730,7 +730,7 @@ blueBPGOMWUGeneGOtermsEdgeR %>%
 ```
 
 ```{r}
-write.csv(blueGeneAnnotGOMWU, "zostera-BlueModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
+write.csv(blueBPGOMWUGeneGOtermsEdgeR, "zostera-BlueModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
 ```
 
 #### Cellular components
