@@ -299,14 +299,7 @@ for (module in modNames) {
 }
 ```
 
-## Master list with membership and gene significance information
-
-```{r}
-zosteraGeneAnnot <- read.delim("../../data/Zostera-blast-annot-withGeneID-noIsoforms.tab", header = FALSE, sep = "\t") #Import gene annotation information
-zosteraGeneAnnot <- zosteraGeneAnnot[,-c(3,10)] #Remove unecessary columns
-colnames(zosteraGeneAnnot) <- c("geneIDs", "Uniprot", "e-value", "annot", "BPGO", "CCGO", "MFGO", "GOterms", "organism")
-head(zosteraGeneAnnot) #Confirm import and formatting
-```
+### Count the number of differentially expressed genes in each significant module
 
 ```{r}
 zosteraDEG <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
@@ -317,6 +310,85 @@ zosteraDEG <- data.frame("geneIDs" = rownames(zosteraDEG),
                          "FDR" = zosteraDEG$FDR,
                          "edgeR.pvalue" = zosteraDEG$PValue) #Only save gene ID, log fold change, log counts per million, FDR, and p-values from edgeR
 head(zosteraDEG) #Confirm changes
+```
+
+#### Brown (exposed and control)
+
+```{r}
+brownGeneList <- read.delim("zosteraGeneList-brown.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(brownGeneList) #Number of rows
+head(brownGeneList) #Confirm import
+```
+
+```{r}
+left_join(x = brownGeneList, y = zosteraDEG, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
+  nrow(.) #Number of DEGs in the brown module
+```
+
+#### Black (exposed)
+
+```{r}
+blackGeneList <- read.delim("zosteraGeneList-black.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(blackGeneList) #Number of rows
+head(blackGeneList) #Confirm import
+```
+
+```{r}
+left_join(x = blackGeneList, y = zosteraDEG, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
+  nrow(.) #Number of DEGs in the black module
+```
+
+#### Blue (exposed and control)
+
+```{r}
+blueGeneList <- read.delim("zosteraGeneList-blue.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(blueGeneList) #Number of rows
+head(blueGeneList) #Confirm import
+```
+
+```{r}
+left_join(x = blueGeneList, y = zosteraDEG, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
+  nrow(.) #Number of DEGs in the blue module
+```
+
+#### Yellow (control)
+
+```{r}
+yellowGeneList <- read.delim("zosteraGeneList-yellow.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(yellowGeneList) #Number of rows
+head(yellowGeneList) #Confirm import
+```
+
+```{r}
+left_join(x = yellowGeneList, y = zosteraDEG, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
+  nrow(.) #Number of DEGs in the yellow module
+```
+
+#### Light green (control)
+
+```{r}
+lightgreenGeneList <- read.delim("zosteraGeneList-lightgreen.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(lightgreenGeneList) #Number of rows
+head(lightgreenGeneList) #Confirm import
+```
+
+```{r}
+left_join(x = lightgreenGeneList, y = zosteraDEG, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
+  nrow(.) #Number of DEGs in the lightgreen module
+```
+
+## Master list with membership and gene significance information
+
+```{r}
+zosteraGeneAnnot <- read.delim("../../data/Zostera-blast-annot-withGeneID-noIsoforms.tab", header = FALSE, sep = "\t") #Import gene annotation information
+zosteraGeneAnnot <- zosteraGeneAnnot[,-c(3,10)] #Remove unecessary columns
+colnames(zosteraGeneAnnot) <- c("geneIDs", "Uniprot", "e-value", "annot", "BPGO", "CCGO", "MFGO", "GOterms", "organism")
+head(zosteraGeneAnnot) #Confirm import and formatting
 ```
 
 ```{r}
@@ -704,11 +776,11 @@ length(unique(blackMFGOMWUGeneGOterms$geneIDs)) == length(unique(blackMFGOMWUGen
 length(unique(blackMFGOMWUGeneGOtermsEdgeR$geneIDs)) #Number of unique genes associated with GOterms = 126
 
 blackMFGOMWUGeneGOtermsEdgeR %>% 
-  filter(., edgeR.pvalue < 0.05) %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
   distinct(., geneIDs) %>%
   summarise(., length(geneIDs)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
 
-#Number of DEG in module = 32
+#Number of DEG in module = 7
 ```
 
 ```{r}
@@ -779,11 +851,11 @@ length(unique(blueBPGOMWUGeneGOterms$geneIDs)) == length(unique(blueBPGOMWUGeneG
 length(unique(blueBPGOMWUGeneGOtermsEdgeR$geneIDs)) #Number of unique genes associated with GOterms = 8
 
 blueBPGOMWUGeneGOtermsEdgeR %>% 
-  filter(., edgeR.pvalue < 0.05) %>%
+  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
   distinct(., geneIDs) %>%
   summarise(., length(geneIDs)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
 
-#Number of DEG in module = 6
+#Number of DEG in module = 3
 ```
 
 ```{r}
