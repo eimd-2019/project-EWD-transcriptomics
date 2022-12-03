@@ -656,9 +656,72 @@ wc -l GO-Annotations-Table.tab #Number of genes in the original document
 
 I will create the .csv files for each module separately.
 
-
 ### Table of significance measures
 
+
+#### brown
+
+```{r}
+brownGOMWUInput <- data.frame("geneID" = rownames(geneInfo),
+                              "moduleColor" = geneInfo$moduleColor,
+                              "MM.brown" = geneInfo$MM.brown) %>%
+  mutate(kME = case_when(moduleColor == "brown" ~ MM.brown,
+                         moduleColor != "brown" ~ 0)) %>%
+  select(., geneID, kME) #Create table of significance measures
+head(brownGOMWUInput) #Confirm formatting
+```
+
+```{r}
+write.csv(brownGOMWUInput,"brown-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+#### yellow
+
+```{r}
+yellowGOMWUInput <- data.frame("geneID" = rownames(geneInfo),
+                              "moduleColor" = geneInfo$moduleColor,
+                              "MM.yellow" = geneInfo$MM.yellow) %>%
+  mutate(kME = case_when(moduleColor == "yellow" ~ MM.yellow,
+                         moduleColor != "yellow" ~ 0)) %>%
+  select(., geneID, kME) #Create table of significance measures
+head(yellowGOMWUInput) #Confirm formatting
+```
+
+```{r}
+write.csv(yellowGOMWUInput,"yellow-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+#### blue
+
+```{r}
+blueGOMWUInput <- data.frame("geneID" = rownames(geneInfo),
+                              "moduleColor" = geneInfo$moduleColor,
+                              "MM.blue" = geneInfo$MM.blue) %>%
+  mutate(kME = case_when(moduleColor == "blue" ~ MM.blue,
+                         moduleColor != "blue" ~ 0)) %>%
+  select(., geneID, kME) #Create table of significance measures
+head(blueGOMWUInput) #Confirm formatting
+```
+
+```{r}
+write.csv(blueGOMWUInput,"blue-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
+
+#### magenta
+
+```{r}
+magentaGOMWUInput <- data.frame("geneID" = rownames(geneInfo),
+                              "moduleColor" = geneInfo$moduleColor,
+                              "MM.magenta" = geneInfo$MM.magenta) %>%
+  mutate(kME = case_when(moduleColor == "magenta" ~ MM.magenta,
+                         moduleColor != "magenta" ~ 0)) %>%
+  select(., geneID, kME) #Create table of significance measures
+head(magentaGOMWUInput) #Confirm formatting
+```
+
+```{r}
+write.csv(magentaGOMWUInput,"magenta-Table-of-Significance-Measures.csv", quote = FALSE, row.names = FALSE) #Save file
+```
 
 ## Run GO-MWU
 
