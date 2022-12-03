@@ -97,7 +97,7 @@ Relevant tutorial: https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rp
 
 ```{r}
 powers <- c(c(1:10), seq(from = 12, to = 20, by = 2)) #Create a set of soft-thresholding powers
-sft <- pickSoftThreshold(zosteraExpr0, powerVector = powers, verbose = 5) #Use the network topology analysis function to evaluate soft-thresolding power values
+sft <- pickSoftThreshold(zosteraExpr0, powerVector = powers, verbose = 5, networkType = "signed") #Use the network topology analysis function to evaluate soft-thresolding power values for signed network
 ```
 
 ```{r}
@@ -105,27 +105,27 @@ plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
      xlab = "Soft Threshold (power)", ylab = "Scale Free Topology Model Fit,signed R^2", type = "n",
      main = paste("Scale independence")) #Plot scale-free topology fit index as a function of the soft-thresholding power
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2], labels = powers, cex = 1, col = "red") #Add sft values
-abline(h=0.90,col="red") #Add line corresponding to a R^2 cutoff of h = 0.90. Lowest power that reaches 0.90 is sft = 14
+abline(h=0.90,col="red") #Add line corresponding to a R^2 cutoff of h = 0.90. Lowest power that reaches 0.90 is sft = 16
 ```
 
 ```{r}
 plot(sft$fitIndices[,1], sft$fitIndices[,5],
      xlab = "Soft Threshold (power)", ylab = "Mean Connectivity", type = "n",
      main = paste("Mean connectivity")) #Plot mean connectivity as a function of soft-thresholding power
-text(sft$fitIndices[,1], sft$fitIndices[,5], labels = powers, cex = 1, col = "red") #Add sft values. 14 still looks good
+text(sft$fitIndices[,1], sft$fitIndices[,5], labels = powers, cex = 1, col = "red") #Add sft values. 
 ```
 
 ## Co-expression similarity and adjacency
 
 ```{r}
-softPower <- 14 #Set soft power based on plots above
-adjacency <- adjacency(zosteraExpr0, power = softPower) #Calculate adjacencies using softPower = 14
+softPower <- 16 #Set soft power based on plots above
+adjacency <- adjacency(zosteraExpr0, power = softPower, type = "signed") #Calculate adjacencies using softPower = 16
 ```
 
 ## Topological Overlap Matrix (TOM)
 
 ```{r}
-TOM <- TOMsimilarity(adjacency) #Minimize noise and spurious associations by transforming adjacency into TOM
+TOM <- TOMsimilarity(adjacency, TOMType = "signed") #Minimize noise and spurious associations by transforming adjacency into TOM
 dissTOM <- 1-TOM #Calculate dissimilarity matrix
 ```
 
@@ -142,7 +142,7 @@ minModuleSize <- 30 #Set the minimum module size (# of genes that need to be in 
 dynamicMods <- cutreeDynamic(dendro = geneTree, distM = dissTOM,
                              deepSplit = 2, pamRespectsDendro = FALSE,
                              minClusterSize = minModuleSize) #Cut the branches of the dendogram to identify WGCNA modules
-table(dynamicMods) #Look at the table of modules. There are 18 modules, and 272 genes that do not fit into a module (label 0). Modules have between 42 and 557 genes
+table(dynamicMods) #Look at the table of modules. There are 18 modules, and 9 genes that do not fit into a module (label 0). Modules have between 47 and 760 genes
 ```
 
 ```{r}
@@ -196,6 +196,9 @@ moduleColors <- mergedColors #Rename to moduleColors
 colorOrder = c("grey", standardColors(50)) #Determine color order
 moduleLabels = match(moduleColors, colorOrder)-1 #Construct numerical lables based on colors
 MEs <- mergedMEs #Replace unmerged MEs
+```
+
+```{r}
 save(MEs, moduleLabels, moduleColors, geneTree, file = "zostera-WGCNA-networkConstruction.RData")
 ```
 
