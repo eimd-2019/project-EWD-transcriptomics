@@ -725,13 +725,13 @@ write.csv(magentaGOMWUInput,"magenta-Table-of-Significance-Measures.csv", quote 
 
 ## Run GO-MWU
 
-### Brown (exposed and control)
+### brown
 
 #### Biological processes
 
 ```{r}
-input="BrownGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goAnnotations="Zostera-GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="brown-Table-of-Significance-Measures.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="GO-Annotations-Table.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
 goDivision="BP" # either MF, or BP, or CC
 source("gomwu.functions.R")
@@ -740,21 +740,24 @@ source("gomwu.functions.R")
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+	smallest=5,   # a GO category should contain at least this many genes to be considered
+	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
+#Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative) : cannot compute exact p-value with ties
 
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+#1 GO terms at 10% FDR
 ```
 
-```{r}
+Since there's only one significant term, there's no need to plot.
 
+```{r}
+read.delim("MWU_BP_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
+#GO:0003333;GO:0006865;GO:1905039;GO:0015849;GO:1903825;GO:0098656;GO:0034220;GO:0055085 transmembrane transport	0
 ```
 
 #### Cellular components
@@ -766,17 +769,24 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+	smallest=5,   # a GO category should contain at least this many genes to be considered
+	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
+# 2  GO terms at 10% FDR
+```
 
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+```{r}
+read.delim("MWU_CC_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
+
+# GO:0000943	retrotransposon nucleocapsid	0.00
+# GO:0099080	supramolecular complex	0.05
 ```
 
 #### Molecular function
@@ -788,397 +798,26 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+	smallest=5,   # a GO category should contain at least this many genes to be considered
+	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-### Black (exposed)
-
-#### Biological processes
-
-```{r}
-input="BlackGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goDivision="BP" # either MF, or BP, or CC
+#Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative): cannot compute exact p-value with ties
+# 2  GO terms at 10% FDR
 ```
 
 ```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
+read.delim("MWU_MF_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
 
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
+# GO:0003677	DNA binding	0.025
+# GO:0003700;GO:0140110	transcription regulator activity	0.050
 ```
-
-#### Cellular components
-
-```{r}
-goDivision="CC" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Molecular function
-
-```{r}
-goDivision="MF" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 2  GO terms at 10% FDR.
-```
-
-##### Match significant results with gene information
-
-```{r}
-blackMFGOMWUResults <- read.csv("MWU_MF_BlackGeneList.csv", sep = "") #Import GO-MWU results for significant test
-head(blackMFGOMWUResults) #Confirm import
-```
-
-```{r}
-blackMFGOMWUSig <- blackMFGOMWUResults %>% 
-  filter(., p.adj < 0.05) %>%
-  select(., term, name, p.adj) %>%
-  separate_rows(., term, sep=";") #Filter rows with significant GOterms, retain GOterm information columns, then separate GOterms into different rows
-colnames(blackMFGOMWUSig) <- c("GOID", "GOterm", "GOMWU.p.adj") #Revise column names
-head(blackMFGOMWUSig) #Confirm formatting
-```
-
-```{r}
-blackMFGOMWUMatchedGenes <- read.csv("MF_BlackGeneList.csv", sep = "") #Import GO-MWU generated list of GOterms and matched genes
-blackMFGOMWUMatchedGenes <- blackMFGOMWUMatchedGenes %>%
-  select(., term, seq) %>%
-  separate_rows(., term, sep=";") #Select GOterm and geneID columns, then separate GOterms into different rows
-colnames(blackMFGOMWUMatchedGenes) <- c("GOID", "geneIDs") #Revise column names
-head(blackMFGOMWUMatchedGenes) #Confirm import
-```
-
-```{r}
-blackMFGOMWUGeneGOterms <- left_join(blackMFGOMWUSig, blackMFGOMWUMatchedGenes, by = "GOID") #Join GOterms with gene IDs
-head(blackMFGOMWUGeneGOterms) #Confirm formatting
-
-blackMFGOMWUGeneGOtermsEdgeR <- left_join(blackMFGOMWUGeneGOterms, zosteraDEG, by = "geneIDs") #Join geneIDs with edgeR results
-head(blackMFGOMWUGeneGOtermsEdgeR) #Confirm formatting
-
-length(unique(blackMFGOMWUGeneGOterms$geneIDs)) == length(unique(blackMFGOMWUGeneGOtermsEdgeR$geneIDs)) #Confirm all matched genes have edgeR values
-```
-
-```{r}
-length(unique(blackMFGOMWUGeneGOtermsEdgeR$geneIDs)) #Number of unique genes associated with GOterms = 126
-
-blackMFGOMWUGeneGOtermsEdgeR %>% 
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  distinct(., geneIDs) %>%
-  summarise(., length(geneIDs)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
-
-#Number of DEG in module = 7
-```
-
-```{r}
-write.csv(blackMFGOMWUGeneGOtermsEdgeR, "zostera-BlackModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
-```
-
-### Blue (exposed and control)
-
-#### Biological processes
-
-```{r}
-input="BlueGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goDivision="BP" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 2  GO terms at 10% FDR, no significant GOterms.
-```
-
-##### Match significant results with gene information
-
-```{r}
-blueBPGOMWUResults <- read.csv("MWU_BP_BlueGeneList.csv", sep = "") #Import GO-MWU results for significant test
-head(blueBPGOMWUResults) #Confirm import
-```
-
-```{r}
-blueBPGOMWUSig <- blueBPGOMWUResults %>% 
-  filter(., p.adj < 0.05) %>%
-  select(., term, name, p.adj) %>%
-  separate_rows(., term, sep=";") #Filter rows with significant GOterms, retain GOterm information columns, then separate GOterms into different rows
-colnames(blueBPGOMWUSig) <- c("GOID", "GOterm", "GOMWU.p.adj") #Revise column names
-head(blueBPGOMWUSig) #Confirm formatting
-```
-
-```{r}
-blueBPGOMWUMatchedGenes <- read.csv("BP_BlueGeneList.csv", sep = "") #Import GO-MWU generated list of GOterms and matched genes
-blueBPGOMWUMatchedGenes <- blueBPGOMWUMatchedGenes %>%
-  select(., term, seq) %>%
-  separate_rows(., term, sep=";") #Select GOterm and geneID columns, then separate GOterms into different rows
-colnames(blueBPGOMWUMatchedGenes) <- c("GOID", "geneIDs") #Revise column names
-head(blueBPGOMWUMatchedGenes) #Confirm import
-```
-
-```{r}
-blueBPGOMWUGeneGOterms <- left_join(blueBPGOMWUSig, blueBPGOMWUMatchedGenes, by = "GOID") #Join GOterms with gene IDs
-head(blueBPGOMWUGeneGOterms) #Confirm formatting
-
-blueBPGOMWUGeneGOtermsEdgeR <- left_join(blueBPGOMWUGeneGOterms, zosteraDEG, by = "geneIDs") #Join geneIDs with edgeR results
-head(blueBPGOMWUGeneGOtermsEdgeR) #Confirm formatting
-
-length(unique(blueBPGOMWUGeneGOterms$geneIDs)) == length(unique(blueBPGOMWUGeneGOtermsEdgeR$geneIDs)) #Confirm all matched genes have edgeR values
-```
-
-```{r}
-length(unique(blueBPGOMWUGeneGOtermsEdgeR$geneIDs)) #Number of unique genes associated with GOterms = 8
-
-blueBPGOMWUGeneGOtermsEdgeR %>% 
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  distinct(., geneIDs) %>%
-  summarise(., length(geneIDs)) #Retain rows where there is an edgeR p-value, identify unique geneIDs, then count the number of unique geneIDs
-
-#Number of DEG in module = 3
-```
-
-```{r}
-write.csv(blueBPGOMWUGeneGOtermsEdgeR, "zostera-BlueModule-EnrichedGOterms-DEG.csv", quote = FALSE, row.names = FALSE) #Save as .csv
-```
-
-#### Cellular components
-
-```{r}
-goDivision="CC" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Molecular function
-
-```{r}
-goDivision="MF" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-### Yellow (control)
-
-#### Biological processes
-
-```{r}
-input="YellowGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goDivision="BP" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Cellular components
-
-```{r}
-goDivision="CC" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Molecular function
-
-```{r}
-goDivision="MF" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-### Light green (control)
-
-#### Biological processes
-
-```{r}
-input="LightgreenGeneList.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
-goDivision="BP" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Cellular components
-
-```{r}
-goDivision="CC" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-#### Molecular function
-
-```{r}
-goDivision="MF" # either MF, or BP, or CC
-```
-
-```{r}
-# Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
-gomwuStats(input, goDatabase, goAnnotations, goDivision,
-           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-           smallest=5,   # a GO category should contain at least this many genes to be considered
-           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
-)
-# do not continue if the printout shows that no GO terms pass 10% FDR.
-
-# 0  GO terms at 10% FDR, no significant GOterms. Will not proceed with plotting.
-```
-
-
-
 
 
 
