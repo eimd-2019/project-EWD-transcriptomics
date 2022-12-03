@@ -629,144 +629,36 @@ grid::grid.draw(grid::textGrob("Module Expression", x = 0.01, rot = 90, gp = gpa
 
 ## Create GO-MWU inputs
 
-For each significant module, I need a .csv of genes and module membership scores (kME) for my table of significance measures. Genes that are not in the module should have a kME = 0. I already have my GO annotations table from my previous GO-MWU run.
+For each significant module, I need a .csv of genes and module membership scores (kME) for my table of significance measures. Genes that are not in the module should have a kME = 0. I also need a GO annotations table with gene name and GO terms separated by semicolon.
 
-I'm also going to count the number of genes and DEG in each module.
-
-### Brown (exposed and control)
+### GO annotations table
 
 ```{r}
-geneInfo %>% 
-  filter(., moduleColor == "brown") %>%
-  summarise(., length(moduleColor)) #Number of genes in the module = 241
-
-geneInfo %>% 
-  filter(., moduleColor == "brown") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  summarise(., length(moduleColor)) #Number of DEG in the module = 144
+head(zosteraGeneAnnot)
 ```
 
 ```{r}
-brownGeneList <- data.frame("geneID" = rownames(geneInfo),
-                            "moduleColor" = geneInfo$moduleColor,
-                            "MM.brown" = geneInfo$MM.brown,
-                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the brown module. Also include a column of 0s
-brownGeneList$kME[which(brownGeneList$moduleColor == "brown")] <- brownGeneList$MM.brown[which(brownGeneList$moduleColor == "brown")] #Replace kME with the MM.brown score when the gene was in the brown module
-brownGeneList <- brownGeneList[c(1,4)] #Keep the gene ID and kME columns
-head(brownGeneList) #Confirm changes
+zosteraGOAnnotations <- zosteraGeneAnnot %>%
+  select(., geneIDs, GOterms) %>%
+  dplyr::rename(., GeneID = "geneIDs") %>%
+  dplyr::rename(., GO = "GOterms") #Create GO annotations table
+head(zosteraGOAnnotations) #Confirm table creation
 ```
 
 ```{r}
-write.csv(brownGeneList,"BrownGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
+write.table(zosteraGOAnnotations, "GO-Annotations-Table.tab", sep = "\t", col.names = FALSE, row.names = FALSE, quote = FALSE) #Save file
 ```
 
-### Black (exposed)
-
-```{r}
-geneInfo %>% 
-  filter(., moduleColor == "black") %>%
-  summarise(., length(moduleColor)) #Number of genes in the module = 132
-
-geneInfo %>% 
-  filter(., moduleColor == "black") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  summarise(., length(moduleColor)) #Number of DEG in the module = 71
+```{bash}
+head GO-Annotations-Table.tab #Confirm formatting is good.
+wc -l GO-Annotations-Table.tab #Number of genes in the original document
 ```
 
-```{r}
-blackGeneList <- data.frame("geneID" = rownames(geneInfo),
-                            "moduleColor" = geneInfo$moduleColor,
-                            "MM.black" = geneInfo$MM.black,
-                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the black module. Also include a column of 0s
-blackGeneList$kME[which(blackGeneList$moduleColor == "black")] <- blackGeneList$MM.black[which(blackGeneList$moduleColor == "black")] #Replace kME with the MM.black score when the gene was in the black module
-blackGeneList <- blackGeneList[c(1,4)] #Keep the gene ID and kME columns
-head(blackGeneList) #Confirm changes
-```
+I will create the .csv files for each module separately.
 
-```{r}
-write.csv(blackGeneList,"BlackGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
-```
 
-### Blue (exposed and control)
+### Table of significance measures
 
-```{r}
-geneInfo %>% 
-  filter(., moduleColor == "blue") %>%
-  summarise(., length(moduleColor)) #Number of genes in the module = 450
-
-geneInfo %>% 
-  filter(., moduleColor == "blue") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  summarise(., length(moduleColor)) #Number of DEG in the module = 420
-```
-
-```{r}
-blueGeneList <- data.frame("geneID" = rownames(geneInfo),
-                           "moduleColor" = geneInfo$moduleColor,
-                           "MM.blue" = geneInfo$MM.blue,
-                           "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the blue module. Also include a column of 0s
-blueGeneList$kME[which(blueGeneList$moduleColor == "blue")] <- blueGeneList$MM.blue[which(blueGeneList$moduleColor == "blue")] #Replace kME with the MM.blue score when the gene was in the blue module
-blueGeneList <- blueGeneList[c(1,4)] #Keep the gene ID and kME columns
-head(blueGeneList) #Confirm changes
-```
-
-```{r}
-write.csv(blueGeneList,"BlueGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
-```
-
-### Yellow (control)
-
-```{r}
-geneInfo %>% 
-  filter(., moduleColor == "yellow") %>%
-  summarise(., length(moduleColor)) #Number of genes in the module = 229
-
-geneInfo %>% 
-  filter(., moduleColor == "yellow") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  summarise(., length(moduleColor)) #Number of DEG in the module = 38
-```
-
-```{r}
-yellowGeneList <- data.frame("geneID" = rownames(geneInfo),
-                             "moduleColor" = geneInfo$moduleColor,
-                             "MM.yellow" = geneInfo$MM.yellow,
-                             "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the yellow module. Also include a column of 0s
-yellowGeneList$kME[which(yellowGeneList$moduleColor == "yellow")] <- yellowGeneList$MM.yellow[which(yellowGeneList$moduleColor == "yellow")] #Replace kME with the MM.yellow score when the gene was in the yellow module
-yellowGeneList <- yellowGeneList[c(1,4)] #Keep the gene ID and kME columns
-head(yellowGeneList) #Confirm changes
-```
-
-```{r}
-write.csv(yellowGeneList,"YellowGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
-```
-
-### Light green (control)
-
-```{r}
-geneInfo %>% 
-  filter(., moduleColor == "lightgreen") %>%
-  summarise(., length(moduleColor)) #Number of genes in the module = 42
-
-geneInfo %>% 
-  filter(., moduleColor == "lightgreen") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  summarise(., length(moduleColor)) #Number of DEG in the module = 20
-```
-
-```{r}
-lightgreenGeneList <- data.frame("geneID" = rownames(geneInfo),
-                                 "moduleColor" = geneInfo$moduleColor,
-                                 "MM.lightgreen" = geneInfo$MM.lightgreen,
-                                 "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the lightgreen module. Also include a column of 0s
-lightgreenGeneList$kME[which(lightgreenGeneList$moduleColor == "lightgreen")] <- lightgreenGeneList$MM.lightgreen[which(lightgreenGeneList$moduleColor == "lightgreen")] #Replace kME with the MM.lightgreen score when the gene was in the lightgreen module
-lightgreenGeneList <- lightgreenGeneList[c(1,4)] #Keep the gene ID and kME columns
-head(lightgreenGeneList) #Confirm changes
-```
-
-```{r}
-write.csv(lightgreenGeneList,"LightgreenGeneList.csv", quote = FALSE, row.names = FALSE) #Save file
-```
 
 ## Run GO-MWU
 
