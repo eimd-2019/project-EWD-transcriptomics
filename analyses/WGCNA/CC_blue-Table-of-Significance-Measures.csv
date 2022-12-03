@@ -1,0 +1,825 @@
+name	term	lev	seq	value
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN292351_c0_g2	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c1_g1	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c2_g1	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c3_g1	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c3_g2	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c3_g3	0.619719922684522
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN299656_c3_g6	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN64322_c0_g1	0
+"organelle lumen"	GO:0005758;GO:0031970;GO:0043233;GO:0070013;GO:0031974	4	TRINITY_DN312083_c1_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN10562_c0_g1	0.638540639762085
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN254317_c1_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g11	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g12	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g2	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g3	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g9	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN293398_c2_g11	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN293398_c2_g4	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN293398_c2_g7	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN298809_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN4817_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN173977_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292907_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN292978_c1_g8	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN227744_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN254309_c0_g1	0.993066670722339
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN255884_c0_g1	0
+"proton-transporting two-sector ATPase complex, catalytic domain"	GO:0000275;GO:0045261;GO:0098800;GO:0033178;GO:0098798	3	TRINITY_DN294194_c0_g2	0.987161984499469
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN10562_c0_g1	0.638540639762085
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN254317_c1_g1	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN292978_c1_g11	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN292978_c1_g12	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN292978_c1_g2	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN292978_c1_g3	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN292978_c1_g9	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN293398_c2_g11	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN293398_c2_g4	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN293398_c2_g7	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN298809_c0_g1	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN299205_c0_g1	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN299205_c0_g3	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN299205_c0_g4	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN299755_c1_g4	0.993522398733546
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN299793_c0_g1	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN4817_c0_g1	0
+"endoplasmic reticulum protein-containing complex"	GO:0140534	2	TRINITY_DN6179_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN106794_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN223898_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN256218_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN271646_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN314109_c1_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN316937_c2_g1	0.324616636735409
+"nucleolus"	GO:0005730	2	TRINITY_DN38426_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN451931_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN6178_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN643084_c0_g1	0
+"nucleolus"	GO:0005730	2	TRINITY_DN67057_c0_g1	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN172938_c0_g1	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN173576_c0_g1	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN226913_c0_g1	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN254005_c0_g2	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN278890_c0_g1	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN278921_c1_g2	0
+"lytic vacuole"	GO:0000323	3	TRINITY_DN444543_c0_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN175462_c0_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN254212_c0_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN277064_c0_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN277201_c0_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294137_c1_g2	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294137_c1_g3	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294137_c1_g4	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294137_c1_g5	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294655_c4_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN294655_c4_g2	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN316287_c1_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN316287_c1_g5	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN316640_c4_g1	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN316640_c4_g2	0
+"thylakoid membrane"	GO:0009535;GO:0055035;GO:0042651;GO:0034357	4	TRINITY_DN316640_c4_g4	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c1_g3	0.648950029638843
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g1	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g3	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g4	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g5	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g6	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g8	0
+"DNA helicase complex"	GO:0017117;GO:0033202;GO:1904949	4	TRINITY_DN299782_c2_g9	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN105130_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN173143_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN254118_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN277290_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN277296_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN294190_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN294655_c3_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN294655_c3_g2	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN294782_c0_g2	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN298445_c0_g2	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN298472_c6_g2	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN299702_c0_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN316210_c1_g1	0
+"endoplasmic reticulum membrane"	GO:0005789	4	TRINITY_DN616819_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN102501_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN228066_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN233029_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN255897_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN277393_c0_g1	0.973537506983817
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN292979_c1_g6	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN295225_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN295225_c0_g2	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN295225_c1_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN296703_c2_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN298862_c0_g3	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN299261_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN310739_c1_g6	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN310746_c0_g1	0.979014656149982
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN310746_c0_g3	0.941728424857553
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN311416_c0_g3	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN311784_c2_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN385747_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN394_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN463905_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN544354_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN612757_c0_g1	0
+"vacuolar membrane"	GO:0005774	4	TRINITY_DN68467_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN115800_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN222905_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN238633_c1_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN256598_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN256648_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN276040_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN292954_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN292954_c0_g2	0.552682654330616
+"peptidase complex"	GO:1905368	2	TRINITY_DN299205_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN299205_c0_g3	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN299205_c0_g4	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN299639_c5_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN299793_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN310732_c2_g2	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN310732_c2_g4	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN311466_c0_g3	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN359839_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN66420_c0_g1	0
+"peptidase complex"	GO:1905368	2	TRINITY_DN67439_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN104808_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN115800_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN259660_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN274662_c0_g1	0.870511864698944
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN274820_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN276016_c0_g1	0.990399173948695
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN293388_c1_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN293388_c2_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN293388_c2_g2	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN296797_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN298149_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN299276_c0_g3	0.924615795841861
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN299722_c0_g3	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN299722_c1_g1	0.99282174823384
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN310026_c1_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN316282_c3_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN340826_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN34923_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN612712_c0_g1	0
+"nuclear protein-containing complex"	GO:0140513	2	TRINITY_DN6277_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN13602_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN233018_c0_g2	0.41694258989615
+"cytosol"	GO:0005829	2	TRINITY_DN2504_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN256462_c0_g1	0.696455719684803
+"cytosol"	GO:0005829	2	TRINITY_DN256462_c0_g2	0.578044810526
+"cytosol"	GO:0005829	2	TRINITY_DN256947_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN271596_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN274844_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN276534_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN277212_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN29469_c0_g1	0.575470079661538
+"cytosol"	GO:0005829	2	TRINITY_DN294783_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN298867_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN298867_c2_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN298867_c2_g2	0
+"cytosol"	GO:0005829	2	TRINITY_DN298867_c2_g3	0
+"cytosol"	GO:0005829	2	TRINITY_DN298867_c2_g4	0
+"cytosol"	GO:0005829	2	TRINITY_DN299782_c1_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN310761_c3_g3	0
+"cytosol"	GO:0005829	2	TRINITY_DN310761_c3_g4	0
+"cytosol"	GO:0005829	2	TRINITY_DN310762_c3_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN311498_c1_g2	0
+"cytosol"	GO:0005829	2	TRINITY_DN312791_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN314627_c4_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN375679_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN524047_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN5932_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN6876_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN688402_c0_g1	0
+"cytosol"	GO:0005829	2	TRINITY_DN689918_c0_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN271059_c0_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN295076_c0_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN298166_c1_g2	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN312769_c1_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN312769_c1_g5	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN312769_c2_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN312769_c2_g6	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN292909_c0_g1	0
+"organelle outer membrane"	GO:0009707;GO:0009527;GO:0031969;GO:0031968;GO:0042170;GO:0019867	4	TRINITY_DN312088_c0_g2	0
+"storage vacuole"	GO:0000322	6	TRINITY_DN172938_c0_g1	0
+"storage vacuole"	GO:0000322	6	TRINITY_DN173576_c0_g1	0
+"storage vacuole"	GO:0000322	6	TRINITY_DN259665_c0_g1	0
+"storage vacuole"	GO:0000322	6	TRINITY_DN278921_c1_g2	0
+"storage vacuole"	GO:0000322	6	TRINITY_DN444543_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN1604_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN175438_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN259521_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN259521_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN274887_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN277374_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN293456_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN294137_c1_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN294137_c1_g6	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN295216_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN295216_c0_g3	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN296781_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN296786_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN296786_c0_g3	0.90911769590444
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN298802_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN298862_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN299291_c1_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN299795_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN311462_c1_g3	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN312088_c0_g6	0.716141130146504
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN312719_c0_g1	0.934506747376512
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN312721_c0_g8	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN314210_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN316265_c0_g1	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN316265_c0_g2	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN316265_c0_g4	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN316265_c0_g6	0
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN316991_c4_g1	0.950065663623241
+"plastid"	GO:0009536;GO:0009507	5	TRINITY_DN67643_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN111467_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN115800_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN175482_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN222905_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN231231_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN2351_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN238633_c1_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN256513_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN256598_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN256648_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN256692_c1_g1	0.421688892405889
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN274556_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN274820_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN276040_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN277009_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN292954_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN292954_c0_g2	0.552682654330616
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN292971_c0_g2	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN293487_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN294612_c2_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN294612_c4_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN295081_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN296770_c4_g3	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN296797_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN298836_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN299276_c0_g3	0.924615795841861
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN299639_c5_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN310721_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN310732_c2_g2	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN310732_c2_g4	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN311036_c1_g6	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN311466_c0_g3	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN314101_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN324631_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN340684_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN340697_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN340826_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN359839_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN39891_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN46292_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN4896_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN492882_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN66420_c0_g1	0
+"intracellular protein-containing complex"	GO:0140535	2	TRINITY_DN67439_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN238132_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN274007_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN274821_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN292966_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN293349_c0_g1	0
+"chromosome, centromeric region"	GO:0000775;GO:0098687	2	TRINITY_DN4991_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN151582_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN22034_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN22035_c0_g1	0.663304318893833
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN227587_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN254233_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN256515_c0_g2	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN257902_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN276843_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN292903_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN292974_c6_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN293899_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN2951_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN298164_c0_g1	0.980665617511157
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN299720_c0_g2	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN299720_c1_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN380114_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN656226_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN255257_c0_g1	0.992538725621191
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN292909_c0_g1	0
+"organelle inner membrane"	GO:0005743;GO:0019866;GO:0031966	5	TRINITY_DN312088_c0_g2	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN255289_c0_g1	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN255289_c0_g2	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c2_g1	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g10	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g2	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g3	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g5	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g8	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c3_g9	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN278999_c4_g1	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN299795_c0_g3	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN311462_c0_g1	0
+"protein-DNA complex"	GO:0000786;GO:0032993;GO:0044815	2	TRINITY_DN310026_c1_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN111467_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN175482_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN231231_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN256513_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN274556_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN293487_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN296770_c4_g3	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN298836_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN310721_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN340684_c0_g1	0
+"ubiquitin ligase complex"	GO:0000151	3	TRINITY_DN340697_c0_g1	0
+"THO complex"	GO:0000347	2	TRINITY_DN259660_c0_g1	0
+"THO complex"	GO:0000347	2	TRINITY_DN293388_c1_g1	0
+"THO complex"	GO:0000347	2	TRINITY_DN293388_c2_g1	0
+"THO complex"	GO:0000347	2	TRINITY_DN293388_c2_g2	0
+"THO complex"	GO:0000347	2	TRINITY_DN299722_c0_g3	0
+"THO complex"	GO:0000347	2	TRINITY_DN299722_c1_g1	0.99282174823384
+"THO complex"	GO:0000347	2	TRINITY_DN6277_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN154819_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN215878_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN222928_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN235304_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN251094_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN254291_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN274806_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN277959_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN278922_c0_g2	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN294128_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN298410_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN299045_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN299657_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN299703_c1_g2	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN310730_c0_g2	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN314252_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN314252_c0_g2	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN314629_c0_g1	0.782924899102941
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN316931_c2_g3	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN37126_c0_g1	0
+"integral component of membrane"	GO:0016021;GO:0031224	2	TRINITY_DN38429_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN2351_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN277009_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN292971_c0_g2	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN294612_c2_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN294612_c4_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN295081_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN314101_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN39891_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN4896_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN492882_c0_g1	0
+"phosphatase complex"	GO:0000159;GO:0008287;GO:1903293	3	TRINITY_DN294612_c7_g2	0
+"transferase complex"	GO:1990234	2	TRINITY_DN111467_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN115800_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN175482_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN231231_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN256513_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN274556_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN274820_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN293487_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN293492_c0_g1	0.986115291889835
+"transferase complex"	GO:1990234	2	TRINITY_DN294180_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN296770_c4_g3	0
+"transferase complex"	GO:1990234	2	TRINITY_DN296797_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN298836_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN299276_c0_g3	0.924615795841861
+"transferase complex"	GO:1990234	2	TRINITY_DN299755_c1_g4	0.993522398733546
+"transferase complex"	GO:1990234	2	TRINITY_DN310721_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN340684_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN340697_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN340826_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN553912_c0_g1	0
+"transferase complex"	GO:1990234	2	TRINITY_DN6179_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN10562_c0_g1	0.638540639762085
+"membrane protein complex"	GO:0098796	2	TRINITY_DN173977_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN226946_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN227744_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN233040_c0_g2	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN238270_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN254309_c0_g1	0.993066670722339
+"membrane protein complex"	GO:0098796	2	TRINITY_DN254317_c1_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN255884_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN271275_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292907_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g11	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g12	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g2	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g3	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g8	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN292978_c1_g9	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN293398_c2_g11	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN293398_c2_g4	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN293398_c2_g7	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN294146_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN294146_c1_g2	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN294194_c0_g2	0.987161984499469
+"membrane protein complex"	GO:0098796	2	TRINITY_DN294770_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN298809_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN299205_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN299205_c0_g3	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN299205_c0_g4	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN299755_c1_g4	0.993522398733546
+"membrane protein complex"	GO:0098796	2	TRINITY_DN299793_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN316287_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN316287_c1_g2	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN4817_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN553912_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN6179_c0_g1	0
+"membrane protein complex"	GO:0098796	2	TRINITY_DN6734_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN111467_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN115800_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN173977_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN175482_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN222905_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN231231_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN2351_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN238633_c1_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN256513_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN256598_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN256648_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN274556_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN274820_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN276040_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN277009_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN292954_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN292954_c0_g2	0.552682654330616
+"catalytic complex"	GO:1902494	2	TRINITY_DN292971_c0_g2	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN293487_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN293492_c0_g1	0.986115291889835
+"catalytic complex"	GO:1902494	2	TRINITY_DN294180_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN294612_c2_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN294612_c4_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN294612_c7_g2	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN295081_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN296770_c4_g3	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN296797_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN298836_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299205_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299205_c0_g3	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299205_c0_g4	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299276_c0_g3	0.924615795841861
+"catalytic complex"	GO:1902494	2	TRINITY_DN299639_c5_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299755_c1_g4	0.993522398733546
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c1_g3	0.648950029638843
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g3	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g4	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g5	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g6	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g8	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299782_c2_g9	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN299793_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN310721_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN310732_c2_g2	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN310732_c2_g4	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN311466_c0_g3	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN314101_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN316287_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN316287_c1_g2	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN340684_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN340697_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN340826_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN34923_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN359839_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN39891_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN4896_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN492882_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN553912_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN6179_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN66420_c0_g1	0
+"catalytic complex"	GO:1902494	2	TRINITY_DN67439_c0_g1	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN274005_c0_g1	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN274731_c0_g1	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN276575_c0_g1	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN311466_c0_g4	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN311488_c0_g1	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN311488_c0_g2	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN311488_c0_g4	0
+"cytoplasmic ribonucleoprotein granule"	GO:0000932;GO:0036464;GO:0035770	4	TRINITY_DN311781_c3_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN119657_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN227518_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN228088_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN256684_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN274825_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN276819_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN277086_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN292911_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN292916_c0_g2	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN294134_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN294185_c1_g1	0.67803422424817
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN296210_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN296770_c4_g4	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN299275_c0_g1	0.988568239857132
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN316951_c1_g2	0.99204903495231
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN316974_c2_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN318036_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN462199_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN4985_c0_g1	0
+"endoplasmic reticulum"	GO:0005783	5	TRINITY_DN612300_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN172938_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN173576_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN226618_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN226913_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN23427_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN238618_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN254005_c0_g2	0
+"vacuole"	GO:0005773	2	TRINITY_DN259665_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN271057_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN276939_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN276939_c0_g2	0
+"vacuole"	GO:0005773	2	TRINITY_DN27773_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN278890_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN278921_c1_g2	0
+"vacuole"	GO:0005773	2	TRINITY_DN292979_c1_g4	0
+"vacuole"	GO:0005773	2	TRINITY_DN294129_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN296362_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN298179_c0_g2	0.648238786547964
+"vacuole"	GO:0005773	2	TRINITY_DN298844_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN298844_c0_g2	0
+"vacuole"	GO:0005773	2	TRINITY_DN310027_c2_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN371087_c0_g1	0.50358756486063
+"vacuole"	GO:0005773	2	TRINITY_DN444543_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN517_c0_g1	0
+"vacuole"	GO:0005773	2	TRINITY_DN6279_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN106794_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN15136_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN173777_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN220743_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN223898_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN256218_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN271646_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN274005_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN274731_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN276575_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN277085_c1_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN278829_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN278829_c0_g3	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN278895_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN292335_c2_g2	0.671466675193084
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN293689_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN293689_c0_g3	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN293689_c0_g4	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN293812_c1_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311466_c0_g4	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311488_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311488_c0_g2	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311488_c0_g4	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311758_c0_g2	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN311781_c3_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN312793_c6_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN314109_c1_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN314636_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN316223_c7_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN316648_c0_g4	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN316937_c2_g1	0.324616636735409
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN38426_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN451931_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN557_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN6178_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN643084_c0_g1	0
+"intracellular non-membrane-bounded organelle"	GO:0043232;GO:0043228	4	TRINITY_DN67057_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN102024_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN102664_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN106037_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN1726_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN254083_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN274552_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN276860_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN292387_c5_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN292387_c8_g1	0.684915214844045
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN299789_c0_g1	0.988939790806386
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN340747_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN231213_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN294129_c0_g1	0
+"intracellular vesicle"	GO:0005768;GO:0031410;GO:0097708;GO:0031982	3	TRINITY_DN310027_c2_g1	0
+"ribosome"	GO:0005840	2	TRINITY_DN15136_c0_g1	0
+"ribosome"	GO:0005840	2	TRINITY_DN220743_c0_g1	0
+"ribosome"	GO:0005840	2	TRINITY_DN277085_c1_g1	0
+"ribosome"	GO:0005840	2	TRINITY_DN293689_c0_g1	0
+"ribosome"	GO:0005840	2	TRINITY_DN293689_c0_g3	0
+"ribosome"	GO:0005840	2	TRINITY_DN293689_c0_g4	0
+"ribosome"	GO:0005840	2	TRINITY_DN557_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN173777_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN231207_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN231207_c1_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN274005_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN274731_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN276575_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN292335_c2_g2	0.671466675193084
+"supramolecular complex"	GO:0099080	2	TRINITY_DN292951_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311466_c0_g4	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311488_c0_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311488_c0_g2	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311488_c0_g4	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311758_c0_g2	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN311781_c3_g1	0
+"supramolecular complex"	GO:0099080	2	TRINITY_DN316223_c7_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN222905_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN238633_c1_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN256598_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN256648_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN276040_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN292954_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN292954_c0_g2	0.552682654330616
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN299639_c5_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN310732_c2_g2	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN310732_c2_g4	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN311466_c0_g3	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN359839_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN66420_c0_g1	0
+"endopeptidase complex"	GO:0000502;GO:1905369	3	TRINITY_DN67439_c0_g1	0
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN102501_c0_g1	0
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN277393_c0_g1	0.973537506983817
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN296703_c2_g1	0
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN310739_c1_g6	0
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN311416_c0_g3	0
+"lytic vacuole membrane"	GO:0098852	6	TRINITY_DN68467_c0_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN292392_c0_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN292950_c0_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN294776_c2_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN298813_c1_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN298813_c1_g5	0.340215095757039
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN299020_c1_g4	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN299790_c1_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN310764_c1_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN312096_c4_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN312754_c4_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314150_c1_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314218_c0_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314258_c2_g2	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314258_c2_g4	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314629_c1_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN314885_c1_g6	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN316994_c0_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN316994_c2_g1	0
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN317261_c5_g1	0.842649104969486
+"retrotransposon nucleocapsid"	GO:0000943	2	TRINITY_DN317266_c4_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN106057_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN1500_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN151358_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN151783_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN238275_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN25183_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN251931_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN254004_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN254004_c0_g2	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN254068_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN256592_c0_g1	0.634153038601754
+"mitochondrion"	GO:0005739	2	TRINITY_DN259597_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN259684_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN274802_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN276409_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN276445_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN277072_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN277072_c0_g2	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN278380_c0_g1	0.740219318145907
+"mitochondrion"	GO:0005739	2	TRINITY_DN278814_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN278823_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN278961_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN292660_c0_g1	0.993369879918896
+"mitochondrion"	GO:0005739	2	TRINITY_DN296218_c0_g2	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN296770_c4_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN296791_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN298692_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN298832_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN310726_c3_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN310726_c3_g2	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN311743_c1_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN312769_c2_g8	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN312798_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN3143_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN314622_c5_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN314622_c5_g6	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN316937_c1_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN35913_c0_g1	0.391831037861129
+"mitochondrion"	GO:0005739	2	TRINITY_DN371308_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN38559_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN45783_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN663150_c0_g1	0
+"mitochondrion"	GO:0005739	2	TRINITY_DN68793_c0_g1	0
+"nucleoplasm"	GO:0005654	2	TRINITY_DN223873_c0_g1	0
+"nucleoplasm"	GO:0005654	2	TRINITY_DN226189_c0_g1	0
+"nucleoplasm"	GO:0005654	2	TRINITY_DN296754_c4_g2	0
+"nucleoplasm"	GO:0005654	2	TRINITY_DN314175_c0_g1	0
+"nucleoplasm"	GO:0005654	2	TRINITY_DN344594_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN119659_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN160346_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN173771_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN238112_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN250512_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN255937_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN255937_c0_g2	0
+"extracellular region"	GO:0005576	2	TRINITY_DN256245_c0_g1	0.531704209648805
+"extracellular region"	GO:0005576	2	TRINITY_DN256911_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN27153_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN274795_c0_g2	0.923214251058558
+"extracellular region"	GO:0005576	2	TRINITY_DN277045_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN292369_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN293699_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN296780_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN296788_c2_g2	0
+"extracellular region"	GO:0005576	2	TRINITY_DN296788_c3_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN298615_c0_g2	0
+"extracellular region"	GO:0005576	2	TRINITY_DN310084_c1_g1	0.992684816130542
+"extracellular region"	GO:0005576	2	TRINITY_DN310084_c1_g2	0.978661349585655
+"extracellular region"	GO:0005576	2	TRINITY_DN310745_c1_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN311756_c0_g1	0
+"extracellular region"	GO:0005576	2	TRINITY_DN312719_c0_g4	0
+"extracellular region"	GO:0005576	2	TRINITY_DN312754_c1_g1	0.709478931237306
+"plasma membrane"	GO:0005886	3	TRINITY_DN110605_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN227390_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN234174_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN252859_c1_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN254086_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN255222_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN255851_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN255890_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN274054_c0_g1	0.984185227995115
+"plasma membrane"	GO:0005886	3	TRINITY_DN276586_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN277053_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN277378_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN292329_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN292329_c0_g2	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN293495_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN293698_c3_g3	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN294776_c2_g3	0.211233729738842
+"plasma membrane"	GO:0005886	3	TRINITY_DN298608_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN299672_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN299703_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN299703_c0_g2	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN311737_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN311737_c0_g2	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN311920_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN311920_c0_g2	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN312713_c2_g2	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN312713_c2_g3	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN312739_c5_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN31461_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN316931_c2_g4	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN316958_c2_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN317258_c3_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN317258_c4_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN34988_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN38592_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN4409_c0_g1	0
+"plasma membrane"	GO:0005886	3	TRINITY_DN6371_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN102375_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN102663_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN104326_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN10633_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN151574_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN151589_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN173945_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN175067_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN17632_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN21031_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN271689_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN274620_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN274792_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN274798_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN278317_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN278381_c0_g3	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN293340_c0_g2	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN294101_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN294670_c4_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN294778_c3_g3	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN295223_c0_g2	0.474042664555924
+"cytoplasm"	GO:0005737	2	TRINITY_DN296272_c0_g2	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN299256_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN299268_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN299273_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN299795_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN310085_c0_g1	0.984899592750022
+"cytoplasm"	GO:0005737	2	TRINITY_DN310765_c2_g2	0.98775283799914
+"cytoplasm"	GO:0005737	2	TRINITY_DN311734_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN312726_c1_g1	0.906611293048578
+"cytoplasm"	GO:0005737	2	TRINITY_DN312726_c1_g3	0.976101036177608
+"cytoplasm"	GO:0005737	2	TRINITY_DN314100_c2_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN314164_c0_g2	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN314164_c0_g3	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN314233_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN314834_c0_g2	0.99021915599225
+"cytoplasm"	GO:0005737	2	TRINITY_DN316231_c0_g5	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN316932_c1_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN37441_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN38474_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN4577_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN462971_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN484519_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN5260_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN526675_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN617484_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN656600_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN6686_c0_g1	0
+"cytoplasm"	GO:0005737	2	TRINITY_DN67434_c0_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN136045_c0_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN255994_c0_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN296217_c6_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN296364_c0_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN296364_c0_g2	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN299679_c1_g1	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN299679_c1_g2	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN314213_c0_g2	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN314213_c0_g4	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN314213_c0_g6	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN314213_c0_g7	0
+"Golgi apparatus"	GO:0005794	5	TRINITY_DN6255_c0_g1	0
