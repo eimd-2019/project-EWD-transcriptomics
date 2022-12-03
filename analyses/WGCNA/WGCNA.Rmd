@@ -237,15 +237,24 @@ dim(textMatrix) <- dim(moduleTraitCor) #Ensure that matrix has the same dimensio
 ```
 
 ```{r}
+#pdf("module-treatment-relationships.pdf", height = 11, width = 8.5)
+
 par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
 labeledHeatmap(Matrix = moduleTraitCor,
-               xLabels = names(zosteraTraits),
+               xLabels = "Exposed vs. Control",
+               xLabelsAngle = 0,
+               xLabelsAdj = 0.5,
                yLabels = names(MEs),
                ySymbols = names(MEs),
                colorLabels = FALSE,
-               colors = blueWhiteRed(50), textMatrix = textMatrix, setStdMargins = FALSE, cex.text = 0.5,
+               colors = blueWhiteRed(50), 
+               textMatrix = textMatrix, 
+               etStdMargins = FALSE, 
+               cex.text = 0.5,
                zlim = c(-1,1),
-               main = paste("Module-Treatment relationships")) # Display the correlation values from textMatrix within a heatmap plot. Text is the correlation value along with p-value. Red colors represent positive correlations (1) and blue colors represent negative correlations (-1)
+               main = paste("Module-Treatment Relationships")) # Display the correlation values from textMatrix within a heatmap plot. Text is the correlation value along with p-value. Red colors represent positive correlations (1) and blue colors represent negative correlations (-1)
+
+#dev.off()
 ```
 
 ## Gene significance and module membership
