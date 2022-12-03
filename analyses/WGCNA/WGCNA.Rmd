@@ -21,12 +21,16 @@ knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/project-EW
 #install.packages("BiocManager")
 #BiocManager::install("WGCNA")
 #install.packages("tidyverse")
+#install.packages("patchwork")
+#install.packages("grid")
 ```
 
 ```{r}
 require(dichromat)
 require(WGCNA)
 require(tidyverse)
+require(patchwork)
+require(grid)
 options(stringsAsFactors = FALSE) #Important setting to include from tutorial
 ```
 
@@ -59,7 +63,7 @@ head(zosteraExpr0) #Confirm formatting
 gsg <- goodSamplesGenes(zosteraExpr0, verbose = 3) #Check for genes and samples with too many missing values
 gsg$allOK #TRUE = all genes have passed test, can continue
 ```
- 
+
 ```{r}
 sampleTree <- hclust(dist(zosteraExpr0), method = "average") #Create dendogram to visually inspect for outliers
 plot(sampleTree) #No obvious outliers, can proceed
@@ -232,12 +236,12 @@ moduleTraitPvalue <- corPvalueStudent(moduleTraitCor, nSamples) #Obtain p-values
 ```{r}
 # Will display correlations and their p-values
 textMatrix <- paste(signif(moduleTraitCor, 2), "\n(",
-                        signif(moduleTraitPvalue, 1), ")", sep = "") #Create text matrix for correlations and their p-values
+                    signif(moduleTraitPvalue, 1), ")", sep = "") #Create text matrix for correlations and their p-values
 dim(textMatrix) <- dim(moduleTraitCor) #Ensure that matrix has the same dimensions
 ```
 
 ```{r}
-#pdf("module-treatment-relationships.pdf", height = 11, width = 8.5)
+#pdf("module-treatment-relationships.pdf", width = 11, height = 8.5)
 
 par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
 labeledHeatmap(Matrix = moduleTraitCor,
@@ -249,12 +253,28 @@ labeledHeatmap(Matrix = moduleTraitCor,
                colorLabels = FALSE,
                colors = blueWhiteRed(50), 
                textMatrix = textMatrix, 
-               etStdMargins = FALSE, 
+               setStdMargins = FALSE, 
                cex.text = 0.5,
                zlim = c(-1,1),
                main = paste("Module-Treatment Relationships")) # Display the correlation values from textMatrix within a heatmap plot. Text is the correlation value along with p-value. Red colors represent positive correlations (1) and blue colors represent negative correlations (-1)
 
 #dev.off()
+```
+
+```{r}
+sigModules <- moduleTraitCor %>%
+  as.data.frame(.) %>%
+  dplyr::rename(., cor = exposed) %>%
+  cbind(., as.data.frame(moduleTraitPvalue)) %>%
+  dplyr::rename(., pvalue = exposed) %>%
+  filter(., pvalue < 0.05) #Subset only significant modules
+sigModules #4 significant modules, all have higher expression in exposed samples except for brown
+
+# module cor pvalue
+# MEbrown	-0.8637994	3.315596e-05		
+# MEyellow	0.5151462	4.939245e-02		
+# MEblue	0.9856425	1.992677e-11		
+# MEmagenta	0.5227804	4.555661e-02	
 ```
 
 ## Gene significance and module membership
@@ -297,12 +317,18 @@ head(MMPvalue) #Confirm formatting
 
 # Obtain gene lists
 
-## For each module
+```{r}
+rownames(sigModules)
+```
+
+```{r}
+modNames[c(1, 3, 4, 5)] #Only significant modules
+```
 
 ```{r}
 probes <- names(zosteraExpr0) #Save gene names as probes
-# Write out the gene lists for each module of interest
-for (module in modNames) {
+# Write out the gene lists for each module of interest (significant modules)
+for (module in modNames[c(1, 3, 4, 5)]) {
   modGenes <- (moduleColors == module) # Select module probes
   modLLIDs <- probes[modGenes] # Get their gene IDs
   fileName <- paste("zosteraGeneList-", module, ".txt", sep = "") #Assign filename for each module
@@ -311,87 +337,57 @@ for (module in modNames) {
 }
 ```
 
-### Count the number of differentially expressed genes in each significant module
+## Count DEG in significant modules
 
 ```{r}
-zosteraDEG <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
-head(zosteraDEG) #Confirm import
-zosteraDEG <- data.frame("geneIDs" = rownames(zosteraDEG),
-                         "logFC" = zosteraDEG$logFC,
-                         "logCPM" = zosteraDEG$logCPM,
-                         "FDR" = zosteraDEG$FDR,
-                         "edgeR.pvalue" = zosteraDEG$PValue) #Only save gene ID, log fold change, log counts per million, FDR, and p-values from edgeR
-head(zosteraDEG) #Confirm changes
+zosteraEdgeROutput <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
+head(zosteraEdgeROutput) #Confirm import
+zosteraEdgeROutput <- data.frame("geneIDs" = rownames(zosteraEdgeROutput),
+                                 "logFC" = zosteraEdgeROutput$logFC,
+                                 "logCPM" = zosteraEdgeROutput$logCPM,
+                                 "FDR" = zosteraEdgeROutput$FDR,
+                                 "edgeR.pvalue" = zosteraEdgeROutput$PValue) #Only save gene ID, log fold change, log counts per million, FDR, and p-values from edgeR
+head(zosteraEdgeROutput) #Confirm changes
 ```
 
-#### Brown (exposed and control)
+### brown
 
 ```{r}
 brownGeneList <- read.delim("zosteraGeneList-brown.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
-nrow(brownGeneList) #Number of rows
-head(brownGeneList) #Confirm import
+nrow(brownGeneList) #457 genes in the brown module
+left_join(x = brownGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  nrow(.) #266 DEGs in the brown module
 ```
 
-```{r}
-left_join(x = brownGeneList, y = zosteraDEG, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  nrow(.) #Number of DEGs in the brown module
-```
-
-#### Black (exposed)
-
-```{r}
-blackGeneList <- read.delim("zosteraGeneList-black.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
-nrow(blackGeneList) #Number of rows
-head(blackGeneList) #Confirm import
-```
-
-```{r}
-left_join(x = blackGeneList, y = zosteraDEG, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  nrow(.) #Number of DEGs in the black module
-```
-
-#### Blue (exposed and control)
-
-```{r}
-blueGeneList <- read.delim("zosteraGeneList-blue.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
-nrow(blueGeneList) #Number of rows
-head(blueGeneList) #Confirm import
-```
-
-```{r}
-left_join(x = blueGeneList, y = zosteraDEG, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  nrow(.) #Number of DEGs in the blue module
-```
-
-#### Yellow (control)
+### yellow
 
 ```{r}
 yellowGeneList <- read.delim("zosteraGeneList-yellow.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
-nrow(yellowGeneList) #Number of rows
-head(yellowGeneList) #Confirm import
+nrow(yellowGeneList) #230 genes in the yellow module
+left_join(x = yellowGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05) %>%
+  nrow(.) #36 DEGs in the yellow module
 ```
 
+### blue
+
 ```{r}
-left_join(x = yellowGeneList, y = zosteraDEG, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  nrow(.) #Number of DEGs in the yellow module
+blueGeneList <- read.delim("zosteraGeneList-blue.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(blueGeneList) #388 genes in the blue module
+left_join(x = blueGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05) %>% 
+  nrow(.) #319 DEGs in the blue module
 ```
 
-#### Light green (control)
+### magenta
 
 ```{r}
-lightgreenGeneList <- read.delim("zosteraGeneList-lightgreen.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
-nrow(lightgreenGeneList) #Number of rows
-head(lightgreenGeneList) #Confirm import
-```
-
-```{r}
-left_join(x = lightgreenGeneList, y = zosteraDEG, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05 & abs(logFC) > 10) %>%
-  nrow(.) #Number of DEGs in the lightgreen module
+magentaGeneList <- read.delim("zosteraGeneList-magenta.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
+nrow(magentaGeneList) #126 genes in the magenta module
+left_join(x = magentaGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
+  filter(., edgeR.pvalue < 0.05) %>% 
+  nrow(.) #67 DEGs in the magenta module
 ```
 
 ## Master list with membership and gene significance information
@@ -404,7 +400,7 @@ head(zosteraGeneAnnot) #Confirm import and formatting
 ```
 
 ```{r}
-zosteraGeneAnnot <- left_join(zosteraGeneAnnot, zosteraDEG, "geneIDs") #Add edgeR information to annotation table
+zosteraGeneAnnot <- left_join(zosteraGeneAnnot, zosteraEdgeROutput, "geneIDs") #Add edgeR information to annotation table
 head(zosteraGeneAnnot) #Confirm formatting
 ```
 
@@ -447,16 +443,186 @@ head(geneInfo) #Check formatting
 ```
 
 ```{r}
-write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE, na = "") #Save master table
+write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table again
+```
+
+# Plot module eigengene expression by treatment
+
+```{r}
+rownames(sigModules)
+```
+
+## brown
+
+```{r}
+brown <- data.frame(expr = MEs$MEbrown, 
+                    exposed = zosteraTraits$exposed,
+                    row.names = rownames(zosteraTraits)) %>%
+  mutate(., condition = case_when(exposed == 1 ~ "Exposed",
+                                  exposed == 0 ~ "Control")) %>%
+  select(., -exposed) #Create dataframe for ME expression
+head(brown)
 ```
 
 ```{r}
-geneInfo <- read.delim("zosteraGeneList-WGCNA-MM-GS-Annot.txt", header = TRUE, sep = "\t", na.strings = "") #Import table using "" as NA
-head(geneInfo) #Confirm import
+ggplot(brown, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "brown") +
+  labs(y = "Module Expression", 
+       x = "", title = "brown Module", 
+       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 266 DEG")) +
+  theme_classic() +theme(axis.text = element_text(size = 12), 
+                         axis.title = element_text(size = 20),
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+ggsave("brown-expression-boxplot.pdf", height = 8.5, width = 11)
+```
+
+## yellow
+
+```{r}
+yellow <- data.frame(expr = MEs$MEyellow, 
+                     exposed = zosteraTraits$exposed,
+                     row.names = rownames(zosteraTraits)) %>%
+  mutate(., condition = case_when(exposed == 1 ~ "Exposed",
+                                  exposed == 0 ~ "Control")) %>%
+  select(., -exposed) #Create dataframe for ME expression
+head(yellow)
 ```
 
 ```{r}
-write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table again, but with NA instead of blank cells
+ggplot(yellow, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "goldenrod1") +
+  labs(y = "Module Expression", 
+       x = "", title = "yellow Module", 
+       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 36 DEG")) +
+  theme_classic() +theme(axis.text = element_text(size = 12), 
+                         axis.title = element_text(size = 20),
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+ggsave("yellow-expression-boxplot.pdf", height = 8.5, width = 11)
+```
+
+## blue
+
+```{r}
+blue <- data.frame(expr = MEs$MEblue, 
+                   exposed = zosteraTraits$exposed,
+                   row.names = rownames(zosteraTraits)) %>%
+  mutate(., condition = case_when(exposed == 1 ~ "Exposed",
+                                  exposed == 0 ~ "Control")) %>%
+  select(., -exposed) #Create dataframe for ME expression
+head(blue)
+```
+
+```{r}
+ggplot(blue, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "blue") +
+  labs(y = "Module Expression", 
+       x = "", title = "blue Module", 
+       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 319 DEG")) +
+  theme_classic() +theme(axis.text = element_text(size = 12), 
+                         axis.title = element_text(size = 20),
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+ggsave("blue-expression-boxplot.pdf", height = 8.5, width = 11)
+```
+
+## magenta
+
+```{r}
+magenta <- data.frame(expr = MEs$MEmagenta, 
+                      exposed = zosteraTraits$exposed,
+                      row.names = rownames(zosteraTraits)) %>%
+  mutate(., condition = case_when(exposed == 1 ~ "Exposed",
+                                  exposed == 0 ~ "Control")) %>%
+  select(., -exposed) #Create dataframe for ME expression
+head(magenta)
+```
+
+```{r}
+ggplot(magenta, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "magenta") +
+  labs(y = "Module Expression", 
+       x = "", title = "magenta Module", 
+       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 67 DEG")) +
+  theme_classic() +theme(axis.text = element_text(size = 12), 
+                         axis.title = element_text(size = 20),
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+ggsave("magenta-expression-boxplot.pdf", height = 8.5, width = 11)
+```
+
+## Create multipanel plot
+
+```{r}
+#Create and save individual plots as objects
+
+brownPlot <- ggplot(brown, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "brown") +
+  labs(y = "", 
+       x = "", title = "brown", 
+       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 266 DEG")) +
+  theme_classic() + theme(axis.text = element_text(size = 16), 
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+yellowPlot <- ggplot(yellow, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "goldenrod1") +
+  labs(y = "", 
+       x = "", title = "yellow", 
+       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 36 DEG")) +
+  theme_classic() + theme(axis.text = element_text(size = 16), 
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+bluePlot <- ggplot(blue, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "blue") +
+  labs(y = "", 
+       x = "", title = "blue", 
+       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 319 DEG")) +
+  theme_classic() + theme(axis.text = element_text(size = 16), 
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+
+magentaPlot <- ggplot(magenta, aes(x = condition, y = expr)) +
+  geom_boxplot(lwd = 1, color = "magenta") +
+  labs(y = "", 
+       x = "", title = "magenta", 
+       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 67 DEG")) +
+  theme_classic() + theme(axis.text = element_text(size = 16), 
+                         strip.text.x = element_text(size = 20),
+                         panel.grid = element_blank(),
+                         plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
+                         plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
+```
+
+```{r}
+#Use patchwork to stitch plots together
+
+#pdf("multipanel-expression-boxplot.pdf", height = 8.5, width = 11)
+
+brownPlot / bluePlot | yellowPlot / magentaPlot
+grid::grid.draw(grid::textGrob("Module Expression", x = 0.01, rot = 90, gp = gpar(fontsize = 25)))
+
+#dev.off()
 ```
 
 # GO-MWU
@@ -536,9 +702,9 @@ geneInfo %>%
 
 ```{r}
 blueGeneList <- data.frame("geneID" = rownames(geneInfo),
-                            "moduleColor" = geneInfo$moduleColor,
-                            "MM.blue" = geneInfo$MM.blue,
-                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the blue module. Also include a column of 0s
+                           "moduleColor" = geneInfo$moduleColor,
+                           "MM.blue" = geneInfo$MM.blue,
+                           "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the blue module. Also include a column of 0s
 blueGeneList$kME[which(blueGeneList$moduleColor == "blue")] <- blueGeneList$MM.blue[which(blueGeneList$moduleColor == "blue")] #Replace kME with the MM.blue score when the gene was in the blue module
 blueGeneList <- blueGeneList[c(1,4)] #Keep the gene ID and kME columns
 head(blueGeneList) #Confirm changes
@@ -563,9 +729,9 @@ geneInfo %>%
 
 ```{r}
 yellowGeneList <- data.frame("geneID" = rownames(geneInfo),
-                            "moduleColor" = geneInfo$moduleColor,
-                            "MM.yellow" = geneInfo$MM.yellow,
-                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the yellow module. Also include a column of 0s
+                             "moduleColor" = geneInfo$moduleColor,
+                             "MM.yellow" = geneInfo$MM.yellow,
+                             "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the yellow module. Also include a column of 0s
 yellowGeneList$kME[which(yellowGeneList$moduleColor == "yellow")] <- yellowGeneList$MM.yellow[which(yellowGeneList$moduleColor == "yellow")] #Replace kME with the MM.yellow score when the gene was in the yellow module
 yellowGeneList <- yellowGeneList[c(1,4)] #Keep the gene ID and kME columns
 head(yellowGeneList) #Confirm changes
@@ -590,9 +756,9 @@ geneInfo %>%
 
 ```{r}
 lightgreenGeneList <- data.frame("geneID" = rownames(geneInfo),
-                            "moduleColor" = geneInfo$moduleColor,
-                            "MM.lightgreen" = geneInfo$MM.lightgreen,
-                            "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the lightgreen module. Also include a column of 0s
+                                 "moduleColor" = geneInfo$moduleColor,
+                                 "MM.lightgreen" = geneInfo$MM.lightgreen,
+                                 "kME" = rep(0, times = nrow(geneInfo))) #Create a new dataframe with gene IDs (rownames), module color, and module membership scores for the lightgreen module. Also include a column of 0s
 lightgreenGeneList$kME[which(lightgreenGeneList$moduleColor == "lightgreen")] <- lightgreenGeneList$MM.lightgreen[which(lightgreenGeneList$moduleColor == "lightgreen")] #Replace kME with the MM.lightgreen score when the gene was in the lightgreen module
 lightgreenGeneList <- lightgreenGeneList[c(1,4)] #Keep the gene ID and kME columns
 head(lightgreenGeneList) #Confirm changes
@@ -619,13 +785,13 @@ source("gomwu.functions.R")
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -645,13 +811,13 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -667,13 +833,13 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -692,13 +858,13 @@ goDivision="BP" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -714,13 +880,13 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -736,13 +902,13 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -811,13 +977,13 @@ goDivision="BP" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -883,13 +1049,13 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -905,13 +1071,13 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -930,13 +1096,13 @@ goDivision="BP" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -952,13 +1118,13 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -974,13 +1140,13 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -999,13 +1165,13 @@ goDivision="BP" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -1021,13 +1187,13 @@ goDivision="CC" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
@@ -1043,13 +1209,13 @@ goDivision="MF" # either MF, or BP, or CC
 ```{r}
 # Calculating stats. It might take ~3 min for MF and BP. Do not rerun it if you just want to replot the data with different cutoffs, go straight to gomwuPlot. If you change any of the numeric values below, delete the files that were generated in previos runs first.
 gomwuStats(input, goDatabase, goAnnotations, goDivision,
-	perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
-	largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
-	smallest=5,   # a GO category should contain at least this many genes to be considered
-	clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
-#	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
-	Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
-#	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
+           perlPath="perl", # replace with full path to perl executable if it is not in your system's PATH already
+           largest=0.1,  # a GO category will not be considered if it contains more than this fraction of the total number of genes
+           smallest=5,   # a GO category should contain at least this many genes to be considered
+           clusterCutHeight=0.25, # threshold for merging similar (gene-sharing) terms. See README for details.
+           #	Alternative="g" # by default the MWU test is two-tailed; specify "g" or "l" of you want to test for "greater" or "less" instead. 
+           Module=TRUE,Alternative="g" # un-remark this if you are analyzing a SIGNED WGCNA module (values: 0 for not in module genes, kME for in-module genes). In the call to gomwuPlot below, specify absValue=0.001 (count number of "good genes" that fall into the module)
+           #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 
