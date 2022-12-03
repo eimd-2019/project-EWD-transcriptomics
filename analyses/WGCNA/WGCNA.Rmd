@@ -11,14 +11,15 @@ In this script, I will conduct a WGCNA to understand *Z. marina* gene expression
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/project-EWD-transcriptomics/analyses/WGCNA/") #Set root directory
 ```
 
 # Install packages
 
 ```{r}
 #install.packages("dichromat")
-install.packages("BiocManager")
-BiocManager::install("WGCNA")
+#install.packages("BiocManager")
+#BiocManager::install("WGCNA")
 #install.packages("tidyverse")
 ```
 
@@ -67,8 +68,7 @@ plot(sampleTree) #No obvious outliers, can proceed
 ## Create clinical trait data matrix
 
 ```{r}
-zosteraTraits <- data.frame("exposed" = c(rep(1, times = 7), rep(0, times = 8)),
-                            "control" = c(rep(0, times = 8), rep(1, times = 7))) #Create a dataframe with clinical trait (laby exposed vs. not exposed) information
+zosteraTraits <- data.frame("exposed" = c(rep(1, times = 7), rep(0, times = 8))) #Create a dataframe with clinical trait (laby exposed vs. not exposed) information
 rownames(zosteraTraits) <- rownames(zosteraExpr0) #Use same rownames as expression data to create an analagous matrix
 head(zosteraTraits) #Confirm dataframe creation
 ```
