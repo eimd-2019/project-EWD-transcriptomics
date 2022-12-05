@@ -187,10 +187,14 @@ mergedMEs <- merge$newMEs #Extract eigengenes of merged modules
 ```
 
 ```{r}
+#pdf("merged-cluster-dendrogram.pdf", height = 8.5, width = 11)
+
 plotDendroAndColors(geneTree, cbind(dynamicColors, mergedColors),
                     c("Dynamic Tree Cut", "Merged dynamic"), 
                     dendroLabels = FALSE, hang = 0.03, 
                     addGuide = TRUE, guideHang = 0.05) #Plot the dendogram with original and merged eigengene colors
+
+#dev.off()
 ```
 
 ## Rename and save variables for subsequent analysis
@@ -260,6 +264,27 @@ labeledHeatmap(Matrix = moduleTraitCor,
 
 #dev.off()
 ```
+
+```{r}
+#pdf("module-treatment-relationships-NOTEXT.pdf", width = 11, height = 8.5)
+
+par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
+labeledHeatmap(Matrix = moduleTraitCor,
+               xLabels = "Exposed vs. Control",
+               xLabelsAngle = 0,
+               xLabelsAdj = 0.5,
+               yLabels = names(MEs),
+               ySymbols = names(MEs),
+               colorLabels = FALSE,
+               colors = blueWhiteRed(50), 
+               setStdMargins = FALSE, 
+               cex.text = 0.5,
+               zlim = c(-1,1),
+               main = paste("Module-Treatment Relationships")) #Create a version without text for the multipanel plot
+
+#dev.off()
+```
+
 
 ```{r}
 sigModules <- moduleTraitCor %>%
@@ -446,6 +471,128 @@ head(geneInfo) #Check formatting
 write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.names = TRUE, row.names = TRUE, quote = FALSE) #Save master table again
 ```
 
+## Obtain common GOterms from each module
+
+### brown
+
+```{r}
+brownGeneListAnnot <- geneInfo %>%
+  rownames_to_column(., var = "geneIDs") %>%
+  right_join(., y = brownGeneList, by = "geneIDs") %>%
+  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+head(brownGeneListAnnot)
+```
+
+```{r}
+write.table(brownGeneListAnnot, "zosteraGeneList-brown-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+```
+
+```{r}
+brownGeneListAnnot %>%
+  separate_rows(., BPGO, sep = "; ") %>%
+  group_by(BPGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for BP to identify common biological processes represented in the module
+```
+
+```{r}
+brownGeneListAnnot %>%
+  separate_rows(., MFGO, sep = "; ") %>%
+  group_by(MFGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for MF to identify common biological processes represented in the module
+```
+
+### yellow
+
+```{r}
+yellowGeneListAnnot <- geneInfo %>%
+  rownames_to_column(., var = "geneIDs") %>%
+  right_join(., y = yellowGeneList, by = "geneIDs") %>%
+  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+head(yellowGeneListAnnot)
+```
+
+```{r}
+write.table(yellowGeneListAnnot, "zosteraGeneList-yellow-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+```
+
+```{r}
+yellowGeneListAnnot %>%
+  separate_rows(., BPGO, sep = "; ") %>%
+  group_by(BPGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for BP to identify common biological processes represented in the module
+```
+
+```{r}
+yellowGeneListAnnot %>%
+  separate_rows(., MFGO, sep = "; ") %>%
+  group_by(MFGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for MF to identify common biological processes represented in the module
+```
+
+### blue
+
+```{r}
+blueGeneListAnnot <- geneInfo %>%
+  rownames_to_column(., var = "geneIDs") %>%
+  right_join(., y = blueGeneList, by = "geneIDs") %>%
+  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+head(blueGeneListAnnot)
+```
+
+```{r}
+write.table(blueGeneListAnnot, "zosteraGeneList-blue-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+```
+
+```{r}
+blueGeneListAnnot %>%
+  separate_rows(., BPGO, sep = "; ") %>%
+  group_by(BPGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for BP to identify common biological processes represented in the module
+```
+
+```{r}
+blueGeneListAnnot %>%
+  separate_rows(., MFGO, sep = "; ") %>%
+  group_by(MFGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for MF to identify common biological processes represented in the module
+```
+
+### magenta
+
+```{r}
+magentaGeneListAnnot <- geneInfo %>%
+  rownames_to_column(., var = "geneIDs") %>%
+  right_join(., y = magentaGeneList, by = "geneIDs") %>%
+  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+head(magentaGeneListAnnot)
+```
+
+```{r}
+write.table(magentaGeneListAnnot, "zosteraGeneList-magenta-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+```
+
+```{r}
+magentaGeneListAnnot %>%
+  separate_rows(., BPGO, sep = "; ") %>%
+  group_by(BPGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for BP to identify common biological processes represented in the module
+```
+
+```{r}
+magentaGeneListAnnot %>%
+  separate_rows(., MFGO, sep = "; ") %>%
+  group_by(MFGO) %>%
+  summarise(count = n()) %>%
+  arrange(., desc(count)) #Get GOterm counts for MF to identify common biological processes represented in the module
+```
+
 # Plot module eigengene expression by treatment
 
 ```{r}
@@ -624,7 +771,6 @@ grid::grid.draw(grid::textGrob("Module Expression", x = 0.01, rot = 90, gp = gpa
 
 #dev.off()
 ```
-
 # GO-MWU
 
 ## Create GO-MWU inputs
