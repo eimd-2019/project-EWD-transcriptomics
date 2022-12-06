@@ -1178,3 +1178,27 @@ read.delim("MWU_MF_magenta-Table-of-Significance-Measures.csv", sep = " ", heade
 # GO:0003735;GO:0005198	structural molecule activity	0.05
 ```
 
+## Summarize GO-MWU results
+
+```{r}
+sigGOMWUResults <- rbind(read.delim("MWU_BP_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_MF_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_BP_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_MF_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1)) %>%
+  mutate(module = c("brown", "brown", "brown", "blue", "magenta"),
+         cat = c("Biological Process", "Biological Process", "Molecular Function", "Biological Process", "Molecular Function")) %>%
+  select(module, term, name, cat, p.adj, nseqs) #Create summary table
+sigGOMWUResults
+```
+
+```{r}
+write.csv(sigGOMWUResults, "significant-GOMWU-results.csv", quote = FALSE, row.names = FALSE) #Save table
+```
+
+
+
+

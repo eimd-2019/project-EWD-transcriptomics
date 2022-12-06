@@ -1,0 +1,6 @@
+module,term,name,cat,p.adj,nseqs
+brown,GO:0003333;GO:0006865;GO:1905039;GO:0015849;GO:1903825;GO:0098656;GO:0034220;GO:0055085,transmembrane transport,Biological Process,0,7
+brown,GO:0003677,DNA binding,Biological Process,0.025,93
+brown,GO:0003700;GO:0140110,transcription regulator activity,Molecular Function,0.05,21
+blue,GO:0002376,immune system process,Biological Process,0.05,5
+magenta,GO:0003735;GO:0005198,structural molecule activity,Molecular Function,0.05,126
