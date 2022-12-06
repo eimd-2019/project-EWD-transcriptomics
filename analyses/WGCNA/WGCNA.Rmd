@@ -484,7 +484,7 @@ head(brownGeneListAnnot)
 ```
 
 ```{r}
-write.table(brownGeneListAnnot, "zosteraGeneList-brown-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+write.table(brownGeneListAnnot, "zosteraGeneList-brown-annot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save individual module list
 ```
 
 ```{r}
@@ -514,7 +514,7 @@ head(yellowGeneListAnnot)
 ```
 
 ```{r}
-write.table(yellowGeneListAnnot, "zosteraGeneList-yellow-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+write.table(yellowGeneListAnnot, "zosteraGeneList-yellow-annot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save individual module list
 ```
 
 ```{r}
@@ -544,7 +544,7 @@ head(blueGeneListAnnot)
 ```
 
 ```{r}
-write.table(blueGeneListAnnot, "zosteraGeneList-blue-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+write.table(blueGeneListAnnot, "zosteraGeneList-blue-annot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save individual module list
 ```
 
 ```{r}
@@ -574,7 +574,7 @@ head(magentaGeneListAnnot)
 ```
 
 ```{r}
-write.table(magentaGeneListAnnot, "zosteraGeneList-magenta-annot.txt", sep = "\t", quote = FALSE) #Save individual module list
+write.table(magentaGeneListAnnot, "zosteraGeneList-magenta-annot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save individual module list
 ```
 
 ```{r}
@@ -803,7 +803,6 @@ wc -l GO-Annotations-Table.tab #Number of genes in the original document
 I will create the .csv files for each module separately.
 
 ### Table of significance measures
-
 
 #### brown
 
