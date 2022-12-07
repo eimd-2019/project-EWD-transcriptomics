@@ -285,7 +285,6 @@ labeledHeatmap(Matrix = moduleTraitCor,
 #dev.off()
 ```
 
-
 ```{r}
 sigModules <- moduleTraitCor %>%
   as.data.frame(.) %>%
@@ -381,8 +380,8 @@ head(zosteraEdgeROutput) #Confirm changes
 brownGeneList <- read.delim("zosteraGeneList-brown.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
 nrow(brownGeneList) #457 genes in the brown module
 left_join(x = brownGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  nrow(.) #266 DEGs in the brown module
+  filter(., FDR < 0.05) %>%
+  nrow(.) #194 DEGs in the brown module
 ```
 
 ### yellow
@@ -391,8 +390,8 @@ left_join(x = brownGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
 yellowGeneList <- read.delim("zosteraGeneList-yellow.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
 nrow(yellowGeneList) #230 genes in the yellow module
 left_join(x = yellowGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05) %>%
-  nrow(.) #36 DEGs in the yellow module
+  filter(., FDR < 0.05) %>%
+  nrow(.) #5 DEGs in the yellow module
 ```
 
 ### blue
@@ -401,7 +400,7 @@ left_join(x = yellowGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
 blueGeneList <- read.delim("zosteraGeneList-blue.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
 nrow(blueGeneList) #388 genes in the blue module
 left_join(x = blueGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05) %>% 
+  filter(., FDR < 0.05) %>% 
   nrow(.) #319 DEGs in the blue module
 ```
 
@@ -411,8 +410,8 @@ left_join(x = blueGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
 magentaGeneList <- read.delim("zosteraGeneList-magenta.txt", header = FALSE, sep = "\t", col.names = "geneIDs") #Import list of genes
 nrow(magentaGeneList) #126 genes in the magenta module
 left_join(x = magentaGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
-  filter(., edgeR.pvalue < 0.05) %>% 
-  nrow(.) #67 DEGs in the magenta module
+  filter(., FDR < 0.05) %>% 
+  nrow(.) #60 DEGs in the magenta module
 ```
 
 ## Master list with membership and gene significance information
@@ -479,7 +478,7 @@ write.table(geneInfo, "zosteraGeneList-WGCNA-MM-GS-Annot.txt", sep = "\t", col.n
 brownGeneListAnnot <- geneInfo %>%
   rownames_to_column(., var = "geneIDs") %>%
   right_join(., y = brownGeneList, by = "geneIDs") %>%
-  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+  select(geneIDs, Uniprot, logFC, logCPM, edgeR.pvalue, FDR, BPGO, MFGO) #Annotate genes.
 head(brownGeneListAnnot)
 ```
 
@@ -509,7 +508,7 @@ brownGeneListAnnot %>%
 yellowGeneListAnnot <- geneInfo %>%
   rownames_to_column(., var = "geneIDs") %>%
   right_join(., y = yellowGeneList, by = "geneIDs") %>%
-  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+  select(geneIDs, Uniprot, logFC, logCPM, edgeR.pvalue, FDR, BPGO, MFGO) #Annotate genes.
 head(yellowGeneListAnnot)
 ```
 
@@ -539,7 +538,7 @@ yellowGeneListAnnot %>%
 blueGeneListAnnot <- geneInfo %>%
   rownames_to_column(., var = "geneIDs") %>%
   right_join(., y = blueGeneList, by = "geneIDs") %>%
-  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+  select(geneIDs, Uniprot, logFC, logCPM, edgeR.pvalue, FDR, BPGO, MFGO) #Annotate genes.
 head(blueGeneListAnnot)
 ```
 
@@ -569,7 +568,7 @@ blueGeneListAnnot %>%
 magentaGeneListAnnot <- geneInfo %>%
   rownames_to_column(., var = "geneIDs") %>%
   right_join(., y = magentaGeneList, by = "geneIDs") %>%
-  select(geneIDs, logFC, logCPM, FDR, edgeR.pvalue, BPGO, MFGO) #Annotate genes.
+  select(geneIDs, Uniprot, logFC, logCPM, edgeR.pvalue, FDR, BPGO, MFGO) #Annotate genes.
 head(magentaGeneListAnnot)
 ```
 
@@ -616,7 +615,7 @@ ggplot(brown, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "brown") +
   labs(y = "Module Expression", 
        x = "", title = "brown Module", 
-       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 266 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 194 DEG")) +
   theme_classic() +theme(axis.text = element_text(size = 12), 
                          axis.title = element_text(size = 20),
                          strip.text.x = element_text(size = 20),
@@ -644,7 +643,7 @@ ggplot(yellow, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "goldenrod1") +
   labs(y = "Module Expression", 
        x = "", title = "yellow Module", 
-       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 36 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 5 DEG")) +
   theme_classic() +theme(axis.text = element_text(size = 12), 
                          axis.title = element_text(size = 20),
                          strip.text.x = element_text(size = 20),
@@ -672,7 +671,7 @@ ggplot(blue, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "blue") +
   labs(y = "Module Expression", 
        x = "", title = "blue Module", 
-       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 319 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 263 DEG")) +
   theme_classic() +theme(axis.text = element_text(size = 12), 
                          axis.title = element_text(size = 20),
                          strip.text.x = element_text(size = 20),
@@ -700,7 +699,7 @@ ggplot(magenta, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "magenta") +
   labs(y = "Module Expression", 
        x = "", title = "magenta Module", 
-       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 67 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 60 DEG")) +
   theme_classic() +theme(axis.text = element_text(size = 12), 
                          axis.title = element_text(size = 20),
                          strip.text.x = element_text(size = 20),
@@ -720,7 +719,7 @@ brownPlot <- ggplot(brown, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "brown") +
   labs(y = "", 
        x = "", title = "brown", 
-       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 266 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[1], 2), "p =", signif(sigModules$pvalue[1], 2), "\n457 Genes, 194 DEG")) +
   theme_classic() + theme(axis.text = element_text(size = 16), 
                          strip.text.x = element_text(size = 20),
                          panel.grid = element_blank(),
@@ -731,7 +730,7 @@ yellowPlot <- ggplot(yellow, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "goldenrod1") +
   labs(y = "", 
        x = "", title = "yellow", 
-       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 36 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[2], 2), "p =", signif(sigModules$pvalue[2], 2), "\n230 Genes, 5 DEG")) +
   theme_classic() + theme(axis.text = element_text(size = 16), 
                          strip.text.x = element_text(size = 20),
                          panel.grid = element_blank(),
@@ -742,7 +741,7 @@ bluePlot <- ggplot(blue, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "blue") +
   labs(y = "", 
        x = "", title = "blue", 
-       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 319 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[3], 2), "p =", signif(sigModules$pvalue[3], 2), "\n388 genes, 263 DEG")) +
   theme_classic() + theme(axis.text = element_text(size = 16), 
                          strip.text.x = element_text(size = 20),
                          panel.grid = element_blank(),
@@ -753,7 +752,7 @@ magentaPlot <- ggplot(magenta, aes(x = condition, y = expr)) +
   geom_boxplot(lwd = 1, color = "magenta") +
   labs(y = "", 
        x = "", title = "magenta", 
-       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 67 DEG")) +
+       subtitle = paste("r =", signif(sigModules$cor[4], 2), "p =", signif(sigModules$pvalue[4], 2), "\n126 genes, 60 DEG")) +
   theme_classic() + theme(axis.text = element_text(size = 16), 
                          strip.text.x = element_text(size = 20),
                          panel.grid = element_blank(),
@@ -771,6 +770,7 @@ grid::grid.draw(grid::textGrob("Module Expression", x = 0.01, rot = 90, gp = gpa
 
 #dev.off()
 ```
+
 # GO-MWU
 
 ## Create GO-MWU inputs
