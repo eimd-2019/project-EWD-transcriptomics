@@ -1,6 +1,31 @@
 Module,GO ID,GOterm Name,GO Category,FDR,Number of Sequences
-brown,GO:0003333;GO:0006865;GO:1905039;GO:0015849;GO:1903825;GO:0098656;GO:0034220;GO:0055085,transmembrane transport,Biological Process,0,7
-brown,GO:0003677,DNA binding,Biological Process,0.025,93
-brown,GO:0003700;GO:0140110,transcription regulator activity,Molecular Function,0.05,21
-blue,GO:0002376,immune system process,Biological Process,0.05,5
-magenta,GO:0003735;GO:0005198,structural molecule activity,Molecular Function,0.05,126
+brown,GO:0006970,response to osmotic stress,Biological Process,0.07,74
+brown,GO:0009620,response to fungus,Biological Process,0,17
+brown,GO:0009651,response to salt stress,Biological Process,0,53
+brown,GO:0015074,DNA integration,Biological Process,0.091666667,24
+brown,GO:0032197;GO:0032196,transposition,Biological Process,0.085714286,11
+brown,GO:0042538,hyperosmotic salinity response,Biological Process,0.0625,8
+brown,GO:0071555;GO:0045229;GO:0071554,cell wall organization or biogenesis,Biological Process,0,35
+brown,GO:0003677,DNA binding,Molecular Function,0.04,190
+brown,GO:0004519;GO:0004518,nuclease activity,Molecular Function,0,52
+brown,GO:0008170;GO:0008276,N-methyltransferase activity,Molecular Function,0.076666667,23
+brown,GO:0008270,zinc ion binding,Molecular Function,0.063636364,110
+brown,GO:0008757,S-adenosylmethionine-dependent methyltransferase activity,Molecular Function,0.083333333,36
+brown,GO:0016279;GO:0016278,protein-lysine N-methyltransferase activity,Molecular Function,0.071428571,15
+brown,GO:0016757,transferase activity transferring glycosyl groups,Molecular Function,0,62
+brown,GO:0016763,transferase activity transferring pentosyl groups,Molecular Function,0.094117647,12
+brown,GO:0016779,nucleotidyltransferase activity,Molecular Function,0.090625,73
+brown,GO:0016788,hydrolase activity acting on ester bonds,Molecular Function,0,139
+brown,GO:0016891;GO:0004521;GO:0016893,endonuclease activity active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters,Molecular Function,0,17
+brown,GO:0018024,histone-lysine N-methyltransferase activity,Molecular Function,0.0125,11
+brown,GO:0034061;GO:0003964,DNA polymerase activity,Molecular Function,0,34
+brown,GO:0042054,histone methyltransferase activity,Molecular Function,0.033333333,16
+brown,GO:0042910,xenobiotic transmembrane transporter activity,Molecular Function,0.076923077,13
+brown,GO:0140097,catalytic activity acting on DNA,Molecular Function,0,56
+brown,GO:0140110;GO:0003700,transcription regulator activity,Molecular Function,0,58
+blue,GO:0003690,double-stranded DNA binding,Molecular Function,0.025,32
+blue,GO:0004691;GO:0004690,cyclic nucleotide-dependent protein kinase activity,Molecular Function,0,9
+magenta,GO:0006412;GO:0043043,peptide biosynthetic process,Biological Process,0,259
+magenta,GO:0008340,determination of adult lifespan,Biological Process,0,10
+magenta,GO:0003735,structural constituent of ribosome,Molecular Function,0,248
+magenta,GO:0019843,rRNA binding,Molecular Function,0.05,64
