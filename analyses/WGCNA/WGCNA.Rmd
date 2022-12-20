@@ -11,7 +11,11 @@ In this script, I will conduct a WGCNA to understand *Z. marina* gene expression
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/project-EWD-transcriptomics/analyses/WGCNA/") #Set root directory
+knitr::opts_knit$set(root.dir = normalizePath("analyses/WGCNA")) #Set root directory
+```
+
+```{r}
+getwd()
 ```
 
 # Install packages
@@ -787,7 +791,8 @@ head(zosteraGeneAnnot)
 zosteraGOAnnotations <- zosteraGeneAnnot %>%
   select(., geneIDs, GOterms) %>%
   dplyr::rename(., GeneID = "geneIDs") %>%
-  dplyr::rename(., GO = "GOterms") #Create GO annotations table
+  dplyr::rename(., GO = "GOterms") %>%
+  mutate(GO = gsub(GO, pattern = " ", replacement = "")) #Create GO annotations table. Remove spaces bewteen ; delimiter and next GOterm
 head(zosteraGOAnnotations) #Confirm table creation
 ```
 
@@ -894,15 +899,65 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative) : cannot compute exact p-value with ties
 
-#1 GO terms at 10% FDR
+#7 GO terms at 10% FDR
 ```
-
-Since there's only one significant term, there's no need to plot.
 
 ```{r}
 read.delim("MWU_BP_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
   filter(p.adj < 0.1)
-#GO:0003333;GO:0006865;GO:1905039;GO:0015849;GO:1903825;GO:0098656;GO:0034220;GO:0055085 transmembrane transport	0
+```
+
+```{r}
+#pdf("GO-MWU-brown-BP.pdf", height = 3.5, width = 11)
+
+results <- gomwuPlot(input, goAnnotations, goDivision,
+          absValue=0.001,  #Specify absValue=0.001 if you are doing Fisher's exact test for standard GO enrichment or analyzing a WGCNA module (all non-zero genes = "good genes").
+          level1=0.1, # FDR threshold for plotting. Specify level1=1 to plot all GO categories containing genes exceeding the absValue.
+          level2=0.05, # FDR cutoff to print in regular (not italic) font.
+          level3=0.01, # FDR cutoff to print in large bold font.
+          txtsize=1.0,    # decrease to fit more on one page, or increase (after rescaling the plot so the tree fits the text) for better "word cloud" effect
+          treeHeight=0.5, # height of the hierarchical clustering tree
+          colors=c("dodgerblue2","firebrick1","skyblue2","lightcoral") # these are default colors, un-remark and change if needed
+)
+
+#dev.off()
+```
+
+```{r}
+# this module chooses GO terms that best represent *independent* groups of significant GO terms
+pcut=0.1 # adjusted pvalue cutoff for representative GO
+hcut=0.9 # height at which cut the GO terms tree to get "independent groups". 
+# plotting the GO tree with the cut level (un-remark the next two lines to plot)
+plot(results[[2]],cex=0.6)
+abline(h=hcut,col="red")
+# cutting
+ct=cutree(results[[2]],h=hcut)
+annots=c();ci=1
+for (ci in unique(ct)) {
+  message(ci)
+	rn=names(ct)[ct==ci]
+	obs=grep("obsolete",rn)
+	if(length(obs)>0) { rn=rn[-obs] }
+	if (length(rn)==0) {next}
+	rr=results[[1]][rn,]
+	bestrr=rr[which(rr$pval==min(rr$pval)),]
+	best=1
+	if(nrow(bestrr)>1) {
+		nns=sub(" .+","",row.names(bestrr))
+		fr=c()
+		for (i in 1:length(nns)) { fr=c(fr,eval(parse(text=nns[i]))) }
+		best=which(fr==max(fr))
+	}
+	if (bestrr$pval[best]<=pcut) { annots=c(annots,sub("\\d+\\/\\d+ ","",row.names(bestrr)[best]))}
+}
+mwus=read.table(paste("MWU",goDivision,input,sep="_"),header=T)
+bestGOs=mwus[mwus$name %in% annots,]
+bestGOs
+```
+
+```{r}
+brownBPGOs <- bestGOs #Save bestGOs as a new table
+brownBPGOs
 ```
 
 #### Cellular components
@@ -923,15 +978,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
-# 2  GO terms at 10% FDR
+# 7  GO terms at 10% FDR
 ```
 
 ```{r}
 read.delim("MWU_CC_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
   filter(p.adj < 0.1)
-
-# GO:0000943	retrotransposon nucleocapsid	0.00
-# GO:0099080	supramolecular complex	0.05
 ```
 
 #### Molecular function
@@ -953,15 +1005,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative): cannot compute exact p-value with ties
-# 2  GO terms at 10% FDR
+#17 GO terms at 10% FDR
 ```
 
 ```{r}
 read.delim("MWU_MF_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
   filter(p.adj < 0.1)
-
-# GO:0003677	DNA binding	0.025
-# GO:0003700;GO:0140110	transcription regulator activity	0.050
 ```
 
 ### yellow
@@ -1052,13 +1101,7 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative) : cannot compute exact p-value with ties
 
-#1 GO terms at 10% FDR
-```
-
-```{r}
-read.delim("MWU_BP_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
-  filter(p.adj < 0.1)
-#GO:0002376	immune system process	0.05
+#0 GO terms at 10% FDR
 ```
 
 #### Cellular components
@@ -1079,7 +1122,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
-# 0  GO terms at 10% FDR
+#1 GO terms at 10% FDR
+```
+
+```{r}
+read.delim("MWU_CC_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
 ```
 
 #### Molecular function
@@ -1101,7 +1149,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative): cannot compute exact p-value with ties
-# 0  GO terms at 10% FDR
+#2  GO terms at 10% FDR
+```
+
+```{r}
+read.delim("MWU_MF_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
 ```
 
 ### magenta
@@ -1125,7 +1178,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative) : cannot compute exact p-value with ties
 
-#0 GO terms at 10% FDR
+#2 GO terms at 10% FDR
+```
+
+```{r}
+read.delim("MWU_BP_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
 ```
 
 #### Cellular components
@@ -1146,7 +1204,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 #	Module=TRUE # un-remark this if you are analyzing an UNSIGNED WGCNA module 
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
-# 0  GO terms at 10% FDR
+#2  GO terms at 10% FDR
+```
+
+```{r}
+read.delim("MWU_CC_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+  filter(p.adj < 0.1)
 ```
 
 #### Molecular function
@@ -1168,14 +1231,12 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 )
 # do not continue if the printout shows that no GO terms pass 10% FDR.
 #Warning in wilcox.test.default(nrg[sgo.yes], nrg[sgo.no], alternative = Alternative): cannot compute exact p-value with ties
-# 1  GO terms at 10% FDR
+#2  GO terms at 10% FDR
 ```
 
 ```{r}
 read.delim("MWU_MF_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
   filter(p.adj < 0.1)
-
-# GO:0003735;GO:0005198	structural molecule activity	0.05
 ```
 
 ## Summarize GO-MWU results
@@ -1183,14 +1244,36 @@ read.delim("MWU_MF_magenta-Table-of-Significance-Measures.csv", sep = " ", heade
 ```{r}
 sigGOMWUResults <- rbind(read.delim("MWU_BP_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
                            filter(p.adj < 0.1),
+                         read.delim("MWU_CC_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
                          read.delim("MWU_MF_brown-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
                            filter(p.adj < 0.1),
-                         read.delim("MWU_BP_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                         read.delim("MWU_CC_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_MF_blue-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_BP_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
+                           filter(p.adj < 0.1),
+                         read.delim("MWU_CC_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
                            filter(p.adj < 0.1),
                          read.delim("MWU_MF_magenta-Table-of-Significance-Measures.csv", sep = " ", header = TRUE) %>%
                            filter(p.adj < 0.1)) %>%
-  mutate(module = c("brown", "brown", "brown", "blue", "magenta"),
-         cat = c("Biological Process", "Biological Process", "Molecular Function", "Biological Process", "Molecular Function")) %>%
+  mutate(module = c(rep("brown", times = 7),
+                    rep("brown", times = 7),
+                    rep("brown", times = 17),
+                    "blue",
+                    rep("blue", times = 2),
+                    rep("magenta", times = 2),
+                    rep("magenta", times = 2),
+                    rep("magenta", times = 2)),
+         cat = c(rep("Biological Process", times = 7),
+                 rep("Cellular Component", times = 7),
+                 rep("Molecular Function", times = 17),
+                 "Cellular Component",
+                 rep("Molecular Function", times = 2),
+                 rep("Biological Process", times = 2),
+                 rep("Cellular Component", times = 2),
+                 rep("Molecular Function", times = 2))) %>%
   select(module, term, name, cat, p.adj, nseqs) #Create summary table
 sigGOMWUResults
 ```
