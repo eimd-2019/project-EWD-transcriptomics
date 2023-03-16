@@ -420,7 +420,7 @@ left_join(x = magentaGeneList, y = zosteraEdgeROutput, by = "geneIDs") %>%
 ## Master list with membership and gene significance information
 
 ```{r}
-zosteraGeneAnnot <- read.delim("../../data/Zostera-blast-annot-withGeneID-noIsoforms.tab", header = FALSE, sep = "\t") #Import gene annotation information
+zosteraGeneAnnot <- read.delim("../output/03-assembly-annotation/c-uniprot/Zostera-blast-annot-withGeneID-noIsoforms.tab", header = FALSE, sep = "\t") #Import gene annotation information
 zosteraGeneAnnot <- zosteraGeneAnnot[,-c(3,10)] #Remove unecessary columns
 colnames(zosteraGeneAnnot) <- c("geneIDs", "Uniprot", "e-value", "annot", "BPGO", "CCGO", "MFGO", "GOterms", "organism")
 head(zosteraGeneAnnot) #Confirm import and formatting
