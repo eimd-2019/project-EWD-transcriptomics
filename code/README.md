@@ -1,3 +1,6 @@
-# `scripts` Subdirectory Structure
+# `code`
 
-[2019-07-10-blastx-Uniprot-File-Merging.ipynb](https://github.com/eimd-2019/project-EWD-transcriptomics/blob/master/scripts/2019-07-10-blastx-Uniprot-File-Merging.ipynb): Jupyter notebook used to annotate `blastx` output, remove redundant gene isoforms, and merge with `trinity` gene counts.
+Numbers correspond to the order of the code in the analytical workflow.
+
+- [03-uniprot-annotation.ipynb](https://github.com/eimd-2019/project-EWD-transcriptomics/blob/master/code/03-uniprot-annotation.ipynb): Code for `bash` manipulation of `blastx` output, matching to Uniprot Swiss-Prot database, and removal of isoform information
+- [05-WGCNA.Rmd](https://github.com/eimd-2019/project-EWD-transcriptomics/blob/master/code/05-WGCNA.Rmd): Weighted Gene Network Correlation Analysis of *Z. marina* gene expression results

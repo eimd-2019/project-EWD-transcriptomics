@@ -8,21 +8,17 @@ Seagrass meadows serve as an integral component of coastal ecosystems but are de
 
 ## Repository structure
 
-### [analyses](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/analyses)
+### [scripts](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/scripts)
 
-R code and output from multiple analyses. Each analysis will be in its own subdirectory.
+Code used for all analyses. Numbers indicate the order of the script in the workflow.
 
-### [data](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/data)
+### [output](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/output)
 
-Raw data used for project analyses, as well as links to data files.
+Output from scripts in `code` directory. Each analysis has its own subdirectory, with numbers corresponding to the same numbers as the code.
 
 ### [figures-and-tables](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/figures-and-tables)
 
 Main figures and tables in the published manuscript.
-
-### [scripts](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/scripts)
-
-`bash` code used for file manipulation.
 
 ### [supplementary-material](https://github.com/eimd-2019/project-EWD-transcriptomics/tree/master/supplementary-material)
 
