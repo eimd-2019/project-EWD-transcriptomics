@@ -1,17 +1,16 @@
 ---
 title: "WGCNA"
 author: "Yaamini Venkataraman"
-date: "7/8/2020"
 output: github_document
 ---
 
-In this script, I will conduct a WGCNA to understand *Z. marina* gene expression patterns. The code is based on [ tutorials from the WGCNA package](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/index.html).
+In this script, I will conduct a WGCNA to understand *Z. marina* gene expression patterns. The code is based on [tutorials from the WGCNA package](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/index.html).
 
 # Set up R Markdown file
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = normalizePath("analyses/WGCNA")) #Set root directory
+knitr::opts_knit$set(root.dir = normalizePath("../output/05-WGCNA/")) #Set root directory
 ```
 
 ```{r}
@@ -51,7 +50,7 @@ Relevant tutorial: https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rp
 ## Import log CPM data
 
 ```{r}
-zosteraAllGenes <- read.delim("../EdgeR/EXP.CON.Zostera.logCPM.txt", header = TRUE, quote = "") #Import data with log CPM information for all expressed genes
+zosteraAllGenes <- read.delim("../04-edgeR/EXP.CON.Zostera.logCPM.txt", header = TRUE, quote = "") #Import data with log CPM information for all expressed genes
 head(zosteraAllGenes) #Confirm import
 ```
 
@@ -249,7 +248,7 @@ dim(textMatrix) <- dim(moduleTraitCor) #Ensure that matrix has the same dimensio
 ```
 
 ```{r}
-#pdf("module-treatment-relationships.pdf", width = 11, height = 8.5)
+#pdf("figures/module-treatment-relationships.pdf", width = 11, height = 8.5)
 
 par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
 labeledHeatmap(Matrix = moduleTraitCor,
@@ -270,7 +269,7 @@ labeledHeatmap(Matrix = moduleTraitCor,
 ```
 
 ```{r}
-#pdf("module-treatment-relationships-NOTEXT.pdf", width = 11, height = 8.5)
+#pdf("figures/module-treatment-relationships-NOTEXT.pdf", width = 11, height = 8.5)
 
 par(mar = c(4, 8.5, 3, 3)) #Change figure boundaries
 labeledHeatmap(Matrix = moduleTraitCor,
@@ -368,7 +367,7 @@ for (module in modNames[c(1, 3, 4, 5)]) {
 ## Count DEG in significant modules
 
 ```{r}
-zosteraEdgeROutput <- read.delim("../EdgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
+zosteraEdgeROutput <- read.delim("../04-edgeR/EXP.CON.Zostera.ALL.txt") #Import Z. marina edgeR results (all genes, not just DEG)
 head(zosteraEdgeROutput) #Confirm import
 zosteraEdgeROutput <- data.frame("geneIDs" = rownames(zosteraEdgeROutput),
                                  "logFC" = zosteraEdgeROutput$logFC,
@@ -627,7 +626,7 @@ ggplot(brown, aes(x = condition, y = expr)) +
                          plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
                          plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
 
-ggsave("brown-expression-boxplot.pdf", height = 8.5, width = 11)
+ggsave("figures/brown-expression-boxplot.pdf", height = 8.5, width = 11)
 ```
 
 ## yellow
@@ -655,7 +654,7 @@ ggplot(yellow, aes(x = condition, y = expr)) +
                          plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
                          plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
 
-ggsave("yellow-expression-boxplot.pdf", height = 8.5, width = 11)
+ggsave("figures/yellow-expression-boxplot.pdf", height = 8.5, width = 11)
 ```
 
 ## blue
@@ -683,7 +682,7 @@ ggplot(blue, aes(x = condition, y = expr)) +
                          plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
                          plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
 
-ggsave("blue-expression-boxplot.pdf", height = 8.5, width = 11)
+ggsave("figures/blue-expression-boxplot.pdf", height = 8.5, width = 11)
 ```
 
 ## magenta
@@ -711,7 +710,7 @@ ggplot(magenta, aes(x = condition, y = expr)) +
                          plot.title = element_text(size = 20, hjust = 0.5, face = "bold"),
                          plot.subtitle = element_text(size = 16, hjust = 0.5, face = "plain"))
 
-ggsave("magenta-expression-boxplot.pdf", height = 8.5, width = 11)
+ggsave("figures/magenta-expression-boxplot.pdf", height = 8.5, width = 11)
 ```
 
 ## Create multipanel plot
@@ -767,7 +766,7 @@ magentaPlot <- ggplot(magenta, aes(x = condition, y = expr)) +
 ```{r}
 #Use patchwork to stitch plots together
 
-#pdf("multipanel-expression-boxplot.pdf", height = 8.5, width = 11)
+#pdf("figures/multipanel-expression-boxplot.pdf", height = 8.5, width = 11)
 
 brownPlot / bluePlot | yellowPlot / magentaPlot
 grid::grid.draw(grid::textGrob("Module Expression", x = 0.01, rot = 90, gp = gpar(fontsize = 25)))
