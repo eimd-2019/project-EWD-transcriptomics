@@ -1,6 +1,6 @@
 rm(list=ls())
 
-setwd("~/Box Sync/CAB_MEE analysis/CAB R files to start/GRASS")
+#setwd("output/04-edgeR/")
 
 library(edgeR)
 
@@ -16,7 +16,7 @@ group <- as.factor(group)
 group
 
 # importing raw data
-rawdata <- read.delim("Zostera-blast-annot-withGeneID-noIsoforms-geneCounts.tab", header=FALSE)
+rawdata <- read.delim("../03-assembly-annotation/c-uniprot/Zostera-blast-annot-withGeneID-noIsoforms-geneCounts.tab", header=FALSE)
 head(rawdata)
 colnames(rawdata)<- c("GeneID", "Accession", "Isoform", "E-value", "ProteinN", "GO_BP", "GO_CC", "GO_MF", "GO", "Status", "Organism", "S_10B", "S_9A", "S_13A", "S_42A", "S_46B", "S_47B", "S_48B", "S_2A", "S_2B", "S_7B", "S_8B", "S_33A", "S_36B", "S_38A", "S_40A")
 row.names(rawdata)<-rawdata$GeneID
