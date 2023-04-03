@@ -13,8 +13,9 @@ require(gridExtra)
 
 
 ##Phenol and tannin analysis
+#setwd("output/02-phenols/")
 
-PhenolsTannins <- read_csv("PhenolsTannins.csv")
+PhenolsTannins <- read_csv("../../data/PhenolsTannins.csv")
 PhenolsTannins<-PhenolsTannins[PhenolsTannins$Temp!='Varying',]
 
 PhenolsTannins$CT_prop_dm<-PhenolsTannins$CT_percent_dm/100

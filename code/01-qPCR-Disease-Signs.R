@@ -13,10 +13,10 @@ require(gridExtra)
 
 
 #upload data
-#setwd()
-Adult36 <- read.delim("36hourAdult.txt")
+#setwd("output/01-Lz/")
+Adult36 <- read.delim("../../data/36hourAdult.txt")
 Adult36$Temp<-ifelse(Adult36$Temp=='Cold', '11 °C', '18 °C')
-Adult5<-read.delim("5dayAdult.txt")
+Adult5<-read.delim("../../data/5dayAdult.txt")
 Adult5$Temp<-ifelse(Adult5$Temp=='Cold', '11 °C', '18 °C')
 
 
